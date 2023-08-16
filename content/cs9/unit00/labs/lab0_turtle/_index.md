@@ -1,31 +1,30 @@
 ---
-bookCollapseSection: true
-weight: 20
+title: "00. Turtle"
+# weight: 20
 ---
 
 # Welcome to Making with Code! 
 
 We're glad you're here! yay 😄
 
-If you have not yet completed the [initial setup]({{< ref "../../initial_setup.md" >}}), 
+If you have not yet completed the [initial setup
 please do that before you start. 
 
 
-
-> [!tip]- Hint 
->
-> *Hello! I'm the For Your Information Space Invader. I'll be stopping by
+{{< aside "FYI" >}}
+*Hello! I'm the For Your Information Space Invader. I'll be stopping by
 every once in a while to give you some extra information about labs or the content you're
 learning.*
->
-> **Here's my first FYI:** Sometimes you'll see 💻 in a lab. This means that you
+
+**Here's my first FYI:** Sometimes you'll see 💻 in a lab. This means that you
 need do something that involves writing code or using your Terminal (MacOS) or Ubunutu (Windows). You can use these like little action items during labs.
-> 
-> The {{< look-action >}} symbol is another helpful symbol to indicate that you need to do
+
+The {{< look-action >}} symbol is another helpful symbol to indicate that you need to do
 something. This one means that there's something important for you to read or watch.
 
+{{< /aside >}}
 
----
+<!-- ---
 
 ## [0] Into the Terminal
 {{< look-action " Take a peek at your Desktop." >}} **You should see a new folder called `making_with_code`** created by the configuration
@@ -212,7 +211,7 @@ file.
 
 
 ---
-
+ -->
 
 
 ## [2] Let's draw!

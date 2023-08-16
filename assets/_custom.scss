@@ -7,4 +7,32 @@
     background: var(--outlinegray);
     // width: 50%;
     margin-inline-start: 0;
+    border-radius: 20px;
+}
+
+
+#page-title a{
+    color: white;
+}
+
+#page-title a:hover, 
+#page-title a:visited:hover,
+#page-title a:link:hover
+{
+    color: white;
+}
+
+#page-title a{
+    font-weight: 400;;
+}
+
+h2{
+    color: var(--secondary);
+    text-decoration: underline;
+    text-underline-offset: 6px;
+}
+
+.markdown code {
+    background: #e7e7e7;
+
 }

@@ -31,10 +31,10 @@ menu:
 params:
 
   name: Ben Cuan
-  title: 📓 Making with Code
+  title: Making with Code
 
   # OPTIONAL: custom favicon location
-  # favicon: 'favicon.png'
+  # favicon: 
 
   # whether to display on-hover link preview cards
   enableLinkPreview: true

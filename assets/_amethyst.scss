@@ -1,4 +1,4 @@
-$header-height: 80px;
+$header-height: 50px;
 
 header {
     position: fixed;
@@ -8,6 +8,7 @@ header {
     background-color: var(--header);
     margin: 0 !important;
     height: $header-height;
+    margin-bottom: 50px;
 }
 
 .book-menu,
@@ -20,6 +21,7 @@ header {
 .book-header {
     display: flex;
     padding: 30px;
+    margin-bottom: 200px;
 }
 
 #page-title a {
