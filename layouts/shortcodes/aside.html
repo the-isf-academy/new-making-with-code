@@ -1,0 +1,10 @@
+<blockquote class="book-hint info">
+    <strong class="markdown-inner">👾 💬 {{ .Get 0 }} </strong> 
+  <br>
+<p class="markdown-inner">
+{{ if .Inner }}
+  {{ .Inner | markdownify }}
+{{ else }}
+{{ end }}
+</p>
+</blockquote>
