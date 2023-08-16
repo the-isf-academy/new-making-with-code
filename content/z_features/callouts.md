@@ -17,6 +17,11 @@ See [documentation on supported types and syntax here](https://help.obsidian.md/
 > [!EXAMPLE] Examples
 >
 > Aliases: example
+> hello
+>
+> ```python
+>test
+>```
 
 > [!note] Notes
 >

@@ -1,7 +1,8 @@
 ---
-weight: 1
+weight: 3
 bookCollapseSection: true
 title: "Example Site"
+draft: true
 ---
 
 # Introduction

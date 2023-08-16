@@ -1,6 +1,7 @@
 ---
 weight: 10
 title: "Table of Contents"
+enableFooter: False
 ---
 
 # Ubi loqui
@@ -27,6 +28,7 @@ miror esse, scelerisque Melaneus viribus. Miseri laurus. Hoc est proposita me
 ante aliquid, aura inponere candidioribus quidque accendit bella, sumpta.
 Intravit quam erat figentem hunc, motus de fontes parvo tempestate.
 
+```python
     iscsi_virus = pitch(json_in_on(eupViral),
             northbridge_services_troubleshooting, personal(
             firmware_rw.trash_rw_crm.device(interactive_gopher_personal,
@@ -46,6 +48,7 @@ Intravit quam erat figentem hunc, motus de fontes parvo tempestate.
             coreLog.joystick(componentUdpLink), windows_expansion_touchscreen);
     bashGigabit.external.reality(2, server_hardware_codec.flops.ebookSampling(
             ciscNavigationBacklink, table + cleanDriver), indexProtocolIsp);
+```
 
 ## Placabilis coactis nega ingemuit ignoscat nimia non
 

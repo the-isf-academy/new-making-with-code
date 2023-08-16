@@ -23,18 +23,18 @@ menu:
   #   - name: "Sample"
   #     url: "https://google.com"
   #     weight: 10
-  after:
-    - name: "Github"
-      url: "https://github.com/64bitpandas/amethyst"
-      weight: 10
+  # after:
+  #   - name: "Github"
+  #     url: "https://github.com/64bitpandas/amethyst"
+  #     weight: 10
 
 params:
 
   name: Ben Cuan
-  title: 📓 Amethyst
+  title: 📓 Making with Code
 
   # OPTIONAL: custom favicon location
-  # favicon: 'location/to/favicon.png'
+  # favicon: 'favicon.png'
 
   # whether to display on-hover link preview cards
   enableLinkPreview: true
@@ -53,11 +53,11 @@ params:
   enableCallouts: true
 
   # Show footer, including backlinks and graph view
-  enableFooter: true
+  enableFooter: false
 
   # whether backlinks of pages should show the context in which
   # they were mentioned
-  enableContextualBacklinks: true
+  enableContextualBacklinks: false
 
   # whether to show a section of recent notes on the home page
   enableRecentNotes: false
@@ -67,7 +67,7 @@ params:
   enableGitHubEdit: true
 
   # whether to render mermaid diagrams
-  enableMermaid: true
+  enableMermaid: false
 
   # Link to your Github repo
   GitHubLink: https://github.com/64bitpandas/amethyst
