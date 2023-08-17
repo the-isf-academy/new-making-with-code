@@ -2,7 +2,6 @@
 title: "CS9"
 weight: 1
 bookCollapseSection: true
-bookFlatSection: false
 
 ---
 
