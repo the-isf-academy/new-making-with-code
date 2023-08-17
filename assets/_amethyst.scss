@@ -1,10 +1,10 @@
-$header-height: 50px;
+$header-height: 80px;
 
 header {
-    position: fixed;
+    position: relative;
     width: 100%;
     padding: 0px 80px;
-    z-index: 9999;
+    z-index: 1;
     background-color: var(--header);
     margin: 0 !important;
     height: $header-height;
@@ -16,6 +16,8 @@ header {
 .book-toc-content,
 .book-page {
     margin-top: $header-height;
+
+   
 }
 
 .book-header {

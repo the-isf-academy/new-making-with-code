@@ -7,22 +7,62 @@ title: "00. Turtle"
 
 We're glad you're here! yay 😄
 
-If you have not yet completed the [initial setup
-please do that before you start. 
-
 
 {{< aside "FYI" >}}
-*Hello! I'm the For Your Information Space Invader. I'll be stopping by
-every once in a while to give you some extra information about labs or the content you're
-learning.*
+**Here's my first FYI:** you will see 💻 throughout each lab. 
 
-**Here's my first FYI:** Sometimes you'll see 💻 in a lab. This means that you
-need do something that involves writing code or using your Terminal (MacOS) or Ubunutu (Windows). You can use these like little action items during labs.
+This means that you
+need do something that involves writing code or using your Terminal. You can use these like little action items during labs.
 
-The {{< look-action >}} symbol is another helpful symbol to indicate that you need to do
-something. This one means that there's something important for you to read or watch.
 
 {{< /aside >}}
+
+---
+
+## [0] Your First Turtle Drawing
+
+{{< code-action "Go to:" >}} [bit.ly/day1_cs9](https://trinket.io/python/196e77f175). **Experiment with turtle commands below.**
+
+{{< figure src="images/courses/cs9/unit00/00_turtle.png" width="75%">}}
+
+
+| Function |       Input      |   Example Use  | Explanation                                                                                                                      |
+|:--------:|:----------------:|:--------------:|----------------------------------------------------------------------------------------------------------------------------------|
+|  forward |      amount      |  forward(100)  | Moves the turtle forward by the specified amount                                                                                 |
+| backward |      amount      |  backward(100) | Moves the turtle backward by the specified amount                                                                                |
+|   right  | angle in degrees |    right(45)   | Turns the turtle clockwise by the specified angle                                                                                |
+|   left   | angle in degress |    left(45)    | Turns the turtle counter clockwise by the specified angle                                                                        |
+|   color  |     colorname    |  color("red")  | Sets the color for drawing. Use "red", "black", etc.  [Here's a list of all the colors](https://trinket.io/docs/colors).                                           |
+|   shape  |     shapename    | shape("arrow") | Should be "arrow", "classic", "turtle", or "circle"                                                                              |
+|   speed  | number from 0-10 |    speed(0)    | Determines the speed at which the turtle moves around the window. 1 for slowest, 3 for normal speed, 10 for fast, 0 for fastest. |
+|  pendown |       None       |    pendown()   | Puts down the turtle/pen so that it draws when it moves                                                                          |
+|   penup  |       None       |     penup()    | Picks up the turtle/pen so that it doesn’t draw when it moves                                                                    |
+| pensize  |       width      |   pensize(4)   | Sets the width of the pen for drawing                                                                                            |
+| circle  |       size      |   circle(10)   | Sets the radius of the circle                                                                                            |
+| setheading  |       angle      |   setheading(90)   | Sets the pen to the 0th degree                                |
+| circle  |       size      |   circle(10)   | Sets the radius of the circle                                                                                            |
+| goto  |       x, y      |   goto(90,0)   | Moves turtle to a given coordinate                                                 |
+
+
+{{< figure src="https://freshgadgets.nl/wp-content/uploads/2014/12/inspirograph2.jpg" width="75%">}}
+
+---
+
+### [Error and bugs]
+While trying this out, you may come across errors or bugs, do not fear!
+Write the issue down, and we can talk about it during class. Try to
+figure out whether your bug is a:
+{{< columns >}}
+**Programmatic error** (which happens when the program does something different than what
+you wanted. Remember that this happened when we set the angle to the wrong number)
+
+<--->
+
+**Syntax error** (which happens when the program crashes because the program cannot be
+understood by the computer. Remember that this happened when we forgot a parentheses).
+
+{{< /columns >}}
+
 
 <!-- ---
 
@@ -213,41 +253,3 @@ file.
 ---
  -->
 
-
-## [2] Let's draw!
-Now that you've got the basics, try to make it more interesting.
-
-
-{{< figure src="https://freshgadgets.nl/wp-content/uploads/2014/12/inspirograph2.jpg" width="75%" title="Python Turtle Examples" >}}
-
-{{< code-action "Experiment with turtle commands below by editing your" >}} `first_program.py` file. 
-
-| Function |       Input      |   Example Use  | Explanation                                                                                                                      |
-|:--------:|:----------------:|:--------------:|----------------------------------------------------------------------------------------------------------------------------------|
-|  forward |      amount      |  forward(100)  | Moves the turtle forward by the specified amount                                                                                 |
-| backward |      amount      |  backward(100) | Moves the turtle backward by the specified amount                                                                                |
-|   right  | angle in degrees |    right(45)   | Turns the turtle clockwise by the specified angle                                                                                |
-|   left   | angle in degress |    left(45)    | Turns the turtle counter clockwise by the specified angle                                                                        |
-|   color  |     colorname    |  color("red")  | Sets the color for drawing. Use "red", "black", etc.  [Here's a list of all the colors](https://trinket.io/docs/colors).                                           |
-|   shape  |     shapename    | shape("arrow") | Should be "arrow", "classic", "turtle", or "circle"                                                                              |
-|   speed  | number from 0-10 |    speed(0)    | Determines the speed at which the turtle moves around the window. 1 for slowest, 3 for normal speed, 10 for fast, 0 for fastest. |
-|  pendown |       None       |    pendown()   | Puts down the turtle/pen so that it draws when it moves                                                                          |
-|   penup  |       None       |     penup()    | Picks up the turtle/pen so that it doesn’t draw when it moves                                                                    |
-| pensize  |       width      |   pensize(4)   | Sets the width of the pen for drawing                                                                                            |
-
----
-
-### [Error and bugs]
-While trying this out, you may come across errors or bugs, do not fear!
-Write the issue down, and we can talk about it during class. Try to
-figure out whether your bug is a:
-{{< columns >}}
-**Programmatic error** (which happens when the program does something different than what
-you wanted. Remember that this happened when we set the angle to the wrong number)
-
-<--->
-
-**Syntax error** (which happens when the program crashes because the program cannot be
-understood by the computer. Remember that this happened when we forgot a parentheses).
-
-{{< /columns >}}

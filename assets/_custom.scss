@@ -36,3 +36,15 @@ h2{
     background: #e7e7e7;
 
 }
+
+.book-menu .book-menu-content{
+    background-color: transparent;
+}
+
+
+
+@media screen and (max-width: $mobile-breakpoint) {
+    .book-menu .book-menu-content{
+        background-color: white;
+    }
+}

@@ -76,7 +76,7 @@
   }
 
   pre {
-    padding: $padding-16;
+    padding: $padding-1;
     background: var(--gray-100);
     border-radius: $border-radius;
     overflow-x: auto;
@@ -111,13 +111,17 @@
     display: block;
     border-spacing: 0;
     border-collapse: collapse;
-    margin-top: $padding-16;
-    margin-bottom: $padding-16;
+    margin-top: $padding-4;
+    margin-bottom: $padding-4;
+    // border: 1px solid #ddd;
+    border: none;
 
     tr th,
     tr td {
       padding: $padding-8 $padding-16;
       border: $padding-1 solid var(--gray-200);
+      border: 1px solid #ddd;
+
     }
 
     tr:nth-child(2n) {
