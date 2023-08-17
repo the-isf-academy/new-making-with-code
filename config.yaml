@@ -128,7 +128,7 @@ params:
   # Configure the date format used on the pages
   # - In git information
   # - In blog posts
-  BookDateFormat: "January 2, 2006"
+  # BookDateFormat: "2006-"
 
 
   # (Optional, default true) Enables comments template on pages
