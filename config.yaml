@@ -1,4 +1,5 @@
-baseURL: https://amethyst.bencuan.me
+# baseURL: https://amethyst.bencuan.me
+baseURL: "https://github.io/the-isf-academy/new-making-with-code"
 
 # Book configuration
 disablePathToLower: true
