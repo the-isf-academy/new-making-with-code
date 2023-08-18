@@ -10,20 +10,20 @@ This lab will re-explore one of our most important and most used tools: the Term
 The Terminal is what we use to navigate our filesystem, run code files, install software, and
 do all kinds of other tasks.
 
+The last time you ventured into the Terminal, you came away with treasure! It's time to dive back into the sea and see what's hiding.
+
+{{< figure src="https://www.kindpng.com/picc/m/410-4102844_transparent-pirate-ship-silhouette-png-pirate-ship-drawing.png" width="75%"  >}}
+
+
+---
+
+## [0] Setup
+
 {{< aside "Windows Users" >}}
 Windows users should use Powershell wherever it says Terminal.
 
 You may see more information output than your Mac peers, but all commands should work the same.
 {{< /aside >}}
-
----
-
-## [0] Terminal Adventure Lab
-
-The last time you ventured into the Terminal, you came away with treasure! It's time to dive back into the sea and see what's hiding.
-
-{{< figure src="https://www.kindpng.com/picc/m/410-4102844_transparent-pirate-ship-silhouette-png-pirate-ship-drawing.png" width="75%"  >}}
-
 
 {{< code-action "First clone the Terminal Adventure Sequel." >}} 
 ```shell
@@ -41,6 +41,7 @@ When you want to exit the shell, you can type `exit` or `^D`
 {{< /aside >}}
 
 
+## [1] Adventure
 
 {{< code-action "Now take a look at what's in the repository:" >}} `ls`
 ```shell
@@ -53,11 +54,11 @@ kitchen	    captain.py     helpers.py    poetry.lock	pyproject.toml
 
 {{< figure src="https://www.justonecookbook.com/wp-content/uploads/2020/07/Wanpaku-Sandwich-4986-I-1.jpg" width="75%"  >}}
 
-### [Terminal Commands]
+### Terminal Commands
 Below are some Terminal commands which might come in handy on your adventure.
 
 
-| Command              | What it does                                 |
+| &nbsp; &nbsp; Command  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;          | What it does                                 |
 | --------------       | -------------------------------------------- |
 | `ls`                 | List what's in the current directory.        |
 | `cd ~`               | Go to your home directory                    |
@@ -77,7 +78,7 @@ Below are some Terminal commands which might come in handy on your adventure.
 | `rm -r dir`          | recursively removes (deletes) the directory `dir` and all subdirectories and files within that directory. **Be careful, this is a powerful tool!** |
 
 
-### [Deliverables]
+## [1] Deliverables
 
 
 {{< deliverables "Congrats on completing your adventure!" >}}  
@@ -88,7 +89,7 @@ Once you've successfully completed the adventure be sure to fill out [this Googl
 
 ---
 
-## [1] Extension
+## [2] Extension
 
 Delve into the code and try and learn how the Terminal Adventure works. Can you add your own feature?
 
