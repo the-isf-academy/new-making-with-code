@@ -38,7 +38,7 @@ cd Desktop
 
 ---
 
-{{< code-action "Use the mkdir command to make a directory called making-with-code" >}} This will list out all the items in your home directory.
+{{< code-action "Use the mkdir command to make a directory called making_with_code" >}} This will list out all the items in your home directory.
 
 ```shell
 mkdir making-with-code
