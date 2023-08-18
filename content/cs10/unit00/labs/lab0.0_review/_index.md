@@ -29,7 +29,7 @@ cd lab_turtle_review_yourgithubusername
 
 {{< code-action >}} `cd` **into the lab**
 ```shell
-cd lab_typing_game_yourGithubUsername
+cd lab_turtle_review_yourGithubUsername
 ```
 
 
@@ -38,6 +38,11 @@ cd lab_typing_game_yourGithubUsername
 We suggest not copying the path command, and instead using `cd` and `ls` to ensure you are in the correct `making_with_code` folder.
 
 {{< /aside >}}
+
+{{< code-action "Install Tkinter" >}} We'll need this for our drawings.
+```shell
+brew install python-tk
+```
 
 {{< code-action "Enter the Poetry Shell." >}} Remember, we run this command at the start of each lab, but only when we are inside a lab folder.
 ```shell
@@ -93,7 +98,7 @@ When you want to exit the shell, you can type `exit` or `^D`
 
 {{< deliverables  >}}
 
-🤔 **Remeber, at the end of each class we push to *Github***
+🤔 **Remember, at the end of each class we push to *Github***
 
 {{< code-action "Push your work to Github:" >}}
 - git status
