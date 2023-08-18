@@ -1,5 +1,7 @@
 ---
 title: "0.0 Review: Turtle"
+weight: 10
+
 ---
 
 # Review: Turtle Drawing
@@ -28,7 +30,7 @@ cd cs10
 mkdir unit00_networking
 ```
 
-{{< code-action "Then, clone your starter code." >}} Be sure to change `YOUR-GITHUB-USERNAME` to your actual Github username.
+{{< code-action "Then, clone your starter code." >}} Be sure to change `yourgithubusername` to your actual Github username.
 ```shell
 git clone https://github.com/the-isf-academy/lab_turtle_review_yourgithubusername
 cd lab_turtle_review_yourgithubusername
@@ -36,7 +38,7 @@ cd lab_turtle_review_yourgithubusername
 
 {{< code-action >}} `cd` **into the lab**
 ```shell
-cd lab_typing_game_yourGithubUsername
+cd lab_turtle_review_yourgithubusername
 ```
 
 

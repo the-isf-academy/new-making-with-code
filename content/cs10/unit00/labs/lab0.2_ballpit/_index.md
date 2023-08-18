@@ -1,36 +1,45 @@
 ---
-title: "0.1 Ball Pit"
-draft: true
+title: "0.2 Review: Ball Pit"
+weight: 30
+
+# draft: true
 ---
 
 # Ball Pit
 
-In this lab, we'll get re-aquainted with CS concepts such as classes and decomposition with the Turtle library. We'll also introduce a concept called *inheritance*. 
+In this lab, we'll get re-aquainted with CS concepts such as classes and decomposition with the Turtle library. 
+
+--- 
 
 ## [0] Set up
 
-{{< code-action "Start by clone the repository" >}} in your `cs10\unit_00` folder. 
+
+{{< code-action "Let's start by clonning the repository" >}} in your `cs10\unit00_networking` folder.  Be sure to change `yourgithubusername` to your actual Github username.
 
 ```shell
-git clone https://github.com/the-isf-academy/lab-ballpit-YOUR-GITHUB-USERNAME.git
+cd ~/desktop/making_with_code/cs10/unit00_networking
+git clone https://github.com/the-isf-academy/lab_ballpit_yourgithubusername.git
+cd lab_ballpit_yourgithubusername
 ```
+> 🤔 *Remember, `tab` autocompletes files and folders in the Terminal*
 
-This repository contains the following files:
+📄 **This repository contains the following files:**
 - `ball.py`
 - `ballpit.py`
 - `setup_ballpit_canvas.py`
-- `test_add_color_to_breathingball.py`
-- `test_add_color_to_warpball.py`
+
+---
 
 ## [1] Exploring Ball Pit
 
 The Ballpit is a little animation made with Turtle. You can watch it by running the following command in your terminal:
  
 ```shell
-python3 ballpit.py
+python ballpit.py
 ```
 
-{{< figure src="images/courses/cs10/unit00/lab-ballpit-00.png" width="400px" >}}
+
+{{< figure src="images/courses/cs10/unit00/lab0.2-00.png" width="50%" >}}
 
 In the Ballpit, notice that each ball has a different behavior. One stays the same size the whole time and bounce off the walls. One doesn't bounce at all. Instead, it warps around to the opposite side of the screen. And the last ball grows and shrinks as it moves. It looks like it's breathing in and out.
 
@@ -128,7 +137,7 @@ Before moving on, make sure your everyone in your group understands the logic be
 Check-in with a teacher by demonstrating your improved `ballpit.py` file. 
 {{< /checkpoint >}}
 
-{{< figure src="images/courses/cs10/unit00/lab-ballpit-01.png" width="400px" >}}
+{{< figure src="images/courses/cs10/unit00/lab0.2-01.png" width="400px" >}}
 
 ### [Deliverables]
 
@@ -161,5 +170,5 @@ If time allows, ramp up the chaos even further by introducing the idea of cyclin
 
 Be sure to push any customization you've made to your ballpit!
 
-{{< figure src="images/courses/cs10/unit00/lab-ballpit-02.gif" width="400px" >}}
+{{< figure src="images/courses/cs10/unit00/lab0.2-02.gif" width="400px" >}}
 
