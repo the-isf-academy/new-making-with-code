@@ -9,6 +9,12 @@ weight: 30
 
 In this lab, we'll get re-aquainted with CS concepts such as classes and decomposition with the Turtle library. 
 
+{{< expand "Extra Resouces: Learn more about Python Objects" >}}
+- Creating a Class: [Python Classes](https://www.w3schools.com/python/python_classes.asp)
+- Inheritance: [Python Inheritance](https://www.w3schools.com/python/python_inheritance.asp)
+{{< /expand >}}
+
+
 --- 
 
 ## [0] Set up
@@ -32,143 +38,151 @@ cd lab_ballpit_yourgithubusername
 
 ## [1] Exploring Ball Pit
 
-The Ballpit is a little animation made with Turtle. You can watch it by running the following command in your terminal:
+{{< code-action >}} **Run `ballpit.py` to see the Ballpit animation.**
  
 ```shell
 python ballpit.py
 ```
 
 
-{{< figure src="images/courses/cs10/unit00/lab0.2-00.png" width="50%" >}}
+{{< figure src="images/courses/cs10/unit00/lab0.2-00.gif" width="50%" >}}
 
-In the Ballpit, notice that each ball has a different behavior. One stays the same size the whole time and bounce off the walls. One doesn't bounce at all. Instead, it warps around to the opposite side of the screen. And the last ball grows and shrinks as it moves. It looks like it's breathing in and out.
+In the Ballpit, notice all three of the balls has a different size, stays the same size the whole time, and bounces off the walls.
 
-### [OOP Review]
-
-Before jumping into the details of the repository, let's review object oriented programming. Object oriented programming uses classes of objects to group related properties and functionalities.
-
-Let's consider a `Character` object and a `Player` object. 
-
-{{< figure src="images/courses/cs10/unit00/lab-ballpit-03.png" width="350px" >}}
-*Note: the arrows signify the direction of the inheritance* 
-
-In this model, we have a `Character` class that has...
-- a `name` property
-- a`introduce()` method
-- a `jump()` method
-
-The `Character` class a child class, `Player`. The `Player` class has... 
-- a unique `mythical_race` property
-- an inhereted `name` property
-- an inhereted `jump()` method
-- an overridden `introduce()` method
-
-{{< checkpoint >}}
-Before moving on, discuss the following with your partner and write down your thoughts in your notebook. 
-- Why is the concept of **inheritance** useful?
-- What does it mean to **override** a method?
-{{< /checkpoint >}}
-<br>
-
-{{< expand "Extra Resouces: Learn more about Python Objects" >}}
-- Creating a Class: [12.5 Constructors](http://programarcadegames.com/index.php?chapter=introduction_to_classes&lang=en#section_12_5)
-- Inheritance: [12.6 Inheritance](http://programarcadegames.com/index.php?chapter=introduction_to_classes&lang=en#section_12_6)
-{{< /expand >}}
-
-### [Create a Model]
-
-The BallPit contains three different types of balls. Each different type of ball is represented by a different class. The normal bouncing balls are represented with the `Ball` class. The `Ball` class is a parent class that has two child classes, `WarpBall` and `BreathingBall`. These two child classes inherit characteristics of the `Ball` class, and extend it to include additional features.  
-
-
-
-
-
-Before you jump into tinkering with the code, create a model for each object. 
-
-{{< write-action "With your knowledge of classes and inheritance, draw a model with your partner for how the BallPit works." >}}
-
-For your reference, the BallPit has the following classes and functions. The `ball.py` file contains the architecture of each `Ball` object. The `ballpit.py` file initializes the Turtle and instances of the `Ball` objects. Make sure your model includes each of them.
-
-- `ball.py`
-    - `Ball`
-    - `WarpBall`
-    - `BreathingBall`
-- `ballpit.py`
-    - `ball_pit()`
-
-
-
-
-
-
-## [2] Increase the chaos
-
-At the moment, each `Ball` object is the same shade of green. Wouldn't it be nice if we could distinguish them? Your goal is to add more color into the pit!
-
-{{< code-action "Add a unique color to the WarpBall and the BreathingBall." >}} Currently the `WarpBall` and `BreathingBall` simply call the parent `Ball` method for `set_color()`. Overide this method with the colors of your choosing. 
-
-{{< checkpoint >}}
-In this lab we've included **test files** where you can experiment with changes to the `WarpBall` and `BreathingBall` separate from the ballpit. Run the following files to check if you've successfully changed the color of each object.
-- `test_add_color_to_breathingball.py`
-- `test_add_color_to_warpball.py`
-
-Check-in with a teacher by demonstrating your test files run as expected before moving on. 
-{{< /checkpoint >}}
-
-Let's try running `ballpit.py` again. You should see each `Ball` appear with a distinct color. 
+{{< code-action >}} **Let's delve into the code.** Start by looking at `ballpit.py`
 ```shell
-python3 ballpit.py
+code .
 ```
 
-<hr>
+{{< code-action >}} **Change the number of Balls that are in the Ballpit.** 
 
-Now that we've got the colors sorted, let's add to the chaos and add more balls to the pit. At the moment, there is only one of each type of `Ball` object displayed in the Turtle window. 
-
-{{< code-action "Increase the amount of balls in the ballpit so each type of Ball appears at least 10 times." >}}
-
-**Hint! Consider the following...*
-- *What data strucutre currently holds the instances of `Ball`, `WarpBall`, and `BreathingBall`?*
-- *What is the most code efficent solution?*
+{{< figure src="images/courses/cs10/unit00/lab0.2-01.png" width="50%" >}}
 
 
-{{< checkpoint >}}
-Before moving on, make sure your everyone in your group understands the logic behind adding more `Ball` objects to the BallPit. 
+{{< code-action >}} **Now, let's focus on `ball.py` and the method `set_color()`. Change `set_color()` so the color is a random shade of green.** Or, feel free to change it to any other color!
+> 🧐 *You may need to look around the file for an example of how to use the Random library*
 
-Check-in with a teacher by demonstrating your improved `ballpit.py` file. 
-{{< /checkpoint >}}
+{{< figure src="images/courses/cs10/unit00/lab0.2-02.png" width="50%" >}}
 
-{{< figure src="images/courses/cs10/unit00/lab0.2-01.png" width="400px" >}}
+
+---
+
+## [2] Inheritance 
+
+What if we wanted to add different types of Balls to the Ballpit? For example, what if we wanted some of the Balls to change size as they moved? 
+
+We can use **inheritance**!
+
+---
+
+### BreathingBall
+
+`BreathingBall()` is a child class of `Ball()` that grows and shrinks as it moves. It looks like it's breathing in and out.
+
+It **inherits** all of the **methods** from `Ball()` and **overrides** the `update()` method. 
+
+{{< code-action >}} **Copy and paste the code below into the bottom of `ball.py`**
+
+```python
+class BreathingBall(Ball):
+    """ BreathingBall extends the Ball class.
+    A BreathingBall is the same as a Ball,
+    but it grows and shrinks as it moves.
+    """
+    def __init__(self):
+        """This constructor calls the constructor of the parent class,
+        and adds a counter variable.
+        """
+        super().__init__()
+        self.step = random.randint(0,120)
+        
+    def update(self):
+        """Calls the parent method and also changes the size of the ball
+        """
+        super().update()
+        self.step += 1
+        new_radius = math.sin(self.step/20)*(3/2)+1.5
+        self.set_size(new_radius)
+```
+
+{{< code-action >}} **Add the `BreathingBall()` to the Ballpit.**
+> 🧐 *What lines of code will you need to add to `ballpit.py`?*
+
+{{< figure src="images/courses/cs10/unit00/lab0.2-03.gif" width="50%" >}}
+
+---
+
+### Override a Method
+
+Currently, it's pretty difficult to notice the regular `Ball()` from the `BreathingBall()`. Let's change that by overriding `set_color()` in `BreathingBall()`
+
+{{< code-action >}} **In `ball.py` under the `BreathingBall()`, override the class `set_color()`.** 
+> 🧐 *Remember, `update()` is another function in `BreathingBall()` that is overridden from `Ball()`*
+
+
+{{< figure src="images/courses/cs10/unit00/lab0.2-04.png" width="50%" >}}
+
+🎨 **Feel free to customize your BallPit however you'd like!** For example, `bgcolor('red')` changes the background color of the screen to the color red. 
+
+---
+
 
 ### [Deliverables]
 
-{{< deliverables "For this lab, you should push your lab-ballpit repository contianing updates to the following files:" >}}
 
 
+{{< deliverables >}}  
 
-- `ball.py`
-- `ballpit.py`
+Once you've successfully completed the lab, fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSel8Ayu9Y1mjypJKgAA-e1wzIbod24AEAy-YRPrLqQbCGX-UQ/viewform?usp=sf_link).
 
-Before moving onto the extension, make sure your everyone in your group understands the logic behind adding more `Ball` objects to the BallPit. 
 
-Check-in with a teacher by demonstrating your improved `ballpit.py` file. 
+🤔 **Remember, at the end of each class we push to *Github***
+
+{{< code-action "Push your work to Github:" >}}
+- git status
+- git add -A
+- git status
+- git commit -m "describe your drawing and your process here"
+  > be sure to customize this message, do not copy and paste this line
+- git push
 {{< /deliverables >}}
 
 
+---
 
-<hr>
+## [3] Extension: Increase the Chaos
 
-## [3] Extension: Randomizing the chaos
+If time allows, ramp up the chaos even further!
 
-If time allows, ramp up the chaos even further by introducing the idea of cycling through colors. For example, every time a `Ball` object is created, it selected a different shade of green. 
 
-{{< code-action "Add a random element to the color of the Ball, WarpBall, and BreathingBall." >}} 
+{{< code-action >}} **Add in a `WarpBall()`**. It warps around to the opposite side of the screen.
 
-**Hint! Consider how the color is currently chosen in the `set_color()` method.*
+```python
+class WarpBall(Ball):
+    """ WarpBall extends the Ball class.
+    A WarpBall is the same as a Ball,
+    but instead of bouncing off the wall,
+    it reappears on the other side of the screen.
+    """
+    def __init__(self):
+        super().__init__()
 
+    def update(self):
+        """Checks whether the ball has hit a wall.
+        If the ball has hit a wall, it "warps" the ball
+        onto the opposite side of the screen
+        """
+        if self.x > 1:
+            self.x = 0
+        if self.y > 1:
+            self.y = 0
+```
 
 {{< code-action "Embrace the chaos of the ball pit! Cause the Ball, WarpBall, and BreathingBall to change color as they move." >}} 
 
-Be sure to push any customization you've made to your ballpit!
-
 {{< figure src="images/courses/cs10/unit00/lab0.2-02.gif" width="400px" >}}
 
+
+{{< code-action "Create your own type of" >}} `Ball()`. Perhaps one that changes into a different shape as it moves. 
+
+{{< code-action "Be sure to push any extension changes you make to Github!" >}}
