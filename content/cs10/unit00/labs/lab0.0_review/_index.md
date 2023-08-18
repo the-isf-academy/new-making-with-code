@@ -21,6 +21,13 @@ cd ~/desktop/making_with_code
 mkdir cs10
 ```
 
+{{< code-action  >}} **Then, go into the `cs10` folder and create a `unit00_networking` folder.**
+
+```shell
+cd cs10
+mkdir unit00_networking
+```
+
 {{< code-action "Then, clone your starter code." >}} Be sure to change `YOUR-GITHUB-USERNAME` to your actual Github username.
 ```shell
 git clone https://github.com/the-isf-academy/lab_turtle_review_yourgithubusername
