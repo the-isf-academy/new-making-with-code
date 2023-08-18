@@ -48,7 +48,7 @@ need do something that involves writing code or using your Terminal. You can use
 
 ---
 
-### [Error and bugs]
+### Error and Bugs
 While trying this out, you may come across errors or bugs, do not fear!
 Write the issue down, and we can talk about it during class. Try to
 figure out whether your bug is a:

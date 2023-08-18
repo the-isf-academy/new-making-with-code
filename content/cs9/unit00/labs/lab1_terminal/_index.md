@@ -5,7 +5,7 @@ title: "01. Terminal Adventure"
 # draft: true
 
 ---
-# Into the Terminal
+# Terminal Adventure
 This lab will explore one of the most important tools we'll use all year: the Terminal. The Terminal is what we'll use to navigate our filesystem, run code files, install software, and
 do all kinds of other tasks.
 
@@ -16,10 +16,9 @@ Windows users should use Powershell wherever it says Terminal.
 You may see more information output than your Mac peers, but all commands should work the same.
 {{< /aside >}}
 
+---
 
-## Terminal Adventure Lab
-
-### [Setup]
+## [0] Setup
 
 First, we want to make some folders to store our work. Do this we'll be using these three commands:
 
@@ -27,7 +26,7 @@ First, we want to make some folders to store our work. Do this we'll be using th
 | --------------       | -------------------------------------------- |
 | `ls`                 | List what's in the current directory (folder).        |
 | `mkdir`              | Make a new directory (folder)                   |
-| `cd somewhere`       | Go to `somewhere`                            |
+| `cd folder`       | Go to `folder`                            |
 | `cd ..`       | Go up one to the previous folder                            |
 
 {{< code-action "Open Terminal and use cd to go to your Desktop" >}}
@@ -107,7 +106,7 @@ When you want to exit the shell, you can type `exit` or `^D`
 
 ---
 
-### [Starting your adventure]
+## [1] Starting your Adventure
 
 {{< code-action "Let's have a look at what's in the repository with:" >}}
 ```shell
@@ -140,7 +139,6 @@ Use Terminal to explore the contents of the `adventure` directory.
 
 
 {{< code-action "Begin by going into into the" >}}  `adventure` **directory:**
-> *Do not type `$`. These are to mark the start of a Terminal command.*
 
 ```shell
 cd adventure
@@ -158,30 +156,17 @@ ls
 ```shell
 cat sinking.txt
 ```
----
-
-### [Treasure]
-
-{{< figure src="https://sealifeart.co.uk/wp-content/uploads/2019/11/treasure-chest-drawing.jpg" width="50%"  >}}
-
-{{< deliverables "You will end this lab by collecting the treasure!" >}}
-
-Continue exploring into the depths of the sea to find it.
-
-Return to the `lab_00_terminal_adventure` directory and run the `returnToShip.py` file to see if you were successful. If you were unable to escape the monster, try again!
-
-**Once you've successfully completed the adventure be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSc_OBYmQV95aeB96HuDfk9c3bBFzrV9HJBGFm6GVL2tFLQlfw/viewform?usp=sf_link)**.
 
 
-{{< /deliverables >}}
+{{< code-action >}} **Continue exploring into the depths of the sea to find the treasure!** Return to the `lab_00_terminal_adventure` directory and run the `returnToShip.py` file to see if you were successful. If you were unable to escape the monster, try again!
 
-{{< aside "Exiting the poetry shell" >}}
-Remember, when you want to exit the shell, you can type `exit` or `^D`
-{{< /aside >}}
+
+{{< figure src="https://sealifeart.co.uk/wp-content/uploads/2019/11/treasure-chest-drawing.jpg" width="25%"  >}}
 
 ---
 
-## Terminal Commands
+
+### Terminal Commands
 Below are some Terminal commands which might come in handy on your adventure.
 
 
@@ -189,7 +174,7 @@ Below are some Terminal commands which might come in handy on your adventure.
 | --------------       | -------------------------------------------- |
 | `ls`                 | List what's in the current directory.        |
 | `cd ~`               | Go to your home directory                    |
-| `cd somewhere`       | Go to `somewhere`                            |
+| `cd folder`       | Go to `folder`                            |
 | `cd ..`              | Go to the parent directory                   |
 | `open file.txt`      | Opens `file.txt` with its default program    |
 | `cat file.txt`       | Prints out the contents of `file.txt`        |
@@ -204,8 +189,7 @@ Below are some Terminal commands which might come in handy on your adventure.
 | `rm -d dir`          | removes (deletes) the directory `dir`        |
 | `rm -r dir`          | recursively removes (deletes) the directory `dir` and all subdirectories and files within that directory. **Be careful, this is a powerful tool!** |
 
-
-### [More terminal commands]
+{{< expand "More Terminal Commands" >}}
 These are just for fun. There's lots more--ask your teachers!
 
 | Command              | What it does                                 |
@@ -214,3 +198,37 @@ These are just for fun. There's lots more--ask your teachers!
 | `cat sinking.txt \| say` | Makes the computer read the text file aloud |
 | `cal`                | Shows you a monthly calendar                 |
 | `banner hello`       | Just try it                                  |
+
+{{< /expand >}}
+
+
+---
+
+
+## [2] Deliverables
+
+
+{{< deliverables "You will end this lab by collecting the treasure!" >}}
+✔ **Once you've successfully completed the adventure be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSc_OBYmQV95aeB96HuDfk9c3bBFzrV9HJBGFm6GVL2tFLQlfw/viewform?usp=sf_link)**.
+
+
+{{< /deliverables >}}
+
+{{< aside "Exiting the poetry shell" >}}
+Remember, when you want to exit the shell, you can type `exit` or `^D`
+{{< /aside >}}
+
+
+
+---
+
+## [3] Extension
+
+Vimtutor!!!
+
+Advanced Terminal! 
+
+In a new terminal, type: 
+```shell
+vimtutor
+```
