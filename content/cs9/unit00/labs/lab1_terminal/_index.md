@@ -2,13 +2,11 @@
 title: "01. Terminal Adventure"
 
 # numberHeaders: true
-draft: true
+# draft: true
 
 ---
 # Into the Terminal
-This lab will explore one of the most important tools we'll use all year: the Terminal. While it
-may seem complicated at first, it will quickly become your go-to tool for computer science class.
-The Terminal is what we'll use to navigate our filesystem, run code files, install software, and
+This lab will explore one of the most important tools we'll use all year: the Terminal. The Terminal is what we'll use to navigate our filesystem, run code files, install software, and
 do all kinds of other tasks.
 
 
@@ -21,20 +19,78 @@ You may see more information output than your Mac peers, but all commands should
 
 ## Terminal Adventure Lab
 
-{{< code-action "Let's start cloning this lab onto your laptop." >}} This will download a copy of a lab that is hosted on Github onto your computer. Think of it like downloading a folder from Google drive.
-> *We will run this command `mwc update` every time we start a new lab.*
+### [Setup]
+
+First, we want to make some folders to store our work. Do this we'll be using these three commands:
+
+| Command              | What it does                                 |
+| --------------       | -------------------------------------------- |
+| `ls`                 | List what's in the current directory (folder).        |
+| `mkdir`              | Make a new directory (folder)                   |
+| `cd somewhere`       | Go to `somewhere`                            |
+| `cd ..`       | Go up one to the previous folder                            |
+
+{{< code-action "Open Terminal and use cd to go to your Desktop" >}}
+
 ```shell
-mwc update
+cd Desktop
 ```
 
+---
 
-{{< code-action "Open Terminal and type the following command." >}} This will open the Terminal Adventure Lab in Terminal.
+{{< code-action "Use the mkdir command to make a directory called making-with-code" >}} This will list out all the items in your home directory.
 
 ```shell
-cd Desktop/making_with_code/cs9/unit_00_drawing/lab_terminal_adventure
+mkdir making-with-code
 ```
 
-{{< code-action "We then must enter the Poetry shell." >}} This will ensure all of the correct packages and versions of those packages is being used.
+{{< code-action "Use cd to enter your new directory" >}}
+
+```shell
+cd making-with-code
+```
+
+---
+
+{{< code-action "Make a CS9 folder" >}}
+
+```shell
+mkdir CS9
+```
+{{< code-action "Go into the CS9 folder" >}}
+
+```shell
+cd CS9
+```
+
+---
+
+{{< code-action "Make a unit00_drawing folder" >}}
+
+```shell
+mkdir unit00_drawing
+```
+{{< code-action "Go into the unit00_drawing folder" >}}
+```shell
+cd unit00_drawing
+```
+
+---
+
+{{< code-action "Run the following command in your terminal to clone today's lab." >}} This will make a copy of the code on your own computer
+
+```shell
+git clone https://github.com/the-isf-academy/lab_terminal_adventure.git
+```
+
+{{< code-action "Go into the lab_terminal_adventure folder" >}}
+```shell
+cd lab_terminal_adventure
+```
+
+---
+
+{{< code-action "Next, we enter the Poetry shell." >}} This will ensure all of the correct packages and versions of those packages are being used.
 ```shell
 poetry shell
 ```
@@ -48,6 +104,10 @@ poetry shell
 {{< aside "Exiting the poetry shell" >}}
 When you want to exit the shell, you can type `exit` or `^D`
 {{< /aside >}}
+
+---
+
+### [Starting your adventure]
 
 {{< code-action "Let's have a look at what's in the repository with:" >}}
 ```shell
@@ -77,17 +137,19 @@ Use Terminal to explore the contents of the `adventure` directory.
 
 {{< /aside >}}
 
-<hr>
 
 
 {{< code-action "Begin by going into into the" >}}  `adventure` **directory:**
 > *Do not type `$`. These are to mark the start of a Terminal command.*
 
 ```shell
-$ cd adventure
-$ ls
-seafloor	sinking.txt
+cd adventure
+ls
 ```
+> You should see the following output:
+> ```shell
+>seafloor	sinking.txt
+>```
 
 `sinking.txt` is a text file, so we can read it.
 
@@ -123,7 +185,7 @@ Remember, when you want to exit the shell, you can type `exit` or `^D`
 Below are some Terminal commands which might come in handy on your adventure.
 
 
-| Command              | What it does                                 |
+| &nbsp; &nbsp; &nbsp; &nbsp; Command &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;| What it does                                 |
 | --------------       | -------------------------------------------- |
 | `ls`                 | List what's in the current directory.        |
 | `cd ~`               | Go to your home directory                    |
