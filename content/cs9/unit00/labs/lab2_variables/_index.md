@@ -1,7 +1,7 @@
 ---
 title: 02. Variables
 
-draft: true
+# draft: true
 
 ---
 
@@ -9,22 +9,28 @@ draft: true
 In this lab, we will learn about variables, a powerful storage container of information.
 
 ## [0] Variable tests
-
+<!-- 
 {{< code-action "Start by opening the Terminal cloning this lab onto your laptop." >}} As a reminder, we will run this command at the start of each lab.
 ```shell
 mwc update
-```
+``` -->
 
-{{< code-action "In the Terminal, type the following command to open the lab folder." >}}
+{{< code-action >}} **Then, use `cd` to change directories to your `Desktop`.** A directory is just a fancy word for a folder.
+
 ```shell
-cd ~/desktop/making_with_code/cs9/unit00_drawing/lab_variables
+cd ~/Desktop/making_with_code/unit00_drawing
 ```
 
+{{< code-action "Clone the lab" >}}
+```shell
+git clone https://github.com/the-isf-academy/lab_variables
+```
+<!-- 
 {{< aside "Windows Users" >}}
 
 I suggest not copying the path command, and instead using `cd` and `ls` to ensure you are in the correct `making_with_code` folder.
 
-{{< /aside >}}
+{{< /aside >}} -->
 
 {{< code-action "Enter the Poetry Shell." >}} We will also run this command at the start of each lab, but only when we are inside a lab folder.
 ```shell
