@@ -55,7 +55,7 @@ cd Desktop
 {{< code-action >}} **Use the `mkdir` command to make a directory called `making_with_code`** `mkdir` stands for, make directory.
 
 ```shell
-mkdir making-with-code
+mkdir making_with_code
 ```
 
 {{< code-action >}} **Use `ls` to check the folder was created.** 
@@ -67,7 +67,7 @@ ls
 {{< code-action  >}} **Use `cd` to enter your new `making_with_code` directory.**
 
 ```shell
-cd making-with-code
+cd making_with_code
 ```
 <!-- 
 ---
@@ -200,7 +200,7 @@ Below are some Terminal commands which might come in handy on your adventure.
 | `ls`                 | List what's in the current directory.        |
 | `cd ~`               | Go to your home directory                    |
 | `cd folder`       | Go to `folder`                            |
-| `cd ..`              | Go to the parent directory                   |
+| `cd ..`              | Go up a level in your directory system                   |
 | `open file.txt`      | Opens `file.txt` with its default program    |
 | `cat file.txt`       | Prints out the contents of `file.txt`        |
 | `python x.py`        | Runs the Python program `x.py`               |
@@ -234,7 +234,7 @@ These are just for fun. There's lots more--ask your teachers!
 
 
 {{< deliverables "You will end this lab by collecting the treasure!" >}}
-✔ **Once you've successfully completed the adventure be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSc_OBYmQV95aeB96HuDfk9c3bBFzrV9HJBGFm6GVL2tFLQlfw/viewform?usp=sf_link)**.
+✔ **Once you've successfully completed the adventure be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLScnULLCRvMkIw06reo4MyR39s0efG1hz67VOJMEbFa-ekPdIA/viewform?usp=sf_link)**.
 
 
 {{< /deliverables >}}
