@@ -200,7 +200,7 @@ Below are some Terminal commands which might come in handy on your adventure.
 | `ls`                 | List what's in the current directory.        |
 | `cd ~`               | Go to your home directory                    |
 | `cd folder`       | Go to `folder`                            |
-| `cd ..`              | Go to the parent directory                   |
+| `cd ..`              | Go to the previous directory                   |
 | `open file.txt`      | Opens `file.txt` with its default program    |
 | `cat file.txt`       | Prints out the contents of `file.txt`        |
 | `python x.py`        | Runs the Python program `x.py`               |
