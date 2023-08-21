@@ -29,7 +29,22 @@ First, we want to make some folders to store our work. Do this we'll be using th
 | `cd folder`       | Go to `folder`                            |
 | `cd ..`       | Go up one to the previous folder                            |
 
-{{< code-action "Open Terminal and use cd to go to your Desktop" >}}
+{{< code-action >}} **Open Terminal and use `ls` to list out where you are in your folder system.** 
+
+```shell
+ls
+```
+
+👀 **You should see something like this.**
+
+```shell
+Applications         Downloads            Pictures
+Creative Cloud Files Library              Public
+Desktop              Movies
+Documents            Music
+```
+
+{{< code-action >}} **Then, use `cd` to change directories to your `Desktop`.** A directory is just a fancy word for a folder.
 
 ```shell
 cd Desktop
@@ -37,18 +52,24 @@ cd Desktop
 
 ---
 
-{{< code-action "Use the mkdir command to make a directory called making_with_code" >}} This will list out all the items in your home directory.
+{{< code-action >}} **Use the `mkdir` command to make a directory called `making_with_code`** `mkdir` stands for, make directory.
 
 ```shell
 mkdir making-with-code
 ```
 
-{{< code-action "Use cd to enter your new directory" >}}
+{{< code-action >}} **Use `ls` to check the folder was created.** 
+
+```shell
+ls
+```
+
+{{< code-action  >}} **Use `cd` to enter your new `making_with_code` directory.**
 
 ```shell
 cd making-with-code
 ```
-
+<!-- 
 ---
 
 {{< code-action "Make a CS9 folder" >}}
@@ -60,23 +81,24 @@ mkdir CS9
 
 ```shell
 cd CS9
-```
+``` -->
 
 ---
 
-{{< code-action "Make a unit00_drawing folder" >}}
+
+{{< code-action  >}} **Make a `unit00_drawing` directory.** This will store your files for our first unit. 
 
 ```shell
 mkdir unit00_drawing
 ```
-{{< code-action "Go into the unit00_drawing folder" >}}
+{{< code-action  >}} **Go into the `unit00_drawing` folder**
 ```shell
 cd unit00_drawing
 ```
 
 ---
 
-{{< code-action "Run the following command in your terminal to clone today's lab." >}} This will make a copy of the code on your own computer
+{{< code-action "Run the following command in your terminal to clone today's lab." >}} This will make a copy of the code on your own computer. *This uses something called `git` and `Github`, you will learn more about this later this unit.*
 
 ```shell
 git clone https://github.com/the-isf-academy/lab_terminal_adventure.git
@@ -89,7 +111,8 @@ cd lab_terminal_adventure
 
 ---
 
-{{< code-action "Next, we enter the Poetry shell." >}} This will ensure all of the correct packages and versions of those packages are being used.
+{{< code-action "Next, we enter the Poetry shell." >}} This will ensure all of the correct packages and versions of those packages are being used. 
+> You will use `poetry shell`, everytime you want to work on a lab or project. 
 ```shell
 poetry shell
 ```
@@ -104,11 +127,13 @@ poetry shell
 When you want to exit the shell, you can type `exit` or `^D`
 {{< /aside >}}
 
+📁 **Your folders are now all properly setup for `cs`!**
+
 ---
 
 ## [1] Starting your Adventure
 
-{{< code-action "Let's have a look at what's in the repository with:" >}}
+{{< code-action >}} **Let's have a look at what's in the `lab_terminal_adventure` repository with `ls`.** A *repository* is just a fancy word for a folder that is stored in the cloud using a version control software. 
 ```shell
 ls
 ```
@@ -224,11 +249,32 @@ Remember, when you want to exit the shell, you can type `exit` or `^D`
 
 ## [3] Extension
 
-Vimtutor!!!
+{{< code-action >}} **Once you finish the Terminal Adventure, you may either explore `Vim` OR continue exploring drawing with the Python Turtle library.**
 
-Advanced Terminal! 
 
-In a new terminal, type: 
+{{< columns >}}
+### Vim
+
+Vim is text-editor that you can use to write code directly inside your Terminal. Ms. Brown or Ms. Genzlinger may have used `vim` to activate `Poetry` on your computer. 
+
+**💻 To learn `vim`, in your Terminal type:**
+> *You can create a new `tab` in your terminal with `⌘+t`*
 ```shell
 vimtutor
 ```
+
+Vimtutor is a built in tutorial for learning `vim`.
+
+<--->
+
+### Python Turtle
+
+
+💻 **Go to [bit.ly/day1_cs9](https://trinket.io/python/196e77f175) and continue experiementing with Python code.** Can you figure out how to: 
+- draw a polygon of any number of sides? *(triangle, hexagon, etc.)*
+- draw the [olympic rings](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Olympic_rings_without_rims.svg/1200px-Olympic_rings_without_rims.svg.png)
+- draw a [bullseye](https://compucademy.net/wp-content/uploads/2021/05/python-turtle-archery.png)
+
+{{< /columns >}}
+
+
