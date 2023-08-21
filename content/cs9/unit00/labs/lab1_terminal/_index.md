@@ -55,7 +55,7 @@ cd Desktop
 {{< code-action >}} **Use the `mkdir` command to make a directory called `making_with_code`** `mkdir` stands for, make directory.
 
 ```shell
-mkdir making-with-code
+mkdir making_with_code
 ```
 
 {{< code-action >}} **Use `ls` to check the folder was created.** 
@@ -67,7 +67,7 @@ ls
 {{< code-action  >}} **Use `cd` to enter your new `making_with_code` directory.**
 
 ```shell
-cd making-with-code
+cd making_with_code
 ```
 <!-- 
 ---

@@ -81,7 +81,7 @@ print("Hello")
 print(name)
 ```
 
-{{< code-action >}} **Start by replacing `"YOUR NAME"` with your name (but keep the `""`).** Now you have *declared* the `name` variable and *assigned* your name as its value.
+{{< code-action >}} **Start by replacing*** `"YOUR NAME"` ***with your name (but keep the `""`).** Now you have *declared* the `name` variable and *assigned* your name as its value.
 
 {{< code-action "Save the file and run the program again." >}} You should see an output similar to the one below:
 > *Tip: Use the up arrow to cycle through your previous commands in Terminal*
@@ -104,7 +104,7 @@ print("HELLO")
 print(name)
 ```
 
-{{< code-action >}} **Replace** `"Friend's name"` **with your friend's name.**
+{{< code-action >}} **Replace** `"YOUR FRIEND'S NAME"` **with your friend's name.**
 
 Now our program is printing the `name` variable twice but we've assigned different values to the
 variable at different places in the code. What do you think will happen?
@@ -205,7 +205,7 @@ age = int(input("How old are you? "))
 ✔️ **Once you've successfully completed the responsive drawing be sure to:**
 
 0. fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSckY5z4idIq3YbXOI7EjJD8z1by0nOJ3fE8hvuuKU7XIpFwcA/viewform?usp=sf_link)
-0. add a code snipet to your `CS9 Lab Code Log`
+0. add a code snippet to your `CS9 Lab Code Log`
 
 
 {{< /deliverables >}}
