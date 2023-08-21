@@ -2,7 +2,7 @@
 title: "0.2 Review: Ball Pit"
 weight: 30
 
-# draft: true
+draft: true
 ---
 
 # Ball Pit
@@ -127,7 +127,7 @@ Currently, it's pretty difficult to notice the regular `Ball()` from the `Breath
 ---
 
 
-### [Deliverables]
+## [3] Deliverables
 
 
 
@@ -150,7 +150,7 @@ Once you've successfully completed the lab, fill out [this Google form](https://
 
 ---
 
-## [3] Extension: Increase the Chaos
+## [4] Extension: Increase the Chaos
 
 If time allows, ramp up the chaos even further!
 

@@ -89,8 +89,10 @@ Once you've successfully completed the adventure be sure to fill out [this Googl
 
 ---
 
-## [2] Extension
+## [2] Extensions
+Pick one of the following extensions to continue practicing!
 
+### Continue the Adventure
 Delve into the code and try and learn how the Terminal Adventure works. Can you add your own feature?
 
 Some ideas include but are not limited to:
@@ -100,3 +102,25 @@ Some ideas include but are not limited to:
 
 
 {{< code-action "Expand the current Terminal Adventure!" >}}
+
+### Expand your Turtle drawing from last class
+Change directories so that you are in the review lab from last class
+```shell
+cd ..
+cd lab_turtle_review_yourgithubusername
+```
+{{< code-action >}} **Return to `turtle_drawing.py` and add features so that it now includes all of  the CS concepts below:**
+- Variables
+- Loops
+- Conditionals
+- Lists
+- Dictionaries
+- Functions with parameters
+
+{{< figure src="https://freshgadgets.nl/wp-content/uploads/2014/12/inspirograph2.jpg" width="75%">}}
+
+### Vimtutor
+Want to feel like hacker by coding right in your terminal? Type this command in your terminal to launch a tutorial on how to use vim!
+```shell
+vimtutor
+```
