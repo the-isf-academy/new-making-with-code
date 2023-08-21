@@ -2,7 +2,7 @@
 title: "0.2 Review: Ball Pit"
 weight: 30
 
-draft: true
+# draft: true
 ---
 
 # Ball Pit
@@ -24,7 +24,7 @@ In this lab, we'll get re-aquainted with CS concepts such as classes and decompo
 
 ```shell
 cd ~/desktop/making_with_code/cs10/unit00_networking
-git clone https://github.com/the-isf-academy/lab_ballpit_yourgithubusername.git
+git clone https://github.com/the-isf-academy/lab_ballpit_yourgithubusername
 cd lab_ballpit_yourgithubusername
 ```
 > 🤔 *Remember, `tab` autocompletes files and folders in the Terminal*
@@ -135,8 +135,6 @@ Currently, it's pretty difficult to notice the regular `Ball()` from the `Breath
 
 Once you've successfully completed the lab, fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSel8Ayu9Y1mjypJKgAA-e1wzIbod24AEAy-YRPrLqQbCGX-UQ/viewform?usp=sf_link).
 
-
-🤔 **Remember, at the end of each class we push to *Github***
 
 {{< code-action "Push your work to Github:" >}}
 - git status
