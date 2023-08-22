@@ -186,16 +186,16 @@ class WarpBall(Ball):
 {{< figure src="images/courses/cs10/unit00/lab0.2-02.gif" width="400px" >}}
 
 
-{{< code-action "Create your own type of" >}} `Ball()`. Perhaps one that changes into a different shape as it moves, or a shape that turns. 
+{{< code-action  >}} **Create your own type of `Ball()` or a whole new shape - like a `Square()`!** 
 
 {{< figure src="images/courses/cs10/unit00/lab0.2-01.gif" width="400px" >}}
 
 {{< aside >}}
 If you want to use an inherited method while also changing some behavior, you can do that like this:
 ```python
-    def update(self):
-        super().update() // this calls the inherited behavior
-        self.turtle.right(5) // any new code will be run afterwards
+def update(self):
+    super().update()        # this calls the inherited behavior
+    self.turtle.right(5)    # any new code will be run afterwards
 ```
 {{< /aside >}}
 
