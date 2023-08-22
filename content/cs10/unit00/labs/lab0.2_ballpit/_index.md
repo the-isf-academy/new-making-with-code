@@ -20,7 +20,7 @@ In this lab, we'll get re-aquainted with CS concepts such as classes and decompo
 ## [0] Set up
 
 
-{{< code-action "Let's start by clonning the repository" >}} in your `cs10\unit00_networking` folder.  Be sure to change `yourgithubusername` to your actual Github username.
+{{< code-action "Let's start by cloning the repository" >}} in your `cs10\unit00_networking` folder.  Be sure to change `yourgithubusername` to your actual Github username.
 
 ```shell
 cd ~/desktop/making_with_code/cs10/unit00_networking
@@ -34,9 +34,14 @@ cd lab_ballpit_yourgithubusername
 - `ballpit.py`
 - `setup_ballpit_canvas.py`
 
+{{< code-action "Enter the Poetry Shell." >}} 
+```shell
+poetry shell
+```
 ---
 
 ## [1] Exploring Ball Pit
+
 
 {{< code-action >}} **Run `ballpit.py` to see the Ballpit animation.**
  
@@ -47,7 +52,7 @@ python ballpit.py
 
 {{< figure src="images/courses/cs10/unit00/lab0.2-00.gif" width="50%" >}}
 
-In the Ballpit, notice all three of the balls has a different size, stays the same size the whole time, and bounces off the walls.
+In the Ballpit, notice each ball has a different size, stays the same size the whole time, and bounces off the walls.
 
 {{< code-action >}} **Let's delve into the code.** Start by looking at `ballpit.py`
 ```shell
@@ -140,7 +145,7 @@ Once you've successfully completed the lab, fill out [this Google form](https://
 - git status
 - git add -A
 - git status
-- git commit -m "describe your drawing and your process here"
+- git commit -m "describe your code and your process here"
   > be sure to customize this message, do not copy and paste this line
 - git push
 {{< /deliverables >}}
