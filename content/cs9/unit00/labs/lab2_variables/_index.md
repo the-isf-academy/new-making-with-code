@@ -1,7 +1,7 @@
 ---
 title: 02. Variables
 
-draft: true
+# draft: true
 
 ---
 
@@ -200,12 +200,11 @@ age = int(input("How old are you? "))
 ## [3] Deliverables
 
 
-{{< deliverables  >}}
+{{< deliverables  "Once you've successfully completed the responsive drawing:" >}}
 
-✔️ **Once you've successfully completed the responsive drawing be sure to:**
+✔️   **Fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSckY5z4idIq3YbXOI7EjJD8z1by0nOJ3fE8hvuuKU7XIpFwcA/viewform?usp=sf_link)**
 
-0. fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSckY5z4idIq3YbXOI7EjJD8z1by0nOJ3fE8hvuuKU7XIpFwcA/viewform?usp=sf_link)
-0. add a code snippet to your `CS9 Lab Code Log`
+✏️  **Add a screenshot of a code snippet to your `CS9 Lab Code Log` in your Google Drive.** Add a comment either asking a question about your code OR describing a piece of code you are proud of. 
 
 
 {{< /deliverables >}}
