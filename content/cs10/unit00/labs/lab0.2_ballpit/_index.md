@@ -2,7 +2,7 @@
 title: "0.2 Review: Ball Pit"
 weight: 30
 
-draft: true
+# draft: true
 ---
 
 # Ball Pit
@@ -20,11 +20,11 @@ In this lab, we'll get re-aquainted with CS concepts such as classes and decompo
 ## [0] Set up
 
 
-{{< code-action "Let's start by clonning the repository" >}} in your `cs10\unit00_networking` folder.  Be sure to change `yourgithubusername` to your actual Github username.
+{{< code-action "Let's start by cloning the repository" >}} in your `cs10\unit00_networking` folder.  Be sure to change `yourgithubusername` to your actual Github username.
 
 ```shell
 cd ~/desktop/making_with_code/cs10/unit00_networking
-git clone https://github.com/the-isf-academy/lab_ballpit_yourgithubusername.git
+git clone https://github.com/the-isf-academy/lab_ballpit_yourgithubusername
 cd lab_ballpit_yourgithubusername
 ```
 > 🤔 *Remember, `tab` autocompletes files and folders in the Terminal*
@@ -34,9 +34,14 @@ cd lab_ballpit_yourgithubusername
 - `ballpit.py`
 - `setup_ballpit_canvas.py`
 
+{{< code-action "Enter the Poetry Shell." >}} 
+```shell
+poetry shell
+```
 ---
 
 ## [1] Exploring Ball Pit
+
 
 {{< code-action >}} **Run `ballpit.py` to see the Ballpit animation.**
  
@@ -47,7 +52,7 @@ python ballpit.py
 
 {{< figure src="images/courses/cs10/unit00/lab0.2-00.gif" width="50%" >}}
 
-In the Ballpit, notice all three of the balls has a different size, stays the same size the whole time, and bounces off the walls.
+In the Ballpit, notice each ball has a different size, stays the same size the whole time, and bounces off the walls.
 
 {{< code-action >}} **Let's delve into the code.** Start by looking at `ballpit.py`
 ```shell
@@ -136,13 +141,11 @@ Currently, it's pretty difficult to notice the regular `Ball()` from the `Breath
 Once you've successfully completed the lab, fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSel8Ayu9Y1mjypJKgAA-e1wzIbod24AEAy-YRPrLqQbCGX-UQ/viewform?usp=sf_link).
 
 
-🤔 **Remember, at the end of each class we push to *Github***
-
 {{< code-action "Push your work to Github:" >}}
 - git status
 - git add -A
 - git status
-- git commit -m "describe your drawing and your process here"
+- git commit -m "describe your code and your process here"
   > be sure to customize this message, do not copy and paste this line
 - git push
 {{< /deliverables >}}
@@ -183,6 +186,17 @@ class WarpBall(Ball):
 {{< figure src="images/courses/cs10/unit00/lab0.2-02.gif" width="400px" >}}
 
 
-{{< code-action "Create your own type of" >}} `Ball()`. Perhaps one that changes into a different shape as it moves. 
+{{< code-action  >}} **Create your own type of `Ball()` or a whole new shape - like a `Square()`!** 
+
+{{< figure src="images/courses/cs10/unit00/lab0.2-01.gif" width="400px" >}}
+
+{{< aside >}}
+If you want to use an inherited method while also changing some behavior, you can do that like this:
+```python
+def update(self):
+    super().update()        # this calls the inherited behavior
+    self.turtle.right(5)    # any new code will be run afterwards
+```
+{{< /aside >}}
 
 {{< code-action "Be sure to push any extension changes you make to Github!" >}}
