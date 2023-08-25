@@ -9,7 +9,7 @@ init_action: clone
 
 # Riddler
 
-In this lab we will remind ourserlves of classes and object-oriented programming with a riddle guessing game. It's up to you to use the `Riddle` class to create working game.
+In this lab we will remind ourselves of classes and object-oriented programming with a riddle guessing game. It's up to you to use the `Riddle` class to create working game.
 
 {{< figure src="https://play-lh.googleusercontent.com/DqluLBHRQ1VwCz13_2vIwSq3dEknwGjqXi3CXu10YC_Le-KRldpIZUtMOHgRPchui7A" width="25%"  >}}
 
@@ -164,7 +164,7 @@ Incorrect :(
 
 {{< deliverables "Congrats on completing the lab!" >}}  
 
-Once you've successfully completed the lab, fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSel8Ayu9Y1mjypJKgAA-e1wzIbod24AEAy-YRPrLqQbCGX-UQ/viewform?usp=sf_link).
+Once you've successfully completed the lab, fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSd9ZgAtOvdDZBYeIc2iQ_e5xWR3seokZlipsbG05VvQhYrIhA/viewform?usp=sf_link).
 
 
 {{< code-action "Push your work to Github:" >}}
@@ -186,7 +186,7 @@ Now that we've got a basic riddle guessing game, let's improve it!
 
 Let's start with a few simple improvements.
 - tracking user guesses
-- ranodmizing order of riddles
+- randomizing order of riddles
 
 {{< code-action "Keep track of the user's guesses and provide a score at the end." >}} For example once the user guessed all of the riddles, it may print:
 ```shell
