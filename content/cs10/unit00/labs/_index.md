@@ -1,5 +1,5 @@
 ---
 bookFlatSection: false
-bookCollapseSection: true
+# bookCollapseSection: true
 
 ---
