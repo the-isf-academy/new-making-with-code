@@ -4,7 +4,7 @@ type: lab
 slug: lab_riddle_database
 repo_url: https://github.com/the-isf-academy/lab_riddle_database
 init_action: create_from_template 
-# draft: true
+draft: true
 ---
 
 # Riddle Database
