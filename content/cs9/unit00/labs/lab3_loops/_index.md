@@ -15,11 +15,11 @@ How does a loop work in python? Let's see.
 
 ---
 
-## [0] How to loop
+## [0] Setup
 
 {{< code-action >}} **Start by going into your `unit00_drawing` folder.**
 ```shell
-cd ~/desktop/making_with_code/cs9/unit00_drawing/
+cd ~/desktop/making_with_code/unit00_drawing/
 ```
 
 {{< code-action "Then clone the lab" >}}
@@ -47,12 +47,12 @@ When you want to exit the shell, you can type `exit` or `^D`
 - `extension_fibonacci_sequence.py`
 
 ---
+## [1] How to loop
+### Repetition
 
-### [Repetition]
-
-{{< code-action "Let's start by openning" >}} `repetition.py` **in Atom.**
+{{< code-action "Let's start by opening" >}} `repetition.py` **in Atom.**
 ```shell
-code repetitionn.py
+code repetition.py
 ```
 
 {{< code-action "Run your program and see what gets output:" >}}
@@ -63,7 +63,7 @@ python repetition.py
 This loop runs 10 times, repeating everything indented to the right of the `for i in range(10):` line.
 `i` is a variable that gets incremented by one every time the loop runs.
 
-{{< code-action "Edit the code to make the loop run a different number of times" >}} Maybe 5 or 14.
+{{< code-action "Edit the code to make the loop run a different number of times." >}} Maybe 5 or 14.
 Can you figure out how to do it?
 
 
@@ -90,7 +90,7 @@ When you run `python repetition.py` it should output:
 
 <hr>
 
-### [Looping a Square]
+### Looping a Square
 
 
 {{< code-action >}} **Use `code` to open `square.py`**
@@ -121,13 +121,13 @@ Pretty repetitive, right?
 
 ---
 
-## [3] Geometric Sequence
+## [2] Geometric Sequence
 
 Loops are particularly useful when we need to do things over time. To see this, we're going to explore numerical sequences.
 
 
 **Geometric sequences are sequences where there is a common ratio between each
-number in the sequence.** A geometric sequence always begins with `1`. Each subsequent number in the sequence is calculated by finding the product of the number that precede it and the ratio.
+number in the sequence.** A geometric sequence always begins with `1`. Each subsequent number in the sequence is calculated by finding the product of the number that precedes it and the ratio.
 
 
 {{< figure src="https://www.storyofmathematics.com/wp-content/uploads/2021/01/geometeric-sequence-example.png" width="50%" alt-text="geometric sequence" >}}
@@ -170,7 +170,7 @@ This can be used as a debugging strategy or as a note-taking tool.
 
 ### Code
 
-{{< code-action "After you are confident you under the logic of the pseudocode, translate it into python code." >}} We suggest translating one line of pseudocode at a time.
+{{< code-action "After you are confident you understand the logic of the pseudocode, translate it into python code." >}} We suggest translating one line of pseudocode at a time.
 
 Here is an example of what the program will output when run:
 ```shell
@@ -206,7 +206,7 @@ Geometric Sequences are great for creating interesting visualizations.
 
 ---
 
-## [2] Deliverables
+## [3] Deliverables
 
 {{< deliverables "When are you finished with the lab:" >}}
 
@@ -241,7 +241,7 @@ The Fibonacci sequence begins with two numbers, `0` and `1`. Each subsequent num
 code extension_fibonacci_sequence.py
 ```
 
-{{< code-action >}} **In `extension_fibonacci_sequence.py`, use `comments` to write the pseudocode to list the first 10 digits of the Fibonacci sequence.**
+{{< code-action >}} **In `extension_fibonacci_sequence.py`, use `comments` to write the pseudocode to calculate the first 10 digits of the Fibonacci sequence.**
 
 ---
 
@@ -250,7 +250,7 @@ code extension_fibonacci_sequence.py
 
 Here is an example of what the program will output when run:
 ```shell
-$ python fibonacci_sequence.py
+$ python extension_fibonacci_sequence.py
 0
 1
 1
@@ -267,7 +267,7 @@ $ python fibonacci_sequence.py
 
 ### Visualize the Fibonacci Sequence
 
-Use your working code draw a pattern that utilizes the Fibonacci sequence.
+Use your working code to draw a pattern that utilizes the Fibonacci sequence.
 
 {{< figure src="images/courses/cs9/unit00/03_loops4.png" width=40% alt-text="geometric drawing" >}}
 
