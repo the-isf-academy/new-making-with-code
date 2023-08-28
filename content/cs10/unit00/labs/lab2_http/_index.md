@@ -1,7 +1,7 @@
 ---
 title: "1. HTTP"
 type: lab
-draft: true
+# draft: true
 ---
 
 
@@ -67,17 +67,17 @@ Every time you visit a URL, your computer opens a connection with the server at 
 
 ---
 
-### [GET Request]
+### GET Request
 
 Communication starts when one computer (the client) sends a *request* to another computer (the server). For example, by visiting "cs.fablearn.org" you initiate
 a `GET` request to recieve the *Making with Code* homepage from the server. 
 
 A `GET` request contains following: 
-{{< figure src="images/courses/cs10/unit00/01_http_0.png" width="100%" alt-text="An HTTP GET request" >}}
+{{< figure src="images/courses/cs10/unit00/lab1_http_0.png" width="50%" alt-text="An HTTP GET request" >}}
 
 ---
 
-### [GET Response]
+### GET Response
 
 Once the request has been recieved by the server, it responds by sending the client a HTTP *response*. If a successful connection has been made, the server sends the content to the client. 
 
@@ -106,11 +106,11 @@ Here's an example of a HTTP response to a successful `GET` request to the course
 - `<!DOCTYPE html>` (line 7) is the beginning of the content sent with the response. This is the HTML of the course website which your
   browser then renders as a webpage.
 
-{{< figure src="images/courses/cs10/unit00/00_http_response.png" width="100%" alt-text="An HTTP response" >}}
+{{< figure src="images/courses/cs10/unit00/00_http_response.png" width="50%" alt-text="An HTTP response" >}}
 
 ---
 
-### [Status Codes]
+### Status Codes
 Status codes are used to signal how the communication between the client and the server is going.
 
 **Common HTTP Status Codes**
@@ -123,7 +123,7 @@ Status codes are used to signal how the communication between the client and the
 
 ---
 
-### [Using HTTPIE]
+### Using HTTPIE
 
 With the new tool we installed on your computer, `httpie`, we can send HTTP `GET` requests from our terminal. 
 
@@ -158,7 +158,7 @@ You may have noticed that our site is pretty simple. That's because the data bei
 
 ---
 
-### [API]
+### API
 
 The HKO provides an open `API` that allows anyone to access their weather database. We are going to use `HTTP Requests` to access this database. 
 
@@ -168,7 +168,7 @@ The HKO provides an open `API` that allows anyone to access their weather databa
 
 ---
 
-### [JSON]
+### JSON
 
 **JSON** stands for **JavaScript Object Notation**. It is the standard file format for exchanging data over the internet. The syntax mimics dictionaries by using `key` and `value` pairs. 
 
@@ -193,7 +193,7 @@ http get https://data.weather.gov.hk/weatherAPI/opendata/weather.php\? dataType=
 
 ---
 
-### [Making HTTP Requests]
+### Making HTTP Requests
 
 This lab will require you to make a series of `http requests` to the HKO API. Note the format:
 ```shell
@@ -220,12 +220,12 @@ You will need to use the [HKO API Documentation](https://www.hko.gov.hk/en/weath
 
 {{< deliverables >}}  
 
-**Once you've successfully completed the worksheet be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSf-RzRIb6y3cFRbOj1uFjbmmPakYu2TI1A4UZzOBQdjEDGYCg/viewform?usp=sf_link).**
+**Once you've successfully completed the worksheet be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSfx0vcRky-7Wd0W1_0lIBbmhpru3s3By9-2ULRDdNqQKYvEjw/viewform?usp=sf_link).**
 
 {{< /deliverables >}}
 
 ---
-
+<!-- 
 ## [4] Extension
 
 
@@ -273,4 +273,4 @@ Now that you've had succifient practice accessing APIs, it's time to explore wha
 {{< code-action "Explore an API of your choosing." >}} You may want to use the `httpie` Terminal commands, or experiment using Postman. Here are some suggestions of APIs to explore:
 - [Joke API](https://sv443.net/jokeapi/v2/)
 - [ZenQuotes API](https://premium.zenquotes.io/zenquotes-documentation/)
-- [Wikipedia API](https://www.mediawiki.org/wiki/API:Main_page)
+- [Wikipedia API](https://www.mediawiki.org/wiki/API:Main_page) -->
