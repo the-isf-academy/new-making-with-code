@@ -1,6 +1,6 @@
 ---
 title: 04. Conditionals
-draft: true
+# draft: true
 
 ---
 
@@ -21,7 +21,7 @@ You probably have even more complicated environmental responses as well.
 * Finally, in the case that the shop doesn't have taro or pearl
     * you don't order any bubble tea.
 
-{{< figure src="images/courses/cs9/unit00/00_conditionals_bubble_tea.png" alt-text="bubble tea flow chart" >}}
+{{< figure src="images/courses/cs9/unit00/04_conditionals_bubble_tea.png" alt-text="bubble tea flow chart" width=75% >}}
 
 
 In computer science, **we call this kind of behavior `conditional`**: your code runs only in the case that some condition is satisfied.
@@ -29,17 +29,6 @@ In computer science, **we call this kind of behavior `conditional`**: your code 
 ---
 
 ## [1] Set up
-<!-- 
-{{< code-action "Start by opening the Terminal cloning this lab onto your laptop." >}} As a reminder, we will run this command at the start of each lab.
-```shell
-mwc update
-```
-{{< code-action "In the Terminal, type the following command to open the lab folder." >}}
-```shell
-cd ~/desktop/making_with_code/cs9/unit00_drawing/lab_conditionals
-``` -->
-
-Due to an issue with the `mwc` tool, you will clone this lab manually. 
 
 {{< code-action >}} **Start by going into your `unit00_drawing` folder.**
 ```shell
@@ -64,11 +53,11 @@ When you want to exit the shell, you can type `exit` or `^D`
 {{< /aside >}}
 
 {{< code-action "Take a look at the files inside with:" >}} `ls`
-- `conditionals_example.py`
-- `conditionals_modulo.py`
-- `conditionals_pattern.py`
-- `conditionals_rainbow.py`
-- `conditionals_user_input.py`
+- `example.py`
+- `modulo.py`
+- `pattern.py`
+- `rainbow.py`
+- `user_input.py`
 
 
 ---
