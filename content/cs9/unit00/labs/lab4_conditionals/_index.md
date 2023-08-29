@@ -160,15 +160,15 @@ This conditional creates the following cases for the variable `i`:
 - 15 <= i
 
 
-{{< code-action  >}} **Run the file `conditionals_example.py` to see this conditional statement in actions.**
+{{< code-action  >}} **Run the file `example.py` to see this conditional statement in actions.**
 ```shell
-python conditionals_example.py
+python example.py
 ```
 
 
 {{< code-action >}} **Open the code:**
 ```shell
-code conditionals_example.py
+code example.py
 ```
 
 {{< code-action "Experiment with changing the numbers in the conditional statements." >}} Then run your code to see how your changes affect what it prints.
@@ -181,35 +181,36 @@ code conditionals_example.py
 
 Now, let's explore how we can use conditionals in conjunction with user input.
 
-{{< code-action "Start by running the file:" >}} `conditionals_user_input.py`. One way to use conditionals in our drawings is to use them to respond to user input.
+{{< code-action "Start by running the file:" >}} `user_input.py`. One way to use conditionals in our drawings is to use them to respond to user input.
 > *Try asking the program to draw a square.*
 ```shell
-python conditionals_user_input.py
+python user_input.py
 ```
 
 {{< code-action "Now, let's open up the code." >}}
 ```shell
-code conditionals_user_input.py
+code user_input.py
 ```
 
 ```python
-######################
-# Unit 0 Lab 4
-# conditionals_user_input.py
-#######################
+# user_input.py
 
 from turtle import *
 
 while True:
-
+    
     drawing = input("What would you like me to draw? ")
-    size = int(input("How big should I draw it? "))
+
     if drawing == "square":
+        size = int(input("How big should I draw it? "))
+
         for i in range(4):
             forward(size)
             right(90)
+            
     elif drawing == "quit":
         break
+
     else:
         print("Sorry, I don't know how to draw that...")
 
@@ -256,9 +257,9 @@ print(9%2)
 Conditionals can also be paired with the modulo operator to cause your code to run in repeated
 patterns.
 
-{{< code-action "Start by running" >}} `conditional_pattern.py`. You should see a series of red boxes.
+{{< code-action "Start by running" >}} `pattern.py`. You should see a series of red boxes.
 ```shell
-python conditionals_pattern.py
+python pattern.py
 ```
 
 {{< figure src="images/courses/cs9/unit00/04_conditionals_pattern0.png" width=40% alt-text="Pattern created by conditionals" >}}
@@ -287,17 +288,17 @@ python conditionals_pattern.py
 
 ## [6] Extension: Rainbow
 
-{{< code-action "Start by running" >}} `conditionals_rainbow.py`. You should see a series of colored boxes in a rainbow - very similar to the previous program.
+{{< code-action "Start by running" >}} `extension_rainbow.py`. You should see a series of colored boxes in a rainbow - very similar to the previous program.
 ```shell
-python conditionals_rainbow.py
+python extension_rainbow.py
 ```
 
 {{< figure src="images/courses/cs9/unit00/04_conditionals_rainbow1.png" width=50% alt-text="rainbow pattern of boxes" >}}
 
 
-{{< code-action "Open up the code and see how it works" >}} `conditionals_rainbow.py`. As you can see the code is over 80 lines long!
+{{< code-action "Open up the code and see how it works" >}} `extension_rainbow.py`. As you can see the code is over 80 lines long!
 ```shell
-code conditionals_rainbow.py
+code extension_rainbow.py
 ```
 > Although this code is really really long, there is a pattern to the rainbow that we could use
 to simplify the code!
