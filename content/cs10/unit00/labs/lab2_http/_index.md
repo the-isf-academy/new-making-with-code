@@ -225,10 +225,21 @@ You will need to use the [HKO API Documentation](https://www.hko.gov.hk/en/weath
 {{< /deliverables >}}
 
 ---
-<!-- 
+
 ## [4] Extension
 
 
+Now that you've had succifient practice accessing APIs, it's time to explore what type of APIs exist. 
+
+{{< code-action "Explore an API of your choosing." >}} You may want to use the `httpie` Terminal commands. Here are some suggestions of APIs to explore:
+- [Joke API](https://sv443.net/jokeapi/v2/)
+- [ZenQuotes API](https://premium.zenquotes.io/zenquotes-documentation/)
+- [Wikipedia API](https://www.mediawiki.org/wiki/API:Main_page) 
+- [List of Public APIs](https://github.com/public-apis/public-apis)
+  - We suggest only trying those with no Auth `apikey` requirement
+
+
+<!-- 
 ### [ISF Energy Database]
 
 The ISF Energy Database keep historical and current data about the school's energy usage. This includes tracking how many kilowatt hours were used over a period of time and the amount of money spent. This data is tracked by sensors placed all around the school.
@@ -264,13 +275,4 @@ This API requires an authroization access token. As such, we will use an online 
 
 {{< figure src="images/courses/cs10/unit00/isf_energy_sensors_05.png" width="75%" alt-text="An HTTP GET request" >}}
 
----
-
-### [Other APIs]
-
-Now that you've had succifient practice accessing APIs, it's time to explore what type of APIs exist. 
-
-{{< code-action "Explore an API of your choosing." >}} You may want to use the `httpie` Terminal commands, or experiment using Postman. Here are some suggestions of APIs to explore:
-- [Joke API](https://sv443.net/jokeapi/v2/)
-- [ZenQuotes API](https://premium.zenquotes.io/zenquotes-documentation/)
-- [Wikipedia API](https://www.mediawiki.org/wiki/API:Main_page) -->
+--- -->
