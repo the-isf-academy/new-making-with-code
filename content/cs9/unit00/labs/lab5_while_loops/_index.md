@@ -1,7 +1,7 @@
 ---
 title: 05. While Loops
 
-draft: true
+# draft: true
 ---
 
 # While loops
@@ -12,19 +12,28 @@ In addition to `for` loops which run for a set number of iterations, Python has 
 
 ## [0] Set up
 
-{{< code-action "Start by opening the Terminal cloning this lab onto your laptop." >}} As a reminder, we will run this command at the start of each lab.
+
+{{< code-action "Start by going into the unit folder." >}}
 ```shell
-mwc update
+cd ~/desktop/making_with_code/unit00_drawing/
 ```
-{{< code-action "In the Terminal, type the following command to open the lab folder." >}}
+
+{{< code-action "Then clone the lab" >}}
 ```shell
-cd ~/desktop/making_with_code/cs9/unit00_drawing/lab_while
+git clone https://github.com/the-isf-academy/lab_while.git
+```
+
+
+{{< code-action "Now that you have the lab, go into its folder." >}}
+```shell
+cd lab_while
 ```
 
 {{< code-action "Enter the Poetry Shell to start the lab." >}} As a reminder, we will run this command at the start of each lab, but only when we are inside a lab folder.
 ```shell
 poetry shell
 ```
+
 {{< aside "Exiting the poetry shell" >}}
 When you want to exit the shell, you can type `exit` or `^D`
 {{< /aside >}}
@@ -112,18 +121,18 @@ Guess a number:
 When you want to stop running a program, type `^C` in the terminal.
 {{< /aside >}}
 
-{{< code-action "Open the file in atom" >}}
+{{< code-action "Open the file in Visual Studio Code" >}}
 ```shell
-atom guessing_game.py
+code guessing_game.py
 ```
 
 {{< code-action "Fix the game so the loop ends once the user guesses the correct number. It should also tell the user if their guess is too high or too low." >}}
 
 
-{{< figure src="images/courses/cs9/unit00/00_while_guessing_game.drawio.png" width=75% alt-text="bubble tea flow chart" >}}
+{{< figure src="images/courses/cs9/unit00/05_while_guessing_game.drawio.png" width=50% alt-text="bubble tea flow chart" >}}
 
 
-The final game should like something like this:
+👾 **The final game should like something like this:**
 ```shell
 ----------------------------
 Guess a number between 1-10!
@@ -143,9 +152,8 @@ Correct
 
 ## [1] Hailstone Sequence
 
-### [Calculating the Sequence]
-Now that you've gotten practice with `while` loops, you will be exploring a special sequence known as the
-hailstone sequence.
+Now that you've gotten practice with `while` loops, **you will be exploring a special sequence known as the
+hailstone sequence**.
 
 **This sequence results from the following rules** (known as the Collatz conjecture):
 - take any positive number `n`
@@ -158,41 +166,46 @@ The conjecture states that no matter the starting value of `n`, the sequences wi
 
 This sequence is interesting because though no number has ever been found that doesn't reach 1,the Collatz conjecture has never been proven. **This is an unsolved problem in mathematics!**
 
-{{< figure src="images/courses/cs9/unit00/00_while_hailstone.drawio.png" width=75% alt-text="bubble tea flow chart" >}}
+{{< figure src="images/courses/cs9/unit00/05_while_hailstone.drawio.png" width=50% alt-text="bubble tea flow chart" >}}
 
 
 ---
 
-### [Pseudocode the Sequence]
+### Pseudocode the Sequence
 
 This is another algorithm which will require pseudocode to figure out.
 
-{{< look-action >}} **Your program must:**
+✔️ **Your program must:**
 
 0. Ask the user what number the program should calculate the hailstone sequence of.
 0. Print out each number in the sequence.
 0. Print out how many steps it took for the sequence to reach `1`
 
 
-**Here are some things to consider:**
-- This program will require a loop. What kind of loop do you think is best? Remember that
-for loops run for a definite number of times and while loops run until a condition is met.
-- You will need to determine if each term is odd or even. What are some characteristics
-of even numbers that will help you determine if a number is even?
+🤔  **Here are some things to consider:**
+- This program will require a loop. What kind of loop do you think is best? 
+    - *Remember that for loops run for a definite number of times and while loops run until a condition is met.*
+- You will need to determine if each term is odd or even. 
+    - What are some characteristics of even numbers that will help you determine if a number is even?
 - In addition to calculating each term, you must count how many steps it takes to reach 1 and report this number at the end.
 
 
 {{< code-action >}} **To get started, open up `hailstone_sequence.py`.**
 ```shell
-atom hailstone_sequence.py
+code hailstone_sequence.py
 ```
 
 {{< write-action >}} **Use `comments` to complete the pseudocode to find the hailstone sequence of any starting number.** There are currently three line of pseudocode in the file.
+> *A comment is any line that starts with a `#`*
+>
+> `# this is a comment`
+>
+> *You can comment code quickly by highlightly multiple lines and clicking `⌘+?` - this will comment or uncomment code.*
 
 
 ---
 
-### [Code the Sequence]
+### Code the Sequence
 
 {{< code-action "Translate your pseudocode into Python code." >}} Once completed, your program will look something like this:
 ```shell
@@ -217,7 +230,7 @@ It took 7 steps to complete the sequence
 
 {{< deliverables  >}}
 
-**Once you've successfully completed the sequence be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSdghFADPT-K94LCT6QS9V_L626bYfoJXDUvYiPIGLeHrUopkA/viewform?usp=sf_link)**.
+**Once you've successfully completed the sequence be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSfLSc5X8kWNIZqWzdz6o-80Bd6Njegj_cN-YXj7ZIjKwXTfBg/viewform?usp=sf_link)**.
 
 
 {{< /deliverables >}}
@@ -228,17 +241,18 @@ It took 7 steps to complete the sequence
 The sequences you formed above are known as hailstone sequences, because the terms move up
 and down but ultimately reach 1 like hailstones gaining layers of ice in a cloud.
 
-{{< figure src="images/courses/cs9/unit00/00_conditionals_hailstone_cloud.png" width="100%" title="Hailstones forming in a cloud" >}}
+
+{{< figure src="images/courses/cs9/unit00/05_while_hailstone_cloud.png" width="50%" title="Hailstones forming in a cloud" >}}
 
 This pattern can lead to some interesting visualizations of hailstone sequences.
 
 {{< code-action "Use your hailstone sequence code to create a visualization for the hailstone sequence using Turtle." >}}
 
 You can visualize the terms in a sequence starting with a specific number:
-{{< figure src="images/courses/cs9/unit00/00_conditionals_hailstone_terms.png" width="100%" title="Terms in hailstone sequence starting at 590" >}}
+{{< figure src="images/courses/cs9/unit00/05_while_hailstone_terms.png" width="50%" title="Terms in hailstone sequence starting at 590" >}}
 
 Or you can visualize the number of steps it takes to reach one from a set of integers:
-{{< figure src="images/courses/cs9/unit00/00_conditionals_hailstone_steps.png" width="100%" title="Steps to reach one in hailstone sequence as radii of half circles for integers 1-100" >}}
+{{< figure src="images/courses/cs9/unit00/05_while_hailstone_steps.png" width="50%" title="Steps to reach one in hailstone sequence as radii of half circles for integers 1-100" >}}
 
 
 
