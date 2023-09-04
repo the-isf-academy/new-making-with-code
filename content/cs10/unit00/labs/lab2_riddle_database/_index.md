@@ -1,5 +1,5 @@
 ---
-title: "2. Banjo Databases"
+title: "2. Banjo Database"
 type: lab
 # draft: true
 ---

@@ -1,17 +1,16 @@
 ---
-title: "2. Server"
+title: "3. Banjo Server"
 type: lab
 slug: lab_riddle_server
-# repo_url: https://github.com/the-isf-academy/lab_riddle_server.git
-# init_action: init
-draft: true
+
+# draft: true
 ---
 
 # Riddle Server
 
 In this lab we are going to learn how the riddle server is made using Banjo.
 
-{{< look-action "Open the Banjo documentation:" >}} [https://cs.fablearn.org/docs/banjo/index.html](https://cs.fablearn.org/docs/banjo/index.html)
+📖 **Open the Banjo documentation:** [cs.fablearn.org/docs/banjo/index.html](https://cs.fablearn.org/docs/banjo/index.html)
 
 ---
 
@@ -19,19 +18,10 @@ In this lab we are going to learn how the riddle server is made using Banjo.
 
 You are each able to run a locally hosted riddle server on your laptop using Banjo.
 
-{{< code-action "Start by going into the unit folder" >}}
+{{< code-action "Start by going into the unit folder and the lab." >}} Remember to replace `YOUR_USERNAME` with your actual Github username.
 ```shell
 cd ~/desktop/making_with_code/cs10/unit00_networking/
-```
-
-{{< code-action "Clone the lab folder." >}} Remember to replace `YOUR_USERNAME` with your actual Github username.
-```shell
-git clone https://github.com/the-isf-academy/lab_riddle_server_YOUR_USERNAME
-```
-
-{{< code-action "Go into the lab folder." >}} 
-```shell
-cd lab_riddle_server_YOUR_USERNAME
+cd lab_banjo/yourgithubusername
 ```
 
 
@@ -40,26 +30,17 @@ cd lab_riddle_server_YOUR_USERNAME
 poetry shell
 ```
 
-{{< code-action "Install requirements" >}}
-```shell
-poetry install
-```
-
-{{< code-action "Install Banjo" >}}
-```shell
-pip3 install django-banjo
-```
 
 ---
 ## [1] Local Riddle Server
 
 You are each able to run a locally hosted riddle server on your laptop using Banjo.
 
-### [Starting the Server]
+### Starting the Server
 
-{{< code-action "Now, let's start your local server." >}}
+{{< code-action "Now, let's start your local server." >}} We use `--debug` to provide more information when in development stage.
 ```shell
-banjo
+banjo --debug
 ```
 ```shell
 No changes detected in apps 'app', 'banjo'
@@ -84,9 +65,9 @@ Quit the server with CONTROL-C.
 ---
 
 
-### [Accessing the Server]
+### Accessing the Server
 
-{{< look-action " You can now visit this server in your web browser, just as you did with the riddler server hosted on the internet: " >}} [http://127.0.0.1:5000/riddles/all](http://127.0.0.1:5000/riddles/all)
+💻 **You can now visit this server in your web browser, just as you did with the riddler server hosted on the internet:**  [127.0.0.1:5000/riddles/all](http://127.0.0.1:5000/riddles/all)
 
 **In order to send requests to the other endpoints, you will need always have 2 Terminal windows open.**
 - 1 window will run the server
@@ -119,9 +100,9 @@ Your version of the riddle server only has the 2 endpoints:
 
 ## [2] What is Banjo?
 
-This server is written using [Banjo](https://cs.fablearn.org/docs/banjo/index.html), a wrapper for [Django](https://www.djangoproject.com/). It allows users to quickly create models with a persistant database and API.
+**This server is written using [Banjo](https://cs.fablearn.org/docs/banjo/index.html)**, a wrapper for [Django](https://www.djangoproject.com/). It allows users to quickly create models with a persistant database and API.
 
-Banjo apps must have an `app` folder. Within the app folder must be two files: `models.py`, `views.py`. The `database.sqlite` file is created when the server is first started. It is stored at the same level as `app`. Here is an example file structure:
+📁 **Banjo apps must have an `app` folder. Within the app folder must be two files: `models.py`, `views.py`.** The `database.sqlite` file is created when the server is first started. It is stored at the same level as `app`. Here is an example file structure:
 ```shell
 lab_riddle_server
 |
@@ -133,41 +114,48 @@ lab_riddle_server
 - `models.py` - A model is essentially an abstracted class. Just as a class has properties, a model has fields. When defining a model's fields, you must specify the data type.
 - `views.py` - The views are where you define the API functionality. Here is where you decide what the `endpoints` are and the type of `HTTP` request it will require.
 
-**In this lab, we are going to be primarily focused on the `views.py` file.**
+📄 **In this lab, we are going to be primarily focused on the `views.py` file.**
 
 ---
 
 ## [3] Writing Routes
 
-In this lab, you will build out the full functionality of the Riddle server. Currently, your file only has `riddles/all` and `riddle/guess`. 
+In this lab, you will build out the functionality of the Riddle server. Currently, your file only has `riddles/all` and `riddle/new`. 
 
 **It is up to you to add the following endpoints:**
 - `riddles/one`
-- `riddles/new`
+- `riddles/guess`
+- `riddle/difficulty`
 - `riddle/random`
 
 
 
-{{< code-action "Start by opening up the primary folder:" >}} `app`
+{{< code-action "Start by opening up the primary folder:" >}} `/app`
 
 ```shell
-atom app
+code app
 ```
 
 {{< code-action >}} **Open the `views.py` file.** Here is where you will write the additional endpoints. 
 
+📖 **Open the [Banjo Views Documentation](https://cs.fablearn.org/docs/banjo/views.html).** You will need to reference this and the exisiting routes in `views.py`.
+
+🌐 **You may also want to reference the Riddle server that is live on the web:** [sycs.student.isf.edu.hk/api](http://sycs.student.isf.edu.hk/api). This is a unique route `/api` that provides a basic frontend interaction with the API.
+
 ---
 
-### [riddles/one]
+### riddles/one
 
 {{< code-action >}} **Write the `riddles/one` endpoint.** 
 - http: `get`
 - payload: `id`
 - return: a single `Riddle` with the `question`, `guesses`, and `correct` properties
 
+🤔 *Which `method` in the `Riddle` `model` could be useful?*
+
 {{< checkpoint >}}
 
-{{< code-action >}} **Test the `riddles/one` endpoint in a separate Terminal window from the server..**
+💻 **Test the `riddles/one` endpoint in a separate Terminal window from the server..**
 
 ```shell
 http get http://127.0.0.1:5000/riddles/one id=0
@@ -177,16 +165,19 @@ http get http://127.0.0.1:5000/riddles/one id=0
 
 ---
 
-### [riddles/new]
+### riddles/guess
 
 {{< code-action >}} **Write the `riddles/new` endpoint.** 
 - http: `post`
-- payload: `question` and `answer`
+- payload: `id` and `guess`
 - return: a single `Riddle` with the `question`, `guesses`, and `correct` properties
+
+🤔 *Which `method` in the `Riddle` `model` could be useful?*
+
 
 {{< checkpoint >}}
 
-{{< code-action >}} **Test the `riddles/new` endpoint in a separate Terminal window from the server..**
+💻 **Test the `riddles/new` endpoint in a separate Terminal window from the server..**
 
 ```shell
 http post http://127.0.0.1:5000/riddles/new question="It goes up and down the stairs without moving." answer="A carpet"
@@ -196,15 +187,18 @@ http post http://127.0.0.1:5000/riddles/new question="It goes up and down the st
 
 ---
 
-### [riddles/random]
+### riddles/random
 
 {{< code-action >}} **Write the `riddles/random` endpoint.** 
 - http: `get`
 - return: a single `Riddle` with the `question`,  `correct`, and `guess` properties 
 
+🤔 *Which query method may be useful? Be sure to reference the [Banjo documentation](https://cs.fablearn.org/docs/banjo/index.html).*
+
+
 {{< checkpoint >}}
 
-{{< code-action >}} **Test the `riddles/random` endpoint in a separate Terminal window from the server..**
+💻 **Test the `riddles/random` endpoint in a separate Terminal window from the server..**
 
 ```shell
 http get http://127.0.0.1:5000/riddles/random 
