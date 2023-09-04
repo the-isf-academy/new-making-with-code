@@ -227,7 +227,7 @@ You will need to use the [HKO API Documentation](https://www.hko.gov.hk/en/weath
 ---
 
 ## [4] Extension
-
+    
 
 Now that you've had succifient practice accessing APIs, it's time to explore what type of APIs exist. 
 
