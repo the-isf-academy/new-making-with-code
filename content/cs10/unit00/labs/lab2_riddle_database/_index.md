@@ -113,8 +113,8 @@ For this lab, we need to download software to view the database in a nicely form
 
 ```shell
 cd ~/desktop/making_with_code/cs10/unit00_networking
-git clone https://github.com/the-isf-academy/lab_banjo/yourgithubusername
-cd lab_banjo/yourgithubusername
+git clone https://github.com/the-isf-academy/lab_banjo_yourgithubusername
+cd lab_banjo_yourgithubusername
 ```
 
 {{< code-action "Get the necessary packages:" >}}
