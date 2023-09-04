@@ -147,9 +147,10 @@ code app
 ### riddles/one
 
 {{< code-action >}} **Write the `riddles/one` endpoint.** 
-- http: `get`
-- payload: `id`
-- return: a single `Riddle` with the `question`, `guesses`, and `correct` properties
+- **HTTP method:** `get`
+- **Payload/args:** `id`
+- **Return:** a single `Riddle` with the `question`, `guesses`, and `correct` properties
+
 
 🤔 *Which `method` in the `Riddle` `model` could be useful?*
 
@@ -167,20 +168,50 @@ http get http://127.0.0.1:5000/riddles/one id=0
 
 ### riddles/guess
 
-{{< code-action >}} **Write the `riddles/new` endpoint.** 
-- http: `post`
-- payload: `id` and `guess`
-- return: a single `Riddle` with the `question`, `guesses`, and `correct` properties
+{{< code-action >}} **Write the `riddles/guess` endpoint.** 
+- **HTTP method:**  `post`
+- **Payload/args:**  `id` and `guess`
+- **Return:** 
+  - if the guess was correct
+    - message telling the user they were correct
+    - a single `Riddle` with the `question`, `guesses`, `correct`, and `answer` properties
+  - if the guess was incorrect
+    - message telling the user they were incorrect
+    - a single `Riddle` with the `question`, `guesses`, and `correct`, properties
 
 🤔 *Which `method` in the `Riddle` `model` could be useful?*
 
 
 {{< checkpoint >}}
 
-💻 **Test the `riddles/new` endpoint in a separate Terminal window from the server..**
+💻 **Test the `riddles/guess` endpoint in a separate Terminal window from the server..**
 
 ```shell
-http post http://127.0.0.1:5000/riddles/new question="It goes up and down the stairs without moving." answer="A carpet"
+http post http://127.0.0.1:5000/riddles/guess id=1 guess="A carpet"
+```
+
+{{< /checkpoint >}}
+
+---
+
+
+### riddles/difficulty
+
+{{< code-action >}} **Write the `riddles/difficulty` endpoint.** 
+- **HTTP method:** `get`
+- **Payload/args:** `id`
+- **Return:** 
+    - a single `Riddle` with the `question`, `guesses`, `correct`, and `difficulty` properties
+
+🤔 *Which `method` in the `Riddle` `model` could be useful?*
+
+
+{{< checkpoint >}}
+
+💻 **Test the `riddles/guess` endpoint in a separate Terminal window from the server..**
+
+```shell
+http get http://127.0.0.1:5000/riddles/difficulty id=1 
 ```
 
 {{< /checkpoint >}}
@@ -190,8 +221,9 @@ http post http://127.0.0.1:5000/riddles/new question="It goes up and down the st
 ### riddles/random
 
 {{< code-action >}} **Write the `riddles/random` endpoint.** 
-- http: `get`
-- return: a single `Riddle` with the `question`,  `correct`, and `guess` properties 
+- **HTTP method:**`get`
+- **Payload/args:** none
+- **Return:**  a single `Riddle` with the `question`,  `correct`, and `guess` properties 
 
 🤔 *Which query method may be useful? Be sure to reference the [Banjo documentation](https://cs.fablearn.org/docs/banjo/index.html).*
 
@@ -214,6 +246,14 @@ http get http://127.0.0.1:5000/riddles/random
 {{< deliverables >}}  
 
 **Once you've successfully completed the worksheet be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSf8yjSaASsdDp2y4Zawso8Ko77nkhPH6ADf5BOTpPcO_kdtDw/viewform?usp=sf_link).**
+
+{{< code-action "Push your work to Github:" >}}
+- git status
+- git add -A
+- git status
+- git commit -m "describe your code and your process here"
+  > be sure to customize this message, do not copy and paste this line
+- git push
 
 {{< /deliverables >}}
 
