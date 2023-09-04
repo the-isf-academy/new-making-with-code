@@ -138,19 +138,6 @@ When you want to exit the shell, you can type `exit` or `^D`
     - `models.py`: This defines the model 
     - `views.py`: This defines the routes 
 
-{{< code-action "In the Terminal, open the lab folder." >}}
-```shell
-cd ~/desktop/making_with_code/cs10/unit00_networking/lab_riddle_database
-```
-
-{{< code-action "Enter the Poetry Shell." >}} As a reminder, we will run this command at the start of each lab, but only when we are inside a lab folder.
-```shell
-poetry shell
-```
-{{< aside "Exiting the poetry shell" >}}
-When you want to exit the shell, you can type `exit` or `^D`
-{{< /aside >}}
-
 
 ---
 
