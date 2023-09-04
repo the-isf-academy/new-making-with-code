@@ -1,9 +1,6 @@
 ---
 title: "2. Banjo Databases"
 type: lab
-slug: lab_riddle_database
-# repo_url: https://github.com/the-isf-academy/lab_riddle_database
-# init_action: create_from_template 
 # draft: true
 ---
 
@@ -141,6 +138,8 @@ When you want to exit the shell, you can type `exit` or `^D`
 
 ---
 
+## [3] Databases
+
 ### Riddle Model
 
 Now that you've experienced the riddle server, let's delve into how it's made.
@@ -239,13 +238,15 @@ Before moving on, make sure the Riddle properties, `guesses`, and `correct`, wer
 
 ---
 
-### [Database Querying]
+### Database Querying
 
 Now that you've experienced adding and updating the database, we're going to explore how to search, or query, the database.
 
-📖 **Open the Banjo documentation:** [https://cs.fablearn.org/docs/banjo/index.html](https://cs.fablearn.org/docs/banjo/index.html)
+📖 **Open the Banjo documentation:** [cs.fablearn.org/docs/banjo/index.html](https://cs.fablearn.org/docs/banjo/index.html)
+> *If you find any typos, please let a teacher know - we can fix it!*
 
-{{< write-action "Using the Banjo documentation, fill out the worksheet and properly query the database using the Banjo shell." >}} 
+✏️ **Fill out the worksheet and refence the Banjo documentation**  to properly query the database using the Banjo shell.
+> *You will use the Banjo/Djanog syntax throughout the whole year! Please be sure to experiment and ask any/all questions.*
 
 ---
 
@@ -265,7 +266,7 @@ Now that you've experienced adding and updating the database, we're going to exp
 
 Next lab we will explore how to write the Riddle server.
 
-{{< code-action "Feel free to open up the code and start to understand how it works!" >}}
+{{< code-action "Feel free to open up the code and start to understand how it works!" >}} Can you add a new *route* for just one riddle?
 ```shell
 code .
 ```
