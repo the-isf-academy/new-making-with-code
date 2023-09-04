@@ -1,10 +1,10 @@
 ---
-title: "1. Database"
+title: "2. Banjo Databases"
 type: lab
 slug: lab_riddle_database
-repo_url: https://github.com/the-isf-academy/lab_riddle_database
-init_action: create_from_template 
-draft: true
+# repo_url: https://github.com/the-isf-academy/lab_riddle_database
+# init_action: create_from_template 
+# draft: true
 ---
 
 # Riddle Database
@@ -19,29 +19,29 @@ The last time we saw riddles, they existed only within each of your computers. Y
 
 We are now going to look at Riddles that are hosted on the internet!
 
-{{< code-action >}} **Visit [http://riddles.student.isf.edu.hk/riddles/all](http://riddles.student.isf.edu.hk/riddles/all) to view riddle server.**
+{{< code-action >}} **Visit [http://sycs.student.isf.edu.hk/riddles/all](http://sycs.student.isf.edu.hk/riddles/all) to view riddle server.**
 > Not very easy to read, right? You can install the [JSON Formatter](https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa?hl=en) Chrome extension to view better formatted JSON.*
 
 {{< code-action >}} **Now try making `get` request to receive the same information in your terminal using `httpie`.**
 ```shell
-http get http://riddles.student.isf.edu.hk/riddles/all
+http get http://sycs.student.isf.edu.hk/riddles/all
 ```
 
 ```shell
 HTTP/1.1 200 OK
-Connection: close
-Content-Length: 94
+Connection: keep-alive
 Content-Type: application/json
-Date: Thu, 15 Sep 2022 04:53:08 GMT
-Server: gunicorn
+Date: Sun, 03 Sep 2023 13:04:47 GMT
+Server: nginx/1.18.0
+Transfer-Encoding: chunked
 
 {
     "riddles": [
         {
             "correct": 0,
-            "guesses": 3,
+            "guesses": 0,
             "id": 1,
-            "question": "Where does dragon milk come from?"
+            "question": "What is black and white and red all over?"
         }
     ]
 }
@@ -49,7 +49,7 @@ Server: gunicorn
 
 {{< code-action "Do you know the answer? Try posting a guess via the Terminal." >}}
 ```shell
-http post http://riddles.student.isf.edu.hk/riddles/guess id=1 guess="scales"
+http post http://sycs.student.isf.edu.hk/riddles/guess id=1 guess="pickles" 
 ```
 > It is common for `POST` requests to send a *payload* with the request. In this case, the payload is a parameter called `id` specifying which riddle we are guessing, as well as `guess`.
 >
@@ -59,27 +59,24 @@ http post http://riddles.student.isf.edu.hk/riddles/guess id=1 guess="scales"
 You should see something like this:
 ```shell
 HTTP/1.1 200 OK
-Connection: close
-Content-Length: 94
+Connection: keep-alive
 Content-Type: application/json
-Date: Thu, 15 Sep 2022 04:57:08 GMT
-Server: gunicorn
+Date: Sun, 03 Sep 2023 13:05:45 GMT
+Server: nginx/1.18.0
+Transfer-Encoding: chunked
 
 {
-    "correct": false,
-    "guess": "scales",
-    "riddle": {
-        "correct": 0,
-        "guesses": 4,
+    "incorrect guess": {
+        "guesses": 1,
         "id": 1,
-        "question": "Where does dragon milk come from?"
+        "question": "What is black and white and red all over?"
     }
 }
 ```
 
 ---
 
-### [Explore the Endpoints]
+### Explore the Endpoints
 Server APIs often rely on different URL *endpoints* to determine what the API should do.
 
 Here is a cheatsheet of the Riddle endpoints, what parameters they take in their payload, and what they do:
@@ -88,8 +85,10 @@ Here is a cheatsheet of the Riddle endpoints, what parameters they take in their
 | ------ | ---------------------------------- | -------------------- | ---------------------------------------------------------------------------------------- |
 | `GET`  | `/riddles/all`   |                      | Returns a list of all the riddles, without answers.                                      |
 | `GET`  | `/riddles/one`   | `id`                 | Returns the riddle if it exists. (Otherwise, it returns an error with status code 404.)  |
+| `GET`  | `/riddles/difficulty`   | `id`                 | Returns the riddle if it exists with its difficulty score. (Otherwise, it returns an error with status code 404.)  |
 | `POST` | `/riddles/new`   | `question`, `answer` | Creates a new riddle (with an automatically-assigned id). Returns the riddle.            |
 | `POST` | `/riddles/guess` | `id`, `guess`        | Checks whether the guess is correct. In the response, `correct` is `True` or `False`.    |
+
 
 {{< checkpoint >}}
 
@@ -98,12 +97,64 @@ Here is a cheatsheet of the Riddle endpoints, what parameters they take in their
 - view a single riddle
 - add a new riddle
 - guess a riddle
+- try to break the riddle server, what happens when you provide incorrect parameters?
 {{< /checkpoint >}}
+
 
 
 ---
 
-## [1] Explore the Riddle Model
+## [2] Set Up
+
+For this lab, we need to download software to view the database in a nicely formatted chart.
+
+{{< code-action "Download dbsqlite onto your computer:" >}} [https://sqlitebrowser.org/dl/](https://sqlitebrowser.org/dl/)
+
+{{< figure src="https://sqlitebrowser.org/images/sqlitebrowser.svg" alt-text="database icon" >}}
+
+{{< code-action "Now, let's clone the repository" >}} in your `cs10\unit00_networking` folder.  Be sure to change `yourgithubusername` to your actual Github username.
+
+```shell
+cd ~/desktop/making_with_code/cs10/unit00_networking
+git clone https://github.com/the-isf-academy/lab_banjo/yourgithubusername
+cd lab_banjo/yourgithubusername
+```
+
+{{< code-action "Get the necessary packages:" >}}
+```shell
+poetry update
+```
+
+{{< code-action "Enter the Poetry shell" >}} 
+```shell
+poetry shell
+```
+{{< aside "Exiting the poetry shell" >}}
+When you want to exit the shell, you can type `exit` or `^D`
+{{< /aside >}}
+
+📄 **This repository has two main files inside a the `/app` directory:**
+- `/app`
+    - `models.py`: This defines the model 
+    - `views.py`: This defines the routes 
+
+{{< code-action "In the Terminal, open the lab folder." >}}
+```shell
+cd ~/desktop/making_with_code/cs10/unit00_networking/lab_riddle_database
+```
+
+{{< code-action "Enter the Poetry Shell." >}} As a reminder, we will run this command at the start of each lab, but only when we are inside a lab folder.
+```shell
+poetry shell
+```
+{{< aside "Exiting the poetry shell" >}}
+When you want to exit the shell, you can type `exit` or `^D`
+{{< /aside >}}
+
+
+---
+
+### Riddle Model
 
 Now that you've experienced the riddle server, let's delve into how it's made.
 
@@ -121,43 +172,7 @@ class Riddle(Model):
 
 ---
 
-### [Set Up]
-
-For this lab, we need to download software to view the database in a nicely formatted chart.
-
-{{< code-action "Download dbsqlite onto your computer:" >}} [https://sqlitebrowser.org/dl/](https://sqlitebrowser.org/dl/)
-
-{{< figure src="https://sqlitebrowser.org/images/sqlitebrowser.svg" alt-text="database icon" >}}
-
-
-{{< code-action "Get the lab and install any necessary packages." >}}
-```shell
-mwc update
-```
-
-{{< code-action "In the Terminal, open the lab folder." >}}
-```shell
-cd ~/desktop/making_with_code/cs10/unit00_networking/lab_riddle_database
-```
-
-{{< code-action "Enter the Poetry Shell." >}} As a reminder, we will run this command at the start of each lab, but only when we are inside a lab folder.
-```shell
-poetry shell
-```
-{{< aside "Exiting the poetry shell" >}}
-When you want to exit the shell, you can type `exit` or `^D`
-{{< /aside >}}
-
-
-{{< code-action "Install Banjo." >}}
-```shell
-pip3 install django-banjo
-```
-
-
----
-
-### [Viewing the Database]
+### Viewing the Database
 
 You have just downloaded a simple server that hosts `Riddles` onto your laptop. Let's start by looking at the its database.
 
@@ -168,17 +183,17 @@ open database.sqlite
 
 {{< code-action "Select" >}} `Browse Data`
 
-{{< figure src="images/courses/cs10/unit00/00_databases_00.png" alt-text="databases" >}}
+{{< figure src="images/courses/cs10/unit00/02_banjo_00.png" alt-text="databases" >}}
 
 
 {{< look-action "Here you will see all of the riddles that are in your locally hosted server." >}} This database file gets updated each time you guess or add a `Riddle`.
 
-{{< figure src="images/courses/cs10/unit00/00_databases_01.png" alt-text="databases" >}}
+{{< figure src="images/courses/cs10/unit00/02_banjo_01.png" alt-text="databases" >}}
 
 
 ---
 
-### [Adding and Guessing Riddles]
+### Adding and Guessing Riddles
 
 Now, let's guess a `Riddle` and add a new `Riddle` and see how that affects the database.
 
@@ -241,7 +256,7 @@ Before moving on, make sure the Riddle properties, `guesses`, and `correct`, wer
 
 Now that you've experienced adding and updating the database, we're going to explore how to search, or query, the database.
 
-{{< look-action "Open the Banjo documentation:" >}} [https://cs.fablearn.org/docs/banjo/index.html](https://cs.fablearn.org/docs/banjo/index.html)
+📖 **Open the Banjo documentation:** [https://cs.fablearn.org/docs/banjo/index.html](https://cs.fablearn.org/docs/banjo/index.html)
 
 {{< write-action "Using the Banjo documentation, fill out the worksheet and properly query the database using the Banjo shell." >}} 
 
@@ -253,7 +268,7 @@ Now that you've experienced adding and updating the database, we're going to exp
 
 {{< deliverables >}}  
 
-**Once you've successfully completed the worksheet be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSfgWwxFI8SotkBsredlpQejYI2fHzJDQ-2oZgdYTq1ZQO_zjw/viewform?usp=sf_link).**
+**Once you've successfully completed the worksheet be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSeul5VSf93yA1mXQyXq3HaOcafoz4la8D3n8lWhoxsn-1ZdEw/viewform?usp=sf_link).**
 
 {{< /deliverables >}}
 
@@ -265,5 +280,5 @@ Next lab we will explore how to write the Riddle server.
 
 {{< code-action "Feel free to open up the code and start to understand how it works!" >}}
 ```shell
-atom .
+code .
 ```
