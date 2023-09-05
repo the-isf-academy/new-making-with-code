@@ -101,7 +101,7 @@ Here is a cheatsheet of the Riddle endpoints, what parameters they take in their
 
 ---
 
-## [2] Set Up
+## [1] Set Up
 
 For this lab, we need to download software to view the database in a nicely formatted chart.
 
@@ -144,7 +144,7 @@ When you want to exit the shell, you can type `exit` or `^D`
 
 ---
 
-## [3] Databases
+## [2] Databases
 
 ### Riddle Model
 

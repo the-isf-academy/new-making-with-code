@@ -3,7 +3,7 @@ title: "3. Banjo Server"
 type: lab
 slug: lab_riddle_server
 
-draft: true
+# draft: true
 ---
 
 # Riddle Server
@@ -104,14 +104,14 @@ Your version of the riddle server only has the 2 endpoints:
 
 📁 **Banjo apps must have an `app` folder. Within the app folder must be two files: `models.py`, `views.py`.** The `database.sqlite` file is created when the server is first started. It is stored at the same level as `app`. Here is an example file structure:
 ```shell
-lab_riddle_server
+lab_banjo
 |
 └──app
 |   ├──models.py
 |   └──views.py
 └──database.sqlite
 ```
-- `models.py` - A model is essentially an abstracted class. Just as a class has properties, a model has fields. When defining a model's fields, you must specify the data type.
+- `models.py` - This defines what the database will look like. Models are a lot like classes. Just as a class has properties, a model has fields. When defining a model's fields, you must specify the data type.
 - `views.py` - The views are where you define the API functionality. Here is where you decide what the `endpoints` are and the type of `HTTP` request it will require.
 
 📄 **In this lab, we are going to be primarily focused on the `views.py` file.**
