@@ -1,5 +1,5 @@
 ---
-title: "2. Banjo Databases"
+title: "2. Banjo Database"
 type: lab
 # draft: true
 ---
@@ -117,7 +117,13 @@ git clone https://github.com/the-isf-academy/lab_banjo_yourgithubusername
 cd lab_banjo_yourgithubusername
 ```
 
-{{< code-action "Get the necessary packages:" >}}
+{{< code-action  >}} **Install `banjo`**:
+```shell
+pip3 install django-banjo
+```
+
+
+{{< code-action "Get the other necessary packages:" >}}
 ```shell
 poetry update
 ```
