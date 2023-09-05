@@ -21,7 +21,7 @@ Make sure you have followed the Initial Set Up before selecting a challenge. You
 
 {{< code-action >}} **Start by going into your `unit00_drawing` folder.**
 ```shell
-cd ~/desktop/making_with_code/cs9/unit00_drawing/
+cd ~/desktop/making_with_code/unit00_drawing/
 ```
 
 {{< code-action "Then create a new folder:" >}}
