@@ -3,7 +3,7 @@ title: "3. Banjo Server"
 type: lab
 slug: lab_riddle_server
 
-# draft: true
+draft: true
 ---
 
 # Riddle Server
