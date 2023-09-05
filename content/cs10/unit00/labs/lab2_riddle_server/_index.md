@@ -21,7 +21,7 @@ You are each able to run a locally hosted riddle server on your laptop using Ban
 {{< code-action "Start by going into the unit folder and the lab." >}} Remember to replace `YOUR_USERNAME` with your actual Github username.
 ```shell
 cd ~/desktop/making_with_code/cs10/unit00_networking/
-cd lab_banjo/yourgithubusername
+cd lab_banjo_yourgithubusername
 ```
 
 
@@ -38,7 +38,7 @@ You are each able to run a locally hosted riddle server on your laptop using Ban
 
 ### Starting the Server
 
-{{< code-action "Now, let's start your local server." >}} We use `--debug` to provide more information when in development stage.
+{{< code-action "Now, let's start your local server." >}} We use `--debug` to provide more information when in the development stage.
 ```shell
 banjo --debug
 ```
