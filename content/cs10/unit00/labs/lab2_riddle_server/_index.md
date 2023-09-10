@@ -87,13 +87,13 @@ http get http://127.0.0.1:5000/riddles/all
 
 Your version of the riddle server only has the 2 endpoints:
 - `/riddles/all`
-- `/riddles/guess`
+- `/riddles/new`
 
 {{< checkpoint >}}
 
 {{< code-action "Explore both endpoints via the Terminal and be sure to successfully:" >}}
 - view all riddles without the answers
-- guess a riddle
+- create a new riddle
 {{< /checkpoint >}}
 
 ---
