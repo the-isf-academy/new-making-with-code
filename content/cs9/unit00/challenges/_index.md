@@ -33,6 +33,14 @@ mkdir challenges
 ```shell
 cd challenges
 ```
+{{< aside "Important" >}}
+When working on challenges, use the command **python3** to run your code. For example:
+
+```shell
+python3 turtle_art.py
+```
+
+{{< /aside >}}
 
 ---
 
