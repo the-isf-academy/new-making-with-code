@@ -12,6 +12,17 @@ In this lab we are going to learn how the riddle server is made using Banjo.
 
 📖 **Open the Banjo documentation:** [cs.fablearn.org/docs/banjo/index.html](https://cs.fablearn.org/docs/banjo/index.html)
 
+{{< expand "Debugging" >}}
+
+**If you are getting an "Access Denied" error when visiting the `/api` route:**
+
+0. Go to [chrome://net-internals/#sockets](chrome://net-internals/#sockets) 
+0. Select "Flush socket pool"
+0. Refresh the page
+
+{{< /expand >}}
+
+
 ---
 
 ## [0] Set Up
@@ -283,3 +294,5 @@ It should return `JSON` that looks something like:
 
 {{< code-action >}} **Write an endpoint that has the ability to change the question or answer or a riddle.** 
 > *Consider, what kind of HTTP request would be best for this?*
+
+
