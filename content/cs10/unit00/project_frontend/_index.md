@@ -1,11 +1,11 @@
 ---
 Title: "Project: Backend"
-# draft: true
+draft: true
 ---
 
 # Networking: Social Computing Project
 
-In this unit there will be 2 mini-project for you to create a social computing app. In this part of the project, you will create the Banjo backend. 
+In this unit there will be 2 mini-projects for you to create a social computing app. In this part of the project, you will create the Banjo backend. 
 
 {{< aside "Reference: Banjo Documentation" >}}
 
@@ -15,10 +15,11 @@ In this unit there will be 2 mini-project for you to create a social computing a
 
 
 UPDATES
-- use miro board 
+- use miro board or paper??? 
 - individual project 
 - similar backend criteria 
   - error handling 
+  - README documentation, description 
 
 ---
 
