@@ -1,7 +1,7 @@
 ---
 title: 06. Functions I
 
-draft: true
+# draft: true
 ---
 # Functions Lab | Part I
 
@@ -12,13 +12,16 @@ In this lab, we will learn how to create and call functions. Functions are block
 
 ## [0] Set up
 
-{{< code-action "Start by opening the Terminal cloning this lab onto your laptop." >}} As a reminder, we will run this command at the start of each lab.
+
+
+{{< code-action "Start by going into the unit folder." >}}
 ```shell
-mwc update
+cd ~/desktop/making_with_code/unit00_drawing/
 ```
-{{< code-action "In the Terminal, type the following command to open the lab folder." >}}
+
+{{< code-action "Then clone the lab" >}}
 ```shell
-cd ~/desktop/making_with_code/cs9/unit00_drawing/lab_functions
+git clone https://github.com/the-isf-academy/lab_functions1.git
 ```
 
 {{< code-action "Enter the Poetry Shell to start the lab." >}} As a reminder, we will run this command at the start of each lab, but only when we are inside a lab folder.
@@ -33,7 +36,6 @@ When you want to exit the shell, you can type `exit` or `^D`
 - `triangle.py`
 - `hexagon.py`
 - `icecream.py`
-- `grid.py`
 
 ---
 
@@ -106,19 +108,19 @@ draw_triangle(200)
 
 ---
 
-### [Editing a Function]
+### Editing a Function
 
 {{< code-action "Let's start by running" >}} `triangle.py`
 ```shell
 python triangle.py
 ```
 
-{{< figure src="images/courses/cs9/unit00/00_functions_0.png" width="300px">}}
+{{< figure src="images/courses/cs9/unit00/05_functions_0.png" width="300px">}}
 
 
 {{< code-action "Now, let's open the file:" >}}
 ```shell
-atom triangle.py
+code triangle.py
 ```
 Notice how it calls the `draw_triangle()` function with a `side_length` of `200`.
 
@@ -126,13 +128,13 @@ Notice how it calls the `draw_triangle()` function with a `side_length` of `200`
 
 ---
 
-### [Writing  a Function]
+### Writing  a Function
 
 Now that you've had some practice editing a function, let's write a new one.
 
 {{< code-action "Open the file:" >}} `hexagon.py`
 ```shell
-atom hexagon.py
+code hexagon.py
 ```
 
 {{< code-action "Write a function that draws a hexagon with any side_length." >}} You will need to:
@@ -143,9 +145,15 @@ atom hexagon.py
     - It should be able to be called with any number for the `side_length`.
 
 *Your finished drawing should look something like this:*
-{{< figure src="images/courses/cs9/unit00/00_functions_1.png" width="300px">}}
+{{< figure src="images/courses/cs9/unit00/05_functions_1.png" width="300px">}}
 
+{{< expand "Extension: Polygon" >}}
 
+🤔 **Do you notice a pattern between the `draw_traingle()` and the `draw_hexagon` function?** 
+
+💻 **How could you write 1 function called `draw_polygon` that could draw a polygon of any number of sides?** *You will need another parameter in addition to `side_length`*
+
+{{< /expand >}}
 
 ---
 
@@ -159,32 +167,24 @@ atom hexagon.py
 
 The code in this lab illustrates this. If we want to draw an ice cream cone with scoops of ice cream, we can break it down into steps:
 
-- Draw ice cream: `draw_icecream()`
-    - Draw an ice cream cone: `cone()`
-    - Draw a scoop of ice cream: `scoop(num_scoops)`
+- Draw an ice cream cone: `cone(side_length)`
+- Draw a scoop of ice cream: `scoop(num_scoops)`
 
 ---
 
-### [Draw the Ice Cream]
-
-{{< code-action "Start by running the file: " >}} `icecream.py`. Currently, it draws an incomplete ice cream.
-```shell
-python icecream.py
-```
-
-{{< figure src="images/courses/cs9/unit00/00_functions_3.png" width="200px">}}
+### Draw Ice Cream
 
 
-{{< code-action "Open the file: " >}} `icecream.py`. As you can see, the function definitions are already provided. You just need to edit the following functions:
+{{< code-action "Open the file: " >}} `code icecream.py`. As you can see, the function definitions are already provided. You just need to call the functions:
 - `scoop(num_scoops)`
-- `cone()`
-- `draw_icecream(num_scoops)`
+- `cone(size_length)`
 
 
+{{< code-action "Complete the ice cream drawing by calling the funcitons to draw an ice cream cone. " >}} The colors of the cone and ice cream scoops are up to you!
 
-{{< code-action "Complete the ice cream drawing by editing the funcitons. " >}} The colors of the cone and ice cream scoops are up to you!
+{{< figure src="images/courses/cs9/unit00/05_functions_icecream0.png" width="200px">}}
 
-{{< figure src="images/courses/cs9/unit00/00_functions_icecream.png" width="200px">}}
+{{< figure src="images/courses/cs9/unit00/05_functions_icecream.png" width="200px">}}
 
 
 {{<aside "FYI: How to Fill a Shape with Color and More!" >}}
@@ -257,5 +257,5 @@ How many scoops would you like?
 [Press any key to exit]
 ```
 
-{{< figure src="images/courses/cs9/unit00/lab_06_functions_03.png" width="25%">}}
+{{< figure src="images/courses/cs9/unit00/05_functions_03.png" width="25%">}}
 
