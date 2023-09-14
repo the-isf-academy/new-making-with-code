@@ -316,8 +316,45 @@ Organizations often choose to keep data about their models that is not public.
 
 🤔 **Be sure to hide these new fields from all JSON response.** You may want to write a secret endpoint, that gives provides all of the secret data. 
 
+
 ---
 
+### Category field
+
+
+{{< code-action >}} **Add a new field to the `Riddle` model called `category`.** 
+
+{{< code-action >}} **Add a new endpoint for you to get all Riddle objects of a category**
+
+
+---
+
+### Foreign Key
+
+Banjo has the ability to have relational databases. 
+
+```python
+from banjo.models import Model, StringField, IntegerField, ForeignKey, BooleanField, FloatField
+
+class Artist(Model):
+    name = StringField()
+
+
+class Song(Model):
+    name = StringField()
+    artist = ForeignKey(Artist)
+```
+
+As Banjo is a wrapper over Django, it works just as the Django documentation states [HERE](https://docs.djangoproject.com/en/4.2/topics/db/examples/many_to_one/).
+
+In the example code above, a **Artist** can be associated with many **Song** objects, but a **Song** object can only have one **Artist** object. 
+
+💻 **Try and incorporate a many-to-one relationship in `models.py`.** A few ideas:
+- question field its own Model to hold the history of changes
+- answer field its own Model to hold the history of changes
+
+
+<!-- 
 ### Interface: Riddle Client 
 
 We will talk more about clients later in this unit, but for now just aquaint yourself with the [Requests library](https://requests.readthedocs.io/en/latest/). 
@@ -329,6 +366,6 @@ We will talk more about clients later in this unit, but for now just aquaint you
 {{< code-action >}} **A few more things to try:**
 - format the response JSON in a user friendly, readable format 
 - hit a GET route that requires a payload
-- hit a POST route that requires a payload 
+- hit a POST route that requires a payload  -->
 
 
