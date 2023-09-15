@@ -12,6 +12,17 @@ In this lab we are going to learn how the riddle server is made using Banjo.
 
 📖 **Open the Banjo documentation:** [cs.fablearn.org/docs/banjo/index.html](https://cs.fablearn.org/docs/banjo/index.html)
 
+{{< expand "Debugging" >}}
+
+**If you are getting an "Access Denied" error when visiting the `/api` route:**
+
+0. Go to [chrome://net-internals/#sockets](chrome://net-internals/#sockets) 
+0. Select "Flush socket pool"
+0. Refresh the page
+
+{{< /expand >}}
+
+
 ---
 
 ## [0] Set Up
@@ -259,7 +270,10 @@ http get http://127.0.0.1:5000/riddles/random
 
 ---
 
-## [5] Extension
+## [5] Extensions
+
+
+### View Solution
 
 Currently, there's not way to see the answer unless you correctly guess the riddle. 
 
@@ -281,5 +295,77 @@ It should return `JSON` that looks something like:
 }
 ```
 
-{{< code-action >}} **Write an endpoint that has the ability to change the question or answer or a riddle.** 
+---
+### Change Question and Answer
+
+{{< code-action >}} **Write an endpoint that has the ability to change the question a riddle.** 
 > *Consider, what kind of HTTP request would be best for this?*
+
+{{< code-action >}} **Write an endpoint that has the ability to change the answer a riddle.** 
+> *Consider, what kind of HTTP request would be best for this?*
+
+---
+
+### Hidden Data 
+
+Organizations often choose to keep data about their models that is not public. 
+
+{{< code-action >}} **Add a new field to the `Riddle` model that tracks how many times that riddle has been accessed.** For example, each time the Riddle queried from `riddles/one`, `riddles/guess`, or `riddles/difficulty` the field will be increased by 1. 
+
+{{< code-action >}} **Now, add a new field to the `Riddle` model that tracks how many times that riddle has been changed.**
+
+🤔 **Be sure to hide these new fields from all JSON response.** You may want to write a secret endpoint, that gives provides all of the secret data. 
+
+
+---
+
+### Category field
+
+
+{{< code-action >}} **Add a new field to the `Riddle` model called `category`.** 
+
+{{< code-action >}} **Add a new endpoint for you to get all Riddle objects of a category**
+
+
+---
+
+### Foreign Key
+
+Banjo has the ability to have relational databases. 
+
+```python
+from banjo.models import Model, StringField, IntegerField, ForeignKey, BooleanField, FloatField
+
+class Artist(Model):
+    name = StringField()
+
+
+class Song(Model):
+    name = StringField()
+    artist = ForeignKey(Artist)
+```
+
+As Banjo is a wrapper over Django, it works just as the Django documentation states [HERE](https://docs.djangoproject.com/en/4.2/topics/db/examples/many_to_one/).
+
+In the example code above, a **Artist** can be associated with many **Song** objects, but a **Song** object can only have one **Artist** object. 
+
+💻 **Try and incorporate a many-to-one relationship in `models.py`.** A few ideas:
+- question field its own Model to hold the history of changes
+- answer field its own Model to hold the history of changes
+
+
+<!-- 
+### Interface: Riddle Client 
+
+We will talk more about clients later in this unit, but for now just aquaint yourself with the [Requests library](https://requests.readthedocs.io/en/latest/). 
+
+{{< code-action >}} **Create a new python file:** `client.py`
+
+{{< code-action >}}  **Try to access the public Riddle server, [http://sycs.student.isf.edu.hk/riddles/all](http://sycs.student.isf.edu.hk/riddles/all), using the `Requests` library in this file.**
+
+{{< code-action >}} **A few more things to try:**
+- format the response JSON in a user friendly, readable format 
+- hit a GET route that requires a payload
+- hit a POST route that requires a payload  -->
+
+
