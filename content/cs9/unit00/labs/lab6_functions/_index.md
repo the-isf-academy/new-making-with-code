@@ -115,7 +115,7 @@ draw_triangle(200)
 python triangle.py
 ```
 
-{{< figure src="images/courses/cs9/unit00/05_functions_0.png" width="300px">}}
+{{< figure src="images/courses/cs9/unit00/06_functions_0.png" width="300px">}}
 
 
 {{< code-action "Now, let's open the file:" >}}
@@ -145,13 +145,13 @@ code hexagon.py
     - It should be able to be called with any number for the `side_length`.
 
 *Your finished drawing should look something like this:*
-{{< figure src="images/courses/cs9/unit00/05_functions_1.png" width="300px">}}
+{{< figure src="images/courses/cs9/unit00/06_functions_1.png" width="300px">}}
 
 {{< expand "Extension: Polygon" >}}
 
 🤔 **Do you notice a pattern between the `draw_traingle()` and the `draw_hexagon` function?** 
 
-💻 **How could you write 1 function called `draw_polygon` that could draw a polygon of any number of sides?** *You will need another parameter in addition to `side_length`*
+💻 **How could you write 1 function called `draw_polygon()` that could draw a polygon of any number of sides?** *You will need another parameter in addition to `side_length`*
 
 {{< /expand >}}
 
@@ -162,13 +162,15 @@ code hexagon.py
 
 **When you want to draw something fancy, you need to break it down into smaller steps.** Then you can write functions to do the smaller steps, and write more functions to combine small steps into bigger steps. This concept is called **decomposition**.
 
-{{< figure src="https://www.thespruceeats.com/thmb/btLT5e97Xl3vBzNo37xPlUgfQcI=/3135x3900/filters:fill(auto,1)/GettyImages-90053856-588b7aff5f9b5874ee534b04.jpg" width="200px">}}
+{{< figure src="https://www.learning.com/wp-content/uploads/2022/08/Decomposition-2-383x360.png" width="30%">}}
 
 
-The code in this lab illustrates this. If we want to draw an ice cream cone with scoops of ice cream, we can break it down into steps:
+✔️ **If we want to draw an ice cream cone with scoops of ice cream, we can break it down into steps:**
 
 - Draw an ice cream cone: `cone(side_length)`
 - Draw a scoop of ice cream: `scoop(num_scoops)`
+
+{{< figure src="https://www.thespruceeats.com/thmb/btLT5e97Xl3vBzNo37xPlUgfQcI=/3135x3900/filters:fill(auto,1)/GettyImages-90053856-588b7aff5f9b5874ee534b04.jpg" width="30%">}}
 
 ---
 
@@ -180,31 +182,36 @@ The code in this lab illustrates this. If we want to draw an ice cream cone with
 - `cone(size_length)`
 
 
-{{< code-action "Complete the ice cream drawing by calling the funcitons to draw an ice cream cone. " >}} The colors of the cone and ice cream scoops are up to you!
+{{< code-action "Complete the ice cream drawing by calling the funcitons to draw an ice cream cone. " >}} You need to use other turtle functions and experiment with the parameters to align the `scoop()` and the `cone()` perfectly. A few useful turtle functions include, but not limited to:
+- `forward()`
+- `backward()`
+- `right()`
+- `left()`
+- `penup()`
+- `pendown()`
 
-{{< figure src="images/courses/cs9/unit00/05_functions_icecream0.png" width="200px">}}
+{{< figure src="images/courses/cs9/unit00/06_functions_icecream0.png" width="200px">}}
 
-{{< figure src="images/courses/cs9/unit00/05_functions_icecream.png" width="200px">}}
+{{< code-action >}} **Now, add in color by adding a second parameter to `scoop()` and `cone()`.** 
+> *Note: a variable cannot be the same name as a function. We suggest using the parameters `scoop_color` and `cone_color`.*
+
+{{< figure src="images/courses/cs9/unit00/06_functions_icecream1.png" width="200px">}}
 
 
 {{<aside "FYI: How to Fill a Shape with Color and More!" >}}
-To fill your turtle drawing with color follow the below format. You must call `begin_fill()` before the shape has been drawn and `end_fill()` after.
+💻 To fill your turtle drawing with color follow the below format. You must call `begin_fill()` before the shape has been drawn and `end_fill()` after.
 
 ```python
-def draw_triangle(sideLength):
-    #This function draws a triangle
-    for i in range(3):
-        left(120)
-        forward(sideLength)
+circle_color = "blue"
+fillcolor(circle_color)     #Tells the turtle to set the fill color
 
-fillcolor("Blue")
-begin_fill()        #Tells the turtle to start the color fill
-draw_triangle(20)
-end_fill()          #Tells the turtle to stop the color fill
+begin_fill()                #Tells the turtle to start the color fill
+circle(200)
+end_fill()                  #Tells the turtle to stop the color fill
 ```
 <br>
 
-*For a wide range of color options look at this [chart](http://cng.seas.rochester.edu/CNG/docs/x11color.html).*
+📖 *For a wide range of color options look at this [chart](http://cng.seas.rochester.edu/CNG/docs/x11color.html).*
 
 {{</aside>}}
 
@@ -215,19 +222,28 @@ end_fill()          #Tells the turtle to stop the color fill
 
 {{< deliverables  >}}
 
-**Once you've successfully completed the square pattern be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSdEzSmliyxzEcLmk7qHxfeCui9zp0ReDif4pJUzGoDob7sTyw/viewform?usp=sf_link)**.
+☑️ **Once you've successfully completed the square pattern be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSfRcfEweimfcoY6gZxZMh0odczoer8w5DVx-EgRia7QP6UovA/viewform?usp=sf_link)**.
 
+✏️  **Add a screenshot of a code snippet to your `CS9 Lab Code Log` in your Google Drive.** Add a comment either asking a question about your code OR describing a piece of code you are proud of. 
 
 {{< /deliverables >}}
 
 ---
-## [5] Extension
+## [5] Extension: Ice Cream Parlor
 
-### [Ice Cream Parlor]
+### Number of Scoops
 
-Let's return to `ice_cream.py`.
+Right now, you can only have 1 scoop of ice cream 😢. But, it's way more fun to have multiple scoops of ice cream!
 
-Right now, both the color of the ice cream and the number of scoops are pre-determined or hard-coded. If you wanted to change the color or number of scoops, you would have to go back into the code and change it yourself.
+💻 **Add another parameter to `scoop()`called `num_scoops`.** This should draw any number of scoops on top of each other. 
+
+{{< figure src="images/courses/cs9/unit00/06_functions_icecream.png" width="25%">}}
+
+--- 
+
+### User Input
+
+Now that we have colors and number of scoops, let's add in user input!
 
 {{< code-action "Expand the functionality of this program to simulate an ice cream parlor."  >}} The user should be able to choose the flavor of the ice-cream and the number of scoops.
 
@@ -257,5 +273,6 @@ How many scoops would you like?
 [Press any key to exit]
 ```
 
-{{< figure src="images/courses/cs9/unit00/05_functions_03.png" width="25%">}}
+{{< figure src="images/courses/cs9/unit00/06_functions_icecream2.png" width="25%">}}
+
 

@@ -232,6 +232,7 @@ It took 7 steps to complete the sequence
 
 **Once you've successfully completed the sequence be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSfLSc5X8kWNIZqWzdz6o-80Bd6Njegj_cN-YXj7ZIjKwXTfBg/viewform?usp=sf_link)**.
 
+✏️  **Add a screenshot of a code snippet to your `CS9 Lab Code Log` in your Google Drive.** Add a comment either asking a question about your code OR describing a piece of code you are proud of. 
 
 {{< /deliverables >}}
 
