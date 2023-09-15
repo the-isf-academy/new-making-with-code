@@ -150,7 +150,7 @@ Correct
 
 
 
-## [1] Hailstone Sequence
+## [3] Hailstone Sequence
 
 Now that you've gotten practice with `while` loops, **you will be exploring a special sequence known as the
 hailstone sequence**.
@@ -226,18 +226,19 @@ It took 7 steps to complete the sequence
 
 ---
 
-## [2] Deliverables
+## [4] Deliverables
 
 {{< deliverables  >}}
 
 **Once you've successfully completed the sequence be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSfLSc5X8kWNIZqWzdz6o-80Bd6Njegj_cN-YXj7ZIjKwXTfBg/viewform?usp=sf_link)**.
 
+✏️  **Add a screenshot of a code snippet to your `CS9 Lab Code Log` in your Google Drive.** Add a comment either asking a question about your code OR describing a piece of code you are proud of. 
 
 {{< /deliverables >}}
 
 ---
 
-## [3] Extension: Visualizing the Sequence
+## [5] Extension: Visualizing the Sequence
 The sequences you formed above are known as hailstone sequences, because the terms move up
 and down but ultimately reach 1 like hailstones gaining layers of ice in a cloud.
 
