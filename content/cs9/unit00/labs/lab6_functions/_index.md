@@ -24,6 +24,11 @@ cd ~/desktop/making_with_code/unit00_drawing/
 git clone https://github.com/the-isf-academy/lab_functions1.git
 ```
 
+{{< code-action "Now that you have the lab, go into its folder." >}}
+```shell
+cd lab_functions1
+```
+
 {{< code-action "Enter the Poetry Shell to start the lab." >}} As a reminder, we will run this command at the start of each lab, but only when we are inside a lab folder.
 ```shell
 poetry shell
@@ -48,7 +53,7 @@ forward(side_length)
 left(120)
 ```
 
-Sometimes we want to talk about how many times a code block should run, or whether it should run at all.
+Sometimes we decide how many times a code block should run, or whether it should run at all.
 Consider this code, which will draw a triangle:
 
 ```python
@@ -57,8 +62,8 @@ for each_item in range(3):
     left(120)
 ```
 
-We have the same code block, but now it's indented under the condition `for each_item in range(3):`. This means
-the code block should run once for each item in the range. A few things to note:
+We have the same code block, but now it's indented under the loop `for each_item in range(3):`. This means
+the code block should run once for each item in the range.
 
 
 
@@ -78,10 +83,10 @@ draw_triangle(200)
 >
 > - `line 1`
 >   - `def` defines a new function called `draw_triangle()`
->   - it takes on parameter, or argument, called `side_length`
+>   - it takes one parameter, or argument, called `side_length`
 > - `line 4`
 >   - `side_length` is used as a variable
->   - you can use function's parameters inside the function as variables
+>   - you can use a function's parameters inside the function as variables
 > - `line 7`
 >   - `draw_triangle(200)` calls the function with a `side_length` of `200`
 >   - Once you have written a function, you must call it to use it.
@@ -93,7 +98,6 @@ draw_triangle(200)
 
 - After the function's name is the list of arguments, surrounded by parentheses `(side_length)`. Arguments, or parameters, are the things you need to tell the program before you can use the function. Think of arguments as questions the program might ask about what to do. For `draw_triangle`, the program wants to know "How long should the length of the sides be?" and you have to tell it the `side_length`. Some functions won't have any arguments, so their parameters list will look like `()`. It depends how you design your functions.
 - The first line of the function's code block should be a comment explaining what the function does.
-- In the function's code block, you can use the arguments as variables.
 
 {{< /expand >}}
 
@@ -124,7 +128,7 @@ code triangle.py
 ```
 Notice how it calls the `draw_triangle()` function with a `side_length` of `200`.
 
-{{< code-action "Experiment with editing the parameter and then re-running the program." >}} For example, change `200` to a `500`.
+{{< code-action "Experiment by editing the parameter and then re-running the program." >}} For example, change `200` to `500`.
 
 ---
 
@@ -149,7 +153,7 @@ code hexagon.py
 
 {{< expand "Extension: Polygon" >}}
 
-🤔 **Do you notice a pattern between the `draw_traingle()` and the `draw_hexagon` function?** 
+🤔 **Do you notice a pattern between the `draw_traingle()` and the `draw_hexagon()` function?** 
 
 💻 **How could you write 1 function called `draw_polygon()` that could draw a polygon of any number of sides?** *You will need another parameter in addition to `side_length`*
 
@@ -182,13 +186,14 @@ code hexagon.py
 - `cone(size_length)`
 
 
-{{< code-action "Complete the ice cream drawing by calling the funcitons to draw an ice cream cone. " >}} You need to use other turtle functions and experiment with the parameters to align the `scoop()` and the `cone()` perfectly. A few useful turtle functions include, but not limited to:
+{{< code-action "Complete the ice cream drawing by calling the functions to draw an ice cream cone. " >}} You need to use other turtle functions and experiment with the parameters to align the `scoop()` and the `cone()` perfectly. A few useful turtle functions include, but not limited to:
 - `forward()`
 - `backward()`
 - `right()`
 - `left()`
 - `penup()`
 - `pendown()`
+- `goto()`
 
 {{< figure src="images/courses/cs9/unit00/06_functions_icecream0.png" width="200px">}}
 
@@ -218,7 +223,7 @@ end_fill()                  #Tells the turtle to stop the color fill
 
 ---
 
-## [4] Deliverables
+## [3] Deliverables
 
 {{< deliverables  >}}
 
@@ -229,7 +234,7 @@ end_fill()                  #Tells the turtle to stop the color fill
 {{< /deliverables >}}
 
 ---
-## [5] Extension: Ice Cream Parlor
+## [4] Extension: Ice Cream Parlor
 
 ### Number of Scoops
 
@@ -250,7 +255,6 @@ Now that we have colors and number of scoops, let's add in user input!
 {{<aside "Hints" >}}
 
 Consider the following:
-- How will you implement the functionality of a `flavor` that is not hard-coded?
 - How will you include user input?
 - How will you translate the flavor "chocolate" to the color "brown?
 

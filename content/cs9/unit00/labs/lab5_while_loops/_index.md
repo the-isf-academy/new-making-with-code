@@ -150,7 +150,7 @@ Correct
 
 
 
-## [1] Hailstone Sequence
+## [3] Hailstone Sequence
 
 Now that you've gotten practice with `while` loops, **you will be exploring a special sequence known as the
 hailstone sequence**.
@@ -226,7 +226,7 @@ It took 7 steps to complete the sequence
 
 ---
 
-## [2] Deliverables
+## [4] Deliverables
 
 {{< deliverables  >}}
 
@@ -238,7 +238,7 @@ It took 7 steps to complete the sequence
 
 ---
 
-## [3] Extension: Visualizing the Sequence
+## [5] Extension: Visualizing the Sequence
 The sequences you formed above are known as hailstone sequences, because the terms move up
 and down but ultimately reach 1 like hailstones gaining layers of ice in a cloud.
 
