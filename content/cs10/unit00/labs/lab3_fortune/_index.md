@@ -112,11 +112,11 @@ code app
 ## [3] Views.py
 
 {{< code-action >}} **Open the `views.py` file.** This server has 5 endpoints:
-- `fortune_teller/new`
-- `fortune_teller/all`
-- `fortune_teller/edit`
-- `fortune_teller/like`
-- `fortune_teller/random`
+- `fortune/new`
+- `fortune/all`
+- `fortune/edit`
+- `fortune/like`
+- `fortune/random`
 
 
 --- 
@@ -166,7 +166,7 @@ banjo
 
 Currently there is no feature to delete a fortune. It can be risky to peremantly delete an item from the database, so instead let's create an archive feature.
 
-💻**Create a feature to "archive" a `Fortune` and hide it from queries.** If a `Fortune` is "archived", it should not be queried in `fortuen_teller/all`, `fortune_teller/like` or `fortune_teller/random`.
+💻**Create a feature to "archive" a `Fortune` and hide it from queries.** If a `Fortune` is "archived", it should not be queried in `fortune/all`, `fortune/like` or `fortune/random`.
 
 🤔 **Consider:**
 - what field type is best? 
