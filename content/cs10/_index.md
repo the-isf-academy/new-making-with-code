@@ -13,7 +13,7 @@ Perhaps even more than through computational power, computers have transformed o
 {{< /expand >}}
 
 {{< expand "Unit: Web Design" >}}
-*More info coming soon...*
+*More info coming soon... *
 {{< /expand >}}
 
 {{< expand "Unit: Cryptography or Hardware" >}}

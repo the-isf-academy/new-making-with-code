@@ -1,7 +1,7 @@
 ---
 title: 06. Functions I
 
-draft: true
+# draft: true
 ---
 # Functions Lab | Part I
 
@@ -12,13 +12,21 @@ In this lab, we will learn how to create and call functions. Functions are block
 
 ## [0] Set up
 
-{{< code-action "Start by opening the Terminal cloning this lab onto your laptop." >}} As a reminder, we will run this command at the start of each lab.
+
+
+{{< code-action "Start by going into the unit folder." >}}
 ```shell
-mwc update
+cd ~/desktop/making_with_code/unit00_drawing/
 ```
-{{< code-action "In the Terminal, type the following command to open the lab folder." >}}
+
+{{< code-action "Then clone the lab" >}}
 ```shell
-cd ~/desktop/making_with_code/cs9/unit00_drawing/lab_functions
+git clone https://github.com/the-isf-academy/lab_functions1.git
+```
+
+{{< code-action "Now that you have the lab, go into its folder." >}}
+```shell
+cd lab_functions1
 ```
 
 {{< code-action "Enter the Poetry Shell to start the lab." >}} As a reminder, we will run this command at the start of each lab, but only when we are inside a lab folder.
@@ -33,7 +41,6 @@ When you want to exit the shell, you can type `exit` or `^D`
 - `triangle.py`
 - `hexagon.py`
 - `icecream.py`
-- `grid.py`
 
 ---
 
@@ -46,7 +53,7 @@ forward(side_length)
 left(120)
 ```
 
-Sometimes we want to talk about how many times a code block should run, or whether it should run at all.
+Sometimes we decide how many times a code block should run, or whether it should run at all.
 Consider this code, which will draw a triangle:
 
 ```python
@@ -55,8 +62,8 @@ for each_item in range(3):
     left(120)
 ```
 
-We have the same code block, but now it's indented under the condition `for each_item in range(3):`. This means
-the code block should run once for each item in the range. A few things to note:
+We have the same code block, but now it's indented under the loop `for each_item in range(3):`. This means
+the code block should run once for each item in the range.
 
 
 
@@ -76,10 +83,10 @@ draw_triangle(200)
 >
 > - `line 1`
 >   - `def` defines a new function called `draw_triangle()`
->   - it takes on parameter, or argument, called `side_length`
+>   - it takes one parameter, or argument, called `side_length`
 > - `line 4`
 >   - `side_length` is used as a variable
->   - you can use function's parameters inside the function as variables
+>   - you can use a function's parameters inside the function as variables
 > - `line 7`
 >   - `draw_triangle(200)` calls the function with a `side_length` of `200`
 >   - Once you have written a function, you must call it to use it.
@@ -91,7 +98,6 @@ draw_triangle(200)
 
 - After the function's name is the list of arguments, surrounded by parentheses `(side_length)`. Arguments, or parameters, are the things you need to tell the program before you can use the function. Think of arguments as questions the program might ask about what to do. For `draw_triangle`, the program wants to know "How long should the length of the sides be?" and you have to tell it the `side_length`. Some functions won't have any arguments, so their parameters list will look like `()`. It depends how you design your functions.
 - The first line of the function's code block should be a comment explaining what the function does.
-- In the function's code block, you can use the arguments as variables.
 
 {{< /expand >}}
 
@@ -106,33 +112,33 @@ draw_triangle(200)
 
 ---
 
-### [Editing a Function]
+### Editing a Function
 
 {{< code-action "Let's start by running" >}} `triangle.py`
 ```shell
 python triangle.py
 ```
 
-{{< figure src="images/courses/cs9/unit00/00_functions_0.png" width="300px">}}
+{{< figure src="images/courses/cs9/unit00/06_functions_0.png" width="300px">}}
 
 
 {{< code-action "Now, let's open the file:" >}}
 ```shell
-atom triangle.py
+code triangle.py
 ```
 Notice how it calls the `draw_triangle()` function with a `side_length` of `200`.
 
-{{< code-action "Experiment with editing the parameter and then re-running the program." >}} For example, change `200` to a `500`.
+{{< code-action "Experiment by editing the parameter and then re-running the program." >}} For example, change `200` to `500`.
 
 ---
 
-### [Writing  a Function]
+### Writing  a Function
 
 Now that you've had some practice editing a function, let's write a new one.
 
 {{< code-action "Open the file:" >}} `hexagon.py`
 ```shell
-atom hexagon.py
+code hexagon.py
 ```
 
 {{< code-action "Write a function that draws a hexagon with any side_length." >}} You will need to:
@@ -143,9 +149,15 @@ atom hexagon.py
     - It should be able to be called with any number for the `side_length`.
 
 *Your finished drawing should look something like this:*
-{{< figure src="images/courses/cs9/unit00/00_functions_1.png" width="300px">}}
+{{< figure src="images/courses/cs9/unit00/06_functions_1.png" width="300px">}}
 
+{{< expand "Extension: Polygon" >}}
 
+🤔 **Do you notice a pattern between the `draw_traingle()` and the `draw_hexagon()` function?** 
+
+💻 **How could you write 1 function called `draw_polygon()` that could draw a polygon of any number of sides?** *You will need another parameter in addition to `side_length`*
+
+{{< /expand >}}
 
 ---
 
@@ -154,87 +166,95 @@ atom hexagon.py
 
 **When you want to draw something fancy, you need to break it down into smaller steps.** Then you can write functions to do the smaller steps, and write more functions to combine small steps into bigger steps. This concept is called **decomposition**.
 
-{{< figure src="https://www.thespruceeats.com/thmb/btLT5e97Xl3vBzNo37xPlUgfQcI=/3135x3900/filters:fill(auto,1)/GettyImages-90053856-588b7aff5f9b5874ee534b04.jpg" width="200px">}}
+{{< figure src="https://www.learning.com/wp-content/uploads/2022/08/Decomposition-2-383x360.png" width="30%">}}
 
 
-The code in this lab illustrates this. If we want to draw an ice cream cone with scoops of ice cream, we can break it down into steps:
+✔️ **If we want to draw an ice cream cone with scoops of ice cream, we can break it down into steps:**
 
-- Draw ice cream: `draw_icecream()`
-    - Draw an ice cream cone: `cone()`
-    - Draw a scoop of ice cream: `scoop(num_scoops)`
+- Draw an ice cream cone: `cone(side_length)`
+- Draw a scoop of ice cream: `scoop(num_scoops)`
+
+{{< figure src="https://www.thespruceeats.com/thmb/btLT5e97Xl3vBzNo37xPlUgfQcI=/3135x3900/filters:fill(auto,1)/GettyImages-90053856-588b7aff5f9b5874ee534b04.jpg" width="30%">}}
 
 ---
 
-### [Draw the Ice Cream]
-
-{{< code-action "Start by running the file: " >}} `icecream.py`. Currently, it draws an incomplete ice cream.
-```shell
-python icecream.py
-```
-
-{{< figure src="images/courses/cs9/unit00/00_functions_3.png" width="200px">}}
+### Draw Ice Cream
 
 
-{{< code-action "Open the file: " >}} `icecream.py`. As you can see, the function definitions are already provided. You just need to edit the following functions:
+{{< code-action "Open the file: " >}} `code icecream.py`. As you can see, the function definitions are already provided. You just need to call the functions:
 - `scoop(num_scoops)`
-- `cone()`
-- `draw_icecream(num_scoops)`
+- `cone(size_length)`
 
 
+{{< code-action "Complete the ice cream drawing by calling the functions to draw an ice cream cone. " >}} You need to use other turtle functions and experiment with the parameters to align the `scoop()` and the `cone()` perfectly. A few useful turtle functions include, but not limited to:
+- `forward()`
+- `backward()`
+- `right()`
+- `left()`
+- `penup()`
+- `pendown()`
+- `goto()`
 
-{{< code-action "Complete the ice cream drawing by editing the funcitons. " >}} The colors of the cone and ice cream scoops are up to you!
+{{< figure src="images/courses/cs9/unit00/06_functions_icecream0.png" width="200px">}}
 
-{{< figure src="images/courses/cs9/unit00/00_functions_icecream.png" width="200px">}}
+{{< code-action >}} **Now, add in color by adding a second parameter to `scoop()` and `cone()`.** 
+> *Note: a variable cannot be the same name as a function. We suggest using the parameters `scoop_color` and `cone_color`.*
+
+{{< figure src="images/courses/cs9/unit00/06_functions_icecream1.png" width="200px">}}
 
 
 {{<aside "FYI: How to Fill a Shape with Color and More!" >}}
-To fill your turtle drawing with color follow the below format. You must call `begin_fill()` before the shape has been drawn and `end_fill()` after.
+💻 To fill your turtle drawing with color follow the below format. You must call `begin_fill()` before the shape has been drawn and `end_fill()` after.
 
 ```python
-def draw_triangle(sideLength):
-    #This function draws a triangle
-    for i in range(3):
-        left(120)
-        forward(sideLength)
+circle_color = "blue"
+fillcolor(circle_color)     #Tells the turtle to set the fill color
 
-fillcolor("Blue")
-begin_fill()        #Tells the turtle to start the color fill
-draw_triangle(20)
-end_fill()          #Tells the turtle to stop the color fill
+begin_fill()                #Tells the turtle to start the color fill
+circle(200)
+end_fill()                  #Tells the turtle to stop the color fill
 ```
 <br>
 
-*For a wide range of color options look at this [chart](http://cng.seas.rochester.edu/CNG/docs/x11color.html).*
+📖 *For a wide range of color options look at this [chart](http://cng.seas.rochester.edu/CNG/docs/x11color.html).*
 
 {{</aside>}}
 
 
 ---
 
-## [4] Deliverables
+## [3] Deliverables
 
 {{< deliverables  >}}
 
-**Once you've successfully completed the square pattern be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSdEzSmliyxzEcLmk7qHxfeCui9zp0ReDif4pJUzGoDob7sTyw/viewform?usp=sf_link)**.
+☑️ **Once you've successfully completed the square pattern be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSfRcfEweimfcoY6gZxZMh0odczoer8w5DVx-EgRia7QP6UovA/viewform?usp=sf_link)**.
 
+✏️  **Add a screenshot of a code snippet to your `CS9 Lab Code Log` in your Google Drive.** Add a comment either asking a question about your code OR describing a piece of code you are proud of. 
 
 {{< /deliverables >}}
 
 ---
-## [5] Extension
+## [4] Extension: Ice Cream Parlor
 
-### [Ice Cream Parlor]
+### Number of Scoops
 
-Let's return to `ice_cream.py`.
+Right now, you can only have 1 scoop of ice cream 😢. But, it's way more fun to have multiple scoops of ice cream!
 
-Right now, both the color of the ice cream and the number of scoops are pre-determined or hard-coded. If you wanted to change the color or number of scoops, you would have to go back into the code and change it yourself.
+💻 **Add another parameter to `scoop()`called `num_scoops`.** This should draw any number of scoops on top of each other. 
+
+{{< figure src="images/courses/cs9/unit00/06_functions_icecream.png" width="25%">}}
+
+--- 
+
+### User Input
+
+Now that we have colors and number of scoops, let's add in user input!
 
 {{< code-action "Expand the functionality of this program to simulate an ice cream parlor."  >}} The user should be able to choose the flavor of the ice-cream and the number of scoops.
 
 {{<aside "Hints" >}}
 
 Consider the following:
-- How will you implement the functionality of a `flavor` that is not hard-coded?
 - How will you include user input?
 - How will you translate the flavor "chocolate" to the color "brown?
 
@@ -257,5 +277,6 @@ How many scoops would you like?
 [Press any key to exit]
 ```
 
-{{< figure src="images/courses/cs9/unit00/lab_06_functions_03.png" width="25%">}}
+{{< figure src="images/courses/cs9/unit00/06_functions_icecream2.png" width="25%">}}
+
 

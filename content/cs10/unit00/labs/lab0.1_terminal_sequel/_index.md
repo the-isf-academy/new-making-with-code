@@ -1,5 +1,5 @@
 ---
-title: "0. 1 Review: Terminal"
+title: "0.1 Review: Terminal"
 weight: 20
 # draft: true
 ---
