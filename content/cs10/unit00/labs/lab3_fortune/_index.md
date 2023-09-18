@@ -211,7 +211,6 @@ In the example code above, a **Artist** can be associated with many **Song** obj
 💻 **Try to incorporate a many-to-one relationship in `models.py`.** An example:
 - each `Fortune` could have many `Feedback`s.
 
-
 <!-- 
 ### Interface: Riddle Client 
 
