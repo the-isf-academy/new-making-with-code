@@ -8,7 +8,7 @@ slug: lab_riddle_server
 
 # Fortune Server
 
-In this lab we are going to delve further into Banjo by focusing on `models.py` and error handeling in `views.py`.
+In this lab we are going to delve further into Banjo by focusing on `models.py` and error handling in `views.py`.
 
 
 📖 **Open the Banjo documentation:** [cs.fablearn.org/docs/banjo/index.html](https://cs.fablearn.org/docs/banjo/index.html)
@@ -17,7 +17,7 @@ In this lab we are going to delve further into Banjo by focusing on `models.py` 
 
 **If you are getting an "Access Denied" error when visiting the `/api` route:**
 
-0. Go to [chrome://net-internals/#sockets](chrome://net-internals/#sockets) 
+0. Go to <a href="chrome://net-internals/#sockets" >chrome://net-internals/#sockets</a>
 0. Select "Flush socket pool"
 0. Refresh the page
 
@@ -30,13 +30,15 @@ In this lab we are going to delve further into Banjo by focusing on `models.py` 
 
 You are each able to run a locally hosted riddle server on your laptop using Banjo.
 
-{{< code-action "Start by going into the unit folder and the lab." >}} Remember to replace `YOUR_USERNAME` with your actual Github username.
+{{< code-action "Now, let's clone the repository" >}} in your `cs10\unit00_networking` folder.  Be sure to change `yourgithubusername` to your actual Github username.
+
 ```shell
 cd ~/desktop/making_with_code/cs10/unit00_networking/
+git clone https://github.com/the-isf-academy/lab_fortune_yourgithubusername
 cd lab_fortune_yourgithubusername
 ```
 
-{{< code-action "Enter the Poetry shell" >}}
+{{< code-action "Get the necessary packages" >}}
 ```shell
 poetry update
 ```
@@ -121,22 +123,22 @@ code app
 
 --- 
 
-### Error Handeling 
+### Error Handling 
 
-Each endpoint works, but there is currently NO error handeling.
+Each endpoint works, but there is currently NO error handling.
 
-💻 **Systemtically test each endpoint and add in the necessary error JSON messages.** The best way to systematically test, is to try to break it! 
+💻 **Systematically test each endpoint and add in the necessary error JSON messages.** The best way to systematically test, is to try to break it! 
 > Be sure to provide error messages that provide relevant information to the user.
 
 
-{{< code-action >}} **When are you confident your endpoints are perfect, runserver outside of `--debug` mode.**
+{{< code-action >}} **When are you confident your endpoints are perfect, run the server outside of `--debug` mode.**
 ```shell
 banjo 
 ```
 
 💻 **Test the server at the `/api` route:**  [127.0.0.1:5000/api](127.0.0.1:5000/api)
 
-☑️ **Successful error should recieve zero HTTP 500 errors.** If you recieve a 500 error, you have not properply handled all the potential errors.
+☑️ **Successful error should recieve zero HTTP 500 errors.** If you recieve a 500 error, you have not properly handled all the potential errors.
 
 ---
 
@@ -164,7 +166,7 @@ banjo
 
 ### Archive 
 
-Currently there is no feature to delete a fortune. It can be risky to peremantly delete an item from the database, so instead let's create an archive feature.
+Currently there is no feature to delete a fortune. It can be risky to permanently delete an item from the database, so instead let's create an archive feature.
 
 💻**Create a feature to "archive" a `Fortune` and hide it from queries.** If a `Fortune` is "archived", it should not be queried in `fortuen_teller/all`, `fortune_teller/like` or `fortune_teller/random`.
 
@@ -206,9 +208,8 @@ As Banjo is a wrapper over Django, it works just as the Django documentation sta
 
 In the example code above, a **Artist** can be associated with many **Song** objects, but a **Song** object can only have one **Artist** object. 
 
-💻 **Try and incorporate a many-to-one relationship in `models.py`.** A few ideas:
-- each `Fortune` can have many `Feedback`s.
-- each `Fortune` can have many `Feedback`s.
+💻 **Try to incorporate a many-to-one relationship in `models.py`.** An example:
+- each `Fortune` could have many `Feedback`s.
 
 
 <!-- 
