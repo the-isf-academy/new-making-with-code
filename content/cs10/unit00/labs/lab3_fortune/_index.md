@@ -49,6 +49,12 @@ poetry update
 poetry shell
 ```
 
+{{< code-action "You may need to re-install" >}} `banjo`
+```shell
+pip3 install django-banjo
+```
+
+
 
 ---
 ## [1] Running the Fortune Server
