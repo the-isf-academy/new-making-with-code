@@ -87,7 +87,7 @@ It contains the following :
 - project planning [3]
 - iterative development [3]
 - model architecture [3]
-- api architecture [3]
+- endpoint architecture [3]
 - readability [3]
 - documentation [3]
 
@@ -107,34 +107,23 @@ Successful computer scientists should be able to make the following claims:
 - I can thoughtfully plan and manage a large computer science project.  
     - I can consider the components of my project before coding
     - I can manage my time well and complete the project by the deadline
-    - I can update my process journal on an ongoing basis to organize by thoughts for the next work day
 - I can develop my project iteratively over time
     - I can track the development of my project by successfully committing to Github a minimum of each class work day
     - I can write descriptive commit messages that accurately describe the changes made
     - I can systematically break down my project into smaller chunks  
-- I can develop a backend
-  - I can write model architecture
-    - I can use Banjo to effectively build a model with necessary features
-    - I can write field with appropriate data types
-    - I can write methods to simplify code
-    - I can write a model with multiple uses in mind
-  - I use write API architecture
-    - I can appropriately use GET and POST requests
-    - I can write endpoints with user experience in mind
-    - I can return descriptive and accurate JSON
-  - I can write backend code with readability in mind
-    - I can use descriptive names for models, fields, methods, endpoints, variables, and  parameters
-    - I can write descriptive comments
-- I can develop a frontend
-  - I can write frontend code with readability in mind
-    - I can use descriptive names for variables, functions, data structures, etc.
-    - I can write descriptive comments
-  - I can write frontend code with user error handling in mind
-    - I can provide appropriate error messaging to the user if a user error occurs
-    - I can prevent unexpected user scenarios from crashing the client
-  - I can write frontend code with user interaction in mind
-    - I can write an easy to use client with clear instructions and appropriate formatting
-    - I can ensure users are able to interact with the client as it is intended
+- I can write model architecture
+  - I can use Banjo to effectively build a model with necessary features
+  - I can write field with appropriate data types
+  - I can write methods to simplify code
+  - I can write a model with multiple uses in mind
+- I use write Endpoint architecture
+  - I can appropriately use GET and POST requests
+  - I can wrwite endpoints with user experience in mind
+  - I can return descriptive and accurate JSON
+- I can write code with readability in mind
+  - I can use descriptive names for models, fields, methods, endpoints, variables, and  parameters
+  - I can write descriptive comments
+- I can write documentation with public use in-mind
 
 
 *Keep these success claims in mind when coding your project and assessing yourself.*
