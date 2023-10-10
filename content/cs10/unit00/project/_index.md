@@ -48,8 +48,8 @@ In this lab, you will be working in groups, storing your shared code in your gro
 
 ```shell
 cd ~/desktop/making_with_code/cs10/unit00_networking/
-git clone https://github.com/the-isf-academy/project_networking_yourgithubusername.git
-cd project_networking_project_networking_yourgithubusername
+git clone https://github.com/the-isf-academy/project_networking_backend_yourgithubusername.git
+cd project_networking_project_networking_backend_yourgithubusername
 ```
 
 {{< code-action "Enter the poetry shell." >}}
@@ -160,7 +160,7 @@ The project is scored out of 7. It will be calculated by adding the score from e
 {{< deliverables  >}}
 
 - A `Networking Project Management Sheet` - Google sheet. This is where you will plan your project.
-- A `project_networking` repository containing the following:
+- A `project_networking_backend` repository containing the following:
   - `\app`
     - `models.py` - This is where you will define your model.
     - `views.py` - This is where you will define your routes and endpoints.
