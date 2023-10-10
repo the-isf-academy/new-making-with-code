@@ -1,7 +1,7 @@
 ---
 title: "4. Banjo - Fortune"
 type: lab
-slug: lab_riddle_server
+slug: lab_fortune_server
 
 # draft: true
 ---
@@ -28,7 +28,7 @@ In this lab we are going to delve further into Banjo by focusing on `models.py` 
 
 ## [0] Set Up
 
-You are each able to run a locally hosted riddle server on your laptop using Banjo.
+You are each able to run a locally hosted fortune server on your laptop using Banjo.
 
 {{< code-action "Now, let's clone the repository" >}} in your `cs10\unit00_networking` folder.  Be sure to change `yourgithubusername` to your actual Github username.
 
@@ -148,7 +148,37 @@ banjo
 
 ---
 
-## [4] Deliverables
+## [4] `New` Add a Dislike feature
+
+Currently, we have a like feature, but no dislike feature. It's your job to add it in!
+
+💻 **In models.py,  add a property for `num_dislike` to the `Fortune`, and add the necessary method to increase its value.** 
+
+💻 **In views.py,  add a new endpoint that you can dislike fortunes.** Make sure to test it once you've made it!
+
+{{< aside "Hint" >}}
+Copy and paste is your friend!
+{{< /aside >}}
+
+
+---
+
+## [5] `New` Add a Search feature
+
+💻 **In views.py, add a new endpoint that allows you to search for fortunes by keyword.** For example, if you search for the word "money", you will receive all fortunes that contain that word. 
+
+[Check the banjo documentation to find the best way to query the database!](https://cs.fablearn.org/docs/banjo/models.html#id2)
+
+🤔 **Consider:**
+- Which existing endpoint is similar? 
+- How should you format the json that you return?
+- What should you return to the user if no fortunes match their search term?
+
+
+
+---
+
+## [6] Deliverables
 
 
 {{< deliverables >}}  
@@ -167,7 +197,7 @@ banjo
 
 ---
 
-## [5] Extensions
+## [7] Extensions
 
 
 ### Archive 
@@ -193,6 +223,7 @@ Currently there is no feature to delete a fortune. It can be risky to permanentl
 
 
 ---
+
 
 ### Foreign Key
 
