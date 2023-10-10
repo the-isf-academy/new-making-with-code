@@ -1,24 +1,20 @@
 ---
-title: 08. Functions III
+title: 07. Functions II
 draft: true
 ---
-# Functions Lab | Part III
+# Functions Lab | Part II
 
-In this lab, we will deepen our understanding with a series of design challenges.
+In this lab, we will continue to practice creating and calling functions. 
 
 ---
 
 ## [0] Set up
 
-This lab will use the previous lab directory.
+This lab will use the previous lab directory. 
 
 {{< code-action "In the Terminal, type the following command to open the lab folder." >}}
 ```shell
 cd ~/desktop/making_with_code/cs9/unit00_drawing/lab_functions
-```
-{{< code-action "Run mwc update to get the latest code." >}}
-```shell
-mwc update
 ```
 
 {{< code-action "Enter the Poetry Shell to start the lab." >}} As a reminder, we will run this command at the start of each lab, but only when we are inside a lab folder.
@@ -30,145 +26,84 @@ poetry shell
 When you want to exit the shell, you can type `exit` or `^D`
 {{< /aside >}}
 
-<!-- {{< code-action "Create a new file:" >}}
-```shell
-atom circle_patterns.py
-```
+{{< code-action "We will only be working with:" >}} `grid.py`
 
-{{< code-action "Copy and paste the starter code into the file:" >}}
-```python
-from turtle import *
+---
 
-def filled_circle(circle_size,circle_color):
-    pencolor(circle_color)
-    pensize(0)
-    fillcolor(circle_color)
-    begin_fill()
-    circle(circle_size)
-    end_fill()
-``` -->
-{{< code-action "Open circle_patterns in atom:" >}}
-```shell
-atom circle_patterns.py
-```
-{{< look-action "Take a look at the code inside" >}}
+## [1] Draw Grid
 
-```python
-from turtle import *
+Let's practice writing some more functions. Our aim is to create a grid of squares.
 
-def filled_circle(circle_size,circle_color):
-    pencolor(circle_color)
-    pensize(0)
-    fillcolor(circle_color)
-    begin_fill()
-    circle(circle_size)
-    end_fill()
-```
+{{< figure src="images/courses/cs9/unit00/lab_06_functions_02.png" width="50%">}}
 
+This is a complex problem, and thus we should use the practice of **decompsition** to break it down into smaller steps.
+
+- **Step 1:** Drawing one square
+- **Step 2:** Drawing one line of squares
+- **Step 3:** Drawing a grid of squares
+
+{{< aside "Many Solutions..." >}}
+
+There are many solutions to this problem. If you feel confident to solve this problem in different way and without hints, please feel free to do so.
+
+*We will accept any solution that draws a grid of squares of any square size and any gap size when you run `python grid.py`.*
+
+{{< /aside >}}
+
+---
 
 ### [Helpful Turtle Functions]
 
-Here are some helpful Turtle functions that may make this problem easier. You are not required to use all of these functions.
+Here are some helpful Turtle functions that may make this problem easier. You are not required to use all of these functions. 
 
-| Function     | Example Use     | Explanation                                                                                        |
-|--------------|-----------------|----------------------------------------------------------------------------------------------------|
-| setheading() | setheading(0)   | Sets the orientation of the turtle to an angle.  0 is east; 90 is north; 180 is west; 270 is south |
-| goto()       | goto(0,0)       | Moves the turtle to an absolute x,y position                                                       |
-| home()       | home()          | Moves the turtle to the start position (0,0)                                                       |
-| penup()      | penup()         | Lifts the turtle pen up so it doesn't draw                                                         |
-| pendown()    | pendown()       | Lifts the turtle pen down so it doesn't draw                                                       |
-| speed()      | speed(1)        | Changes the speed of the turtle. 0 is the fastest. 1 is the slowest.                               |
-| forward()    | forward(100)    | Draws a straight line in the current direction                                                     |
-| backward()   | backward(100)   | Draws a straight line in the opposite direction                                                    |
-| right()      | right(90)       | Turns the turtle a certain number of degrees right                                                 |
-| left()       | left(90)        | Turns the turtle a certain number of degrees left                                                  |
-| bgcolor()    | bgcolor('blue') | Changes the background of the turtle screen                                                        |
-| colormode()  | colormode(255)  | Changes the turtle color to accept rgb colors.  e.g. color(255,15,23)                              |
+| Function     | Example Use   | Explanation                                                                                        |
+|--------------|---------------|----------------------------------------------------------------------------------------------------|
+| setheading() | setheading(0) | Sets the orientation of the turtle to an angle.  0 is east; 90 is north; 180 is west; 270 is south |
+| goto()       | goto(0,0)     | Moves the turtle to an absolute x,y position                                                       |
+| home()       | home()        | Moves the turtle to the start position (0,0)                                                       |
+| penup()      | penup()       | Lifts the turtle pen up so it doesn't draw                                                         |
+| pendown()    | pendown()     | Lifts the turtle pen down so it doesn't draw                                                       |
+| speed()      | speed(1)      | Changes the speed of the turtle. 0 is the fastest. 1 is the slowest.                               |
 
 ---
 
-## [1] Circle Patterns
+### [Step 1]
 
-This mini lab is designed to be a pick and choose adventure. The patterns below are in order of difficulty. It is up to you to choose patterns that are at an appropriate level of difficulty for you.
+{{< code-action "Open the file:" >}}
+```shell
+atom grid.py
+```
 
-**Each of the pattenrs rely on the `filled_circle()` function provided in the starter code.**
+{{< code-action "Fill in the" >}} `square(square_size)` function. It should draw one square of any size.
+
+{{< figure src="images/courses/cs9/unit00/lab_06_functions_00.png" width="25%">}}
+
+{{< code-action >}} **Test your `square()` function.** Make sure it can draw a square of any size.  
+
 
 ---
 
-### [Alternating Pattern]
+### [Step 2]
 
+{{< code-action "Implement the STEP 2 functionality in the" >}} `line_of_squares(square_size, gap_size)` function. Draw one line of squares the length of `square_size` with gap the size of `gap_size`.
+> You should use your `square()` function to create a line of squares.
 
-{{< figure src="images/courses/cs9/unit00/lab_08_functions_00.png" width="50%">}}
+{{< figure src="images/courses/cs9/unit00/lab_06_functions_01.png" width="50%">}}
 
-{{< code-action >}} **Code a function `alternating_pattern(num_circles)`**
-> *Example function call: `alternating_pattern(5)`*
-   - It takes `num_circles` as a parameter - this will change the amount of circles in the pattern
-   - Hard code the 2 colors to alternate between
-   - *Hint: look at the conditionals lab*
+{{< code-action >}} **Test your `line_of_squares()` function.** Make sure it can draw a line of squares of any `square_size` and `gap_size`.
 
-For an additional challenge:
-- add `num_circle_size` as a parameter - this will change the size of the circles in the pattern
-   - *Example function call: `alternating_pattern(5,200)`*
 
 ---
 
-### [Bullseye]
+### [Step 3]
 
-{{< figure src="images/courses/cs9/unit00/lab_08_functions_01.png" width="50%">}}
+{{< code-action "Implement the STEP 3 functionality in the" >}} `grid(square_size, gap_size)` function.
+> You should use your `line_of_squares` to create a grid of squares.
 
+{{< figure src="images/courses/cs9/unit00/lab_06_functions_02.png" width="50%">}}
 
-{{< code-action >}} **Code a function `bullseye_pattern(num_circles, starting_circle_size)`**
-> *Example function call: `bullseye_pattern(5, 200)`*
+{{< code-action >}} **Test your `grid()` function.** Make it sure it can draw a 4x4 grid of squares.
 
-   - It takes `num_circles` and `starting_circle_size` as parameters - the number of circles and the size of the bullseye should adjust accordingly
-   - Hard code the 2 colors to alternate between
-
-For an additional challenge:
-- add `color1` and `color2` as parameters - this will change the colors of the pattern.
-   - *Example function call: `bullseye_pattern(5, 200, 'coral', 'light blue')`*
-
----
-
-### [Size Pattern]
-{{< figure src="images/courses/cs9/unit00/lab_08_functions_02.png" width="50%">}}
-
-{{< code-action >}} **Code a function `size_pattern(num_columns, num_rows, color)`**
-> *Example function call: `size_pattern(6,5,'coral')`*
-
-- It takes `num_columns`, `num_rows`, and `color` as parameters
-
----
-
-### [Half-tone Pattern]
-
-{{< figure src="images/courses/cs9/unit00/lab_08_functions_03.png" width="50%">}}
-
-{{< code-action >}} **Code a function `halftone_pattern(num_columns, num_rows, color1, color2)`**
-> *Example function call: `halftone_pattern(6,5,'dark blue','light blue')`*
-
-- It takes `num_columns`, `num_rows`, `color1`, and `color2` as parameters
-
----
-
-### [Random Pattern]
-
-{{< figure src="images/courses/cs9/unit00/lab_08_functions_04.png" width="50%">}}
-
-{{< code-action >}} **First, code a function `thick_circle(circle_size, circle_color, thickness)`**
-- It should draw a circle of any color, size, and any pen thickness
-
-{{< code-action >}} **Second, code a function `random_pattern(num_circles, background_color)`**
-> *Example function call: `random_pattern(20,'black')`*
-
-- It should create a random pattern of thick circles and filled circles
-- The circles should all be of random colors and sizes.
-
-
-**This will require you to:**
--  use the `randint()` function from the random library
-   - add `from random import randint` to the top of your file
-- change the color mode to accept rgb colors
-   - add `colormode(255)` to the start of the function
 
 ---
 
@@ -176,7 +111,55 @@ For an additional challenge:
 
 {{< deliverables  >}}
 
-**At then end of class, be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSf932ws3hURuj4q-X7E-zOkCSrgQLQVbNLI0P_XlFI5w56_Nw/viewform?usp=sf_link)**.
+**If you did not fill out the Google form in "Function I", be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSdEzSmliyxzEcLmk7qHxfeCui9zp0ReDif4pJUzGoDob7sTyw/viewform?usp=sf_link)**.
 
 
 {{< /deliverables >}}
+
+---
+## [5] Extension
+
+
+
+### [Custom Grid]
+
+
+
+{{< code-action "Expand the functionality of the program so the user can customize the following:"  >}}
+- number of rows
+- number of columns
+- color palette
+
+
+Here is an example interaction:
+
+```shell
+python grid.py
+
+--- PATERN GENERATOR ---
+
+How many rows?
+   > Enter a number: 5
+How many columns?
+   > Enter a number: 3
+Pick a primary color.
+   > Choose a color (darkseagreen, coral, deeppink): darkseagreen
+Pick a secondary color.
+   > Choose a color (darkred, coral, cyan, cadetblue): coral
+
+[Press any key to exit]
+```
+
+{{< figure src="images/courses/cs9/unit00/lab_06_functions_04.png" width="50%">}}
+
+---
+
+### [Polygon Grid]
+
+{{< code-action "Expand the functionality of the grid program so the user can customize the type of polygon that is drawn."  >}}
+
+
+{{< figure src="images/courses/cs9/unit00/lab_07_functions_00.png" width="50%">}}
+
+
+{{< figure src="images/courses/cs9/unit00/lab_07_functions_01.png" width="50%">}}
