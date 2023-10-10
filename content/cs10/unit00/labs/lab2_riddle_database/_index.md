@@ -253,7 +253,7 @@ Now that you've experienced adding and updating the database, we're going to exp
 
 {{< deliverables >}}  
 
-**Once you've successfully completed the worksheet be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSfgWwxFI8SotkBsredlpQejYI2fHzJDQ-2oZgdYTq1ZQO_zjw/viewform?usp=sf_link).**
+**Once you've successfully completed the worksheet be sure to fill out [this Google form]('https://docs.google.com/forms/d/e/1FAIpQLSfgWwxFI8SotkBsredlpQejYI2fHzJDQ-2oZgdYTq1ZQO_zjw/viewform?usp=sf_link').**
 
 {{< /deliverables >}}
 
@@ -265,5 +265,5 @@ Next lab we will explore how to write the Riddle server.
 
 {{< code-action "Feel free to open up the code and start to understand how it works!" >}}
 ```shell
-atom .
+code .
 ```
