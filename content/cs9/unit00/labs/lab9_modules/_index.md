@@ -1,6 +1,6 @@
 ---
-title: 10. Modules
-draft: true
+title: 09. Modules
+# draft: true
 ---
 
 # Modules Lab
@@ -11,17 +11,12 @@ In this lab, we will learn how to organize our functions into modules. Modules a
 
 ## [0] Setup
 
-{{< code-action "Go int your" >}} `lab_modules` **folder in your** `unit_00` **directory:**
+{{< code-action "Go into your" >}} `lab_modules` **folder:**
 
 ```shell
-cd ~/Desktop/making_with_code/cs9/unit00_drawing/lab_modules_YOURGITHUBUSERNAME
+cd ~/Desktop/making_with_code/unit00_drawing/lab_modules_yourgithubusername
 ```
-> Don't forget to change "YOURGITHUBUSERNAME" to your actual Github username.
-
-{{< code-action "Update the packages" >}}
-```shell
-git submodule update --init --recursive
-```
+> Don't forget to change "yourgithubusername" to your actual Github username.
 
 {{< code-action "Enter the Poetry shell:" >}}
 ```shell
@@ -39,13 +34,13 @@ So let's say you wrote a function in one file. What if you want to re-use a func
 
 **Today we are going to learn how to import code from one module into another.** But first, let's get some vocabulary straight:
 
-- **All python code lives in `files` that end in `.py`.** They're just plain text files that you can edit using Atom (or Microsoft Word if you really want. Don't though. You'll regret it.)
-- **Python thinks of each file as a `module`.** Each module is its own little bubble world.
+- **All python code lives in `files` that end in `.py`.** They're just plain text files that you can edit using VS Code (or any text editor).
+- **Python thinks of each file as a `module`.** Each module is its own little world.
 - **Python thinks of each directory containing `.py` files as a `package`.** A package is a bundle of modules. So your `unit_00` directory is also a package.
 
 ---
 
-### [How to import a module]
+### How to import a module
 When you want to use something from another module, you need to `import` it.
 
 We have actually already been doing this. Every one of our programs so far has started with `from turtle import *`. But what is this `turtle`? It's a module! And it lives in a file called `turtle.py` that some people wrote for you.
@@ -103,9 +98,9 @@ This folder has 3 files:
 - `tree.py` 
 
 
-{{< code-action "Open the folder in Atom" >}}
+{{< code-action "Open the folder in VS Code" >}}
 ```shell
-atom .
+code .
 ```
 
 {{< look-action "Take a look at" >}} `basic_shapes.py` and `tree_parts.py`. Note how `tree_parts.py` uses functions from `basic_shapes.py`.
@@ -119,7 +114,28 @@ atom .
 
 When you run `tree`.py it look like:
 
-{{< figure src="images/courses/cs9/unit00/00_modules_0.png" width="50%" >}}
+{{< figure src="images/courses/cs9/unit00/lab_09_modules_tree.png" width="30%" >}}
+
+{{< expand "Extension: Forest" >}}
+
+💻 **Write a function `forest()` that randomly draws trees around the screen!**
+
+{{< figure src="images/courses/cs9/unit00/06_functions_forest.png" width="30%" >}}
+
+As a reminder, here's how you can use the random library:
+```python
+from random import randint   # import the random library
+
+x_coordinate = randint(-200,200) # generates a random integer between -200 and 200
+y_coordinate = randint(-200,200)
+
+goto(x_coordinate, y_coordinate) #moves the turtle to the random location
+```
+
+💻  **After you have your forest, try making the nearby trees larger than those farther away.**
+
+
+{{< /expand >}}
 
 
 ---
@@ -129,7 +145,7 @@ When you run `tree`.py it look like:
 
 Now we are going to use a package full of fancy drawing functions to turbocharge your turtle.
 
-Packages always include documentation to communicate to users how to use the included software.
+Packages always include documentation to communicate how to use the included software.
 **This lab will require you to read documentation** provided in the `README.md` file.
 
 {{< checkpoint >}}
@@ -155,7 +171,7 @@ Here you should have:
 
 ---
 
-### [Example]
+### Example
 
 {{< code-action "Start by running:" >}} `fancy_drawing_example.py`
 ```shell
@@ -168,23 +184,23 @@ python fancy_drawing_example.py
 
 
 
-{{< figure src="images/courses/cs9/unit00/00_modules_01.png" width="50%" >}}
+{{< figure src="images/courses/cs9/unit00/lab_09_modules_fancydrawing.png" width="50%" >}}
 
 {{< code-action "Experiment with editing the code." >}} Try make your own version of this pattern! Here is just one of many potential patterns:
 
-{{< figure src="images/courses/cs9/unit00/00_modules_02.png" width="50%" >}}
+{{< figure src="images/courses/cs9/unit00/lab_09_modules_example.png" width="50%" >}}
 
 {{< look-action >}} Explore more color options [HERE](https://trinket.io/docs/colors)
 
 ---
 
 
-### [Fancy Drawing]
+### Fancy Drawing
 
 
 {{< code-action >}} **In `fancy_drawing.py`, it is up to you to create a drawing of your choosing using the modules in the drawing package.** It must include uses of at least 3 different modules from the drawing package.
 ```shell
-atom fancy_drawing.py
+code fancy_drawing.py
 ```
 
 
@@ -201,7 +217,7 @@ atom fancy_drawing.py
 
 {{< deliverables  >}}
 
-**Once you've successfully completed the sequence be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSd3P-0622hRFXybDHS8CDagep3YB7K1_q-tmUZ11VMoO-B0Tg/viewform?usp=sf_link)**.
+**Once you've successfully completed the sequence be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSd_Cq-iJTMviYOk7MlgSYsK7R2DaCpLQzX0GIDdOq_ROJDPGA/viewform?usp=sf_link)**.
 
 
 {{< code-action "Push your work to Github:" >}}

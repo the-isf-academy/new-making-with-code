@@ -1,5 +1,5 @@
 ---
-title: 07. Functions II
+title: 08. Functions III
 draft: true
 ---
 # Functions Lab | Part II
@@ -52,7 +52,7 @@ There are many solutions to this problem. If you feel confident to solve this pr
 
 ---
 
-### [Helpful Turtle Functions]
+### Helpful Turtle Functions
 
 Here are some helpful Turtle functions that may make this problem easier. You are not required to use all of these functions. 
 
