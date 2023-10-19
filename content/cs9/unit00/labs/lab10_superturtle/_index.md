@@ -46,10 +46,10 @@ For example, let's consider baking again.
 
 
 
-{{< code-action "Go to your" >}} `cs9/unit00_drawing` **folder.**
+{{< code-action "Go to your" >}} `unit00_drawing` **folder.**
 
 ```shell
-cd ~/desktop/making_with_code/cs9/unit00_drawing/
+cd ~/desktop/making_with_code/unit00_drawing/
 ```
 
 {{< code-action "Clone your repo. This will copy it onto your computer." >}}  
@@ -90,7 +90,7 @@ When you want to exit the shell, you can type `exit` or `^D`
 - `rotate.py`
 - `scale.py`
 - `translate.py`
-- `interlopate.py`
+- `interpolate.py`
 - `framebyframe.py`
 - `extension.py`
 - `shapes.py`
