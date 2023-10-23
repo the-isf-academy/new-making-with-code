@@ -55,12 +55,9 @@ When you want to exit the shell, you can type `exit` or `^D`
 
 
 {{< code-action "Take a look at the files inside with:" >}} `ls`
-- `rotate.py`
-- `scale.py`
-- `translate.py`
-- `interlopate.py`
-- `framebyframe.py`
-- `extension.py`
+- `animation_tree.py`
+- `experiment.py`
+- `tree_parts.py`
 - `shapes.py`
 
 
@@ -128,7 +125,10 @@ python animation_tree.py
 
 ## [3] Experiment!
 
-{{< code-action >}} **In `animation_ex.py`, experiment by creating your own animation to create a new design using functions in `shapes.py`.** A few ideas...
+{{< code-action >}} **In `experiment.py`, experiment by creating your own animation to create a new design using functions in `shapes.py`.** We included the starter code from the [documentation](https://superturtle.readthedocs.io/en/latest/introduction.html#creating-animations), but feel free to delete it and start fresh!
+
+
+A few ideas...
 - a face with eyes that move 
 - a car that moves across the screen 
 - a llama with ears taht grow
