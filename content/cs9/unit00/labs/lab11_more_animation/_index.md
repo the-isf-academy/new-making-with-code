@@ -109,7 +109,7 @@ python animation_tree.py
 ---
 
 
-## [3] Deliverables
+## [2] Deliverables
 
 {{< deliverables "For this lab, you should:" >}}
 ☑️ **At then end of class, be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSdLsonbvKv_BNic0gAlq_EsCnaeKj-v2m343KQDeypw65j0YQ/viewform?usp=sf_link)**.
@@ -126,10 +126,17 @@ python animation_tree.py
 
 ---
 
-## [2] Experiment!
+## [3] Experiment!
 
 {{< code-action >}} **In `animation_ex.py`, experiment by creating your own animation to create a new design using functions in `shapes.py`.** A few ideas...
 - a face with eyes that move 
 - a car that moves across the screen 
 - a llama with ears taht grow
 
+{{< code-action >}} **Explore using the additional functions available to the animation transformations in [`SuperTurtle`](https://superturtle.readthedocs.io/en/latest/introduction.html).** Experiment with:
+- `debug = True`?
+- `last_frame`
+- `cycles`
+- `restore_state_when_finished()` in `movement`
+- `dashes`, `dots`, and `rainbow` in `stroke`
+- the available `easing` options
