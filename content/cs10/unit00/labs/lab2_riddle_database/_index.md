@@ -262,7 +262,11 @@ Now that you've experienced adding and updating the database, we're going to exp
 
 {{< deliverables >}}  
 
+<<<<<<< HEAD
 **Once you've successfully completed the worksheet be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSeul5VSf93yA1mXQyXq3HaOcafoz4la8D3n8lWhoxsn-1ZdEw/viewform?usp=sf_link).**
+=======
+**Once you've successfully completed the worksheet be sure to fill out [this Google form]('https://docs.google.com/forms/d/e/1FAIpQLSfgWwxFI8SotkBsredlpQejYI2fHzJDQ-2oZgdYTq1ZQO_zjw/viewform?usp=sf_link').**
+>>>>>>> cs9
 
 {{< /deliverables >}}
 
