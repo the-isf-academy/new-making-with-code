@@ -17,7 +17,7 @@ In this lab we are going to continue to experiment with `SuperTurtle` and explor
 {{< code-action "Go to your" >}} `cs9/unit00_drawing` **folder.**
 
 ```shell
-cd ~/desktop/making_with_code/cs9/unit00_drawing/
+cd ~/desktop/making_with_code/unit00_drawing/
 ```
 
 {{< code-action "Clone your repo. This will copy it onto your computer." >}}  
