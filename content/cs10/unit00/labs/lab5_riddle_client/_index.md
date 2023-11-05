@@ -1,12 +1,12 @@
 ---
-title: "3. Client"
+title: "5. Client"
 type: lab
-draft: true
+# draft: true
 ---
 
 # Client
 
-In this lab we will create a Client in the form of a Command Line Interface(CLI) for the Riddle server. We will use the `Requests` library to send and recieve HTTP requests.To learn more about the `Requests` library, checkout its [documentation](https://requests.readthedocs.io/en/latest/)
+In this lab we will create a Client in the form of a Command Line Interface(CLI) for the Riddle server. We will use the `Requests` library to send and recieve HTTP requests. To learn more about the `Requests` library, checkout its [documentation](https://requests.readthedocs.io/en/latest/).
 
 
 ---
@@ -59,41 +59,78 @@ python client.py
 ```
 
 ```shell
------------------------------------
----- Welcome to the Riddler ----
------------------------------------
-
+Menu:
 > View All Riddles                                                            
   View One Riddle                                                             
   Quit        
 ```
 
 ---
-{{< code-action "Open the client.py file in atom and take a look inside:" >}}
+{{< code-action "Open the folder in VS Code and take a look inside:" >}}
 ```shell
-atom client.py
+code .
 ```
 
 ---
 
-### [RiddleClient]
+### client.py
 
-The `RiddleClient` has the following properties:
+`client.py` is the main loop that triggers all the other code to be run. It imports the `RequestInterface` and the `View` and uses them to make everything happen.
 
-| Property      | Description                         |
-|---------------|-------------------------------------|
-| riddle_server | stores the url of the riddle server |
-| menu_options  | stores a list of the menu options   |
+```python {linenos=inline}
+from requests_interface import RequestsInterface
+from view import View
+
+client_running = True
+requests_interface = RequestsInterface()
+view = View()
+
+while client_running == True:
+
+    user_choice = view.menu(
+        prompt = "Menu:",
+        options = [
+                'View All Riddles',
+                'View One Riddle',
+                'Quit']
+                )
+
+    if user_choice == 'View All Riddles':
+        requests_interface.view_all_riddles()
+
+    elif user_choice == 'View One Riddle':
+        user_chosen_id =  view.get_input('Enter Riddle ID')
+        requests_interface.view_one_riddle(user_chosen_id)
+
+
+    elif user_choice == 'Quit':
+        client_running = False
+        view.quit()
+```
+
+- `line 4:` `client_running` is the variable that keeps track if the user is still using the client
+- `line 10:` `user_choice` stores the user's choice when they select a menu option
+-  `lines 18, 21, 26:` control the logic for each menu option
+
+---
+
+### RequestsInterface
+
+The requests interface class has these properties:
+
+| Property      | Description                                     |
+|---------------|-------------------------------------------------|
+| **riddle_server** | stores the url of the riddle server             |
+| **view**          | stores a View object for displaying information |
 
 And the following methods:
 
 | Method                          | Description                                                          |
 |---------------------------------|----------------------------------------------------------------------|
-| menu()                          | allows user to pick a menu option and returns the option as a string |
-| run()                         | runs the client and controls the logic of the client - all user input is taken here               |
-| view_all_riddles()              | GETS all of the riddles and prints them as a bulleted list           |
-| view_one_riddle(user_chosen_id) | GETS one riddle with the requested ID                                |
-
+| **view_all_riddles()**              | GETS all of the riddles and prints them as a bulleted list       |
+| **view_one_riddle(user_chosen_id)** | GETS one riddle with the requested ID                            |
+| **error_json(response_json)**       | used when the response json **contains** an error messaged       |
+| **error_no_json(response)**         | used when the response json **doesn't contain** an error message |
 
 
 
@@ -103,44 +140,6 @@ And the following methods:
 
 {{< look-action >}} **Let's start by taking a look at the method `run()`.** This method controls the logic of the client. It also is the only method in the client that takes user input.
 
-
-```python {linenos=table}
-def run(self):
-        '''This function runs the client.'''
-
-        print("-"*35)
-        print("---- Welcome to the Riddler ----")
-        print("-"*35,"\n")
-
-        client_running = True
-
-        while client_running == True:
-            user_choice = self.menu()
-
-            if user_choice == 'View All Riddles':
-                print('[View All Riddles]')
-
-                self.view_all_riddles()
-
-            elif user_choice == 'View One Riddle':
-                print('[View One Riddle]')
-
-                user_chosen_id = input('Enter Riddle ID: ')
-                self.view_one_riddle(user_chosen_id)
-
-
-            elif user_choice == 'Quit':
-                client_running = False
-
-                print("="*75)
-
-            print()
-```
-
-- `lines 4-6:` prints a starting message to the user
-- `line 8:` `client_running` is the variable that keeps track if the user is still using the client
-- `line 11:` stores the user's choice when they select a menu option
--  `lines 13, 18, 25:` control the logic for each menu option
 
 
 ---
