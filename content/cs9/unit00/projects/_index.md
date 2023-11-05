@@ -23,14 +23,14 @@ Here are a few examples from last year to get you started.
 
 ---
 
-## [0] Project Management Booklet: Planning 
+## [0] Project Booklet: Planning 
 
 This is a big project, and you will get lost or frustrated if you don't do some planning up front. You are required to fill out the planning section of the Project Booklet and get it approved by a teacher. 
 
 
-{{< write-action "Fill out the Project Overview and Project Design sections of the Booket." >}}
+{{< write-action " ✏️ Fill out the Project Overview and Project Design sections of the Booket." >}}
 
-**👀 Once you have completed your planning document, meet with a teacher to talk through your project.**
+**✋ Once you have completed your planning document, meet with a teacher to talk through your project.**
 
 
 ---
@@ -48,17 +48,18 @@ cd ~/desktop/making_with_code/unit00_drawing/
 ```
 
 {{< code-action "Clone your respository with starter code for your project." >}}
+```shell
+git clone https://github.com/the-isf-academy/project_animation_yourGithubUsername
+```
 > replace the `yourGithubUsername` with your Github username.
 >
 > *example:*
 >
-> *`git clone https://github.com/the-isf-academy/project_animation_emmaqbrown.git`*
+> *`git clone https://github.com/the-isf-academy/project_animation_emmaqbrown`*
 
-```shell
-git clone https://github.com/the-isf-academy/project_animation_yourGithubUsername.git
-```
 
-{{< code-action "In the Terminal, type the following command to open the lab folder." >}}
+
+{{< code-action "In the Terminal, type the following command to open the project folder." >}}
 ```shell
 cd project_animation_yourGithubUsername
 ```
