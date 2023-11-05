@@ -1,7 +1,7 @@
 ---
-title: "3. Client"
+title: "5. Client"
 type: lab
-draft: true
+# draft: true
 ---
 
 # Client
@@ -46,6 +46,11 @@ poetry install
 poetry shell
 ```
 
+📄 **The repository has the following files:** 
+- `client.py`
+- `requests_interface.py`
+- `view.py`
+
 
 ---
 
@@ -69,9 +74,9 @@ python client.py
 ```
 
 ---
-{{< code-action "Open the client.py file in atom and take a look inside:" >}}
+{{< code-action "Open code" >}}
 ```shell
-atom client.py
+code client.py
 ```
 
 ---
