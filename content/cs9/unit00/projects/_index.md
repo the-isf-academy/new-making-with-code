@@ -35,7 +35,9 @@ This is a big project, and you will get lost or frustrated if you don't do some 
 
 ---
 
-##  [1] Starter Code
+##  [1] Setup
+
+### Starter Code
 
 For this project, your code will live in a git repository. It is your responsibility to regularly commit to your repository.
 
@@ -70,6 +72,8 @@ It contains the following files:
 {{< code-action "Start coding!" >}} With the planning pages of your Project Booklet approved by a teacher and your starter code downloaded, you're ready to start creating.
 
 ---
+
+### Superturtle
 
 {{< aside "Animating with Superturtle" >}}  
 You will be using superturtle to create your animation. Check out the documetation for examples of how to use it!
