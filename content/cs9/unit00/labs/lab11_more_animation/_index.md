@@ -72,7 +72,7 @@ This mini lab is designed to be a pick and choose adventure for practice animati
 
 {{< aside "Documentation" >}}  
 
-For lab, we reccomend referencing the previous lab repository, `lab_superturtle`, and the offical documentation. 
+For lab, we recommend referencing the previous lab repository, `lab_superturtle`, and the offical documentation. 
 
 📖 **SuperTurtle Documentation:** [superturtle.readthedocs.io/en/latest/animation.html](https://superturtle.readthedocs.io/en/latest/animation.html)
 

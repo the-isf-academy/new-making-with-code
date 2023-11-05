@@ -1,6 +1,6 @@
 ---
 Title: Project
-draft: true
+# draft: true
 ---
 
 # Animation Project
@@ -9,13 +9,13 @@ In this project you will make an animated drawing (or a GIF!) using Python's tur
 
 It's up to you to make a drawing you actually care about making. Your teachers will help you choose a project that's a good level of challenge.
 
-Here are a few examples from last year to get you started. More can be found at the `gallery` page.
+Here are a few examples from last year to get you started. 
 
 {{< columns >}}
 
-{{< figure src="images/courses/cs9/unit00/00_project_2021_edwin.gif" width="75%" title="by Edwin" >}}
+{{< figure src="images/courses/cs9/unit00/00_project_2022_alden.gif" width="75%" title="by Alden" >}}
 <--->
-{{< figure src="images/courses/cs9/unit00/00_project_2021_charlotte.gif" width="75%" title="by Charlotte" >}}
+{{< figure src="images/courses/cs9/unit00/00_project_2021_edwin.gif" width="75%" title="by Edwin" >}}
 {{< /columns >}}
 
 
@@ -39,17 +39,26 @@ This is a big project, and you will get lost or frustrated if you don't do some 
 
 For this project, your code will live in a git repository. It is your responsibility to regularly commit to your repository.
 
-{{< code-action "Download your respository with starter code for your project." >}}
+{{< code-action "Go to your" >}} `unit00_drawing` **folder.**
+
+```shell
+cd ~/desktop/making_with_code/unit00_drawing/
+```
+
+{{< code-action "Clone your respository with starter code for your project." >}}
 > replace the `yourGithubUsername` with your Github username.
 >
 > *example:*
 >
 > *`git clone https://github.com/the-isf-academy/project_animation_emmaqbrown.git`*
 
-
 ```shell
-cd ~/Desktop/making_with_code/cs9/unit00_drawing/
 git clone https://github.com/the-isf-academy/project_animation_yourGithubUsername.git
+```
+
+{{< code-action "In the Terminal, type the following command to open the lab folder." >}}
+```shell
+cd project_animation_yourGithubUsername
 ```
 
 It contains the following files:
@@ -58,17 +67,41 @@ It contains the following files:
 - `README.md` This is documentation for your project for other people who may want to use your project.
 
 
-{{< code-action "Start coding your first milestone!" >}} With you design document approved by a teacher and your starter code downloaded, you're ready to start creating.
+{{< code-action "Start coding!" >}} With the planning pages of your Project Booklet approved by a teacher and your starter code downloaded, you're ready to start creating.
 
 ---
 
-## [3] Criteria
+{{< aside "Animating with Superturtle" >}}  
+You will be using superturtle to create your animation. Check out the documetation for examples of how to use it!
+
+[📖 **Superturtle Animation**](https://superturtle.readthedocs.io/en/latest/animation.html) lets you:
+
+- Rotate
+- Scale
+- Translate
+- Interpolate
+
+
+[📖 **Superturtle Movement**](https://superturtle.readthedocs.io/en/latest/movement.html) lets you:
+- Fly
+- Update Position
+- *...and more...*
+
+Feel free to use **any** of the superturtle modules in your project!
+
+{{< /aside >}}
+
+---
+
+## [2] Criteria
+
+
 
 {{< columns >}}
 
-{{< figure src="images/courses/cs9/unit00/00_project_2020_eric.gif" width="75%" title="by Eric" >}}
+{{< figure src="images/courses/cs9/unit00/00_project_2022_jay.gif" width="75%" title="by Jay" >}}
 <--->
-{{< figure src="images/courses/cs9/unit00/00_project_2020_austin.gif" width="75%" title="by Austin" >}}
+{{< figure src="images/courses/cs9/unit00/00_project_2022_brandon.gif" width="75%" title="by Brandon" >}}
 {{< /columns >}}
 
 **This project will be assessed on the following criteria:**
@@ -89,7 +122,7 @@ It contains the following files:
 ---
 
 
-### [Success Claims]
+### Success Claims
 
 Successful computer scientists should be able to make the following claims:
 - I can thoughtfully plan and manage a large computer science project.  
@@ -105,11 +138,11 @@ Successful computer scientists should be able to make the following claims:
     - I can use descriptive names for modules, variables, and functions
     - I can write descriptive comments to describe complex pieces of the code
 - I can effectively use the principle of abstraction to make my code more efficient and elegant
-    - I can write a function with paramters
+    - I can write a function with parameters
     - I can manipulate control flow with conditional statements
     - I can use loops to repeat commands
      can write functions with parameters
-- I can effictively use the principle of decomposition to make my code more efficient and elegant
+- I can effectively use the principle of decomposition to make my code more efficient and elegant
     - I can write functions to be used in different scenarios
     - I can write modules for different aspects of my project
 
@@ -117,30 +150,33 @@ Successful computer scientists should be able to make the following claims:
 
 ---
 
-### [Scoring]
-
-The project is scored out of 7. It will be calculated by adding the score from each criteria, then referencing the bands:
-- 1 = 0
-- 2 = 1
-- 3 = 2-3
-- 4 = 4-6
-- 5 = 7-11
-- 6 = 12-13
-- 7 = 14-15
-
----
-
 ## [3] Deliverables
 
-{{< deliverables  "Projects are due on Friday, 25 Novemeber." >}}
+{{< deliverables  "Your submit the following items:" >}}
 
 
-- `Unit 00 Animation Project: Planning Document` in your Google Drive folder
+- `Unit 00 Animation Project Planning Booklet` handed in to your teacher
 - `project_animation` repository containing the following files:
     - `project.py` When this program runs, it should draw your project.
     - `settings.py` This is where you settings for your animation should be stored.
     - `README.md` This is documentation for your project
     - At least one additional module (written by you)
+
+
+**🗓️ Timeline**
+
+You have 6 in-class work days. You may find it necessary to work outside of school, however if you are focused in class you can complete the project within the allotted blocks. Our office hours are Tuesday during CCA in B405. 
+
+| CS9.1 Dates  | CS9.2 Dates  | Agenda                           |
+|--------------|--------------|----------------------------------|
+| 07 Nov       | 06 Nov       | Project Intro & Planning Booklet |
+| 10 Nov       | 08 Nov       | Work Day                         |
+| 15 Nov       | 13 Nov       | Work Day                         |
+| 16 Nov       | 14 Nov       | Work Day                         |
+| 17 Nov       | 16 Nov       | Work Day                         |
+| 21 Nov       | 22 Nov       | Due at End of Class              |
+
+ ---
 
 {{< code-action "Push your work to Github:" >}}
 - `git status`
@@ -154,4 +190,30 @@ The project is scored out of 7. It will be calculated by adding the score from e
 {{< /deliverables >}}
 
 
+
+## [4] Gallery
+
+{{< columns >}}
+
+{{< figure src="images/courses/cs9/unit00/00_project_2022_lawrence.gif" width="75%" title="by Lawrence" >}}
+<--->
+{{< figure src="images/courses/cs9/unit00/00_project_2022_kiki.gif" width="85%" title="by Kiki" >}}
+
+{{< /columns >}}
+
+
+{{< columns >}}
+{{< figure src="images/courses/cs9/unit00/00_project_2021_chris.gif" width="75%" title="by Chris" >}}
+
+<--->
+{{< figure src="images/courses/cs9/unit00/00_project_2021_charlotte.gif" width="75%" title="by Charlotte" >}}
+{{< /columns >}}
+
+
+{{< columns >}}
+
+{{< figure src="images/courses/cs9/unit00/00_project_2020_eric.gif" width="75%" title="by Eric" >}}
+<--->
+{{< figure src="images/courses/cs9/unit00/00_project_2020_austin.gif" width="75%" title="by Austin" >}}
+{{< /columns >}}
 
