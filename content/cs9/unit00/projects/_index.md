@@ -70,6 +70,16 @@ It contains the following files:
 - `README.md` This is documentation for your project for other people who may want to use your project.
 
 
+{{< code-action "Enter the Poetry Shell." >}} 
+```shell
+poetry shell
+```
+
+{{< code-action "Install the required packages" >}} This project requires SuperTurtle to be installed using poetry. 
+```shell
+poetry install
+```
+
 {{< code-action "Start coding!" >}} With the planning pages of your Project Booklet approved by a teacher and your starter code downloaded, you're ready to start creating.
 
 ---
