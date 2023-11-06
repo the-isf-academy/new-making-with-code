@@ -21,6 +21,9 @@ of making these requests for us? A program like this is called a *client*.
 
 **Any app which uses the Internet is a client.**
 
+{{< figure src=https://res.cloudinary.com/lwgatsby/f_auto/www/uploads/2023/05/client-server-network.jpg" width="50%">}}
+
+
 The client, or app, is constantly making HTTP requests
 to a server to send and receive information.
 
@@ -66,7 +69,7 @@ python client.py
 ```shell
 Menu:
 > View All Riddles                                                            
-  View One Riddle                                                             
+  Guess Riddle                                                           
   Quit        
 ```
 
@@ -96,16 +99,18 @@ while client_running == True:
         prompt = "Menu:",
         options = [
                 'View All Riddles',
-                'View One Riddle',
+                'Guess Riddle',
                 'Quit']
                 )
 
     if user_choice == 'View All Riddles':
-        requests_interface.view_all_riddles()
+        requests_interface.all_riddles()
 
-    elif user_choice == 'View One Riddle':
+    elif user_choice == 'Guess Riddle':
         user_chosen_id =  view.get_input('Enter Riddle ID')
-        requests_interface.view_one_riddle(user_chosen_id)
+        user_guess=  view.get_input('Enter guess')
+
+        requests_interface.guess_riddle(user_chosen_id, user_guess)
 
 
     elif user_choice == 'Quit':
@@ -119,9 +124,11 @@ while client_running == True:
 
 ---
 
-### RequestsInterface
+### requests_interface.py
 
-The requests interface class has these properties:
+The `RequestsInterface` class controls the `HTTP requests` to the [Riddle Server](http://sycs.student.isf.edu.hk/riddles/all). It uses the [Requests library](https://requests.readthedocs.io/en/latest/) to send `GET` and `POST` requests. 
+
+It has two properties:
 
 | Property      | Description                                     |
 |---------------|-------------------------------------------------|
@@ -133,97 +140,148 @@ And the following methods:
 | Method                          | Description                                                          |
 |---------------------------------|----------------------------------------------------------------------|
 | **view_all_riddles()**              | GETS all of the riddles and prints them as a bulleted list       |
-| **view_one_riddle(user_chosen_id)** | GETS one riddle with the requested ID                            |
+| **guess_riddle(user_chosen_id, user_guess)** | GETS one riddle with the requested ID                            |
 | **error_json(response_json)**       | used when the response json **contains** an error messaged       |
 | **error_no_json(response)**         | used when the response json **doesn't contain** an error message |
 
+---
+
+### views.py
+
+The `View` class simply controls the communication of information to the user. It has no methods and the following properties:
+- `menu()`
+- `get_input(prompt)`
+- `welcome()`
+- `all_riddles(all_riddles)`
+- `guess_riddle(guess_riddle_json)`
+- `error_json(error_message)`
+- `error_no_json(status_code)`
+- `quit()`
+
+
+
 
 
 ---
 
-### [run()]
+## [3] RiddleInterface
 
-{{< look-action >}} **Let's start by taking a look at the method `run()`.** This method controls the logic of the client. It also is the only method in the client that takes user input.
+Let's start by delving into how to use the Requests library. 
 
+--- 
 
+### [all_riddles()]
 
----
+👀 **First let's look at the method`all_riddles()`** that sends an **HTTP GET** request to the Riddle server endpoint `riddles/all`.
 
+```python {linenos=inline}
+def all_riddles(self):
+  '''This functions sends a GET request to riddles/all.'''
 
-### [view_all_riddles()]
+  all_riddles_address = self.riddle_server + 'all'
 
-{{< look-action >}} **Now let's look at the working method `view_all_riddles()`.** This method sends an HTTP GET request to the Riddle server endpoint `riddles/all` and prints all of the riddles in a bulleted list.
+  response = requests.get(all_riddles_address)
 
-```python {linenos=table}
-def view_all_riddles(self):
-        '''This functions sends a GET request to riddles/all.
-        It gets all of the riddles and nicely formats them into a bulleted list.'''
+  if response.status_code == 200:
+      all_riddles_json = response.json()
+      self.view.all_riddles(all_riddles_json['riddles'])
 
-        all_riddles_address = self.riddle_server + 'riddles/all'
-
-        response = requests.get(all_riddles_address)
-
-        if response.status_code == 200:
-            all_riddles_json = response.json()
-
-            for riddle in all_riddles_json['riddles']:
-                print("  • {} (#{})".format(riddle['question'], riddle['id']))
-        else:
-            error_json = response.json()
-            print('Server {} Error. Try again...'.format(response.status_code))
-            print('-- {}'.format(error_json['errors'][0]))
+  else:       
+      self.error(response)
 ```
-- `line 5:` stores the full URL address of where to get all of the riddles. It uses the `riddle_server` property of the client class as the base address and adds the endpoint to the end of it.
-- `line 7:` sends an HTTP GET request to the server and stores the response.
-- `lines 9-13:` If the HTTP request was sucessful, it prints each riddle one at a time in a nicely formatted bulleted list.
-  - `line 10:` converts the response from the server into JSON.
-- `line 14-17`: If the HTTP request was unsuccessful, it prints the error status code and the error message.
+- `line 4:` stores the full URL address of where to get all of the riddles. It uses the `riddle_server` property of the client class as the base address and adds the endpoint to the end of it.
+- `line 6:` sends an HTTP GET request to the server and stores the response.
+- `lines 8-10:` If the HTTP request was sucessful, it stores the JSON. Then, uses the `View` class to print the JSON is a nicely formatted bulleted list. 
+  - `line 9:` converts the response from the server into JSON.
+- `line 12-13`: If the HTTP request was unsuccessful, it processses the error. 
 
 ---
 
-### [view_one_riddle()]
+### [guess_riddle()]
 
-{{< look-action >}} **Finally take a look at the method `view_one_riddle()`.** This method sends an HTTP GET request to the Riddle server endpoint `riddles/one` and print a single riddle with the requested ID.
+👀 **Now, let's look at the method`guess_riddle()`** that sends an **HTTP POST** request to the Riddle server endpoint `riddles/guess`.
 
-```python {linenos=table}
-def view_one_riddle(self, user_chosen_id):
-        '''This function sends a GET request to riddles/one.
-        It gets a single riddle with a specific ID and then formats it in a nice list.'''
 
-        one_riddles_address = self.riddle_server + 'riddles/one'
+```python {linenos=inline}
+def guess_riddle(self, user_chosen_id, user_guess):
+  '''This function sends a POST request to riddles/guess.'''
 
-        one_riddle_payload = {
-            'id': user_chosen_id
-        }
+  guess_riddles_address = self.riddle_server + 'guess'
 
-        response = requests.get(one_riddles_address, json=one_riddle_payload)
+  payload = {
+      'id': user_chosen_id,
+      'guess': user_guess
+  }
 
-        if response.status_code == 200:
-            one_riddle_json = response.json()
+  response = requests.post(guess_riddles_address, json=payload)
 
-            for key, value in one_riddle_json.items():
-                print("  • {}: {}".format(key,value))
+  if response.status_code == 200:
+      guess_riddle_json = response.json()
 
-        else:
-            error_json = response.json()
-            print('Server {} Error. Try again...'.format(response.status_code))
-            print('-- {}'.format(error_json['errors'][0]))
+      if 'error' not in guess_riddle_json:
+          self.view.guess_riddle(guess_riddle_json['riddle'])
+
+      else:
+          self.error_json(guess_riddle_json)
+
+  else:
+      self.error_no_json(response)
 ```
-- `line 5:` stores the full URL address of where to get one riddle.
-- `lines 7-9:` stores the payload in a dictionary.
-- `line 11:` sends an HTTP GET request with the payload to the server and stores the response.
-- `lines 13-17:` If the HTTP request was sucessful, it prints a single riddle with each of its properties in a bulleted list.
-  - `line 14:` converts the response from the server into JSON.
+- `line 4:` stores the full URL address of where to get one riddle.
+- `lines 6-9:` stores the payload in a dictionary.
+- `line 11:` sends an HTTP POST request with the payload to the server and stores the response.
+- `lines 13-20:` If the HTTP request was sucessful, it checks if there was an error then uses the `View` class to communicate to the user if the guess was correct or incorrect.
+  - `line 16` checks if there was a user error (like a non-existing Riddle id)
 - `line 19-22`: If the HTTP request was unsuccessful, it prints the error status code and the error message.
 
 ---
 
-## [3] Extend the Client
+## [4] Extend the Client
 
-**Your job is to add 2 functionalites to the `RiddleClient.py`.** This will require you to edit a property, edit a method, and add methods to `RiddleClient`.
-- `new riddle` - should allow the user to input a riddle question and answer, send a post request, and print the newly added riddle
-- `guess riddle` - should allow the user to guess a specific riddle, send a post request, and print a message telling the user is their guess was correct or incorrect
+💻 **Your job is to add 2 functionalites to the `RiddleClient.py`.** 
+- `View One Riddle` - allows the user to input a riddle id and view the specific information for the given riddle
+- `Add New Riddle` - allows the user to input a riddle question and answer, send a post request, and print the newly added riddle
 
+
+📄 **For each new functionality, you will need to edit:**
+- `client.py`
+- `requests_interface`
+- `view.py`.
+
+✔️ **When completed your client will have each option fully working and look something like this:**
+```shell
+Menu:
+> View All Riddles   
+  View One Riddle                                                         
+  Guess Riddle   
+  Add New Riddle                                                        
+  Quit        
+```
+
+
+{{< expand "A Few Tips... " >}}
+
+🐞 **Debugging**
+- Test, test, test! Make sure you are confident in each piece before moving on. 
+- Use `print()` statements CONSTANTLY to give yourself more information 
+- Copy and Paste are your best friends 
+
+---
+
+📚 **Parsing JSON**
+
+The HTTP response is given to us in `JSON`.  
+
+JSON is a standardized format to transfer data over a network. It represents data in a key/value pair, just like a Python dictionary.
+
+**You can parse JSON, just as you would a [Python dictionary](https://realpython.com/iterate-through-dictionary-python/).**
+
+💡 *What is in the `JSON` response if the guess is correct? If the guess is incorrect?*
+{{< /expand >}}
+
+
+
+<!-- 
 ---
 
 ### [new riddle]
@@ -304,19 +362,7 @@ Enter Riddle ID: 10
 
 Enter your guess: Dragon  
 Incorrect!
-```
-
-
-{{< expand "Hint: Parsing JSON" >}}
-
-When we guess a riddle, the response is given to us in `JSON`.  
-
-JSON is a standardized format to transfer data over a network. It represents data in a key/value pair, just like a Python dictionary.
-
-**You can parse JSON, just as you would a Python dictionary.**
-
-💡 *What is in the `JSON` response if the guess is correct? If the guess is incorrect?*
-{{< /expand >}}
+``` -->
 
 
 
@@ -324,27 +370,30 @@ JSON is a standardized format to transfer data over a network. It represents dat
 
 ---
 
-## [4] Deliverables
+## [5] Deliverables
 
 {{< deliverables "Once you've successfully completed the client:" >}}  
 
 
-{{< write-action >}} **Fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSedWRG5sYR_HfmgT7-uguhNNF27QK0Nh6jKv_tYR-UGimJqvA/viewform?usp=sf_link)**
+{{< write-action >}} **Fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSe-mGrk41m6_-iZtqw5X1LpmYrfhF68Kbw8XJBCNv0XsqHG-Q/viewform?usp=sf_link)**
 
 {{< code-action "Push your code to Github." >}}
+- git status
+- git add -A
+- git status
+- git commit -m "describe your code and your process here"
+  > be sure to customize this message, do not copy and paste this line
+- git push
 
 {{< /deliverables >}}
 
 
 ---
 
-## [5] Extension
+## [6] Extension
 
 
-
-### [Gamify]
-
-Currently, the client simply takes care of the HTTP requests in a nicely formatted view. But, let's make it more fun and turn it into a game!
+👾 Currently, the client simply takes care of the HTTP requests in a nicely formatted view. But, **let's make it more fun and turn it into a game!**
 
 {{< code-action "Extend the functionality of the client and allow the user to play a guessing game." >}}
 
@@ -371,13 +420,13 @@ Question: What cups do not hold water?
 Enter your guess:
 ```
 
-Potential further extension features:
+🤔 **Even more extension feature ideas:**
 - keep score of how many riddles the user guesses correctly
 - display the current score after each riddle is guessed
 - randomly display each riddle
 
----
+<!-- ---
 
 ### [Magic 8]
 
-In this extension 
+In this extension  -->
