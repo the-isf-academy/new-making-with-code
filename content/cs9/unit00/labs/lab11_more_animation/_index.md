@@ -17,7 +17,7 @@ In this lab we are going to continue to experiment with `SuperTurtle` and explor
 {{< code-action "Go to your" >}} `cs9/unit00_drawing` **folder.**
 
 ```shell
-cd ~/desktop/making_with_code/cs9/unit00_drawing/
+cd ~/desktop/making_with_code/unit00_drawing/
 ```
 
 {{< code-action "Clone your repo. This will copy it onto your computer." >}}  
@@ -72,7 +72,7 @@ This mini lab is designed to be a pick and choose adventure for practice animati
 
 {{< aside "Documentation" >}}  
 
-For lab, we reccomend referencing the previous lab repository, `lab_superturtle`, and the offical documentation. 
+For lab, we recommend referencing the previous lab repository, `lab_superturtle`, and the offical documentation. 
 
 📖 **SuperTurtle Documentation:** [superturtle.readthedocs.io/en/latest/animation.html](https://superturtle.readthedocs.io/en/latest/animation.html)
 
