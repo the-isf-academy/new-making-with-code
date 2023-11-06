@@ -245,21 +245,13 @@ def guess_riddle(self, user_chosen_id, user_guess):
 
 📄 **For each new functionality, you will need to edit:**
 - `client.py`
-- `requests_interface`
-- `view.py`.
-
-✔️ **When completed your client will have each option fully working and look something like this:**
-```shell
-Menu:
-> View All Riddles   
-  View One Riddle                                                         
-  Guess Riddle   
-  Add New Riddle                                                        
-  Quit        
-```
+- `requests_interface.py`
+- `view.py`
 
 
-{{< expand "A Few Tips... " >}}
+
+
+{{< aside "A Few Tips... " >}}
 
 🐞 **Debugging**
 - Test, test, test! Make sure you are confident in each piece before moving on. 
@@ -277,9 +269,18 @@ JSON is a standardized format to transfer data over a network. It represents dat
 **You can parse JSON, just as you would a [Python dictionary](https://realpython.com/iterate-through-dictionary-python/).**
 
 💡 *What is in the `JSON` response if the guess is correct? If the guess is incorrect?*
-{{< /expand >}}
+{{< /aside >}}
 
 
+✔️ **When completed your client will have each option fully working and look something like this:**
+```shell
+Menu:
+> View All Riddles   
+  View One Riddle                                                         
+  Guess Riddle   
+  Add New Riddle                                                        
+  Quit        
+```
 
 <!-- 
 ---
