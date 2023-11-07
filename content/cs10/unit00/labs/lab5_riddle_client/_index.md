@@ -159,18 +159,43 @@ The `View` class simply controls the communication of information to the user. I
 - `quit()`
 
 
-
-
-
 ---
 
 ## [3] RiddleInterface
 
-Let's start by delving into how to use the Requests library. 
+Let's start by delving into how to use the Requests library. This will require you to remember  the Riddle API. 
+
+
+---
+
+### Riddle API Refresher
+
+🌐 **Visit [http://sycs.student.isf.edu.hk/riddles/all](http://sycs.student.isf.edu.hk/riddles/all) to view riddle server.**
+
+💻 **As a reminder, you can make `GET` and `POST` requests to the API using the `httpie` tool in the Terminal**
+```shell
+http get http://sycs.student.isf.edu.hk/riddles/all
+```
+
+```shell
+http post http://sycs.student.isf.edu.hk/riddles/guess id=1 guess="pickles" 
+```
+
+Here is a cheatsheet of the Riddle endpoints, what parameters they take in their payload, and what they do:
+
+| Method | URL                                | Required Payload     | Action                                                                                   |
+| ------ | ---------------------------------- | -------------------- | ---------------------------------------------------------------------------------------- |
+| `GET`  | `/riddles/all`   |                      | Returns a list of all the riddles, without answers.                                      |
+| `GET`  | `/riddles/one`   | `id`                 | Returns the riddle if it exists. (Otherwise, it returns an error with status code 404.)  |
+| `GET`  | `/riddles/difficulty`   | `id`                 | Returns the riddle if it exists with its difficulty score. (Otherwise, it returns an error with status code 404.)  |
+| `POST` | `/riddles/new`   | `question`, `answer` | Creates a new riddle (with an automatically-assigned id). Returns the riddle.            |
+| `POST` | `/riddles/guess` | `id`, `guess`        | Checks whether the guess is correct. In the response, `correct` is `True` or `False`.    |
+
+
 
 --- 
 
-### [all_riddles()]
+### `all_riddles()`
 
 👀 **First let's look at the method`all_riddles()`** that sends an **HTTP GET** request to the Riddle server endpoint `riddles/all`.
 
@@ -197,7 +222,7 @@ def all_riddles(self):
 
 ---
 
-### [guess_riddle()]
+### `guess_riddle()`
 
 👀 **Now, let's look at the method`guess_riddle()`** that sends an **HTTP POST** request to the Riddle server endpoint `riddles/guess`.
 
