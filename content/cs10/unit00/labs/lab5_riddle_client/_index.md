@@ -418,6 +418,7 @@ Incorrect!
 
 ## [6] Extension
 
+### Gamify!
 
 👾 Currently, the client simply takes care of the HTTP requests in a nicely formatted view. But, **let's make it more fun and turn it into a game!**
 
@@ -450,6 +451,29 @@ Enter your guess:
 - keep score of how many riddles the user guesses correctly
 - display the current score after each riddle is guessed
 - randomly display each riddle
+
+
+---
+
+### Improved CLI!
+
+How could you improve your CLI (command line interface) to make it more user-friendly? 
+
+📖 **Explore the [`InquiererPy` documentaiton](https://inquirerpy.readthedocs.io/en/latest/index.html) and see what's possible with the menu package**
+
+💻 **Improve your CLI**, here are a few ideas: 
+- allow user to select a riddle from a list to see its details 
+- allow a user to select a riddle, guess it 
+- allow user to select multiple riddles to create their own custom guessing game
+
+---
+
+### GUI 
+
+CLIs are great for low-weight applications, but if you wanted a GUI (graphical user interface)? 
+
+💻 **Experiment with Python's built in GUI package [tkinter](https://realpython.com/python-gui-tkinter/)** 
+
 
 <!-- ---
 
