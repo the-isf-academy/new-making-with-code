@@ -49,7 +49,7 @@ poetry shell
 
 Even though `client.py` and `requests_interface.py` are fully filled in and working, the game isn't very aesthetically pleasing. And you can't even see what cards you have! Let's improve `views.py` so that the user experience is better.
 
-{{< code-action "Try the client:" >}}
+{{< code-action "Try the client" >}}
 ```shell
 python client.py
 ```
@@ -65,13 +65,12 @@ Menu:
 
 It's pretty boring. There's no welcome message, and it doesn't tell you what's happening. You can't even see your cards!
 
----
-{{< code-action "Open code" >}}
+
+{{< code-action "Open up the code" >}}
 ```shell
-code view.py
+code .
 ```
 
-`views.py` controls the aesthetics and user interactions. Right now, all it has is a menu and error messaging. 
 
 ---
 
@@ -86,7 +85,7 @@ The first thing we need is a welcome message! You might design in the style of o
 ```
 or you can design your own.
 
-{{< code-action "Add a welcome method to the `View` class, and call it in `client.py`" >}}
+💻 **Add a welcome method to the `View` class, and call it in `client.py`**
 
 ---
 
@@ -94,18 +93,70 @@ or you can design your own.
 
 Add a message for when the game ends
 
-{{< code-action "Add a quit method to the `View` class, and call it in `client.py`" >}}
+```shell
+-----------------------------------
+---- Goodbye ----
+-----------------------------------
+       
+```
+
+💻 **Add a quit method to the `View` class, and call it in `client.py`**
 
 ---
 ### View Cards
 
 Last but not least, a user needs to be able to see their cards.
 
-{{< code-action "Add a method for viewing your cards to the `View` class, and call it in `client.py`" >}}
+```shell
+Menu: View Cards
+9 ♥
+4 ♠
+A ♦
+J ♣️
+```
 
-## [3] Deliverables
+💻 **Add a method for viewing your cards to the `View` class, and call it in `client.py`**
 
-{{< deliverables "Once you've successfully completed the client:" >}}  
+---
+
+## [3] Error Handling
+
+### No Deck
+
+You might notice right now that if you attempt to deal, view, or reset before you start a deck, you get an error:
+
+```shell
+TypeError: can only concatenate str (not "NoneType") to str
+```
+
+This is because you haven't made a deck yet!
+
+👀 **Look at the constructor of the `RequestsInterface` class below:**
+
+```python {linenos=inline, hl_lines=9,linenostart=9}
+def __init__(self):
+    self.deckofcards_url = 'https://www.deckofcardsapi.com/api/deck/' # the base url for the cards api
+
+    self.view = View()
+
+    # deck_id is initalized in get_new_deck()
+        # you may want to hard code it during testing 
+        # you can hard code it by finding a valid deck_id by printing the deck_json under line 27
+    self.deck_id = None  
+```
+
+Notice how `self.deck_id` starts as `None`, because it hasn't been created yet. You need to add error handling to the client that checks whether the `deck_id` is `None``, and if it is, let the user know that they should make a deck first.
+
+💻 **Add an error message method in `views.py` telling the user to make a deck first.**
+<br>
+
+💻 **Add error handling to `client.py` to trigger this message.**
+
+---
+
+## [4] Deliverables
+
+{{< deliverables "Once you've successfully fixed the client" >}}  
 
 {{< code-action "Push your code to Github." >}}
 - git status
@@ -121,12 +172,46 @@ Last but not least, a user needs to be able to see their cards.
 ---
 
 
-## [4] Extension - Extend the Client
+## [5] Extension - Improve the Client
 
-💻 **Add more funtions to `client.py`.** 
+The Deck of Cards API has so many features! Choose one of the options below to add to the existing client:
 
-Explore the documentation for the Cards API and add more features! You could add a second player, a discard pile, etc. 
+### Draw multiple cards at a time
 
-If you're up for the challenge, you can try coding blackjack!
+Right now you can only ever deal one card at a time
+
+💻 **Add a new menu item that allows you to draw any number of cards.** 
+
+---
+
+### Multiplayer
+
+Right now, there is just one player with cards, but the API allows you to add as many as you want.
+
+💻 **Add in multiple players** 
+
+Remember, you'll need to **deal** to multiple players, and also to **view** multiple different players!
+
+---
+
+### Discard Pile
+
+Create a new pile, and let the player discard to it!
+
+💻 **Add a new menu item that allows you to discard to the discard pile.** 
+
+---
+
+### Fix the 500 Error
+
+Right now, if you try to view your cards before you have any, you get a 500 error
+
+```shell
+[Error: HTTP 500]
+```
+💻 **Add in error handling so that the 500 error doesn't happen.**
+
+
+
 
 
