@@ -231,7 +231,18 @@ Right now, if you try to view your cards before you have any, you get a 500 erro
 ```
 💻 **Add in error handling so that the 500 error doesn't happen.**
 
+---
 
 
+### No Cards Delt Error
 
+You might notice right now that if you attempt to `View Cards` and you have not selected `Deal a Card` prior, it will result in an error. This is because that pile does not exist yet. 
+  
+
+```shell
+KeyError: 'player'
+```
+
+
+💻 **Fix this error whichever way makes most sense to you.** You could change the menu, you could change the `RequestInterface()` or the `View()`. 
 
