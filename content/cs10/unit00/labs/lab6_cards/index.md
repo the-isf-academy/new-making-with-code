@@ -14,7 +14,9 @@ In this lab we will create a Client in the form of a Command Line Interface(CLI)
 
 ## [0] Deck of Cards API
 
-The API that we will use for today is called the Deck of Cards API. It is free, simple, and easy-to-use. Here is a link to the [API Documentation](https://www.deckofcardsapi.com/). You will need to reference this in today's lab.
+The API that we will use for today is called the Deck of Cards API. It is free, simple, and easy-to-use. 
+
+🌐 **Here is a link to the [Deck of Cards API Documentation](https://www.deckofcardsapi.com/).** 
 
 ---
 
@@ -45,7 +47,7 @@ poetry shell
 
 ---
 
-## [2] Improve the Views
+## [2] Improve the View()
 
 Even though `client.py` and `requests_interface.py` are fully filled in and working, the game isn't very aesthetically pleasing. And you can't even see what cards you have! Let's improve `views.py` so that the user experience is better.
 
@@ -105,7 +107,7 @@ Add a message for when the game ends
 ---
 ### View Cards
 
-Last but not least, a user needs to be able to see their cards.
+The user needs to be able to see their cards.
 
 ```shell
 Menu: View Cards
@@ -116,6 +118,33 @@ J ♣️
 ```
 
 💻 **Add a method for viewing your cards to the `View` class, and call it in `client.py`**
+
+---
+
+### Client Messaging
+
+There is currently no messaging to the user if any of the menu options are successful or unsuccessful. 
+
+```shell
+Menu: Start New Deck
+
+Menu: Deal a Card
+
+Menu: Reset Deck
+```
+
+💻 **Add 3 methods `View` class to provide descriptive messaging to the user.** An example improved interface: 
+
+```shell
+Menu: Start New Deck
+-- Created a new deck: 3hif58bmuz9t
+
+Menu: Deal a Card
+--  Delt J♣️ to player
+
+Menu: Reset Deck
+-- Reset deck 3hif58bmuz9t (returned cards to deck and shuffled)
+```
 
 ---
 
@@ -145,7 +174,7 @@ def __init__(self):
     self.deck_id = None  
 ```
 
-Notice how `self.deck_id` starts as `None`, because it hasn't been created yet. You need to add error handling to the client that checks whether the `deck_id` is `None``, and if it is, let the user know that they should make a deck first.
+Notice how `self.deck_id` starts as `None`, because it hasn't been created yet. You need to add error handling to the client that checks whether the `deck_id` is `None`, and if it is, let the user know that they should make a deck first.
 
 💻 **Add an error message method in `views.py` telling the user to make a deck first.**
 <br>
@@ -156,7 +185,7 @@ Notice how `self.deck_id` starts as `None`, because it hasn't been created yet. 
 
 ## [4] Deliverables
 
-{{< deliverables "Once you've successfully fixed the client" >}}  
+{{< deliverables "Once you've successfully improved the View()." >}}  
 
 {{< code-action "Push your code to Github." >}}
 - git status
@@ -172,33 +201,24 @@ Notice how `self.deck_id` starts as `None`, because it hasn't been created yet. 
 ---
 
 
-## [5] Extension - Improve the Client
+## [5] Extension 
 
-The Deck of Cards API has so many features! Choose one of the options below to add to the existing client:
+### Improve the Client
 
-### Draw multiple cards at a time
+The Deck of Cards API has so many features! Choose one of the options below to add to the existing client. For each feature, you will need to consider `client.py`, `view,py` and `requests_interface.py`. 
 
-Right now you can only ever deal one card at a time
+☑️ **Additional features:**
+- drawing multiple cards at a time
+  - allow user to choose how many cards to deal 
+- multiplayer piles 
+  - allow user to enter their player name 
+  - create a pile with that name
+  - view each player's pile 
+- discard pile 
+  - add a discard pile 
+  - view the discard pile
 
-💻 **Add a new menu item that allows you to draw any number of cards.** 
-
----
-
-### Multiplayer
-
-Right now, there is just one player with cards, but the API allows you to add as many as you want.
-
-💻 **Add in multiple players** 
-
-Remember, you'll need to **deal** to multiple players, and also to **view** multiple different players!
-
----
-
-### Discard Pile
-
-Create a new pile, and let the player discard to it!
-
-💻 **Add a new menu item that allows you to discard to the discard pile.** 
+*You may also add in a feature we did not list below! For example, implementing a simple card game.*
 
 ---
 
