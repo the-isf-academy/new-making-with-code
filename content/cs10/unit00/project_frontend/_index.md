@@ -67,7 +67,7 @@ poetry install
 - project planning [3]
 - iterative development [3]
 - code readability [3]
-- user interaction readability [3]
+- user interaction [3]
 
 
 **For each criteria you will be assessed on a score from 0-3** 
@@ -84,7 +84,7 @@ poetry install
 Successful computer scientists should be able to make the following claims:
 - I can thoughtfully plan and manage a computer science project 
     - I can consider the components of my project before coding
-    - I can choose a project of appropraite scale for the time alloted
+    - I can choose a project of appropriate scale for the time allowed
 - I can develop my project iteratively over time
     - I can track the development of my project by successfully committing to Github a minimum of each class work day
     - I can write descriptive commit messages that accurately describe the changes made
@@ -93,7 +93,7 @@ Successful computer scientists should be able to make the following claims:
   - I can write code another computer scientist could easily understand
   - I can use descriptive names for variables, methods, data_structures, etc. 
   - I can write descriptive comments
-- I can write a frontend with user interaciton in mind
+- I can write a frontend with user interaction in mind
   - I can write an easy to use client with clear instructions and appropriate formatting
   - I can ensure users are able to interact with the client as it is intended
   - I can provide appropriate error messaging to the user if a user error occurs
