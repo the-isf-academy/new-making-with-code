@@ -101,8 +101,8 @@ Successful computer scientists should be able to make the following claims:
   - I can ensure users are able to interact with the client as it is intended
   - I can provide appropriate error messaging to the user if a user error occurs
 - I can successfully use my chosen API
-  - I can create a requests interface that makes get and post requests
-  - I can prevent unexpected user scenarios from crashing the client
+  - I can create a requests interface that makes get/post requests
+  - I can prevent unsuccessful API calls from crashing the client
 
 
 *Keep these success claims in mind when coding your project and assessing yourself.*
