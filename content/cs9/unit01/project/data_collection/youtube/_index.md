@@ -37,8 +37,8 @@ This is a walkthrough to downloading your YouTube watch history.
 > 0. **Download the first export.** You do not need to download all of the exports. 
 > 0. **Open the `.zip` file.**
 > 0. **Navigate to the `Takeout 6/YouTube and YouTube Music/history` folder.**
-> 0. **Move the `watch_history.json` into your `desktop/cs9/unit_01` folder.**
-
+> 0. **Move  file `watch_history.json` into your Google Drive.**
+<!-- 
 ---
 
 ## API Key
@@ -61,4 +61,4 @@ This is a walkthrough to downloading your YouTube watch history.
 > 0. **Copy and paste your `API key` to somewhere you will not lose it..**
 >
 > If you forget your API key, return to [this](https://console.cloud.google.com/apis/credentials) page to access it.
-
+ -->
