@@ -18,6 +18,6 @@ This is a walkthrough to downloading your Netflix watch history.
 > 0. **Select your account under `Profile & Parental Controls`.**
 > 0. **Under `Viewing activity` select `View`.**
 > 0. **Select `Download all`.**
-> 0. **Move the `.csv` file to your `destop/csv9/unit_01` folder.**
+> 0. **Move the `.csv` file to your Google Drive.**
 
 

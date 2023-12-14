@@ -19,8 +19,8 @@ This is a walkthrough to downloading your Whatsapp watch history.
 > 0. **Open the Whatsapp app on your phone**
 > 0. **Select a chat.** 
 > 0. **Open the chat settings by clicking the name of the chat at the top of the screen.**
-> 0. **Scroll down and select `Export Chat`.**
-> 0. **Transfer the file to your computer and place it in your `destop/csv9/unit_01` folder.**
+> 0. **Scroll down and select `More > Export Chat`.**
+> 0. **Move the file to your Google Drive**
 
 
 

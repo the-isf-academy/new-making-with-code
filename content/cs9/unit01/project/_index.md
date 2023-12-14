@@ -1,17 +1,21 @@
 ---
 Title: Project
-draft: false
+# draft: false
 ---
 
 # Unit 01 Data Science Project
 
-The final project for this unit will be a research project. Working with the data science tools we explored this unit, **you are expected to tell a narrative story about a time in your life using data as evidence.** 
-
-To be successful in this project, you should **find a topic that is both interesting to you and answerable** (at least in part) with data from your chosen dataset. Your teachers will help you make sure your project hypothesis achieves that. 
-
-📖 **Here is the [example project juptyer notebook file](https://drive.google.com/file/d/1Z8G28pkMbBF50Qi-DMiugX4q5rJHJJ7S/view?usp=sharing)**. 
+We'll release more information when it's time!
 
 
+<!-- The final project for this unit will be a research project. Working with the data science tools we explored this unit, **you are expected to tell a narrative story about a time in your life using data as evidence.**  -->
+
+
+<!-- To be successful in this project, you should **find a topic that is both interesting to you and answerable** (at least in part) with data from your chosen dataset. Your teachers will help you make sure your project hypothesis achieves that. 
+
+📖 **Here is the [example project juptyer notebook file](https://drive.google.com/file/d/1Z8G28pkMbBF50Qi-DMiugX4q5rJHJJ7S/view?usp=sharing)**.  -->
+
+<!-- 
 ---
 
 ## [1] Timeline
@@ -90,6 +94,6 @@ The project is scored out of 7.
     - I can discuss the limitations and potential biases of my analysis. 
     - I can consider potential future areas of investigation if I were to continue this project. 
 
-**Keep the success claims in mind when coding your project.**
+**Keep the success claims in mind when coding your project.** -->
 
 

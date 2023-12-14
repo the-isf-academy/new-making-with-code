@@ -1,17 +1,17 @@
 ---
 Title: "[Data Collection]"
 
-draft: true
+# draft: true
 
 ---
 
 # Data Collection Guides
 
-From the left menu, select whichever service you would like to analyze! Then, follow the instructions to download your data.
+From the left menu, select whichever service you would like to analyze! Then, follow the instructions to download your data. The downloads from Spotify and Youtube may take up to 30 days before you can download them.
 
-## Building out your Dataset
+Once you've successfully downloaded your data, upload it to your Google Drive.
 
-Now that you've got your data, let's build it out and add more columns. 
+<!-- Now that you've got your data, let's build it out and add more columns. 
 
 {{< code-action "Start by cloning this repository into your folder." >}} This repository contains Python scripts to build out the database for each service.
 ```shell
@@ -49,4 +49,4 @@ pip3 install -r requirements.txt
 - [YouTube](https://github.com/the-isf-academy/courseware-data/tree/master/youtube_export)
 
 {{< code-action "Follow along with the README.md file." >}} If successful, your dataset `.csv` file will be in the `/export` folder.
-> *Please notify a teacher if you run into any issues and do not see your dataset.*
+> *Please notify a teacher if you run into any issues and do not see your dataset.* -->
