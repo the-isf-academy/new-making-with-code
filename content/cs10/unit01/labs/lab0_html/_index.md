@@ -6,7 +6,7 @@ weight: 10
 
 # HTML Lab
 
-In this lab, you will start learning to write `HTML` code!
+In this lab, you will start learning to write `HTML` code! HTML defines the content and the structural elements of a web site.
 
 
 ---
