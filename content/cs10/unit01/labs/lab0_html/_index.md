@@ -8,6 +8,7 @@ weight: 10
 
 In this lab, you will start learning to write `HTML` code!
 
+
 ---
 
 ## [0] Set up
