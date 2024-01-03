@@ -98,7 +98,7 @@ Don't worry, we'll return to Python in the next unit - Web Apps :)
 {{< deliverables "Once you've successfully completed the lab:" >}}  
 
 
-☑️  **Fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSe-mGrk41m6_-iZtqw5X1LpmYrfhF68Kbw8XJBCNv0XsqHG-Q/viewform?usp=sf_link)**
+☑️  **Fill out [this Google form](https://forms.gle/Xhyi9nk9E3GxJqmx6)**
 
 {{< code-action "Push your code to Github." >}}
 - git status
