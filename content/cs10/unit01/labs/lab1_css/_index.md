@@ -1,7 +1,7 @@
 ---
 title: "1: CSS"
 weight: 10
-draft: true
+# draft: true
 ---
 
 <style>
@@ -57,37 +57,20 @@ cd lab_html_yourgithubusername
 
 
 
-✏️ **First, complete the wireframe design document.** 
+✏️ **Complete the wireframe design document.** 
 
 
-💻 **Second, exchange wireframe design documents and implement your partners design in `HTML` and `CSS`.** This will require you to write `CSS` rules for various HTML elements. You may even want to implement `class` and `id` selectors for layout components and finer tuning of aesthetic design. 
+
 
 ---
 
-## [0] CSS Mini-intro
+## [1] Develop the Wireframe 
 
-`CSS` allows you define design specifications for `HTML` elements. 
-
-**For example, take this simple example:** `<h1>Hello, World</h1>`
-
-**To change all `<h1>` tags to pink and underlined, all I need to do is write a simple rule in `styles.css`.**
-
-<h1 class="css_intro">Hello, World</h1>
-
-
-
-```css
-h1{
-  color: pink;
-  text-decoration: underline;
-}
-```
-
-💡 **You can write as many *rules* for CSS tags as you need for your design.**
-
-🌐 **There are SO many CSS properties, you do not need to memorize them. Instead,  Google and reference documentation.**
-- [w3.css](https://www.w3schools.com/w3css/default.asp)
-
+💻 **Exchange wireframe design documents and implement your partners design in `HTML` and `CSS`.** This will require you to write `CSS` rules for various HTML elements. You may even want to implement `class` and `id` selectors for layout components and finer tuning of aesthetic design. 
+> 📖 Be sure to reference the `HTML/CSS Tips` 
+>
+> - [class selector example](https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors#examples)
+> - [id selector example](https://developer.mozilla.org/en-US/docs/Web/CSS/ID_selectors#examples)
 
 ---
 
