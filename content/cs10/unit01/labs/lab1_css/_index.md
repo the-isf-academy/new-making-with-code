@@ -4,28 +4,35 @@ weight: 10
 draft: true
 ---
 
+<style>
+
+/* FOR CSS INTRO */
+
+
+h1.css_intro{
+  color: pink;
+  text-decoration: underline;
+}
+
+
+</style>
+
+
 # CSS Lab
 
-In this lab, you will start learning to write `CSS` code!
+In this lab, you will start learning to write `CSS` code! CSS defines the design style and layout of web site.
+
 
 ---
 
 ## [0] Set up
 
-We are now in the **Web Design** unit, so you'll need to make a new folder. 
 
-{{< code-action  >}} **In the Terminal, go into your `making_with_code/cs10` folder and create a `unit01_webdesign` folder.**
 
+{{< code-action "Start by cloning your starter code." >}} Be sure to change `yourgithubusername` to your actual Github username.
 ```shell
-cd ~/desktop/making_with_code/cs10
-mkdir unit01_webdesign
-```
-
-
-{{< code-action "Then, clone your starter code." >}} Be sure to change `yourgithubusername` to your actual Github username.
-```shell
-git clone https://github.com/the-isf-academy/lab_html_yourgithubusername
-cd lab_html_yourgithubusername
+cd ~/desktop/making_with_code/cs10/unit01_webdesign
+git clone https://github.com/the-isf-academy/lab_css_yourgithubusername
 ```
 
 {{< code-action >}} `cd` **into the lab**
@@ -33,75 +40,63 @@ cd lab_html_yourgithubusername
 cd lab_html_yourgithubusername
 ```
 
-{{< aside "No need for the Poetry shell" >}}
-
-In this unit we will not be using Python, and so **we will NOT use the Poetry shell**.
-
-Don't worry, we'll return to Python in the next unit - Web Apps :)
-
-{{< /aside>}}
-
-
+📄 **This repo contains the following:**
+- `index.html`
+- `styles.css`
+- `assets/` - contains 5 images
+- `README.md`
 
 ---
 
+## [0] Wireframe Design
+
+🎨  **In this lab you will design a `wireframe` for the Ocean Park Water Park.** A `wireframe` is a layout design for a website. 
 
 
-## [1] Flexbox Guide
+{{< figure src="https://thewebsitearchitect.com/wp-content/uploads/2021/02/How-do-you-draw-a-website-wireframe.jpg" width="40%" >}}
 
-The `display: flex` property is an incredibly useful `CSS` property to apply flexible and layouts. You can see an example of this in the `flexbox_example` folder. 
 
-### Equally Sized Columns
 
-Often times we want content to be side-by-side. We can use a flexbox layout to achieve this. 
+✏️ **First, complete the wireframe design document.** 
 
-{{< figure src="images/courses/cs10/unit01/01_css_0.png" width="100%" >}}
 
-{{< code-action >}} **This is the `html` for multiple columns.** 
+💻 **Second, exchange wireframe design documents and implement your partners design in `HTML` and `CSS`.** This will require you to write `CSS` rules for various HTML elements. You may even want to implement `class` and `id` selectors for layout components and finer tuning of aesthetic design. 
 
-```html
-<div class="flexbox-grid">
-  <div class="column">
-    <h2>column</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse luctus dapibus consequat. Duis congue scelerisque odio eu suscipit. Nunc at ligula non libero viverra dapibus. In sit amet lacinia odio.</p>
-  </div>
+---
 
-  <div class="column">
-    <h2>column</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse luctus dapibus consequat. Duis congue scelerisque odio eu suscipit. Nunc at ligula non libero viverra dapibus. In sit amet lacinia odio.</p>
-  </div>
-</div>
-```
+## [0] CSS Mini-intro
 
-{{< code-action >}} **This is the `css` for the two classes: `flexbox-grid` and `column` grid.** 
+`CSS` allows you define design specifications for `HTML` elements. 
+
+**For example, take this simple example:** `<h1>Hello, World</h1>`
+
+**To change all `<h1>` tags to pink and underlined, all I need to do is write a simple rule in `styles.css`.**
+
+<h1 class="css_intro">Hello, World</h1>
+
+
 
 ```css
-.flexbox-grid{
-    display:flex;
-    gap: 20px;
-    margin-bottom: 50px;
-}
-
-.column{
-    background-color: rgb(255, 243, 203);
-    padding: 0px 20px;
-    flex: 1;
+h1{
+  color: pink;
+  text-decoration: underline;
 }
 ```
 
+💡 **You can write as many *rules* for CSS tags as you need for your design.**
 
-### Unevenly sized columns
+🌐 **There are SO many CSS properties, you do not need to memorize them. Instead,  Google and reference documentation.**
+- [w3.css](https://www.w3schools.com/w3css/default.asp)
 
 
-### Responsive Design: Mobile Friendly 
-
+---
 
 ## [2] Deliverables
 
 {{< deliverables "Once you've successfully completed the lab:" >}}  
 
 
-☑️  **Fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSe-mGrk41m6_-iZtqw5X1LpmYrfhF68Kbw8XJBCNv0XsqHG-Q/viewform?usp=sf_link)**
+☑️  **Fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSc00CmVnLI0kyTYSVZ4QeXoimOqUfeot_Ue985K9P2Ih6RgNg/viewform?usp=sf_link)**
 
 {{< code-action "Push your code to Github." >}}
 - git status
@@ -113,6 +108,6 @@ Often times we want content to be side-by-side. We can use a flexbox layout to a
 
 {{< /deliverables >}}
 
---- 
+<!-- --- 
 
-## [3] Extension: CSS 
+## [3] Extension: CSS  -->
