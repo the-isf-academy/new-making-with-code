@@ -72,6 +72,7 @@ This page is dedicated to HTML and CSS tips. Let the teachers know if you would 
 🔗 **Here are a few helpful links to reference CSS properties:**
 - [CSS Properties Cheat Sheet](https://web.stanford.edu/group/csp/cs21/csscheatsheet.pdf)
 - [CSS Interactive Cheat Sheet](https://htmlcheatsheet.com/css/)
+- [Mozzila CSS Tutorials](https://developer.mozilla.org/en-US/docs/Web/CSS)
 - [w3 CSS wiki](https://www.w3schools.com/css/css_intro.asp)
 
 
