@@ -75,7 +75,16 @@ This page is dedicated to HTML and CSS tips. Let the teachers know if you would 
 - [Mozzila CSS Tutorials](https://developer.mozilla.org/en-US/docs/Web/CSS)
 - [w3 CSS wiki](https://www.w3schools.com/css/css_intro.asp)
 
+---
 
+## CSS Challenges
+
+{{< figure src="https://upload.wikimedia.org/wikipedia/commons/9/9a/CodePen_logo.png" width="40%" >}}
+
+
+🔗 **Here are solutions to the CSS Challenges on Codepen:**
+- [challenge 1](https://codepen.io/eqbrown/pen/bGZEZap)
+- [challenge 2](https://codepen.io/eqbrown/details/KKEzrYW)
 
 
 ---
