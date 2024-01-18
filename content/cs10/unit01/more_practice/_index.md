@@ -18,7 +18,7 @@ This page is dedicated to fun exercises we find for HTML/CSS Practice
 
 ## Fun Codepens
 
-- [Simple hover Button Wiggle Animation](https://codepen.io/eqbrown/pen/BabWGqY?editors=1100)
+- [Simple Hover Button Wiggle Animation](https://codepen.io/eqbrown/pen/BabWGqY?editors=1100)
 - [Simple Hover Highlight Animation](https://codepen.io/eqbrown/pen/QWopJJV?editors=1100)
 - [Dot Animation](https://codepen.io/petersonby/pen/gzxpdj?editors=1100)
 - [Button Transformation](https://codepen.io/dead_pixel/pen/KKevEE?editors=1100)
