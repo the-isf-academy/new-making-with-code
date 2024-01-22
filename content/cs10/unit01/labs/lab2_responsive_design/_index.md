@@ -32,7 +32,7 @@ cd lab_responsive_design_yourgithubusername
 - `assets/` - contains 1 images
 - `README.md`
 
-{{< code-action >}} Start by openning the repo in VS code and opening the `index.html` page
+{{< code-action >}} **Start by openning the repo in VS code and opening the `index.html` page.**
 ```shell
 code .
 open index.html
@@ -98,14 +98,14 @@ Now that the mobile looks better, let's improve the site!
 
 You can link to an internal part of your site by setting an `id` to an `HTML` element. 
 
-💻 **Try clicking on the `activites` link.** It jumps you to the activites section of the page. But, the `contact me!` and `meow` buttons are broken. 
+💻 **Try clicking on the `about` link.** It jumps you to the about section of the page. But, the `contact me!` and `meow` buttons are broken. 
 
 {{< figure src="images/courses/cs10/unit01/02_responsive_5.png" width="25%" >}}
 
 📖 **This is the `HTML` code for the link. It's `href` points to the `id` of the about section.**
 
 ```html
-<a class="border-box" href="#about">activites</a>
+<a class="border-box" href="#about">about</a>
 ```
 
 📖 **This is the `HTML` code for the `<h2>` section heading.**
