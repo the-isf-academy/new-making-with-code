@@ -5,6 +5,7 @@ weight: 10
 ---
 
 
+
 # Responsive Design 
 
 In this lab, you will learn how to differentiate CSS for mobile viewing and continue exploring CSS design properties. 
