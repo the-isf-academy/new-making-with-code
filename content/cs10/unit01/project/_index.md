@@ -91,36 +91,25 @@ You have the option of hosting your site online using Github pages. Because of t
     - I can consistently update my `README.md` file with works cited 
 - **Design Specifications [3]**
     - I can brainstorm ideas by gathering inspiration from existing personal websites
-    - I can plan design specifications such as a wireframe, color palette, and fonts 
-    - I can update the design specifications overtime with a justification as to why changes were made
-- **Design Implementation [3]**
-    - I can write and adapt HTML and CSS to implement my design specification
+    - I can consider the user and context of my site
+    - I can plan a wireframe for desktop and mobile with appropriate color palette and fonts
+    - I can update the design specifications over time with a justification as to why changes were made
+    - mobile and desktop
+- **HTML [3]**
+    - I can write readable code
     - I can write a well structured site using HTML
+- **CSS [3]**
+    - I can write readable code
+    - mobile and desktop
     - I can write well abstracted style rules using CSS 
 
 
-**For each criteria you will be assessed on a score from 0-3. With 9 criteria, there is a total of 9 potential points.** 
+
+**For each criteria you will be assessed on a score from 0-3.** 
 - 0 - no evidence of the practice
 - 1 - limited evidence of the practice
 - 2 - adequate evidence of the practice
 - 3 - substantial evidence of the practice
-
-{{< expand "Scoring Breakdown" >}}
-
-The project is scored out of 7. 
-
-*To calculate your score for the practices & concepts, look at the following bands:*
-
-- 1 = 0
-- 2 = 1
-- 3 = 2
-- 4 = 3-4
-- 5 = 5-6
-- 6 = 7-8
-- 7 = 9
-{{< /expand >}}
-
-
 ---
 
 ## [4] Deliverables
