@@ -9,45 +9,57 @@ The final project for this unit will be a research project. Working with the dat
 
 To be successful in this project, you should **find a topic that is both interesting to you and answerable** (at least in part) with data from your chosen dataset. Your teachers will help you make sure your project hypothesis achieves that. 
 
-📖 **Here is the [example project juptyer notebook file](https://drive.google.com/file/d/1Z8G28pkMbBF50Qi-DMiugX4q5rJHJJ7S/view?usp=sharing)**. 
 
 
 ---
 
 ## [1] Timeline
 
-📅 **The project begins on 13 February and you will have 4 in-class blocks to complete this project.** 
+1️⃣ **Firstly, you will plan your project and choose a research question.**
 
-| section | due date |
-|---------|----------|
-| cs9.1   | 24 Feb   |
-| cs9.2   | 27 Feb   |
+2️⃣ **Secondly, you will conduct the data analysis and create data visusalizations.**
+
+3️⃣ **Thirdly, you will create a research poster to communicate your finding.**
+
+4️⃣ **Fourthly, you will present your findings to the class.**
+
+5️⃣ **Lastly, if interested, you may present your findings at Shuyuan Research Week in May.**  This is not required. 
 
 ---
 
-## [2] Starter Code
+📅 **You will have 5 in-class blocks to complete this project.** 
+
+| section | due date |
+|---------|----------|
+| cs9.1   | 06 March   |
+| cs9.2   | 04 March   |
+
+---
+
+## [2] Starter Materials
 
 {{< code-action >}} **You can find your project in your Google Drive:** `project_data_science.ipynb`
+
+✏️ **For the poster, you may use Canva or any other service.** It will be A3 size. 
 
 
 ---
 
 ## [3] Assessment
 
-✅ **The assessment is broken down into five criteria:**
-- Planning  
+✅ **The assessment is broken down into four criteria:**
+- Project Planning  
 - Data Analysis
 - Data Visualizations 
-- Poster
-    - Presentation 
+- Data Communication Communication
 
 
-For each criteria you will be assigned a score from 0-3:
+**For each criteria you will be assigned a score from 0-3:**
 - 0 - no to no evidence of the concept
 - 1 - limited evidence of the concept
 - 2 - adequate evidence of the concept
 - 3 - substantial evidence of the concept
-
+<!-- 
 {{< expand "Scoring Breakdown" >}}
 
 The project is scored out of 7. 
@@ -62,22 +74,23 @@ The project is scored out of 7.
 - 5 = 8-11
 - 6 = 12-13
 - 7 = 14-15
-{{< /expand >}}
+{{< /expand >}} -->
 
 --- 
 
 ## [4] Success Claims
 
 💯 **Successful computer scientists should be able to make the following claims:**
-- Planning 
-    - I can plan a reserach project 
+- Project Planning 
+    - I can brainstorm potential areas of exploration with my data 
+    - I can choose a relevant research question and break it down into sub-questions 
     - I can consistently track my progress with notes and comments
 - Data Analysis  
     - I can combine and reorganize pieces of data to explore new relationships
-    - I can generate summary statistics (mean, median, mode, count) for describing the data
+    - I can generate summary statistics (mean, median, mode, frequency count) for describing the data
 - Data Visualization 
-    - I can display dataframes, charts, and plots that are thoughtfully sorted and easy to read
-    - I can generate a variety of dataframes, charts, and plots to communicate and highlight different aspects of my data
+    - I can chooose appropriate data visaulizations to communicate my findings 
+    - I can display data visualizations that are thoughtfully sorted and easy to read
 - Data Communication Communication: Poster & Presentation 
     - I can explain the purpose and focus of the research 
     - I can explain my methodology, including action steps and reasoning for restructuring the data
