@@ -38,7 +38,7 @@ To be successful in this project, you should **find a topic that is both interes
 
 ## [2] Starter Materials
 
-{{< code-action >}} **You can find your project in your Google Drive:** `project_data_science.ipynb`
+{{< code-action >}} **You can find your project in your Google Drive:** `Project: Data Science.ipynb`
 
 ✏️ **For the poster, you may use Canva or any other service.** It will be A3 size. 
 
