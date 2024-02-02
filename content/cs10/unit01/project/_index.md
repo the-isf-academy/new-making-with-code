@@ -21,7 +21,6 @@ It should include at least one of the following:
 **Your personal website must include:**
 - `.html` files
     - `index.html` homepage
-    - 1 additional `.html` sub-page
 - `styles.css` file
 - `media`
     - this may include images or videos to showcase yourself or your work
@@ -33,16 +32,17 @@ You may use and adapt code you find online. However, you must keep track of the 
 
 ---
 
-## [1] Design Specification Document
+## [1] Design Specification
 
 
-{{< write-action >}} **Find the Design Specification Document in your Google Drive folder. The purpose of this document is to outline your design specifications and justify any changes to the design over time.** You should also use a blank piece of paper to hand draw  a wireframe. You should include a photo of this in your planning document. This should include a:
+✏️ **You will use a miro board to plan your website before you build it. The purpose of this board is to outline your design specifications and justify any changes to the design over time.** Your miro board will include:
 
-- [wireframe](https://balsamiq.com/learn/articles/what-are-wireframes/#:~:text=A%20wireframe%20is%20a%20schematic,or%20website%20you're%20building.) - a hand-drawn blueprint that is used to think through the structure of a website 
-- color palette - explanation for why you choose it
-- font(s) - explanation for why you choose it
+- **inspiration**: screenshots of other sites or design elements, including explanations of how you would like to emulate them on your site
+- **wireframe**: a high-fidelity wireframe of your website, including both a desktop and mobile layout
+- **color palette**: including which specific shades your will use, and an explanation for why you choose them
+- **font(s)**: including an explanation for why you choose them
 
-If your design specs change over time, that's okay! Just be sure to justify what you changed and why you changed it.
+If your design specs change over time, that's okay! Just be sure to document what you changed and why you changed it on your Miro board
 
 ---
 
@@ -63,14 +63,14 @@ You have the option of hosting your site online using Github pages. Because of t
 > - Selected `Add people`
 > - Add `emmaqbrown` and `brittegenzlinger` as Admin
 
-{{< code-action "Clone the repository into your" >}} `cs10/unit_web_design` folder. 
+{{< code-action "Clone the repository into your" >}} `cs10/unit01_webdesign` folder. 
 
 👀 **The repository contains the following:**
 - `index.html`
-- `page1.html` - you should rename this file
+- `page1.html` - this is an optional extra page. you should rename or delete this file
 - `styles.css`
 - `/assets` - you should put in photos into folder 
-- `README.md`
+- `README.md` - keep this up to date with the resources you reference
 
 🌐 **If you would like for your project to be live on the web, you must activate Github pages**. Every time you push your Github, it will automatically push your website live to: `yourgithubername.github.io`. For example, mine is hosted at:[https://emmaqbrown.github.io/](https://emmaqbrown.github.io/).
 > - Select `Settings` on the repo page
@@ -82,10 +82,24 @@ You have the option of hosting your site online using Github pages. Because of t
 
 
 
-## [3] Assessment
-
+## [3] Criteria
 
 ✅  **This project will be assessed on the following criteria:**
+
+- Iterative Development [3]
+- Design Specifications [3]
+- HTML [3]
+- CSS [3]
+
+**For each criteria you will be assessed on a score from 0-3** 
+- 0 - no evidence of the practice
+- 1 - limited evidence of the practice
+- 2 - adequate evidence of the practice
+- 3 - substantial evidence of the practice
+
+---
+
+**[Success Claims]**
 - **Iterative Development [3]**
     - I can consistently push my work to Github with descriptive commit messages
     - I can consistently update my `README.md` file with works cited 
@@ -94,22 +108,13 @@ You have the option of hosting your site online using Github pages. Because of t
     - I can consider the user and context of my site
     - I can plan a wireframe for desktop and mobile with appropriate color palette and fonts
     - I can update the design specifications over time with a justification as to why changes were made
-    - mobile and desktop
 - **HTML [3]**
     - I can write readable code
     - I can write a well structured site using HTML
 - **CSS [3]**
     - I can write readable code
-    - mobile and desktop
-    - I can write well abstracted style rules using CSS 
-
-
-
-**For each criteria you will be assessed on a score from 0-3.** 
-- 0 - no evidence of the practice
-- 1 - limited evidence of the practice
-- 2 - adequate evidence of the practice
-- 3 - substantial evidence of the practice
+    - I can write CSS that is adaptive to both mobile and desktop devices
+    - I can write well abstracted style rules using CSS
 ---
 
 ## [4] Deliverables
@@ -121,12 +126,17 @@ You have the option of hosting your site online using Github pages. Because of t
 
 ---
 
-**🗓️ Timeline**
+**🗓️ Timeline:** You have 4 in-class work days. 
 
-**You have 4 in class days to complete this project.**
+You may find it necessary to work outside of school, however if you are focused in class you can complete the project within the allotted blocks. Our office hours are Tuesday during CCA in B405. 
 
-- begins on Wednesday, 22 February 
-- due on Thursday, 02 March
+| CS10.1 Dates | CS10.2 Dates | Agenda                         |
+|--------------|--------------|--------------------------------|
+| 19 Feb       | 20 Feb       | Project Intro & Design Specification |
+| 20 Feb       | 21 Feb       | Work Day - Finish Design Specification & Start Coding |
+| 22 Feb       | 23 Feb       | Work Day - Coding        |
+| 27 Feb       | 26 Feb       | Work Day - Coding        |
+| 29 Feb       | 28 Feb       | Project Due at End of Class |
 
 ---
 
@@ -147,11 +157,11 @@ You have the option of hosting your site online using Github pages. Because of t
 🔍 **Google is your best friend!** Especially when it comes to Web Design, it's not about remembering exact HTML syntax or hundreds of specific CSS properties. It's about coming up with a design and figuring out how to implement it by looking at examples and modifying existing code.
 
 - CSS Code Pen Examples
-    - [google search bar](bit.ly/cs10_css_challenge)
-    - [button](bit.ly/css_challenge_button)
-    - [hover](https://codepen.io/eqbrown/pen/mdGeZdy)
-    - [photo grid](bit.ly/css_challenge_photogrid)
-    - [card](bit.ly/css_challenge_card)
+    - [google search bar](https://codepen.io/eqbrown/pen/KKEzrYW)
+    - [button](https://codepen.io/eqbrown/pen/jOpjeOe)
+    - [hover berries](https://codepen.io/eqbrown/pen/mdGeZdy)
+    - [hover buttons](https://codepen.io/eqbrown/pen/XWGgqxb)
+    - [100 days](https://codepen.io/eqbrown/pen/xxBrWov)
     - [flexbox - align items](https://codepen.io/eqbrown/pen/MWqeLrg)
 - [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 - [Google Fonts](https://fonts.google.com/)
