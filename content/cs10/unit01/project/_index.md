@@ -35,14 +35,15 @@ You may use and adapt code you find online. However, you must keep track of the 
 ## [1] Design Specification
 
 
-✏️ **You will use a miro board to plan your website before you build it. The purpose of this board is to outline your design specifications and justify any changes to the design over time.** Your miro board will include:
+✏️ **You will use a miro board to plan your website before you build it. The purpose of this board is to outline your design specifications and justify any changes to the design over time**
 
-- **inspiration**: screenshots of other sites or design elements, including explanations of how you would like to emulate them on your site
-- **wireframe**: a high-fidelity wireframe of your website, including both a desktop and mobile layout
-- **color palette**: including which specific shades your will use, and an explanation for why you choose them
-- **font(s)**: including an explanation for why you choose them
 
 If your design specs change over time, that's okay! Just be sure to document what you changed and why you changed it on your Miro board
+
+💻 **Duplicate the [Miro Board Template](https://miro.com/app/board/uXjVNyV3moc=/?share_link_id=540296233857) and share it with the teachers.**
+> 1) Click `Web Design Design Specification Document [template]` on the top left 
+> 2) Click `Duplicate`
+> 3) Share with `eqbrown@isf.edu.hk` and `bgenzlinger@isf.edu.hk`
 
 ---
 
@@ -67,12 +68,11 @@ You have the option of hosting your site online using Github pages. Because of t
 
 👀 **The repository contains the following:**
 - `index.html`
-- `page1.html` - this is an optional extra page. you should rename or delete this file
 - `styles.css`
 - `/assets` - you should put in photos into folder 
 - `README.md` - keep this up to date with the resources you reference
 
-🌐 **If you would like for your project to be live on the web, you must activate Github pages**. Every time you push your Github, it will automatically push your website live to: `yourgithubername.github.io`. For example, mine is hosted at:[https://emmaqbrown.github.io/](https://emmaqbrown.github.io/).
+🌐 **If you would like for your project to be live on the web, you must activate Github pages**. Every time you push your Github, it will automatically push your website live to: `yourgithubername.github.io`. For example, this site is is hosted at:[https://the-isf-academy.github.io/making-with-code/](https://the-isf-academy.github.io/making-with-code/).
 > - Select `Settings` on the repo page
 > - Select `Pages` on the left sidebar
 > - Select `Branch` > `main` > `Save`
@@ -121,12 +121,12 @@ You have the option of hosting your site online using Github pages. Because of t
 
 {{< deliverables  "Projects are due on Wednesday, 02 March." >}}
 
-- A `Web Design Project | Design Specification Document` - a Google Doc
+- A `Web Design Project Design Specification Document` - Miro boardso
 - A `yourgithubusername.github.io` repository 
 
 ---
 
-**🗓️ Timeline:** You have 4 in-class work days. 
+**🗓️ Timeline:** You have 5 in-class work days. 
 
 You may find it necessary to work outside of school, however if you are focused in class you can complete the project within the allotted blocks. Our office hours are Tuesday during CCA in B405. 
 
@@ -157,12 +157,11 @@ You may find it necessary to work outside of school, however if you are focused 
 🔍 **Google is your best friend!** Especially when it comes to Web Design, it's not about remembering exact HTML syntax or hundreds of specific CSS properties. It's about coming up with a design and figuring out how to implement it by looking at examples and modifying existing code.
 
 - CSS Code Pen Examples
-    - [google search bar](https://codepen.io/eqbrown/pen/KKEzrYW)
-    - [button](https://codepen.io/eqbrown/pen/jOpjeOe)
-    - [hover berries](https://codepen.io/eqbrown/pen/mdGeZdy)
-    - [hover buttons](https://codepen.io/eqbrown/pen/XWGgqxb)
+    - [Simple Hover Button Wiggle Animation](https://codepen.io/eqbrown/pen/BabWGqY?editors=1100)
+    - [Simple Hover Highlight Animation](https://codepen.io/eqbrown/pen/QWopJJV?editors=1100)
+    - [Dot Animation](https://codepen.io/petersonby/pen/gzxpdj?editors=1100)
+    - [Button Transformation](https://codepen.io/dead_pixel/pen/KKevEE?editors=1100)
     - [100 days](https://codepen.io/eqbrown/pen/xxBrWov)
-    - [flexbox - align items](https://codepen.io/eqbrown/pen/MWqeLrg)
 - [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 - [Google Fonts](https://fonts.google.com/)
 - [Fontjoy](https://fontjoy.com/) - generates font combinations
