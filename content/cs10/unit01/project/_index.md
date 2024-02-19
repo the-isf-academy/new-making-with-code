@@ -178,8 +178,8 @@ You may find it necessary to work outside of school, however if you are focused 
     - [glorialo.design](https://www.glorialo.design/)
     - [swkang73.github.io](https://swkang73.github.io/#home)
     - [isfedwin.github.io](https://isfedwin.github.io/)
-    - [https://0113017.github.io/](https://0113017.github.io/)
-    - [https://0012112.github.io/](https://0012112.github.io/)
+    - [0113017.github.io/](https://0113017.github.io/)
+    - [0012112.github.io/](https://0012112.github.io/)
 
 
 
