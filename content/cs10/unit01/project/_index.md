@@ -119,7 +119,7 @@ You have the option of hosting your site online using Github pages. Because of t
 
 ## [4] Deliverables
 
-{{< deliverables  "Projects are due on Wednesday, 02 March." >}}
+{{< deliverables  "Projects are due at the end of Week 24." >}}
 
 - A `Web Design Project Design Specification Document` - Miro boardso
 - A `yourgithubusername.github.io` repository 
@@ -177,6 +177,9 @@ You may find it necessary to work outside of school, however if you are focused 
     - [elizabethylin.com](https://www.elizabethylin.com/)
     - [glorialo.design](https://www.glorialo.design/)
     - [swkang73.github.io](https://swkang73.github.io/#home)
+    - [isfedwin.github.io](https://isfedwin.github.io/)
+    - [https://0113017.github.io/](https://0113017.github.io/)
+    - [https://0012112.github.io/](https://0012112.github.io/)
 
 
 
