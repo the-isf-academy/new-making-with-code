@@ -61,7 +61,7 @@ age_df.head()
 
 ## Find the mode of a column for each unique value in another column 
 
-📖 **Here is a similar `dataframe` stored in the variable `age_df`.** It stores names, ages, is_adult, and house.
+📖 **Here is a `dataframe` stored in the variable `age_df`.** It stores names, ages, is_adult, and house.
 
 ```python
 age_df.head()
@@ -93,6 +93,47 @@ mode_isAdult_by_house_df
 ```
 
 *This tutorial is based of [this](https://stackoverflow.com/questions/15222754/groupby-pandas-dataframe-and-select-most-common-value) post.*
+
+---
+
+
+---
+
+## Find the mean of a column for each unique value in another column 
+
+📖 **Here is a `dataframe` stored in the variable `age_df`.** It stores names, ages, is_adult, and house.
+
+```python
+age_df.head()
+
+	name	age     is_adult    house
+0	Alice	10      False       'fire'
+1	Bob	    15      False       'metal'
+2	Charlie	25      True        'metal'
+3	David	40      True        'fire'
+4	Sally	80      True        'fire
+```
+
+📖 **We want to see what is the `mean` of `is_adult` for each `age`.** For this we must use `groupby`. 
+> You could also replace `.mean()` with `.max()` or `.min()`
+>
+> To round the mean, add `.round(3)` after `.mean()`
+
+```python
+mean_isAdult_by_age_df =  df.groupby(['is_adult'])['age'].mean().to_frame().reset_index()
+```
+
+📖 **Here is the new dataframe `mean_isAdult_by_age_df`.**
+
+
+```python
+mode_isAdult_by_house_df
+
+	is_adult	    age         
+0	True	    27.500000           
+1	False	    47.333333
+
+```
 
 
 
