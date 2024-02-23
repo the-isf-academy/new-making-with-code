@@ -81,6 +81,8 @@ mode_isAdult_by_house_df =  df.groupby(['house'])['is_adult'].agg(pd.Series.mode
 ```
 
 📖 **Here is the new dataframe `mode_isAdult_by_house_df`.**
+> For `metal`, because `True` and `False` appear the same amount of times it returns both options. 
+
 ```python
 mode_isAdult_by_house_df
 
