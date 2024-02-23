@@ -1,19 +1,103 @@
 ---
-Title: "[Resources]"
-draft: true
+Title: "[Tips & Tricks]"
+# draft: true
 ---
 
-# Resources
+# Tips & Tricks
 
-This page will be home to helpful tips and tricks of `Pandas` and `MatPlotLib`. Think of these resources as as an FAQs (frequently asks questions).
+This page will be home to helpful tips and tricks of `Pandas`. Think of these resources as as an FAQs (frequently asks questions).
 
-> Simply click on a header on the right sidebar, to jump to a topic.
 
 *Feel free to let a teacher know if you have any suggestions of what we should add.*
 
 ---
 
-## Creating a Frequency Table and Graph
+## Creating a New Column Based on Another Columns
+
+
+📖 **Here is a `dataframe` stored in the variable `age_df`.** It stores names and ages.
+
+```python
+age_df.head()
+
+	name	age
+0	Alice	10
+1	Bob	    15
+2	Charlie	25
+3	David	40
+4	Sally	80
+```
+📖 **In one code block, you will write a function with your conditional statements.** This function returns `True` or `False`, based on their age. 
+
+```python
+def get_if_adult(age):
+    if age < 18:
+        return False
+    else:
+        return True
+```
+
+📖 **In another code block, you can apply the function to each value in a given row.** Here it applies the function `get_if_adult()` to each row of the `age` columns, and stores the return value in a new column called `is_adult`.
+```python
+# Apply the get_age_group function to the age column
+df['is_adult']  = df.apply(lambda row: is_adult(row['age']), axis=1)
+```
+📖 **Here is the updated dataframe.**
+```python
+age_df.head()
+
+	name	age     is_adult
+0	Alice	10      False
+1	Bob	    15      False
+2	Charlie	25      True
+3	David	40      True
+4	Sally	80      True
+```
+
+*This tutorial is based of [this](https://saturncloud.io/blog/how-to-create-a-new-column-based-on-the-value-of-another-column-in-pandas/#:~:text=Once%20we%20have%20had%20our,and%20return%20a%20new%20DataFrame.) guide.*
+
+
+---
+
+## Find the mode of a column for each unique value in another column 
+
+📖 **Here is a similar `dataframe` stored in the variable `age_df`.** It stores names, ages, is_adult, and house.
+
+```python
+age_df.head()
+
+	name	age     is_adult    house
+0	Alice	10      False       'fire'
+1	Bob	    15      False       'metal'
+2	Charlie	25      True        'metal'
+3	David	40      True        'fire'
+4	Sally	80      True        'fire
+```
+
+📖 **We want to see what is the `mode` of `is_adult` for each `house`.** For this we must use `groupby`. 
+
+```python
+mode_isAdult_by_house_df =  df.groupby(['house'])['is_adult'].agg(pd.Series.mode).to_frame().reset_index()
+```
+
+📖 **Here is the new dataframe `mode_isAdult_by_house_df`.**
+```python
+mode_isAdult_by_house_df
+
+	house	is_adult         
+0	fire	True             
+1	metal	['False','True']
+
+```
+
+*This tutorial is based of [this](https://stackoverflow.com/questions/15222754/groupby-pandas-dataframe-and-select-most-common-value) post.*
+
+
+
+
+
+
+<!-- ## Creating a Frequency Table and Graph
 
 When analyzing a CSV of our media history, we'll often see duplicates.
 
@@ -165,4 +249,4 @@ If you're interested learning how to customize your graphs further, take a look 
 
 Seaborn is another Python library that is built on top of MatPlotLib.
 
----
+--- -->
