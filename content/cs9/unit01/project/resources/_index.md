@@ -1,19 +1,207 @@
 ---
-Title: "[Resources]"
-draft: true
+Title: "[Tips & Tricks]"
+# draft: true
 ---
 
-# Resources
+# Tips & Tricks
 
-This page will be home to helpful tips and tricks of `Pandas` and `MatPlotLib`. Think of these resources as as an FAQs (frequently asks questions).
+This page will be home to helpful tips and tricks of `Pandas`. Think of these resources as as an FAQs (frequently asks questions).
 
-> Simply click on a header on the right sidebar, to jump to a topic.
 
 *Feel free to let a teacher know if you have any suggestions of what we should add.*
 
 ---
 
-## Creating a Frequency Table and Graph
+## Creating a New Column Based on Another Columns
+
+
+📖 **Here is a `dataframe` stored in the variable `age_df`.** It stores names and ages.
+
+```python
+age_df.head()
+
+	name	age
+0	Alice	10
+1	Bob	    15
+2	Charlie	25
+3	David	40
+4	Sally	80
+```
+📖 **In one code block, you will write a function with your conditional statements.** This function returns `True` or `False`, based on their age. 
+
+```python
+def get_if_adult(age):
+    if age < 18:
+        return False
+    else:
+        return True
+```
+
+📖 **In another code block, you can apply the function to each value in a given row.** Here it applies the function `get_if_adult()` to each row of the `age` columns, and stores the return value in a new column called `is_adult`.
+```python
+# Apply the get_age_group function to the age column
+age_df['is_adult']  = age_df.apply(lambda row: get_if_adult(row['age']), axis=1)
+```
+📖 **Here is the updated dataframe.**
+```python
+age_df.head()
+
+	name	age     is_adult
+0	Alice	10      False
+1	Bob	    15      False
+2	Charlie	25      True
+3	David	40      True
+4	Sally	80      True
+```
+
+*This tutorial is based of [this](https://saturncloud.io/blog/how-to-create-a-new-column-based-on-the-value-of-another-column-in-pandas/#:~:text=Once%20we%20have%20had%20our,and%20return%20a%20new%20DataFrame.) guide.*
+
+
+---
+
+## Find the mode of a column for each unique value in another column 
+
+📖 **Here is a `dataframe` stored in the variable `age_df`.** It stores names, ages, is_adult, and house.
+
+```python
+age_df.head()
+
+	name	age     is_adult    house
+0	Alice	10      False       'fire'
+1	Bob	    15      False       'metal'
+2	Charlie	25      True        'metal'
+3	David	40      True        'fire'
+4	Sally	80      True        'fire
+```
+
+📖 **We want to see what is the `mode` of `is_adult` for each `house`.** For this we must use `groupby`. 
+
+```python
+mode_isAdult_by_house_df =  age_df.groupby(['house'])['is_adult'].agg(pd.Series.mode).to_frame().reset_index()
+```
+
+📖 **Here is the new dataframe `mode_isAdult_by_house_df`.**
+> For `metal`, because `True` and `False` appear the same amount of times it returns both options. 
+
+```python
+mode_isAdult_by_house_df
+
+	house	is_adult         
+0	fire	True             
+1	metal	['False','True']
+
+```
+
+*This tutorial is based of [this](https://stackoverflow.com/questions/15222754/groupby-pandas-dataframe-and-select-most-common-value) post.*
+
+---
+
+
+## Find the mean of a column for each unique value in another column 
+
+📖 **Here is a `dataframe` stored in the variable `age_df`.** It stores names, ages, is_adult, and house.
+
+```python
+age_df.head()
+
+	name	age     is_adult    house
+0	Alice	10      False       'fire'
+1	Bob	    15      False       'metal'
+2	Charlie	25      True        'metal'
+3	David	40      True        'fire'
+4	Sally	80      True        'fire
+```
+
+📖 **We want to see what is the `mean` of `is_adult` for each `age`.** For this we must use `groupby`. 
+> You could also replace `.mean()` with `.max()` or `.min()`
+>
+> To round the mean, add `.round(3)` after `.mean()`
+
+```python
+mean_isAdult_by_age_df =  df.groupby(['is_adult'])['age'].mean().to_frame().reset_index()
+```
+
+📖 **Here is the new dataframe `mean_isAdult_by_age_df`.**
+
+
+```python
+mode_isAdult_by_house_df
+
+	is_adult	    age         
+0	True	    27.500000           
+1	False	    47.333333
+
+```
+
+---
+
+
+## Compare a value to the value right above it
+
+
+📖 **Here is a `dataframe` stored in the variable `watch_history_df`.** It stores shows, episodes, and genre.
+
+```python
+watch_history_df.head()
+
+	show	    episode     genre    
+0	One Piece	08          Fantasy      
+1	One Piece	09          Fantasy      
+2	The Office	15          Comedy        
+3	Avatar	    01          Animation       
+4	Avatar	    02          Animation 
+5	Avatar	    03          Animation 
+```
+
+📖 **We want to add a column to see what the previous show was called.** For this we must use `shift`.
+
+> You could also put a number in the brackets to shift more than just 1 row down
+>
+> For example, `.shift(2)` or `.shift(-1)`
+
+
+```python
+watch_history_df['previous'] = watch_history_df['show'].shift()
+```
+
+📖 **Here is the dataframe with its new column `previous`.**
+
+```python
+watch_history_df.head()
+
+	show	    episode     genre       previous
+0	One Piece	08          Fantasy     None 
+1	One Piece	09          Fantasy     One Piece 
+2	The Office	15          Comedy      One Piece  
+3	Avatar	    01          Animation   The Office    
+4	Avatar	    02          Animation   Avatar
+5	Avatar	    03          Animation   Avatar
+```
+
+📖 **Now we will add a new column to track if the show is the same as the previous one.**
+
+```python
+watch_history_df["repeat"] = watch_history_df["show"] == watch_history_df["previous"]
+```
+
+📖 **Here is the dataframe with its new column `previous`.**
+
+```python
+watch_history_df.head()
+
+	show	    episode     genre       previous    repeat
+0	One Piece	08          Fantasy     None        False
+1	One Piece	09          Fantasy     One Piece   True
+2	The Office	15          Comedy      One Piece   False
+3	Avatar	    01          Animation   The Office  False  
+4	Avatar	    02          Animation   Avatar      True
+5	Avatar	    03          Animation   Avatar      True
+```
+
+
+
+
+<!-- ## Creating a Frequency Table and Graph
 
 When analyzing a CSV of our media history, we'll often see duplicates.
 
@@ -165,4 +353,4 @@ If you're interested learning how to customize your graphs further, take a look 
 
 Seaborn is another Python library that is built on top of MatPlotLib.
 
----
+--- -->
