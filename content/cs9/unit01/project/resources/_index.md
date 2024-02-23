@@ -40,7 +40,7 @@ def get_if_adult(age):
 📖 **In another code block, you can apply the function to each value in a given row.** Here it applies the function `get_if_adult()` to each row of the `age` columns, and stores the return value in a new column called `is_adult`.
 ```python
 # Apply the get_age_group function to the age column
-df['is_adult']  = df.apply(lambda row: is_adult(row['age']), axis=1)
+age_df['is_adult']  = age_df.apply(lambda row: get_if_adult(row['age']), axis=1)
 ```
 📖 **Here is the updated dataframe.**
 ```python
@@ -77,7 +77,7 @@ age_df.head()
 📖 **We want to see what is the `mode` of `is_adult` for each `house`.** For this we must use `groupby`. 
 
 ```python
-mode_isAdult_by_house_df =  df.groupby(['house'])['is_adult'].agg(pd.Series.mode).to_frame().reset_index()
+mode_isAdult_by_house_df =  age_df.groupby(['house'])['is_adult'].agg(pd.Series.mode).to_frame().reset_index()
 ```
 
 📖 **Here is the new dataframe `mode_isAdult_by_house_df`.**
@@ -96,8 +96,6 @@ mode_isAdult_by_house_df
 
 ---
 
-
----
 
 ## Find the mean of a column for each unique value in another column 
 
@@ -135,7 +133,70 @@ mode_isAdult_by_house_df
 
 ```
 
+---
 
+
+## Compare a value to the value right above it
+
+
+📖 **Here is a `dataframe` stored in the variable `watch_history_df`.** It stores shows, episodes, and genre.
+
+```python
+watch_history_df.head()
+
+	show	    episode     genre    
+0	One Piece	08          Fantasy      
+1	One Piece	09          Fantasy      
+2	The Office	15          Comedy        
+3	Avatar	    01          Animation       
+4	Avatar	    02          Animation 
+5	Avatar	    03          Animation 
+```
+
+📖 **We want to add a column to see what the previous show was called.** For this we must use `shift`.
+
+> You could also put a number in the brackets to shift more than just 1 row down
+>
+> For example, `.shift(2)` or `.shift(-1)`
+
+
+```python
+watch_history_df['previous'] = watch_history_df['show'].shift()
+```
+
+📖 **Here is the dataframe with its new column `previous`.**
+
+```python
+watch_history_df.head()
+
+	show	    episode     genre       previous
+0	One Piece	08          Fantasy     None 
+1	One Piece	09          Fantasy     One Piece 
+2	The Office	15          Comedy      One Piece  
+3	Avatar	    01          Animation   The Office    
+4	Avatar	    02          Animation   Avatar
+5	Avatar	    03          Animation   Avatar
+```
+
+📖 **Now we will add a new column to track if the show is the same as the previous one.**
+
+```python
+watch_history_df["repeat"] = watch_history_df["show"] == watch_history_df["previous"]
+```
+
+📖 **Here is the dataframe with its new column `previous`.**
+
+```python
+watch_history_df.head()
+
+	show	    episode     genre       previous    repeat
+0	One Piece	08          Fantasy     None        False
+1	One Piece	09          Fantasy     One Piece   True
+2	The Office	15          Comedy      One Piece   False
+3	Avatar	    01          Animation   The Office  False  
+4	Avatar	    02          Animation   Avatar      True
+5	Avatar	    03          Animation   Avatar      True
+```
 
 
 
