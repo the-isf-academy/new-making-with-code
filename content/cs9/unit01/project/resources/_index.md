@@ -59,6 +59,42 @@ age_df.head()
 
 ---
 
+## Find the top 1 (or 5) based on two columns
+
+For example, I want to find the top 1 show I watched each month.
+
+📖 **Here is a `dataframe` stored in the variable `watch_history_df`.** 
+
+```python
+	month       show	    episode     genre       
+0	January     One Piece	08          Fantasy     
+1	January     One Piece	09          Fantasy     
+2	January     The Office	15          Comedy        
+3	February    Avatar	    01          Animation       
+4	February    Avatar	    02          Animation   
+5	February    Avatar	    03          Animation   
+```
+
+📖 **We want to see what our top 1 `show` is for each `month`.** For this we must use `groupby` twice.
+
+```python
+#this counts up how many times i watched each show in each month
+top_show_df = watch_history_df.groupby(by=["month", "show"]).size().to_frame("count")
+
+#this sort the new df and gets only the top 1 for each month
+top_show_df = top_show_df.sort_values(['month', 'show'], ascending=[True, False]).groupby('month').head(1)
+```
+
+📖 **Here is the new dataframe `top_show_df`.**
+
+
+```python
+month       show	    count        
+1           One Piece   2     
+2           Avatar      3     
+```
+
+---
 ## Find the mode of a column for each unique value in another column 
 
 📖 **Here is a `dataframe` stored in the variable `age_df`.** It stores names, ages, is_adult, and house.
@@ -134,7 +170,6 @@ mode_isAdult_by_house_df
 ```
 
 ---
-
 
 ## Compare a value to the value right above it
 
