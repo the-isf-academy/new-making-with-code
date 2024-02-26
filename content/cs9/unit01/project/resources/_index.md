@@ -233,6 +233,104 @@ watch_history_df.head()
 5	Avatar	    03          Animation   Avatar      True
 ```
 
+---
+
+## Grouped Bar Chart
+
+**A grouped bar chart allows you to compare multiple sets of similar data.**
+
+📖 **In this chart, we compare two people and their number of cats and dogs.** Their data is stored in `person1df` and `person2df`. The dataframes are identical, except for the `count` column.
+
+
+```python
+person1df
+
+	animal	count     
+0	dog	    25     
+1	cat	    30          
+```
+
+```python
+person2df
+
+	animal	count     
+0	dog	    50     
+1	cat	    23          
+```
+
+📖  **This is how you create a group bar chart with two dataframes.**
+
+```python
+fig = go.Figure(data=[
+    go.Bar(name='person a', x=person1df.animal, y=person1df.count),
+    go.Bar(name='person b', x=person2df.animal, y=person2df.count)
+])
+
+
+fig.update_layout(
+    barmode='group',
+    title="Plot Title",
+    xaxis_title="x axis title",
+    yaxis_title="y axis title",
+    )
+
+fig.show()
+```
+
+{{< figure src="images/courses/cs9/unit01/resouces_groupedbar.png" width="100%" >}}
+
+---
+
+## Line Charts with Multiple Lines
+
+**A grouped bar chart allows you to compare multiple sets of similar data.**
+
+📖 **In this chart, we compare two people and their heights over 5 years.** Their data is stored in `person1df` and `person2df`. The dataframes are identical, except for the `count` column.
+
+
+```python
+person1df
+
+	year	height     
+0	2020	    150     
+1	2021	    155   
+1	2022	    160          
+1	2023	    164          
+1	2024	    165          
+```
+
+```python
+person2df
+
+	year	height     
+0	2020	    165     
+1	2021	    168   
+1	2022	    170          
+1	2023	    173          
+1	2024	    175           
+```
+
+📖  **This is how you create a group bar chart with two dataframes.**
+
+```python
+fig = go.Figure()
+
+fig.add_trace(go.Scatter(x=person1df.year, y=person1df.height, name='person 1'))
+
+fig.add_trace(go.Scatter(x=person2df.year, y=person2df.height, name='person 2'))
+
+fig.update_xaxes(type='category') # only exisiting values for ticks 
+
+fig.update_layout(
+    title="Plot Title",
+    xaxis_title="height",
+    yaxis_title="years",
+    )
+
+fig.show()
+```
+
+{{< figure src="images/courses/cs9/unit01/resouces_linechart.png" width="100%" >}}
 
 
 
