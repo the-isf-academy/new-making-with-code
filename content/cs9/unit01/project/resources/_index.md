@@ -17,16 +17,16 @@ This page will be home to helpful tips and tricks of `Pandas`. Think of these re
 
 📖 **Here is a `dataframe` stored in the variable `age_df`.** It stores names and ages.
 
-```python
-age_df.head()
 
-	name	age
-0	Alice	10
-1	Bob	    15
-2	Charlie	25
-3	David	40
-4	Sally	80
-```
+|   | name    | age |
+|---|---------|-----|
+| 0 | Alice   | 10  |
+| 1 | Bob     | 15  |
+| 2 | Charlie | 25  |
+| 3 | David   | 40  |
+| 4 | Sally   | 80  |
+
+
 📖 **In one code block, you will write a function with your conditional statements.** This function returns `True` or `False`, based on their age. 
 
 ```python
@@ -43,16 +43,14 @@ def get_if_adult(age):
 age_df['is_adult']  = age_df.apply(lambda row: get_if_adult(row['age']), axis=1)
 ```
 📖 **Here is the updated dataframe.**
-```python
-age_df.head()
 
-	name	age     is_adult
-0	Alice	10      False
-1	Bob	    15      False
-2	Charlie	25      True
-3	David	40      True
-4	Sally	80      True
-```
+|   | name    | age | is_adult |
+|---|---------|-----|----------|
+| 0 | Alice   | 10  | False    |
+| 1 | Bob     | 15  | False    |
+| 2 | Charlie | 25  | True     |
+| 3 | David   | 40  | True     |
+| 4 | Sally   | 80  | True     |
 
 *This tutorial is based of [this](https://saturncloud.io/blog/how-to-create-a-new-column-based-on-the-value-of-another-column-in-pandas/#:~:text=Once%20we%20have%20had%20our,and%20return%20a%20new%20DataFrame.) guide.*
 
@@ -65,34 +63,45 @@ For example, I want to find the top 1 show I watched each month.
 
 📖 **Here is a `dataframe` stored in the variable `watch_history_df`.** 
 
+
+|   | month    | show       | episode | genre     |
+|---|----------|------------|---------|-----------|
+| 0 | January  | One Piece  | 08      | Fantasy   |
+| 1 | January  | One Piece  | 09      | Fantasy   |
+| 2 | January  | The Office | 15      | Comedy    |
+| 3 | February | Avatar     | 01      | Animation |
+| 4 | February | Avatar     | 02      | Animation |
+| 5 | February | Avatar     | 03      | Animation |
+
+
+1️⃣ **Count how many times we watched each `show` during each `month`.** For this we must use `groupby`.
+
 ```python
-	month       show	    episode     genre       
-0	January     One Piece	08          Fantasy     
-1	January     One Piece	09          Fantasy     
-2	January     The Office	15          Comedy        
-3	February    Avatar	    01          Animation       
-4	February    Avatar	    02          Animation   
-5	February    Avatar	    03          Animation   
+#this counts up how many times I watched each show in each month
+top_show_df = watch_history_df.groupby(by=["month", "show"]).size().to_frame("count")
 ```
 
-📖 **We want to see what our top 1 `show` is for each `month`.** For this we must use `groupby` twice.
+2️⃣ **Next, sort the values.** Sort by month, then the count. We use ascending for the month, since we want to start with the lowest number (1 for january). We use descending for count, since we want the most watched at the top.
 
 ```python
-#this counts up how many times i watched each show in each month
-top_show_df = watch_history_df.groupby(by=["month", "show"]).size().to_frame("count")
+#this sorts the new df first by month, then by the count
+top_show_df = top_show_df.sort_values(['month', 'count'], ascending=[True, False])
+```
 
-#this sort the new df and gets only the top 1 for each month
-top_show_df = top_show_df.sort_values(['month', 'show'], ascending=[True, False]).groupby('month').head(1)
+3️⃣ **Last, get the top 1 show for each month.** To do this, we use `groupby` combined with `head`. If you want the top 3, you could use `.head(3)`, etc.
+
+```python
+#this gets the top 1 for every month
+top_show_df = top_show_df.groupby('month').head(1)
 ```
 
 📖 **Here is the new dataframe `top_show_df`.**
 
+| month | show      | count |
+|-------|-----------|-------|
+| 1     | One Piece | 2     |
+| 2     | Avatar    | 3     |
 
-```python
-month       show	    count        
-1           One Piece   2     
-2           Avatar      3     
-```
 
 ---
 ## Find the mode of a column for each unique value in another column 
@@ -101,14 +110,15 @@ month       show	    count
 
 ```python
 age_df.head()
-
-	name	age     is_adult    house
-0	Alice	10      False       'fire'
-1	Bob	    15      False       'metal'
-2	Charlie	25      True        'metal'
-3	David	40      True        'fire'
-4	Sally	80      True        'fire
 ```
+
+|   | name    | age | is_adult | house   |
+|---|---------|-----|----------|---------|
+| 0 | Alice   | 10  | False    | 'fire'  |
+| 1 | Bob     | 15  | False    | 'metal' |
+| 2 | Charlie | 25  | True     | 'metal' |
+| 3 | David   | 40  | True     | 'fire'  |
+| 4 | Sally   | 80  | True     | 'fire   |
 
 📖 **We want to see what is the `mode` of `is_adult` for each `house`.** For this we must use `groupby`. 
 
@@ -121,12 +131,12 @@ mode_isAdult_by_house_df =  age_df.groupby(['house'])['is_adult'].agg(pd.Series.
 
 ```python
 mode_isAdult_by_house_df
-
-	house	is_adult         
-0	fire	True             
-1	metal	['False','True']
-
 ```
+
+|   | house | is_adult         |
+|---|-------|------------------|
+| 0 | fire  | True             |
+| 1 | metal | ['False','True'] |
 
 *This tutorial is based of [this](https://stackoverflow.com/questions/15222754/groupby-pandas-dataframe-and-select-most-common-value) post.*
 
@@ -139,14 +149,15 @@ mode_isAdult_by_house_df
 
 ```python
 age_df.head()
-
-	name	age     is_adult    house
-0	Alice	10      False       'fire'
-1	Bob	    15      False       'metal'
-2	Charlie	25      True        'metal'
-3	David	40      True        'fire'
-4	Sally	80      True        'fire
 ```
+
+|   | name    | age | is_adult | house   |
+|---|---------|-----|----------|---------|
+| 0 | Alice   | 10  | False    | 'fire'  |
+| 1 | Bob     | 15  | False    | 'metal' |
+| 2 | Charlie | 25  | True     | 'metal' |
+| 3 | David   | 40  | True     | 'fire'  |
+| 4 | Sally   | 80  | True     | 'fire   |
 
 📖 **We want to see what is the `mean` of `is_adult` for each `age`.** For this we must use `groupby`. 
 > You could also replace `.mean()` with `.max()` or `.min()`
@@ -162,12 +173,12 @@ mean_isAdult_by_age_df =  df.groupby(['is_adult'])['age'].mean().to_frame().rese
 
 ```python
 mode_isAdult_by_house_df
-
-	is_adult	    age         
-0	True	    27.500000           
-1	False	    47.333333
-
 ```
+
+|   | is_adult | age       |
+|---|----------|-----------|
+| 0 | True     | 27.500000 |
+| 1 | False    | 47.333333 |
 
 ---
 
@@ -178,15 +189,16 @@ mode_isAdult_by_house_df
 
 ```python
 watch_history_df.head()
-
-	show	    episode     genre    
-0	One Piece	08          Fantasy      
-1	One Piece	09          Fantasy      
-2	The Office	15          Comedy        
-3	Avatar	    01          Animation       
-4	Avatar	    02          Animation 
-5	Avatar	    03          Animation 
 ```
+
+|   | show       | episode | genre     |
+|---|------------|---------|-----------|
+| 0 | One Piece  | 08      | Fantasy   |
+| 1 | One Piece  | 09      | Fantasy   |
+| 2 | The Office | 15      | Comedy    |
+| 3 | Avatar     | 01      | Animation |
+| 4 | Avatar     | 02      | Animation |
+| 5 | Avatar     | 03      | Animation |
 
 📖 **We want to add a column to see what the previous show was called.** For this we must use `shift`.
 
@@ -197,42 +209,131 @@ watch_history_df.head()
 
 ```python
 watch_history_df['previous'] = watch_history_df['show'].shift()
-```
-
-📖 **Here is the dataframe with its new column `previous`.**
-
-```python
 watch_history_df.head()
-
-	show	    episode     genre       previous
-0	One Piece	08          Fantasy     None 
-1	One Piece	09          Fantasy     One Piece 
-2	The Office	15          Comedy      One Piece  
-3	Avatar	    01          Animation   The Office    
-4	Avatar	    02          Animation   Avatar
-5	Avatar	    03          Animation   Avatar
 ```
+
+|   | show       | episode | genre     | previous   |
+|---|------------|---------|-----------|------------|
+| 0 | One Piece  | 08      | Fantasy   | None       |
+| 1 | One Piece  | 09      | Fantasy   | One Piece  |
+| 2 | The Office | 15      | Comedy    | One Piece  |
+| 3 | Avatar     | 01      | Animation | The Office |
+| 4 | Avatar     | 02      | Animation | Avatar     |
+| 5 | Avatar     | 03      | Animation | Avatar     |
 
 📖 **Now we will add a new column to track if the show is the same as the previous one.**
 
 ```python
 watch_history_df["repeat"] = watch_history_df["show"] == watch_history_df["previous"]
+watch_history_df.head()
 ```
 
-📖 **Here is the dataframe with its new column `previous`.**
+|   | show       | episode | genre     | previous   | repeat |
+|---|------------|---------|-----------|------------|--------|
+| 0 | One Piece  | 08      | Fantasy   | None       | False  |
+| 1 | One Piece  | 09      | Fantasy   | One Piece  | True   |
+| 2 | The Office | 15      | Comedy    | One Piece  | False  |
+| 3 | Avatar     | 01      | Animation | The Office | False  |
+| 4 | Avatar     | 02      | Animation | Avatar     | True   |
+| 5 | Avatar     | 03      | Animation | Avatar     | True   |
+---
+
+## Grouped Bar Chart
+
+**A grouped bar chart allows you to compare multiple sets of similar data.**
+
+📖 **In this chart, we compare two people and their number of cats and dogs.** Their data is stored in `person1df` and `person2df`. The dataframes are identical, except for the `count` column.
+
 
 ```python
-watch_history_df.head()
+person1df         
+```
+|   | animal | count |
+|---|--------|-------|
+| 0 | dog    | 25    |
+| 1 | cat    | 30    |
 
-	show	    episode     genre       previous    repeat
-0	One Piece	08          Fantasy     None        False
-1	One Piece	09          Fantasy     One Piece   True
-2	The Office	15          Comedy      One Piece   False
-3	Avatar	    01          Animation   The Office  False  
-4	Avatar	    02          Animation   Avatar      True
-5	Avatar	    03          Animation   Avatar      True
+```python
+person2df         
+```
+|   | animal | count |
+|---|--------|-------|
+| 0 | dog    | 50    |
+| 1 | cat    | 23    |
+
+📖  **This is how you create a group bar chart with two dataframes.**
+
+```python
+fig = go.Figure(data=[
+    go.Bar(name='person a', x=person1df.animal, y=person1df.count),
+    go.Bar(name='person b', x=person2df.animal, y=person2df.count)
+])
+
+
+fig.update_layout(
+    barmode='group',
+    title="Plot Title",
+    xaxis_title="x axis title",
+    yaxis_title="y axis title",
+    )
+
+fig.show()
 ```
 
+{{< figure src="images/courses/cs9/unit01/resouces_groupedbar.png" width="100%" >}}
+
+---
+
+## Line Charts with Multiple Lines
+
+**A grouped bar chart allows you to compare multiple sets of similar data.**
+
+📖 **In this chart, we compare two people and their heights over 5 years.** Their data is stored in `person1df` and `person2df`. The dataframes are identical, except for the `count` column.
+
+
+```python
+person1df         
+```
+|   | year | height |
+|---|------|--------|
+| 0 | 2020 | 150    |
+| 1 | 2021 | 155    |
+| 1 | 2022 | 160    |
+| 1 | 2023 | 164    |
+| 1 | 2024 | 165    |
+
+```python
+person2df          
+```
+|   | year | height |
+|---|------|--------|
+| 0 | 2020 | 165    |
+| 1 | 2021 | 168    |
+| 1 | 2022 | 170    |
+| 1 | 2023 | 173    |
+| 1 | 2024 | 175    |
+
+📖  **This is how you create a group bar chart with two dataframes.**
+
+```python
+fig = go.Figure()
+
+fig.add_trace(go.Scatter(x=person1df.year, y=person1df.height, name='person 1'))
+
+fig.add_trace(go.Scatter(x=person2df.year, y=person2df.height, name='person 2'))
+
+fig.update_xaxes(type='category') # only exisiting values for ticks 
+
+fig.update_layout(
+    title="Plot Title",
+    xaxis_title="height",
+    yaxis_title="years",
+    )
+
+fig.show()
+```
+
+{{< figure src="images/courses/cs9/unit01/resouces_linechart.png" width="100%" >}}
 
 
 
