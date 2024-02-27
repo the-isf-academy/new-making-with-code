@@ -265,8 +265,8 @@ person2df
 
 ```python
 fig = go.Figure(data=[
-    go.Bar(name='person a', x=person1df.animal, y=person1df.count),
-    go.Bar(name='person b', x=person2df.animal, y=person2df.count)
+    go.Bar(name='person a', x=person1df.animal, y=person1df.count, text=df1.Name),
+    go.Bar(name='person b', x=person2df.animal, y=person2df.count, text=df2.Name)
 ])
 
 
