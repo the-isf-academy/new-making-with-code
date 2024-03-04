@@ -336,6 +336,59 @@ fig.show()
 {{< figure src="images/courses/cs9/unit01/resouces_linechart.png" width="100%" >}}
 
 
+---
+
+## Adding Other to a dataframe
+
+1️⃣ **Make a new dataframe with just the top 5 artists** For this we must use `head`.
+
+```python
+# make a new df with just the top 5
+top5_df = artist_totals.head(5)
+```
+|  |         artist         | total |
+|:-----:|:----------------------:|:-----:|
+|     0 | Florence + The Machine |   110 |
+|     1 | Childish Gambino       |    62 |
+|     2 | J. Cole                |    28 |
+|     3 | Muse                   |    18 |
+|     4 | Chance the Rapper      |    13 |
+
+2️⃣ **Make a new dataframe with everyone `except` the top 5 artist.** We use `head` again, but with a negative number.
+
+```python
+# get everything except the top 5
+other_df = artist_totals.tail(-5)
+```
+
+3️⃣ **We add up the totals for all the other artists.** To do this, we use `sum`. 
+
+```python
+#this gets the top 1 for every month
+sum = other_df["total"].sum()
+```
+
+4️⃣ **We add a new row for the `other` sum.** 
+
+```python
+# create the new row
+new_row = {'artist': 'Other', 'total': sum}
+# make a new df that combines the top5_df with the new row
+combo_df = top5_df.append(new_row, ignore_index = True)
+```
+
+📖 **Here is the new dataframe `combo_df`.**
+
+|  |         artist         | total |
+|:-----:|:----------------------:|:-----:|
+|     0 | Florence + The Machine |   110 |
+|     1 | Childish Gambino       |    62 |
+|     2 | J. Cole                |    28 |
+|     3 | Muse                   |    18 |
+|     4 | Chance the Rapper      |    13 |
+|     5 | Other      |    11 |
+
+
 
 <!-- ## Creating a Frequency Table and Graph
 
