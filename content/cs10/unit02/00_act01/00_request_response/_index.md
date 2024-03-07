@@ -32,15 +32,16 @@ the request/response lifecycle.
 
 --- 
 
-{{< code-action >}} **Let's get started by making a `unit_02` folder and checking out the sample app.**
+{{< code-action >}} **Let's get started by making a `unit_02` folder.**
  
 ```shell
 cd ~/desktop/making-with-code/cs10
 mkdir unit_web_apps
 cd unit_web_apps
-git clone https://github.com/the-isf-academy/lab_colorama_yourgithubusername
-cd lab_colorama_yourgithubusername
 ```
+
+{{< code-action >}} **Fork your repository, go to [https://github.com/the-isf-academy/lab_colorama](https://github.com/the-isf-academy/lab_colorama).**
+
 
 {{< code-action "Enter the poetry shell and install the required packages." >}}
 ```shell
@@ -48,10 +49,9 @@ poetry shell
 poetry install
 ```
 
-{{< code-action >}} **Now have a look around using the `tree` command.** *If you don't have `tree` installed, you can skip this step.*
-```shell
-tree .
-```
+
+{{< code-action >}} **Open the repository in VSCode:** `code .` 
+
 
 You'll meet some of these files today. For now, **the most important file to know
 about is `manage.py`.** You'll always run this file when you want Django to do
@@ -86,8 +86,6 @@ Let's see how the parts of the app worked together to show this page. When a
 request first arrives, its URL is separated into a host name and a path. In
 this case, the host name is `localhost:8000` and the path is `/`. 
 
-{{< code-action >}} **Open the repository in VSCode:** `code .` 
-
 {{< code-action >}} **Open `mysite/urls.py`.** The file `mysite/urls.py` declares the app's routing, matching paths
 to views which should handle them. 
 
@@ -111,9 +109,9 @@ urlpatterns = [
     path('random/', views.random_color_view, name="random_color"),
 ]
 ```
-> Two views are defined. If you go to [the home page](http://localhost:8000) (empty path), 
+> Two views are defined. If you go to [`localhost:8000/`](http://localhost:8000) (homepage), 
 the request will be handled by `views.home_view`. And if you go to 
-[`random`](http://localhost:8000/random), the request will be handled by
+[`localhost:8000/random/`](http://localhost:8000/random), the request will be handled by
 `views.random_color_view`.
 
 {{< code-action >}} **Let's look at these views. You can see that they are imported from `color_app.views`, so we'll open `color_app/views.py`.**
@@ -223,18 +221,16 @@ shortly.
 
 {{< checkpoint >}}
 
-{{< write-action >}} **B.0:** When you go to the [home page](http://localhost:8000), it says "Hello
+✏️ **B.0:** When you go to the [home page](http://localhost:8000), it says "Hello
   stranger" at the top. However, if you look at the template 
   `color_app/templates/color_app/index.html`, the word "stranger" does not
   appear. **Explain how the word "stranger" ends up on the page.**
   
-  > {{< code-action >}} **Then, without
-  changing the template, change the home page so that it says hello to you instead.**
+  💻 **Then, without changing the template, change the home page so that it says hello to you instead.** Explain what you had to change.
 
-{{< write-action >}} **B.1:** Figure out how to change the color swatch on the home page to a different
-  color. **Explain how to do it.** 
+💻  **B.1:** **Change the color swatch on the home page to a different color.** Explain how to do it.
 
-{{< write-action >}} **B.2:** If you didn't already check it out, go to the [random color page](http://localhost:8000/random).
+✏️  **B.2:** If you didn't already check it out, go to the [random color page](http://localhost:8000/random).
   You'll notice that the color swatch changes every time you load the page, and 
   the background changes to an opposite color. **Explain how this works.** *(Hint:
   We previously noticed that `/color/random` is served by `color_app.views.random_color_view`,
@@ -255,7 +251,7 @@ to the app.
 
 {{< code-action >}} **Open `color_app/urls.py` and add the highlighted lines:**
 
-```python {linenos=table, hl_lines=[7, 8]}
+```python {linenos=table, hl_lines=[8, 9]}
 from django.urls import path
 from color_app import views
 
@@ -278,7 +274,7 @@ Once again, let's have a look at the code that made this possible. We added two
 new URL routes, `colors` and `color/new`, and routed them to `ColorListView`
 and `NewColorView`, respectively. 
 
-{{< code-action >}} **Let's look at the bottom of `color_app/views.py`:**
+{{< code-action >}} **Let's look at the bottom of `color_app/views.py` for the `Class Based Views`:**
 ```python                                                                              
 class ColorListView(ListView):                                                                                         
     model = Color                                                                                                      
@@ -323,28 +319,27 @@ it's actually a pretty complicated pattern and it's completely new to you!)
 
 {{< checkpoint >}}
 
-{{< write-action >}} **C.0:** There is currently no link from the homepage to the color list, or the
+**C.0:** There is currently no link from the homepage to the color list, or the
   form to add new colors. You have to enter the URL directly to get to these
   pages, and 99% of users (you no longer included) even know how to enter URLs
   directly. 
-  > {{< code-action >}} **Add a link to the home page taking the user to the color list page.**
+
+- 💻 **Add a link to the home page taking the user to the color list page.**
   *(Hint: There's already a link from the home page to the random color page. Use the same pattern.)*
-  >
-  > **Explain what you did.** 
+  
+- ✏️ **Explain what you did.** 
 
-{{< write-action >}} **C.1:** There's also no link away from the random color page; you're 
+**C.1:** There's also no link away from the random color page; you're 
   stuck looping through random colors forever. 
-  > {{< code-action >}} **Decide where the random color page should link to add add an appropriate link.** 
-  >
-  > **Where did you decide to link to?**
+- 💻  **Decide where the random color page should link to add add an appropriate link.** 
+- ✏️ **Where did you decide to link to?**
 
-{{< write-action >}} **C.2:** Make five or six new colors, if you haven't already. Then look at the color list page. 
+💻 **C.2: Make five or six new colors**, if you haven't already. Then look at the color list page. 
   The colors are currently sorted alphabetically (with all the upper-case names first
   and then the lower-case names). 
-  > {{< code-action >}} **Figure out how to change this page so that
+- 💻 **Figure out how to change this page so that
   colors are instead sorted by how much red they contain.**
-  >
-  > **Explain what you had to do.**
+  - ✏️ **Explain what you had to do.**
 {{</ checkpoint >}}
 
 ## D. Wrapping up

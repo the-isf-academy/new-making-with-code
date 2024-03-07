@@ -1,6 +1,7 @@
 ---
 title: "Teaching lesson 2"
 type: teaching
+draft: true
 ---
 
 Django Lesson 2 picks up where Lesson 1 left off. It would be difficult for

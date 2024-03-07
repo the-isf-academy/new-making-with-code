@@ -1,6 +1,6 @@
 ---
 title: 2. Runtime Lifecycle
-# draft: true
+draft: true
 ---
 
 # Django Runtime
@@ -64,7 +64,7 @@ python manage.py dumpdata > backup.json
 {{< code-action "Now that you have a backup of your database, let's test it, shall we? Delete your app's database." >}} 
 
 ```shell 
-rm colorama/db.sqlite3
+rm db.sqlite3
 ```
 > *Careful! This is permanent. Your backup should work, but we're only suggesting
 this because we assume you won't be heart-broken if you lose the colors you
@@ -99,7 +99,7 @@ colors should be back.
 {{< code-action " Now delete your colors again and instead load in" >}}
 [all the colors listed on Wikipedia](https://en.wikipedia.org/wiki/Lists_of_colors).
 ```shell 
-rm colorama/db.sqlite3
+rm db.sqlite3
 python manage.py migrate
 python manage.py loaddata wikipedia_colors.json
 ```
