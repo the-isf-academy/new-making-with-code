@@ -1,6 +1,6 @@
 ---
 title: 2. Runtime Lifecycle
-draft: true
+# draft: true
 ---
 
 # Django Runtime
@@ -95,6 +95,17 @@ python3 manage.py loaddata backup.json
 
 > Double-check the [color list page](http://localhost:8000/colors); all your
 colors should be back. 
+
+{{< aside >}}
+
+**🛑 If are you in CS10.1 STOP and update a file.**  
+
+1) Find the file `color_app/fixtures/wikipedia_colors.json`
+
+2) Replace all of its content with this updated version: [wikipedia_colors.json](https://raw.githubusercontent.com/the-isf-academy/lab_colorama/main/color_app/fixtures/wikipedia_colors.json)
+
+{{< /aside >}}
+
 
 {{< code-action " Now delete your colors again and instead load in" >}}
 [all the colors listed on Wikipedia](https://en.wikipedia.org/wiki/Lists_of_colors).
