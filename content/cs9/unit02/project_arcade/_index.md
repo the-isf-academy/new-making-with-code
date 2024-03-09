@@ -1,6 +1,6 @@
 ---
 Title: Project Arcade
-# draft: true
+draft: true
 ---
 
 # Unit 02 Games Arcade Project

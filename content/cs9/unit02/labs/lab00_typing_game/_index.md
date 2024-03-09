@@ -25,22 +25,6 @@ In this lab, you will create a typing game! You will be re-introduced to the Ter
 
 ## [0] Setup
 
-{{< code-action "Download Visual Studio Code:" >}} [HERE](https://code.visualstudio.com/). Atom is no longer being developed, so we have decided to switch to VScode, one of the most popular code editors. 
-<!-- 
-{{< code-action "Check you have" >}} `mwc` installed. 
-```shell
-mwc version
-``` 
-{{< code-action "If you do not see a version number, install it:" >}} 
-```shell
-pip3 install making-with-code-cli
-```
-
-{{< code-action "Now, update it and install the lab" >}} As a reminder, we will run this command at the start of each lab.
-```shell
-mwc update
-``` -->
-
 {{< code-action "In the Terminal, open your" >}} `making_with_code/cs9` **folder:**
 ```shell
 cd ~/desktop/making_with_code/cs9/
@@ -66,12 +50,12 @@ git clone https://github.com/the-isf-academy/lab_typing_game_yourGithubUsername
 cd lab_typing_game_yourGithubUsername
 ```
 
-
+<!-- 
 {{< aside "Windows Users" >}}
 
 I suggest not copying the path command, and instead using `cd` and `ls` to ensure you are in the correct `making_with_code` folder.
 
-{{< /aside >}}
+{{< /aside >}} -->
 
 {{< code-action "Enter the Poetry Shell." >}} We will also run this command at the start of each lab, but only when we are inside a lab folder.
 ```shell
@@ -181,12 +165,13 @@ Accuracy: 92.2%
 
 {{< deliverables  >}}
 
-**Once you've successfully completed the game be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSdA6DntQ82dDg_WnYMzPcMO9kzPBoFP-G0hb9aydBIgNiL27Q/viewform?usp=sf_link)**.
+**Once you've successfully completed the game be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSf6GflWtY1GS6D0Sv1cXMtldnHFSO-lL4XYPHdsaGhHejP7ew/viewform?usp=sf_link)**.
 
 
 {{< code-action "Push your work to Github:" >}}
 - git status
-- git add file_name.py file_name2.py
+- git add -A
+  > `-A` adds all changed files
 - git status
 - git commit -m "describe your drawing and your process here"
   > be sure to customize this message, do not copy and paste this line
