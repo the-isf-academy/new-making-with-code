@@ -140,7 +140,7 @@ python3 manage.py shell
 {{< look-action " First, we'll see some built-in capabilities of any Django model object." >}}
 
 ```python
->>> from colors_app.models import Color
+>>> from color_app.models import Color
 >>> Color.objects.count()
 865
 >>> Color.objects.first()
@@ -187,7 +187,7 @@ template.
 
 
 
-**`Color` also has some custom methods, which we implemented in `colors_app/models.py`.**
+**`Color` also has some custom methods, which we implemented in `color_app/models.py`.**
 As it turns out, red/green/blue is not a very convenient color space for finding
 related colors. Hue/saturation/value works much better. 
 
@@ -283,7 +283,7 @@ VALUES_TO_SHOW = [-0.2, -0.1, 0, 0.1, 0.2]
       <h1>{{color.name}}</h1>
       <p>{{color.hex_code}}</p>
       <p>
-        <a href="{% url 'colors_app:color_list' %}">
+        <a href="{% url 'color_app:color_list' %}">
           Back to the color list        
         </a>  
       </p>
@@ -322,14 +322,14 @@ from django.conf import settings
 
 class ColorListView(ListView):
     model = Color
-    template_name = "colors_app/color_list.html"
+    template_name = "color_app/color_list.html"
     queryset = Color.objects.order_by("name")
 
 class NewColorView(CreateView):
     model = Color
     form_class = ColorForm
-    template_name = "colors_app/color_form.html"
-    success_url = reverse_lazy("colors_app:color_list")
+    template_name = "color_app/color_form.html"
+    success_url = reverse_lazy("color_app:color_list")
 
 class ColorDetailView(DetailView):
     model = Color
@@ -358,7 +358,7 @@ from django.urls import path
 from color_app import views
 from color_app.class_based_views import NewColorView, ColorListView, ColorDetailView
 
-app_name = "colors_app"
+app_name = "color_app"
 urlpatterns = [
     path('', views.home_view, name="index"),
     path('colors/random', views.random_color_view, name="random_color"),
