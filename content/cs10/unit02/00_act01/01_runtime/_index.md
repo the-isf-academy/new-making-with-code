@@ -312,7 +312,7 @@ VALUES_TO_SHOW = [-0.2, -0.1, 0, 0.1, 0.2]
      {% endfor %}
 ```
 
-{{< code-action "Add a view to handle the color detail route:" >}}  `color_app/class_based_views.py`:
+{{< code-action "Add a view to handle the color detail route:" >}}  `color_app/views.py`:
 ```python {linenos=table, hl_lines=[5, "18-36"]}
 from django.views.generic import DetailView, ListView, CreateView
 from django.urls import reverse_lazy
@@ -356,7 +356,7 @@ class ColorDetailView(DetailView):
 ```python {linenos=table, hl_lines=[3, 11]}
 from django.urls import path
 from color_app import views
-from color_app.class_based_views import NewColorView, ColorListView, ColorDetailView
+from color_app.views import NewColorView, ColorListView, ColorDetailView
 
 app_name = "color_app"
 urlpatterns = [
