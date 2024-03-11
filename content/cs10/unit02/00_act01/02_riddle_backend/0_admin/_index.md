@@ -17,8 +17,8 @@ During the track lessons you will be creating a web app for the ISF Riddler. You
 
 ```shell
 cd ~/desktop/making_with_code/cs10/unit_web_apps/
-git clone https://github.com/the-isf-academy/lab_riddler_backend_yourgithubusername
-cd lab_riddler_backend_yourgithubusername
+git clone https://github.com/the-isf-academy/lab_riddler_django_yourgithubusername
+cd lab_riddler_django_yourgithubusername
 ```
 
 {{< code-action "Install requirements" >}}
@@ -146,6 +146,44 @@ There are lots of ethical questions that need to be considered when building an 
 
 ---
 
+## [3] Riddle Model
+
+
+{{< checkpoint >}}
+
+✏️💻 **Follow along with the worksheet to understand writing and editing models in Django.** You will be working in:
+- `models.py`
+- `views.py`
+- `riddle_app/riddle_detail.html`
+
+
+{{</checkpoint>}}
+
+
+
+{{< code-action >}}**When you change the model, you must update the database with `makemigrations`, apply the changes with `migrate`, and re-run the server.**
+
+```shell
+python manage.py makemigrations
+python manage.py migrate
+python manage.py runserver     
+```
+
+---
+
+## [4] Deliverables 
+
+{{< deliverables >}}
+{{< code-action "Push your work to Github:" >}}
+- `git status`
+- `git add -A`
+- `git status`
+- `git commit -m "your message goes here"`
+    - be sure to customize this message, do not copy and paste this line
+- `git push`
+{{< /deliverables >}}
+
+<!-- 
 ## [3] Django Shell
 
 **Now that we have some data in our database, let's see what we can do with it!** We can try out different methods using the python shell. 
@@ -174,7 +212,7 @@ python manage.py shell
 <Riddle: I’m the rare case when today comes before yesterday. What am I?>
 ```
 
-{{< code-action " We can try printing out some of the Task properties" >}}
+{{< code-action " We can try printing out some of the `Riddle` properties" >}}
 
 ```python
 >>> first_riddle = Riddle.objects.first()
@@ -196,8 +234,8 @@ python manage.py shell
 
 {{< code-action >}} **Try and successfully use both methods in the shell.** One way to know if you were successful, is to check the admin portal and see if the `likes` property increases for a specific `Riddle`.
 
----
-
+--- -->
+<!-- 
 ## [4] Changing the Model
 
 What if we decide we want to add more fields and methods to our `Riddle` model. It's possible with `makemigrations`. 
@@ -226,18 +264,6 @@ python manage.py runserver
 
 ☑️ **Now, let's login to the admin portal to confirm your changes were made:** [`127.0.0.1:8000/admin/`](http://127.0.0.1:8000/admin/)
 
-☑️ **Also, don't forget to use the `shell` to check if your changes to the `methods` were successful**
+☑️ **Also, don't forget to use the `shell` to check if your changes to the `methods` were successful** -->
 
----
 
-## [5] Deliverables 
-
-{{< deliverables >}}
-{{< code-action "Push your work to Github:" >}}
-- `git status`
-- `git add -A`
-- `git status`
-- `git commit -m "your message goes here"`
-    - be sure to customize this message, do not copy and paste this line
-- `git push`
-{{< /deliverables >}}
