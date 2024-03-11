@@ -25,9 +25,9 @@ In this lab, you will create a typing game! You will be re-introduced to the Ter
 
 ## [0] Setup
 
-{{< code-action "In the Terminal, open your" >}} `making_with_code/cs9` **folder:**
+{{< code-action "In the Terminal, open your" >}} `making_with_code` **folder:**
 ```shell
-cd ~/desktop/making_with_code/cs9/
+cd ~/desktop/making_with_code
 ```
 
 {{< code-action "Create a new folder for the unit:" >}}
