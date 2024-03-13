@@ -1,6 +1,6 @@
 ---
 Title: "[1. Views]"
-# draft: True
+draft: True
 
 ---
 
