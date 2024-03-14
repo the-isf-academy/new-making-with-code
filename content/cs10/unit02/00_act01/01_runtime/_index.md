@@ -304,7 +304,7 @@ VALUES_TO_SHOW = [-0.2, -0.1, 0, 0.1, 0.2]
 {{< code-action "Add links to thr color list template:" >}}  `color_app/templates/color_app/color_list.html`
 ```python {linenos=table, hl_lines=[2, 6],linenostart=17}
      {% for color in object_list %}
-       <a href="{% url 'color=_app:color_detail' color.id %}">
+       <a href="{% url 'color_app:color_detail' color.id %}">
        <div class="swatch">
          {% include "color_app/swatch.html" %}
        </div>  
