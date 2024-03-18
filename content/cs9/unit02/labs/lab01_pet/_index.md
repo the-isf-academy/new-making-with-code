@@ -105,7 +105,7 @@ Now that you've used the `Pet` class, let's delve into the code and make our `Pe
 This section of the lab walks you through how to write a `class` in Python. Keep a look out for the {{< code-action  >}} to ensure you add all the necessary features. 
 {{< /aside >}}
 
-{{< look-action  >}} **Go to `pet.py` in VSCode**
+👀 **Go to `pet.py` in VSCode**
 
 ---
 
@@ -190,9 +190,9 @@ Right now, the `introduce()` method just has the pet say their name. Let's make 
 
 ```python {linenos=table, linenostart=14}
 def introduce(self):
-    '''This method introduces the pet with its name.'''
+  '''This method introduces the pet with its name.'''
 
-    print("Hi, I'm", self.name)
+  print(f"👋 Hi, I am {self.name}!")
 ```
 <br>
 
@@ -245,6 +245,22 @@ Your pet is ready!
 
 ---
 
+
+### [Add tired feature]
+
+💤 Pet's get tired, just like humans!
+
+{{< code-action >}} **Add the ability to track if the `Pet` is tired.** If it's tired, it should take a `nap()`.
+- What property will you add? 
+- What method will you add?
+
+{{< code-action >}} **Edit `game_interface.py` so you can tell your `Pet` to `nap()`!**
+
+🎮 **Play test it!** `python game_interface.py`
+
+
+---
+
 ## [4] Deliverables
 
 
@@ -284,10 +300,9 @@ At this point, you have a working `Pet`, but it's pretty basic. Most pets, get h
 - decreased when it plays 
 - increase when it uses `eat()`
 
-{{< code-action >}} **Test your edits with the `python shell`.**  
+{{< code-action >}} **Test your edits with the `test_pet.py` or `python shell`.**  
 
-
-{{< code-action >}} **Edit `interface.py` to include all of the features the `Pet` has.**
+{{< code-action >}} **Edit `game_interface.py` to include the new hunger features of the `Pet`**
 
 {{< code-action >}} **Play test it:** `python game_interface.py`
 
@@ -299,8 +314,10 @@ This lab was inspired by the Tamagotchi!
 
 {{< figure src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Tamagotchi_0124_ubt.jpeg/330px-Tamagotchi_0124_ubt.jpeg" width="40%" >}}
 
-{{< code-action >}} **Include as many of the original Tamagotchi features as you can!**
-- [Tamagotchi wiki](https://en.wikipedia.org/wiki/Tamagotchi)
+{{< code-action >}} **Include as many of the original Tamagotchi features as you can: [Tamagotchi wiki](https://en.wikipedia.org/wiki/Tamagotchi!** For example:
+- happiness 
+- sickness 
+- life cycle (baby, child, teen, adult) 
 
 ---
 
