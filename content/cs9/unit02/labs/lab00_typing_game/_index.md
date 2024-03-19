@@ -80,7 +80,7 @@ When you want to exit the shell, you can type `exit` or `^D`
 
 ---
 
-### [Game Logic]
+### Game Logic
 
 
 
@@ -137,7 +137,7 @@ number_rounded = round(2.555,2)
 
 ---
 
-### [Calculate the user's accuracy]
+### Calculate the user's accuracy
 
 Now that you have the logic of the game complete, let's communicate the **accuracy of the user's input**. Words per Minute (WPM) means nothing without accuracy!
 
@@ -188,7 +188,7 @@ Accuracy: 92.2%
 
 ---
 
-### [Adjusted WPM]
+### Adjusted WPM
 
 [Adjusted Words Per Minute](https://support.sunburst.com/hc/en-us/articles/229335208-Type-to-Learn-How-are-Words-Per-Minute-and-Accuracy-Calculated-) is the typing speed adjust for the user's accuracy. It is calculated by `WPM*Accuracy`. For example:
 ```
@@ -206,7 +206,7 @@ Adjusted WPM: 74.2
 
 ---
 
-### [Generate random prompts]
+### Generate random prompts
 
 Typing games often increase the difficulty by having the prompts be random words that do not tell a story. For example the prompt may be something like, "score wear question continue friend". It is up to you to write a function that does just that.
 
@@ -219,7 +219,7 @@ Typing games often increase the difficulty by having the prompts be random words
 
 ---
 
-### [Difficult levels]
+### Difficult levels
 
 As you may have noticed, the prompts are quite simple. There is no punctuation, hardly any capital letters, no numbers, or special symbols. It is up to you to create an easy, medium, and hard difficulty level of the game. 
 

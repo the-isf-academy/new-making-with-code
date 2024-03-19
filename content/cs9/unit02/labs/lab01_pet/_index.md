@@ -6,21 +6,15 @@ title: 1. Pet Lab
 # Pet Lab
 
 <!-- 
-- move checkpoint qs to form
-- change to VScode 
-- add nap() and play()
-- create a family of pets v. interface -->
+- idea for extension: create a family of pets v. the interface -->
 
 
 👀 **In this lab, you will learn about object oriented programming.** You will create a pet simulator game.
 
-📖 **Here is more information on how to create a class:** [12.5 Constructors](http://programarcadegames.com/index.php?chapter=introduction_to_classes&lang=en#section_12_5)
-
-
 ---
 
 ## [0] Setup
-{{< code-action "Start by going into your" >}} `cs9/unit02_games` **folder.**
+{{< code-action "Start by going into your" >}} `unit02_games` **folder.**
 ```shell
 cd ~/desktop/making_with_code/unit02_games
 ```
@@ -317,7 +311,7 @@ This lab was inspired by the Tamagotchi!
 {{< figure src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Tamagotchi_0124_ubt.jpeg/330px-Tamagotchi_0124_ubt.jpeg" width="40%" >}}
 
 {{< code-action >}} **Include as many of the original Tamagotchi features as you can: [Tamagotchi wiki.](https://en.wikipedia.org/wiki/Tamagotchi!)**     
- 
+
 For example:
 - happiness 
 - sickness 
