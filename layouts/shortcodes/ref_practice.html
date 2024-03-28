@@ -1,0 +1,11 @@
+{{ $path := printf "/practices/%s.md" (.Get 0) }} 
+{{ with $.Page.GetPage $path }}
+    <a href="{{ .Permalink }}">{{ .Title }}</a>
+{{ else }} 
+  <blockquote class="book-hint warning">
+      REF NOT FOUND: {{ $path }}
+  </blockquote>
+{{ end }}
+
+
+
