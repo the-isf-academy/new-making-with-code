@@ -255,7 +255,7 @@ We can add to this method so that it also updates the score.
 {{< code-action >}} **In `game.py` add a print statement that prints out the score.**
 
 ```python
-print(spelling_bee.score()) #prints out the current score
+print(spelling_bee.score) #prints out the current score
 ```
 
 {{< code-action >}} **Now try running your game. Does the score increase as you expect?**
