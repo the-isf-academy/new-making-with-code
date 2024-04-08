@@ -6,11 +6,6 @@ title: 1. Pet Lab
 # Pet Lab
 
 
-- move checkpoint qs to form
-- change to VScode 
-- add nap() and play()
-- create a family of pets v. interface
-
 
 👀 **In this lab, you will learn about object oriented programming.** You will create the backend of a pet simulator game.
 
