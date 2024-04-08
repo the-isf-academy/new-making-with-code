@@ -2,22 +2,18 @@
 title: "Act II: Pitch"
 type: unit
 slug: unit02_web_design
-draft: true
+# draft: true
 ---
 
 # Act II: Web App Pitch 
 
 Act II focuses on planning and outlining a Web Application. Your will need to consider aesthetics, user experience, and backend architecture in order to create a comprehensive plan.
 
-<!-- We follow a human centered design cycle that focuses on ideating, defining, and designing.  -->
-
-
-<!-- {{< youtube "wOrmr5kT-48" >}} -->
 
 
 ## [0] Project Overview
 
-🎨 **Design Brief:** In this project, you must create a social computing Web App. Users should be able to contribute, interact, view, and/or modify the Database. It is up to your team to decide what the App is its features. 
+🎨 **Design Brief:** In this project, you must create a social computing Web App for G6-G8 tutor groups. Students should be able to contribute, interact, view, and/or modify the Database. It is up to your team to decide what the App is its features. 
 
 🤔 **Here are a few ideas:**
 - [r/place](https://www.washingtonpost.com/technology/2022/04/04/reddit-place-internet-communities/)
@@ -35,13 +31,10 @@ Act II focuses on planning and outlining a Web Application. Your will need to co
 
 For this project, you will use a Miro board to design the frontend and backend of your Web App.
 
-{{< look-action >}} **Start by taking a look at the template and duplicating it for your group:** [Miro Board Template](https://miro.com/app/board/uXjVMYd6V5Q=/?share_link_id=126518669077)
+{{< look-action >}} **Open your Miro Board. You can find it by going to Miro.com or by referencing the invite email.  
 
-0. Click on `cs10 Web Apps Design Doc` in the top left corner 
-0. Click `Duplicate`
-0. Share it with your teammate, Ms. Brown *(eqbrown@isf.edu.hk)*, and Ms. Genzlinger *(bgenzlinger@isf.edu.hk)*
 
-🖌 **You and your teammate must work together to plan the frontend and backend of your social computing web app.**
+🖌 **You and your teammate(s) must work together to plan the frontend and backend of your social computing web app.**
 - For the frontend, 
     - you must design a high-fidelity wireframe for each page of your site. It should look as close to your final design as possible. *([Inspiration for high-fidelity wireframes](https://dribbble.com/shots/popular/web-design))*
 - For the backend, 
@@ -74,10 +67,6 @@ Your pitch should include:
 
 
 ✅  **This project will be assessed on the following criteria:**
-- **Frontend Design [3]**
-    - We can appropriately plan the color palette and typography 
-    - We can design a high-fidelity wireframe for each necessary template
-    - We can display the appropriate information in the layout
 - **Backend Design [3]**
     - We can plan the architecture of a Django Model
         - All field types are appropriate
@@ -86,31 +75,22 @@ Your pitch should include:
         - Each View is described in detail
         - Each View includes a corresponding url path
     - We can use descriptive names to support readability 
+- **Frontend Design [3]**
+    - We can design a high-fidelity wireframe for each necessary template
+    - We can display appropriate placeholder information in the layout
 - **Pitch Presentation [3]**
     - We can present the Web App idea in a clear, engaging manner
     - We can design slides that are readable and include appropriate visual aids 
     - We can appropriately respond to audience feedback   
+- **MVP [3]**
+    - We can appropriately set a Minimum Viable Product goal
+    - We can create tasks to complete the MVP and assign them to team members  
 
-**For each criteria you will be assessed on a score from 0-3. With 9 criteria, there is a total of 9 potential points.** 
+**For each criteria you will be assessed on a score from 0-3.** 
 - 0 - no evidence of the practice
 - 1 - limited evidence of the practice
 - 2 - adequate evidence of the practice
 - 3 - substantial evidence of the practice
-
-{{< expand "Scoring Breakdown" >}}
-
-The project is scored out of 7. 
-
-*To calculate your score for the practices & concepts, look at the following bands:*
-
-- 1 = 0
-- 2 = 1
-- 3 = 2
-- 4 = 3-4
-- 5 = 5-6
-- 6 = 7-8
-- 7 = 9
-{{< /expand >}}
 
 
 ---
