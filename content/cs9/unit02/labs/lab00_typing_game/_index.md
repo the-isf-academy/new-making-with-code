@@ -25,25 +25,9 @@ In this lab, you will create a typing game! You will be re-introduced to the Ter
 
 ## [0] Setup
 
-{{< code-action "Download Visual Studio Code:" >}} [HERE](https://code.visualstudio.com/). Atom is no longer being developed, so we have decided to switch to VScode, one of the most popular code editors. 
-<!-- 
-{{< code-action "Check you have" >}} `mwc` installed. 
+{{< code-action "In the Terminal, open your" >}} `making_with_code` **folder:**
 ```shell
-mwc version
-``` 
-{{< code-action "If you do not see a version number, install it:" >}} 
-```shell
-pip3 install making-with-code-cli
-```
-
-{{< code-action "Now, update it and install the lab" >}} As a reminder, we will run this command at the start of each lab.
-```shell
-mwc update
-``` -->
-
-{{< code-action "In the Terminal, open your" >}} `making_with_code/cs9` **folder:**
-```shell
-cd ~/desktop/making_with_code/cs9/
+cd ~/desktop/making_with_code
 ```
 
 {{< code-action "Create a new folder for the unit:" >}}
@@ -66,12 +50,12 @@ git clone https://github.com/the-isf-academy/lab_typing_game_yourGithubUsername
 cd lab_typing_game_yourGithubUsername
 ```
 
-
+<!-- 
 {{< aside "Windows Users" >}}
 
 I suggest not copying the path command, and instead using `cd` and `ls` to ensure you are in the correct `making_with_code` folder.
 
-{{< /aside >}}
+{{< /aside >}} -->
 
 {{< code-action "Enter the Poetry Shell." >}} We will also run this command at the start of each lab, but only when we are inside a lab folder.
 ```shell
@@ -96,7 +80,7 @@ When you want to exit the shell, you can type `exit` or `^D`
 
 ---
 
-### [Game Logic]
+### Game Logic
 
 
 
@@ -153,7 +137,7 @@ number_rounded = round(2.555,2)
 
 ---
 
-### [Calculate the user's accuracy]
+### Calculate the user's accuracy
 
 Now that you have the logic of the game complete, let's communicate the **accuracy of the user's input**. Words per Minute (WPM) means nothing without accuracy!
 
@@ -181,12 +165,13 @@ Accuracy: 92.2%
 
 {{< deliverables  >}}
 
-**Once you've successfully completed the game be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSdA6DntQ82dDg_WnYMzPcMO9kzPBoFP-G0hb9aydBIgNiL27Q/viewform?usp=sf_link)**.
+**Once you've successfully completed the game be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSf6GflWtY1GS6D0Sv1cXMtldnHFSO-lL4XYPHdsaGhHejP7ew/viewform?usp=sf_link)**.
 
 
 {{< code-action "Push your work to Github:" >}}
 - git status
-- git add file_name.py file_name2.py
+- git add -A
+  > `-A` adds all changed files
 - git status
 - git commit -m "describe your drawing and your process here"
   > be sure to customize this message, do not copy and paste this line
@@ -203,7 +188,7 @@ Accuracy: 92.2%
 
 ---
 
-### [Adjusted WPM]
+### Adjusted WPM
 
 [Adjusted Words Per Minute](https://support.sunburst.com/hc/en-us/articles/229335208-Type-to-Learn-How-are-Words-Per-Minute-and-Accuracy-Calculated-) is the typing speed adjust for the user's accuracy. It is calculated by `WPM*Accuracy`. For example:
 ```
@@ -221,7 +206,7 @@ Adjusted WPM: 74.2
 
 ---
 
-### [Generate random prompts]
+### Generate random prompts
 
 Typing games often increase the difficulty by having the prompts be random words that do not tell a story. For example the prompt may be something like, "score wear question continue friend". It is up to you to write a function that does just that.
 
@@ -234,7 +219,7 @@ Typing games often increase the difficulty by having the prompts be random words
 
 ---
 
-### [Difficult levels]
+### Difficult levels
 
 As you may have noticed, the prompts are quite simple. There is no punctuation, hardly any capital letters, no numbers, or special symbols. It is up to you to create an easy, medium, and hard difficulty level of the game. 
 
