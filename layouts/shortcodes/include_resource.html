@@ -1,0 +1,8 @@
+{{ $path := printf "../../resources/%s/_index.md" (.Get 0) }}
+{{ with $.Page.GetPage $path }}
+    {{ .Content | safeHTML }}
+{{ else }}
+  <blockquote class="book-hint warning">
+      FILE NOT FOUND: {{ $path }}
+  </blockquote>
+{{ end }}
