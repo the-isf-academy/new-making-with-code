@@ -87,7 +87,7 @@ python manage.py migrate
 python manage.py runserver   `
 ```
 
-{{< code-action >}} **Visit [127.0.0.1:8000/](http://127.0.0.1:8000/) to view the app!** As you are in the backend track, you already have `html` and `css` files. 
+{{< code-action >}} **Visit [127.0.0.1:8000/](http://127.0.0.1:8000/) to view the app!** Since this lab focuses on the backend, you already have `html` and `css` files. 
 
 ---
 
@@ -116,13 +116,14 @@ If you go to this URL, there will be a webpage where we can log in to the admin 
 We've successfully checked that the admin site is ready to go but we can't log in! We need to create a Superuser account to log into the admin site.
 
 
-{{< code-action >}} **Create a SuperUser to access the admin portal.** You'll need to quit the server, then create the user. Remember, `control + d` quits the server.
+{{< code-action >}} **Create a SuperUser to access the admin portal.** You'll need to quit the server, then create the user.    
+Remember, `control + C` quits the server.
 
 ```shell
 python manage.py createsuperuser
 ```
 
-Django will then prompt you to **enter a username and password and that user will have superuser access to the admin site**. For ease of use, keep your username and password short. You can also skip the email field with `return`. It will just ask you type `y` to `Bypass password validation and create user`.
+Django will then prompt you to **enter a username and password and that user will have superuser access to the admin site**. For ease of use, keep your username and password short. You can also skip the email field with `return`. It will just ask you to type `y` to `Bypass password validation and create user`.
 > It can be as simple as
 > - username: `a`
 > - password: `123`
@@ -136,7 +137,7 @@ Django will then prompt you to **enter a username and password and that user wil
 
 {{< aside "God View" >}}
 
-As the owners and administrators of your website, you have access to your users' accounts and all of your users' data. We literally have a **God view of everything that is entered into our database**.
+As the owners and administrators of your website, you have access to your users' accounts and all of your users' data. We literally have a **god view of everything that is entered into our database**.
 
 There are lots of ethical questions that need to be considered when building an app, and because of this, always remember the quote from Aunt May to Peter Parker...   
 
