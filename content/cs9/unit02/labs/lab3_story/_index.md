@@ -47,13 +47,13 @@ This repo includes the following files:
 
 ---
 
-## [2] How do you write a story? 
+## [1] How do you write a story? 
 
 **Stories are made up of connected connected `Node()` objects.**
 
 ---
 
-### [Node]
+### Node
 
 {{< look-action >}} Let's start by looking at the `Node` constructor:
 
@@ -77,7 +77,7 @@ It has the following methods:
 
 ---
 
-### [Story]
+### Story
 
 **Now, let's look at the `Story()` constructor.** This is the primary class you will be interacting with when writing your story. 
 ```python
@@ -123,7 +123,7 @@ class Story():
 ```
 ---
 
-## [3] Building your first story
+## [2] Building your first story
 
 {{< look-action >}} **Let's start taking a look at `story_setup.py`** As you can see, the current story has only has 4 unique `Node()` objects and it calls `.add_new_child()` to build the story.
 
@@ -190,7 +190,7 @@ Where will you go?
 
 ---
 
-### [Finish game.py]
+### Finish game.py
 
 {{< code-action >}} **Finish `game.py` so it properly plays through the story.** It should:
 
@@ -236,7 +236,7 @@ End of Story
 
 ---
 
-### [Continue the Story]
+### Continue the Story
 
 Now that you've gotten a working `game.py`, let's build out the story. 
 
@@ -251,7 +251,7 @@ Come up with your own options to continue the story! We'll share out at the end 
 
 ---
 
-## [5] Deliverables
+## [3] Deliverables
 
 {{< deliverables  >}}
 
@@ -272,7 +272,7 @@ Come up with your own options to continue the story! We'll share out at the end 
 ---
 
 
-## [6] Extension:
+## [4] Extensions
 
 For your project, you will need to build out **one** additional feature to this `Story` framework. Here are a few suggested features:
 - looping stories with the ability to set an Node as a existing Node's child 
