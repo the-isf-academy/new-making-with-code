@@ -1,9 +1,6 @@
 ---
-title: 4. Story Lab
-resources:
-- name: Uno
-  src: images/courses/cs9/unit02/02_01_uno.jpg
-draft: true
+title: 3. Story Lab
+# draft: true
 ---
 
 # Story Lab
@@ -20,16 +17,20 @@ In this lab, you are introduced to the structure for writing a branching story. 
 
 ## [0] Setup
 
-{{< code-action "Start by going into your" >}} `cs9/unit02_games` **folder.**
+{{< code-action "Start by going into your" >}} `unit02_games` **folder.**
 ```shell
-cd ~/desktop/making_with_code/cs9/unit02_games
+cd ~/desktop/making_with_code/unit02_games
 ```
 
-{{< code-action "Clone your starter code." >}} Be sure to change `yourgithubusername` to your actual Github username.
+{{< code-action "Clone your starter code." >}} Be sure to change `YOUR-GITHUB-USERNAME` to your actual Github username.
 ```shell
-git clone https://github.com/the-isf-academy/lab_story_example_yourgithubusername
+git clone https://github.com/the-isf-academy/lab_story_example_YOUR-GITHUB-USERNAME
 ```
 
+{{< code-action "cd into the lab" >}}
+```shell
+cd lab_story_example_YOUR-GITHUB-USERNAME
+```
 
 {{< code-action "Enter the Poetry shell and install the requirements:" >}}
 ```shell
@@ -41,8 +42,8 @@ This repo includes the following files:
 - `game.py`
 - `story_setup.py`
 - `view.py`
-- `node.py`
-- `story.py`
+- `model_node.py`
+- `model_story.py`
 
 ---
 
@@ -59,15 +60,13 @@ This repo includes the following files:
 ```python
 class Node():
   def __init__(self, id, option_title, description):
-      self.id = id
-      self.children = []   
-      self.option_title = option_title                    
-      self.description = description  
+      # initializes a node object with its properties
+
+      self.id = id # a unique id
+      self.children = []  # a list of node objects
+      self.option_title = option_title  # text for display in the menu          
+      self.description = description  # text to show if this option is selected
 ```
-- `id`: a unique id *(`str`, `float`, or `integer`)*
-- `children`: a list of `Node()` objects 
-- `option_title`: the text for the display in the menu *(`str`)*
-- `description`:  the additional text for when a user selects an option *(`str`)*
 
 It has the following methods:
 - `__str__`: defines how a `Node` is printed
@@ -84,82 +83,89 @@ It has the following methods:
 ```python
 class Story():
   def __init__(self, title, start_id, start_option_title, start_description):
-      self.title = title
-      self.current_node = Node(start_id, start_option_title, start_description)
-      self.first_node = self.current_node
+      # initializes a node object with its properties
+
+      self.title = title # the title of your story
+      self.current_node = Node(start_id, start_option_title, start_description) #the current Node of your story
+      self.first_node = self.current_node # the first Node of your story
 
 ```
-- `title`: the title of your story *(`str)*
-- `current_node`: the current `Node` of your story, at the start of the story it is the same as `first_node`
-- `first_node`: the first `Node` of your story
 
-
-**A `Story()` has 4 main methods.**
+**A `Story()` has 4 main methods.** Read the comment at the top of each method to know what it does
 
 ```python
-def add_new_child(self, parent_id, child_id, child_option_title, child_description):
-  parent_node = self.current_node.find(parent_id)
+  def add_new_child(self, parent_id, child_id, child_option_title, child_description):
+      # adds a new child node to a parent node
+      parent_node = self.current_node.find(parent_id)
 
-  new_child_node = Node(
-      id = child_id,
-      option_title = child_option_title,
-      description= child_description
-  )
+      new_child_node = Node(
+          id = child_id,
+          option_title = child_option_title,
+          description= child_description
+      )
 
-  parent_node.add_child(new_child_node)
+      parent_node.add_child(new_child_node)
 
-def get_current_children(self):
-  return self.current_node.children
+  def get_current_children(self):
+      # returns a list of the children of the current node
+      return self.current_node.children
 
-def set_current_node(self,chosen_node):
-  self.current_node = chosen_node
+  def set_current_node(self,chosen_node):
+      # sets the current node to the chosen node
+      self.current_node = chosen_node
 
-def is_finished(self):
-  return len(self.current_node.children) == 0
+  def is_finished(self):
+      # returns True or False based on if the current node has children
+      if len(self.current_node.children) == 0:
+          return True
+      else:
+          return False 
 ```
-- `add_new_child()`: adds a new child node to a parent node  
-- `get_current_children()`:returns a list of the children of the current node
-- `set_current_node(chosen_node)`: sets the `current_node` to the `chosen_node` 
-- `is_finished()`: returns True or False based on if the current node has children
-
 ---
 
 ## [3] Building your first story
 
-{{< look-action >}} **Let's start taking a look at `story_setup.py`** As you can see, the current story has only has 4 unique `Node()` objects and it call `.add_new_child()` to build the story.
+{{< look-action >}} **Let's start taking a look at `story_setup.py`** As you can see, the current story has only has 4 unique `Node()` objects and it calls `.add_new_child()` to build the story.
 
 {{< expand "story_setup.py" >}}
 ```python
 from story import Story
 
-
-main_story = Story(
-    title='Lunch.',
-    start_id = 'lunch',
-    start_option_title = "It's lunch time.",
-    start_description= "Where will you go?"
-)
-
-main_story.add_new_child(
-    parent_id = 'lunch', 
-    child_id = 'cyberport',
-    child_option_title='Walk to cyberport.',
-    child_description="It's a nice day, better to go for a short walk."
+def story_setup():
+    main_story = Story(
+        title='Lunch.',
+        start_id = 'lunch',
+        start_option_title = "It's lunch time.",
+        start_description= "Where will you go?"
     )
 
-main_story.add_new_child(
-    parent_id = 'lunch', 
-    child_id = 'isf_ablock_cafe',
-    child_option_title='Elevator down to A Block Cafeteria.',
-    child_description="You're short on time, better to grab something quick downstairs."
-    )
+    main_story.add_new_child(
+        parent_id = 'lunch', 
+        child_id = 'bball_court',
+        child_option_title='Head down to the basketball court.',
+        child_description="It's a nice day, I'd like to go to the basketball court."
+        )
 
-main_story.add_new_child(
-    parent_id = 'isf_ablock_cafe', 
-    child_id = 'optionA',
-    child_option_title='Char Siu Rice',
-    child_description="Yum, pork!"
-    )
+    main_story.add_new_child(
+        parent_id = 'bball_court', 
+        child_id = 'game',
+        child_option_title='Play a basketball game.',
+        child_description="You see your friends have started playing a game. You join in."
+        )
+
+    main_story.add_new_child(
+        parent_id = 'lunch', 
+        child_id = 'isf_ablock_cafe',
+        child_option_title='Walk down to A Block Cafeteria.',
+        child_description="You're hungry, better to grab something to eat downstairs."
+        )
+
+    main_story.add_new_child(
+        parent_id = 'isf_ablock_cafe', 
+        child_id = 'optionA',
+        child_option_title='Char Siu Rice',
+        child_description="Yum, pork!"
+        )
 ```
 {{< /expand>}}
 
@@ -167,21 +173,20 @@ main_story.add_new_child(
 
 ```shell
 $ python game.py
-
 ==================================================
 Title: Lunch.
 
-It's lunch time.
+Its lunch time.
 Where will you go?
 ==================================================
 
 [what will you do?]
-❯ Walk to cyberport.
-  Elevator down to A Block Cafeteria.
+❯ Head down to the basketball court.
+  Walk down to A Block Cafeteria.
 ```
 
 
-🧐 *Hmmmmm.... it works, but it the story does not continue with your choice.*
+🧐 *Hmmmmm.... it works, but the story does not continue with your choice.*
 
 ---
 
@@ -189,9 +194,10 @@ Where will you go?
 
 {{< code-action >}} **Finish `game.py` so it properly plays through the story.** It should:
 
-0. loop through the given chosen options 
-0. display the description of each chosen node
-0. end when there are no more options for the chosen node
+0. show a menu of all the options, and save the choice in a variable 
+0. whatever the user chose, set that to the new current node
+0. display the description for the new current node
+0. loop until there are no more options left
 
 🧐 *Consider...:*
 - *What methods exist in the `View()` and `Story()` that you could use?*
@@ -213,11 +219,11 @@ It's lunch time.
 Where will you go?
 ==================================================
 
-[what will you do?] Walk to cyberport.
-It's a nice day, better to go for a short walk.
+[what will you do?] Walk down to A Block Cafeteria.
+You're hungry, better to grab something to eat downstairs.
 
-[what will you do?] Go to fusion.
-It's a grocery store day! What should I get?
+[what will you do?] Char Siu Rice
+Yum, pork!
 
 
 ==================================================
@@ -238,8 +244,8 @@ Come up with your own options to continue the story! We'll share out at the end 
 
 {{< code-action >}} **"Continue the story, add at least 3 unique `Node()` objects.** Some ideas...
 - add additional lunch options in ISF A Block Cafeteria
-- add lunch options in Fusion 
-- add other locations to purchase lunch in Cyberport 
+- add options at the basketball court 
+- add other places to go for recess 
 
 👾 **Be sure to play test the game to ensure your story additions work as expected:** `python game.py`
 
@@ -249,7 +255,7 @@ Come up with your own options to continue the story! We'll share out at the end 
 
 {{< deliverables  >}}
 
-**Once you've successfully completed the game be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSdt-1ot7m6E6rP01LmJTt9uvIrdOnLvfGw_Zhl5RFdkPN3XYg/viewform?usp=sf_link)**.
+**Once you've successfully completed the game be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSff206imXwF__4FluHsG7rdOOj-lxsIm_xXaQOM05V8sAVEew/viewform?usp=sf_link)**.
 
 
 {{< code-action "Push your work to Github:" >}}
@@ -269,7 +275,7 @@ Come up with your own options to continue the story! We'll share out at the end 
 ## [6] Extension:
 
 For your project, you will need to build out **one** additional feature to this `Story` framework. Here are a few suggested features:
-- looping stories with the ability to set an Node as a current Node's child 
+- looping stories with the ability to set an Node as a existing Node's child 
   - *e.g. player can go back to a previous area*
 - a `Player` class with unique properties 
   - *e.g. hunger, money, health*
