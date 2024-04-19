@@ -152,8 +152,6 @@ The project is scored out of 15.
 
 **You have 5 in class days to complete this project.**
 
-- begins on Monday, 24 April 
-- due on Monday, 08 May 
 
 | CS9.1 Dates  | CS9.2 Dates  | Agenda                           |
 |--------------|--------------|----------------------------------|
@@ -200,6 +198,8 @@ Here are a few resources that may help improve readability.
 - [Emojis](https://www.emojicopy.com/)
 - [InquirerPy](https://inquirerpy.readthedocs.io/en/latest/)
     - This is the package that controls the menu
+- [Colorama](https://pypi.org/project/colorama/)
+    - This package adds colors to the print statements in the Terminal
 
 ---
 
