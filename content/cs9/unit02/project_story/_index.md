@@ -135,7 +135,7 @@ The project is scored out of 15.
 
 ## [3] Deliverables
 
-{{< deliverables  "Projects are due on Wednesday, 02 March." >}}
+{{< deliverables  "Projects are due on the first class of Week 32." >}}
 
 - A `Unit 02 Games Project: Planning Document` 
 - A `project_game_story` repository will include some if not all the following files:
@@ -225,10 +225,10 @@ playsound('test_sound.m4a')
 
 If you are interested in including images in your game, follow along with these steps. It will open the image in your computer's default image viewer *(e.g. Preview)*.
 
-(0) **Install the playsound library:** `poetry add pil`
+(0) **Install the playsound library:** `poetry add pillow`
 
 (1) **Add a image file to your repository.** *e.g. .png, .jpg file*
-> If will have multiple images, be sure to consider how you will organize your repostiory.
+> If will have multiple images, be sure to consider how you will organize your repository.
 
 (2) **Incorporate the image into your game.** If this is your feature, I highly planning how you will incorporate this into the `Node()`, `Story()` and/or `game.py`.
 
@@ -238,6 +238,29 @@ from PIL import Image
 
 image1 = Image.open(r"test_img.png") 
 image1.show()
+```
+
+---
+
+###  ⏱ Time
+If you are interested in including an element of time in your game (a countdown, a stopwatch, etc.), follow along with these steps. You can also reference `lab_typing_game` which used the `time()` to calculate wpm.
+
+**Be sure to import the time library and any functions you want to use at the top of the file.** 
+
+**`time()`**  - *save the current time into a variable*
+```python
+from time import time
+
+#save the current time
+current_time = time()
+```
+
+**`sleep()`** - *pause your program for a given amount of seconds.*
+```python
+from time import sleep
+
+#pause program for 3 seconds
+sleep(3)
 ```
 
 ---
