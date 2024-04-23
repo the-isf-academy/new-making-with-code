@@ -225,7 +225,7 @@ playsound('test_sound.m4a')
 
 If you are interested in including images in your game, follow along with these steps. It will open the image in your computer's default image viewer *(e.g. Preview)*.
 
-(0) **Install the playsound library:** `poetry add pil`
+(0) **Install the playsound library:** `poetry add pillow`
 
 (1) **Add a image file to your repository.** *e.g. .png, .jpg file*
 > If will have multiple images, be sure to consider how you will organize your repository.
