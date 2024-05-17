@@ -1,6 +1,6 @@
 ---
 title: 6. Map Making
-draft: True
+# draft: True
 ---
 
 # Map Making
@@ -55,23 +55,14 @@ This repo includes the following files:
 
 
 ## [1] Game Scaling
-👾 **Play the simple platformer game!** You can use the arrow keys to move around the level. Pressing `esc` will end the game. 
+👾 **Play the simple platformer game!** You can use the `W`, `A`, `D` to move around the level. Pressing `esc` will end the game. 
 
 ```shell
 python game_platformer.py 
 ```
 
-{{< figure src="images/courses/cs9/unit02/arcade02.png" width="25%" >}}
-
-{{< code-action >}} **Althought the game works, the scaling is totally off!** At the top of the file, adjust the following settings until it looks just right:
-- `TILE_SCALING`
-- `PLAYER_SCALING`
-- `SCREEN_WIDTH`
-- `SCREEN_HEIGHT`
-
 {{< figure src="images/courses/cs9/unit02/arcade03.png" width="75%" >}}
 
-🤔 **When you make your game, you'll need to pay close attention to these settings!** Slight change in numbers affect the appearance of your game.
 
 ---
 
@@ -151,11 +142,6 @@ python game_platformer.py
 
 
 {{< deliverables  >}}
-
-**Once you've explored both games, fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSd5uRd-Ehmvu4x6LemzjVBFEIGiYmluTMxSPLDK6AruqbXMhg/viewform?usp=sf_link)**.
-
-- Which game are you more interested in exploring?
-- Are you interested in working in a group? If so, who would you like to work with?
 
 
 
