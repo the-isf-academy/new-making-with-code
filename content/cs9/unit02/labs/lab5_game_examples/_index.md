@@ -25,7 +25,7 @@ You will be running a game from your terminal, so your terminal will need permis
 
 {{< code-action "Start by going into your" >}} `cs9/unit02_games` **folder.**
 ```shell
-cd ~/desktop/making_with_code/cs9/unit02_games
+cd ~/desktop/making_with_code/unit02_games
 ```
 
 {{< code-action "Clone the repo." >}}  Be sure to change `YOUR-GITHUB-USERNAME` to your actual Github username.
@@ -33,6 +33,10 @@ cd ~/desktop/making_with_code/cs9/unit02_games
 git clone https://github.com/the-isf-academy/lab_arcade_intro_YOUR-GITHUB-USERNAME
 ```
 
+{{< code-action "cd into the lab" >}} 
+```shell
+cd lab_arcade_intro_YOUR-GITHUB-USERNAME
+```
 
 {{< code-action "Enter the Poetry shell and install the requirements:" >}}
 ```shell
