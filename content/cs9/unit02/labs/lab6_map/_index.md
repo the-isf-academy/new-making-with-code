@@ -128,7 +128,7 @@ python game_platformer.py
 
 ---
 
-### [Adding to the map]
+### Adding to the map
 
 🎨 **Start by adding more coins to the map!** Double check you editing the the `Coins` layer. 
 
