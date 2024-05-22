@@ -117,6 +117,12 @@ class Enemy(arcade.Sprite):
 
 💻 **Go to the main game file:** `game_platformer.py`
 
+💻 **Add the code below to the top of the file to import the `Enemy`.** 
+
+```python
+from enemy import Enemy
+```
+
 💻 **Add the code below in the `__init__()`.** This will create one enemy at the location `center_x` and `center_y`. You will need to customize these for your game! 
 > *How would you add multiple enemies?* 
 
