@@ -1,12 +1,12 @@
 ---
-title: "CS9"
+title: "Year 1"
 weight: 1
 bookCollapseSection: true
 
 ---
 
 
-# Welcome to CS 9
+# Welcome to Year 1 CS
 
 This is a high-level overview of the curricular units that comprise this introductory course.
 

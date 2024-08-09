@@ -5,23 +5,8 @@ weight: 1
 
 # Initial setup
 
-**Welcome to CS9! These instructions will help you get your computer set up for the class.**
+**Welcome to CS! These instructions will help you get your computer set up for the class.**
 If you get stuck or are unsure what to do, send a screenshot of your error to Ms. Brown or Ms. Genzlinger.
-
-
-<!-- ## Github
-
-Github is a hosting service for code. It allows users to collaborate on projects and track versions of their code over time. We will be using Github to distribute code to students and for students to submit their work.
-
-{{< code-action >}}
-**Sign up for a Github account by going to [this](https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home) link.**
-
-{{< figure src="https://github.githubassets.com/images/modules/logos_page/Octocat.png" width="25%" alt-text="Python Turtle Graphics" >}}
-- Be sure to use your ISF student email.
-- You will be asked to create a Github username. Do NOT use your student ID number and make sure it is school appropriate.  
-
-{{< youtube "GmiNDSIuxZQ" >}} -->
-
 
 
 ---
@@ -87,10 +72,10 @@ xcode-select: error: command line tools are already installed, use "Software Upd
 
 
 (1) **Once the installation finishes, you will see a Finder window showing what was installed**.
-(If you closed the window, open Finder, click on "Applications," and then "Python 3.11" (or whatever version of Python you just installed).
+(If you closed the window, open Finder, click on "Applications," and then "Python 3.12" (or whatever version of Python you just installed).
 
 
-(2) **Check Python installed successfully by typing `python --version` into the Terminal.** You should see a version number above `3.11`.
+(2) **Check Python installed successfully by typing `python --version` into the Terminal.** You should see a version number above `3.12`.
 
 (3) **Double-click on "Install Certificates.command".** This will will open a Terminal window and run a bunch of commands. Once you see `[Process completed]`, you may close the window.
 
@@ -101,7 +86,7 @@ xcode-select: error: command line tools are already installed, use "Software Upd
 
 {{< aside >}}
 **If you see a red "Permission denied" error message when running "Install Certificates.command"**:
-- open a Terminal window and run **`sudo "/Applications/Python 3.11/Install Certificates.command"`**
+- open a Terminal window and run **`sudo "/Applications/Python 3.12/Install Certificates.command"`**
 - You will be asked for an administrator password; you won't see any letters appearing as you enter the password. This is a security feature.
 {{</ aside >}}
 
@@ -117,10 +102,17 @@ xcode-select: error: command line tools are already installed, use "Software Upd
 ```shell
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
+
 💻 **As the installation runs, follow all the instructions, such as:**
-- type your password - you won't see any letters appearing as you enter the password. This is a security feature.
-- press Enter to continue
-- copy/paste certain commands
+
+**1. Type your password** - you won't see any letters appearing as you enter the password. This is a security feature.
+
+{{< figure src="images/courses/cs9/unit00/-000_initialsetup13.png" width="50%" alt-text="mwc setup" >}}
+
+
+**2. Press `return` to continue** 
+
+{{< figure src="images/courses/cs9/unit00/-000_initialsetup14.png" width="50%" alt-text="mwc setup" >}}
 
 **It may ask you to press `Enter` a few more times throughout the process.**
 
@@ -135,10 +127,14 @@ bgenzlinger~/Documents$
 ## Installing Poetry
 *Poetry makes sure your coding environment is set up to work for all your coding projects*
 
+{{< code-action "Run the below command to install Pipx with Brew." >}} 
+```shell
+brew install pipx
+```
+
 {{< code-action "Run the below command to install Poetry." >}} 
 ```shell
-curl -sSL https://install.python-poetry.org | python3 -
-
+pipx install poetry
 ```
 
 ---
@@ -210,6 +206,8 @@ Whenever this website says to use Terminal, you should use Windows Powershell. T
 
 ## Testing your Setup
 
+
+
 💻 **Run each of the following checks one at a time to check your setup.**
 
 
@@ -226,7 +224,7 @@ python3 --version
 ```
 
 ```shell
-brew -v
+brew --version
 ```
 
 ```shell
@@ -237,4 +235,4 @@ poetry --version
 
 A successful setup will look something like this:
 
-{{< figure src="images/courses/cs9/unit00/-000_initialsetup8.png" width="100%" alt-text="mwc setup" >}}
+{{< figure src="images/courses/cs9/unit00/-000_initialsetup15.png" width="100%" alt-text="mwc setup" >}}
