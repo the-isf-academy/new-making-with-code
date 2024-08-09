@@ -1,6 +1,6 @@
 ---
 title: 11. More Animation
-# draft: true
+draft: true
 ---
 
 # More Animation Lab
