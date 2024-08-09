@@ -1,5 +1,5 @@
 ---
-title: "CS10"
+title: "Year 2"
 weight: 2
 bookFlatSection: false
 bookCollapseSection: true
