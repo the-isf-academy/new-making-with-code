@@ -13,9 +13,9 @@ If you get stuck or are unsure what to do, send a screenshot of your error to Ms
 ## Visual Studio Code
 *This is the editor that you will use to write your code.*
 
-(0) **Download and Install.** [Open this link](https://code.visualstudio.com/), click "Download Mac Universal," or use the dropdown to select your operating system. Follow the installation instructions.
+(0) **Download and Install.** [Open this link](https://code.visualstudio.com/), click "Download for macOS," or click on "other plaforms" to choose your operating system. Follow the installation instructions.
 
-(1) **Drag to Applications Folder.** Open up the `Finder` application on your Mac. On the left hand side, click on `Downloads`.  Drag it to the folder named `Applications`.
+(1) **Drag to Applications Folder.** Open up the `Finder` application on your Mac. On the left hand side, click on `Downloads`.  Drag `Visual Studio Code` to the folder named `Applications`.
 
 {{< figure src="images/courses/cs9/unit00/-000_initialsetup12.gif" width="25%" alt-text="mwc setup" >}}
 
@@ -155,7 +155,7 @@ code --version
 ✔️ *Checks `Xcode`*
 
 ```shell
-xcode-select --install
+xcode-select --version
 ```
 
 ✔️ *Checks `Python`*
@@ -185,7 +185,7 @@ poetry --version
 
 A successful setup will look something like this:
 
-{{< figure src="images/courses/cs9/unit00/-000_initialsetup15.png" width="100%" alt-text="mwc setup" >}}
+{{< figure src="images/courses/cs9/unit00/-000_initialsetup15.png" width="80%" alt-text="mwc setup" >}}
 
 
 {{< /deliverables >}}
