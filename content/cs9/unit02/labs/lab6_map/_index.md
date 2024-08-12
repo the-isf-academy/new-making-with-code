@@ -1,6 +1,6 @@
 ---
 title: 6. Map Making
-draft: True
+# draft: True
 ---
 
 # Map Making
@@ -21,9 +21,9 @@ In this lab you explore the map making with [Tiled](https://doc.mapeditor.org/en
 >   - Double click the file
 >   - Drag the `Tiled` app into your `Applications` folder
 
-{{< code-action "Then go into your" >}} `cs9/unit02_games` **folder.**
+{{< code-action "Then go into your" >}} `unit02_games` **folder.**
 ```shell
-cd ~/desktop/making_with_code/cs9/unit02_games
+cd ~/desktop/making_with_code/unit02_games
 ```
 
 {{< code-action "Clone your starter code." >}} Be sure to change `yourgithubusername` to your actual Github username.
@@ -31,6 +31,10 @@ cd ~/desktop/making_with_code/cs9/unit02_games
 git clone https://github.com/the-isf-academy/lab_map_example_yourgithubusername
 ```
 
+{{< code-action "cd into the lab" >}} 
+```shell
+cd lab_map_example_yourgithubusername
+```
 
 {{< code-action "Enter the Poetry shell and install the requirements:" >}}
 ```shell
@@ -49,38 +53,16 @@ This repo includes the following files:
     - `/sprites`
         - `slime.png` - player image
 
-
-
 ---
 
+### Finding the Files
 
-## [1] Game Scaling
-👾 **Play the simple platformer game!** You can use the arrow keys to move around the level. Pressing `esc` will end the game. 
+First you need to help you computer locate the tileset so that it can load the map in your game. 
 
+{{< code-action >}} **Open this repo in Finder:** 
 ```shell
-python game_platformer.py 
+open .
 ```
-
-{{< figure src="images/courses/cs9/unit02/arcade02.png" width="25%" >}}
-
-{{< code-action >}} **Althought the game works, the scaling is totally off!** At the top of the file, adjust the following settings until it looks just right:
-- `TILE_SCALING`
-- `PLAYER_SCALING`
-- `SCREEN_WIDTH`
-- `SCREEN_HEIGHT`
-
-{{< figure src="images/courses/cs9/unit02/arcade03.png" width="75%" >}}
-
-🤔 **When you make your game, you'll need to pay close attention to these settings!** Slight change in numbers affect the appearance of your game.
-
----
-
-
-## [2] Exploring Tiled
-
-**Now, let's expand and build out the level.**
-
-{{< code-action >}} **Open this repo in Finder:** `open .`
 
 {{< code-action >}} **Open the `assets/map` folder.** It has the following files:
 
@@ -89,7 +71,45 @@ python game_platformer.py
 - `forest_map.tmx` - Tiled file
 - `forest_map.tmj` - exported Tiled file for Python file
 
-{{< code-action >}} **Double click the `forest_map.tmx` file to open the map in `Tiled`**
+{{< code-action >}} **Double click the `forest_map.tmx` file to open the map in `Tiled`.**
+**There will be an error at the top asking you to find the `forest_tileset.tsx`**
+
+{{< figure src="images/courses/cs9/unit02/arcade09.jpg" width="75%" >}}
+
+{{< code-action >}} **Click `Locate File...` and find `forest_tileset.tsx` in your repository.**    
+
+{{< figure src="images/courses/cs9/unit02/arcade10.jpg" width="75%" >}}
+
+{{< code-action >}} **Click `Open`.** 
+
+{{< code-action >}} **Now save these changes by following these steps:**
+
+1️⃣ `command + s` to save   
+2️⃣ `command + shift + e` or `File > Export As` to export   
+3️⃣ select `JSON map files (*.tmj *.json)`   
+4️⃣ `save`
+
+**Now you are all set to play the game!**
+
+---
+
+
+## [1] Play the Game
+👾 **Play the simple platformer game!** You can use the `W`, `A`, `D` to move around the level. Pressing `esc` will end the game. 
+
+```shell
+python game_platformer.py 
+```
+
+{{< figure src="images/courses/cs9/unit02/arcade03.png" width="75%" >}}
+
+
+---
+
+
+## [2] Exploring Tiled
+
+**Now, return to Tiled to expand and build out the level.**
 
 {{< figure src="images/courses/cs9/unit02/arcade04.png" width="75%" >}}
 
@@ -108,7 +128,7 @@ python game_platformer.py
 
 ---
 
-### [Adding to the map]
+### Adding to the map
 
 🎨 **Start by adding more coins to the map!** Double check you editing the the `Coins` layer. 
 
@@ -129,12 +149,15 @@ python game_platformer.py
 - `Walls` - are tiles the player can stand on
 - `End` - are the tiles that end the game when the player collides them
 - `Background` - are tiles thare are decorative and have no player effects
- 
-{{< aside "Export As!" >}}
-☑️ Don't forget to `Export As` every time you make edits to the map. 
 
-1. `command + shift + e` or `File > Export As`
-2. Save As Select `JSON map files (*.tmj *.json)`
+
+{{< aside "Export As!" >}}
+Don't forget to `Export As` every time you make edits to the map. 
+
+1️⃣ `command + s` to save   
+2️⃣ `command + shift + e` or `File > Export As` to export   
+3️⃣ select `JSON map files (*.tmj *.json)`   
+
 {{< /aside >}}
 
 👾 **We will play test each other's levels at the end of class!**
@@ -152,21 +175,18 @@ python game_platformer.py
 
 {{< deliverables  >}}
 
-**Once you've explored both games, fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSd5uRd-Ehmvu4x6LemzjVBFEIGiYmluTMxSPLDK6AruqbXMhg/viewform?usp=sf_link)**.
-
-- Which game are you more interested in exploring?
-- Are you interested in working in a group? If so, who would you like to work with?
-
 
 
 {{< code-action "Push your work to Github:" >}}
 - git status
 - git add -A
 - git status
-- git commit -m "describe your drawing and your process here"
+- git commit -m "describe your work here"
   > be sure to customize this message, do not copy and paste this line
 - git push
 
 
 
 {{< /deliverables >}}
+
+

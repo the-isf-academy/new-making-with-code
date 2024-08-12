@@ -97,18 +97,15 @@ Your pitch should include:
 
 ## [4] Deliverables
 
-{{< deliverables  "Milestone 1 is due on Thursday, 20 April." >}}
+{{< deliverables  >}}
 
+**🗓️ Due Dates**
+- CS10.1 - 18 April
+- CS10.2 - 15 April
+
+**📄 Deliverables**
 - A Miro Board with your Web App design specifications
 - A Google Slides presentation 
 
----
-
-**🗓️ Timeline**
-
-**You have 4 in class days to complete the Miro Planning Board and prepare for the Pitch.**
-
-- begins on Wednesday, 12 April  
-- due on Thursday, 20 April
 
 {{< /deliverables >}}
