@@ -127,7 +127,7 @@ bgenzlinger~/Documents$
 ## Installing Poetry
 *Poetry makes sure your coding environment is set up to work for all your coding projects*
 
-{{< code-action "Run the below command to install Pipx with Brew." >}} 
+{{< code-action "Run the below command to install Pipx with Brew." >}} You MUST install `pipx` after installing `homebrew`. 
 ```shell
 brew install pipx
 ```
@@ -139,100 +139,53 @@ pipx install poetry
 
 ---
 
-<!-- {{< code-action "Run the below command to install the Github CLI." >}}
-```shell
-brew install gh
-```
-{{< code-action "Run the below command to authorize." >}} This will take you through a few prompts to log in to your github account.
-```shell
-gh auth login
-```
-
-**You will be asked the following questions to finish the authorization process. You should accept all the default highlighted options, which are these:**
-
-0. "What account do you want to log into?" - GitHub.com
-0. "What is your preferred protocol for Git operations?" - HTTPS
-0. "Authenticate Git with your GitHub credentials?" - Yes
-0. "How would you like to authenticate GitHub CLI?" - Log in with a web browser
-
-> **If you are asked for your computer password, you won't see any letters appear as you type.** This is normal--it's to keep the person standing behind you from seeing your password.
-
-{{< code-action "When prompted, copy your code and press enter." >}} Then you can follow the prompts in your browser. -->
-
-
-<!-- 
-## If you are using Windows, please email your teachers as soon as possible and they will send you updated instructions. --> 
-<!-- ## Install Linux
-
-## Installing Python
-
-(0) **Start by installing the latest version of Python.** [Open this link](https://www.python.org/downloads/), click "Download Python," and follow the installation instructions.
-  - Make sure you select `Add Python 3.10 to PATH'
-
-(1) **Open Windows Powershell**. We will be using this application every class. We suggest you pin it to your toolbar.
-{{< figure src="https://upload.wikimedia.org/wikipedia/commons/a/af/PowerShell_Core_6.0_icon.png" width="25%" alt-text="Python Turtle Graphics" >}}
-
-(2) **Check Python installed successfully by typing `python --version` into Powershell.**
-> You should see a version number above `3.10`
-
-{{< youtube "uhRWvk1Cafc" >}}
-
-
-## Installing Github for CLI
-
-(0) **Go to [cli.github.com](https://cli.github.com/
-) and install Github CLI**
-
-(1) **Open Windows Powershell**
-
-(2) **Type this command: `gh auth login`**
-
-(3) **It will ask you a series of questions. Follow the *blue* answers below.**
-
-{{< figure src="images/courses/cs9/unit00/-000_initialsetup1.png" width="100%" alt-text="mwc setup" >}}
-> Make sure you copy your "one-time code". You will need to active your computer in the browser.
-
-{{< figure src="images/courses/cs9/unit00/-000_initialsetup2.png" width="50%" alt-text="mwc setup" >}}
-
-(4) **Once complete, you will see the following in your Powershell**
-
-{{< figure src="images/courses/cs9/unit00/-000_initialsetup3.png" width="100%" alt-text="mwc setup" >}}
-
-
-{{< aside >}}
-Whenever this website says to use Terminal, you should use Windows Powershell. There will be other small differences for Windows users that we'll explain along the way.
-{{< /aside >}} -->
-
 
 ## Testing your Setup
 
 
 
-💻 **Run each of the following checks one at a time to check your setup.**
+💻 **Run each of the following checks one at a time to check your setup.** If you do not see an `version number`, there was an error with the install.
 
+✔️ *Checks `Visual Studio Code`*
 
 ```shell
-code -v
+code --version
 ```
+
+✔️ *Checks `Xcode`*
 
 ```shell
 xcode-select --install
 ```
 
+✔️ *Checks `Python`*
+
 ```shell
 python3 --version
 ```
+
+✔️ *Checks `Homebrew`*
 
 ```shell
 brew --version
 ```
 
+✔️ *Checks `Poetry`*
+
 ```shell
 poetry --version
 ```
 
-📸 **Take a screenshot** of the result and send it to your teachers, *bgenzlinger@isf.edu.hk* and *eqbrown@isf.edu.hk*, regardless of whether it worked or not. 
+
+
+{{< deliverables "Fill out the Install Form" >}}
+
+✅ **Fill out this form to notify your teachers if your install was successfull:** [forms.gle/xSKm6Xv7G3NYQ4EF7](https://forms.gle/xSKm6Xv7G3NYQ4EF7)
+
 
 A successful setup will look something like this:
 
 {{< figure src="images/courses/cs9/unit00/-000_initialsetup15.png" width="100%" alt-text="mwc setup" >}}
+
+
+{{< /deliverables >}}
