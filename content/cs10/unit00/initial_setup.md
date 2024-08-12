@@ -108,7 +108,7 @@ pipx install poetry
 ✔️ *Checks `Xcode`*
 
 ```shell
-xcode-select --install
+xcode-select --version
 ```
 
 ✔️ *Checks `Python`*
