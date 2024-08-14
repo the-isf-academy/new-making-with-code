@@ -1,7 +1,7 @@
 ---
 title: "1. HTTP"
 type: lab
-# draft: true
+draft: true
 ---
 
 
