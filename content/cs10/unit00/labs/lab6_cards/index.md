@@ -1,7 +1,7 @@
 ---
 title: "6. Cards"
 type: lab
-# draft: true
+draft: true
 ---
 
 # Cards

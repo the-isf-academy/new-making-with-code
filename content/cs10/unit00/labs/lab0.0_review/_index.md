@@ -1,36 +1,34 @@
 ---
 title: "0.0 Review: Turtle"
 weight: 10
-
 ---
 
 # Review: Turtle Drawing
 
-Welcome to CS10! We hope you're excited for what we have planned this year! 😄
+Welcome to Year 2 CS! We hope you're excited for what we have planned this year! 😄
 
-Let's review by taking it back to CS9 Turtle drawings!
+Let's review by taking it back to Turtle drawings!
 
 ---
 
 ## [0] Set up
 
-Now that you're in **cs10** you need a `cs10` folder! 
+Now that you're in **Year 2** you need a new unit foler!
 
-{{< code-action  >}} **In the Terminal, go into your `making_with_code` folder and create a `cs10` folder.**
+{{< code-action  >}} **Start by openning your Terminal!**
+
+{{< code-action  >}} **In the Terminal, go into your `making_with_code` folder and create a `unit04_networking` folder.** If you no longer have a `making_with_code` folder, you will need to create one. 
 
 ```shell
 cd ~/desktop/making_with_code
-mkdir cs10
+mkdir unit04_networking
+cd unit04_networking
 ```
 
-{{< code-action  >}} **Then, go into the `cs10` folder and create a `unit00_networking` folder.**
-
-```shell
-cd cs10
-mkdir unit00_networking
-```
 
 {{< code-action "Then, clone your starter code." >}} Be sure to change `yourgithubusername` to your actual Github username.
+> *remember: `tab` autocompletes in the Terminal*
+
 ```shell
 git clone https://github.com/the-isf-academy/lab_turtle_review_yourgithubusername
 cd lab_turtle_review_yourgithubusername
@@ -67,20 +65,32 @@ When you want to exit the shell, you can type `exit` or `^D`
 
 ## [1] Create a Turtle Drawing
 
+{{< code-action "Run the Python file" >}} 
+```shell
+python turtle_drawing.py
+```
+
+{{< code-action "Open the code." >}} The `.` opens the entire folder.
+```shell
+code . 
+```
+
 {{< code-action >}} **Using the starter code in `turtle_drawing.py` create a drawing that includes at least 3 of CS concepts below:**
-- Variables
-- Loops
-- Conditionals
-- Lists
-- Dictionaries
-- Functions with parameters
 
-{{< figure src="https://freshgadgets.nl/wp-content/uploads/2014/12/inspirograph2.jpg" width="75%">}}
+- [Variables](https://www.w3schools.com/python/python_variables.asp)
+- [Loops](https://www.w3schools.com/python/python_for_loops.asp)
+- [Conditionals](https://www.w3schools.com/python/python_conditions.asp)
+- [Lists](https://www.w3schools.com/python/python_lists.asp)
+- [Dictionaries](https://www.w3schools.com/python/python_dictionaries.asp)
+- [Functions with arguements](https://www.w3schools.com/python/python_functions.asp)
 
+{{< figure src="https://freshgadgets.nl/wp-content/uploads/2014/12/inspirograph2.jpg" width="50%">}}
+
+---
 
 ### A Few Helpful Functions
 
-
+- 🌈 Explore color options [here](https://trinket.io/docs/colors)
 
 | Function |       Input      |   Example Use  | Explanation                                                                                                                      |
 |:--------:|:----------------:|:--------------:|----------------------------------------------------------------------------------------------------------------------------------|
