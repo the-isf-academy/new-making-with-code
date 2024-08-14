@@ -22,9 +22,19 @@ need do something that involves writing code or using your Terminal. You can use
 
 ## [0] Your First Turtle Drawing
 
-{{< code-action "Go to:" >}} [bit.ly/day1_cs9](https://trinket.io/python/196e77f175). **Experiment with turtle commands below.**
+{{< code-action "Go to:" >}} [bit.ly/day1_cs9](https://trinket.io/python/196e77f175). **Experiment with turtle commands below.** Can you figure out how to: 
+- Change the color
+- Change the pen size
+- Draw a triangle
+- Draw a hexagon 
+- Draw a circle
+- Fill a drawing with color
 
 {{< figure src="images/courses/cs9/unit00/00_turtle.png" width="75%">}}
+
+
+### Turtle Commands
+- 🌈 Explore color options [here](https://trinket.io/docs/colors)
 
 
 | Function |       Input      |   Example Use  | Explanation                                                                                                                      |
