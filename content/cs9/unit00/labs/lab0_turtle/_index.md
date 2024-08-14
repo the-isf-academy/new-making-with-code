@@ -10,7 +10,7 @@ We're glad you're here! yay 😄
 
 
 {{< aside "FYI" >}}
-**Here's my first FYI:** you will see 💻 throughout each lab. 
+**You will see 💻 throughout each lab.**
 
 This means that you
 need do something that involves writing code or using your Terminal. You can use these like little action items during labs.
