@@ -5,7 +5,7 @@ weight: 10
 
 # Review: Turtle Drawing
 
-Welcome to Year 2 CS! We hope you're excited for what we have planned this year! 😄
+Welcome to Year 2 CS! We hope you're excited for what we have planned this year 😄
 
 Let's review by taking it back to Turtle drawings!
 
@@ -13,16 +13,16 @@ Let's review by taking it back to Turtle drawings!
 
 ## [0] Set up
 
-Now that you're in **Year 2** you need a new unit foler!
+Now that you're in **Year 2** you need a new unit folder.
 
-{{< code-action  >}} **Start by openning your Terminal!**
+{{< code-action  >}} **Start by opening your Terminal!**
 
-{{< code-action  >}} **In the Terminal, go into your `making_with_code` folder and create a `unit04_networking` folder.** If you no longer have a `making_with_code` folder, you will need to create one. 
+{{< code-action  >}} **In the Terminal, go into your `making_with_code` folder and create a `unit03_networking` folder.** If you no longer have a `making_with_code` folder, you will need to create one. 
 
 ```shell
 cd ~/desktop/making_with_code
-mkdir unit04_networking
-cd unit04_networking
+mkdir unit03_networking
+cd unit03_networking
 ```
 
 
@@ -31,7 +31,6 @@ cd unit04_networking
 
 ```shell
 git clone https://github.com/the-isf-academy/lab_turtle_review_yourgithubusername
-cd lab_turtle_review_yourgithubusername
 ```
 
 {{< code-action >}} `cd` **into the lab**
