@@ -25,12 +25,14 @@ Windows users should use Powershell wherever it says Terminal.
 You may see more information output than your Mac peers, but all commands should work the same.
 {{< /aside >}}
 
-{{< code-action "First clone the Terminal Adventure Sequel." >}} 
+
+{{< code-action "First clone the Terminal Adventure Sequel repository" >}}  in your `cs10\unit04_networking` folder. 
+
 ```shell
+cd ~/desktop/making_with_code/unit04_networking
 git clone https://github.com/the-isf-academy/lab_terminal_adventure_sequel
 cd lab_terminal_adventure_sequel
 ```
-
 
 {{< code-action "Enter the Poetry Shell." >}} Remember, we run this command at the start of each lab, but only when we are inside a lab folder.
 ```shell
@@ -83,7 +85,7 @@ Below are some Terminal commands which might come in handy on your adventure.
 
 {{< deliverables "Congrats on completing your adventure!" >}}  
 
-Once you've successfully completed the adventure be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSdBGueGD9haiYVTowIVDvk4BCJ82o9-Yje6kHbjcCg-uwMjQA/viewform?usp=sf_link).
+Once you've successfully completed the adventure be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSfrb-hH22nHOZbEcZxsCB1XpFyUmTfIHrh2ppvZ18NcytBzkQ/viewform?usp=sf_link).
 
 {{< /deliverables >}}
 

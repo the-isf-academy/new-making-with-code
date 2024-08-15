@@ -20,10 +20,10 @@ In this lab, we'll get re-aquainted with CS concepts such as classes and decompo
 ## [0] Set up
 
 
-{{< code-action "Let's start by cloning the repository" >}} in your `cs10\unit00_networking` folder.  Be sure to change `yourgithubusername` to your actual Github username.
+{{< code-action "Let's start by cloning the repository" >}} in your `cs10\unit04_networking` folder.  Be sure to change `yourgithubusername` to your actual Github username.
 
 ```shell
-cd ~/desktop/making_with_code/cs10/unit00_networking
+cd ~/desktop/making_with_code/unit04_networking
 git clone https://github.com/the-isf-academy/lab_ballpit_yourgithubusername
 cd lab_ballpit_yourgithubusername
 ```
