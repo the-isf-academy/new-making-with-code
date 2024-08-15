@@ -81,7 +81,7 @@ code .
 - [Conditionals](https://www.w3schools.com/python/python_conditions.asp)
 - [Lists](https://www.w3schools.com/python/python_lists.asp)
 - [Dictionaries](https://www.w3schools.com/python/python_dictionaries.asp)
-- [Functions with arguements](https://www.w3schools.com/python/python_functions.asp)
+- [Functions with arguments](https://www.w3schools.com/python/python_functions.asp)
 
 {{< figure src="https://freshgadgets.nl/wp-content/uploads/2014/12/inspirograph2.jpg" width="50%">}}
 
