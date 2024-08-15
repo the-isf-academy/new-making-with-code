@@ -75,7 +75,10 @@ xcode-select: error: command line tools are already installed, use "Software Upd
 (If you closed the window, open Finder, click on "Applications," and then "Python 3.12" (or whatever version of Python you just installed).
 
 
-(2) **Check Python installed successfully by typing `python --version` into the Terminal.** You should see a version number above `3.12`.
+(2) **Check Python installed successfully by typing `python3.12 --version` into the Terminal.** You should see a version number above `3.12`.
+
+{{< figure src="images/courses/cs9/unit00/-000_initialsetup14.png" width="50%" alt-text="mwc setup" >}}
+
 
 (3) **Double-click on "Install Certificates.command".** This will will open a Terminal window and run a bunch of commands. Once you see `[Process completed]`, you may close the window.
 
@@ -107,19 +110,18 @@ xcode-select: error: command line tools are already installed, use "Software Upd
 
 **1. Type your password** - you won't see any letters appearing as you enter the password. This is a security feature.
 
-{{< figure src="images/courses/cs9/unit00/-000_initialsetup13.png" width="50%" alt-text="mwc setup" >}}
-
-
 **2. Press `return` to continue** 
 
-{{< figure src="images/courses/cs9/unit00/-000_initialsetup14.png" width="50%" alt-text="mwc setup" >}}
 
 **It may ask you to press `Enter` a few more times throughout the process.**
 
-You will know it is finished when you see your username and a `$` once again. For example:*
+You will know it is finished when you see your username and a `$` or `%` once again. For example:*
 ```shell
 bgenzlinger~/Documents$
 ```
+
+{{< figure src="images/courses/cs9/unit00/-000_initialsetup10.png" width="50%" alt-text="mwc setup" >}}
+
 
 {{< code-action "Run the below commands to add the Homebrew to the path." >}} 
 ```shell
