@@ -101,6 +101,7 @@ xcode-select: error: command line tools are already installed, use "Software Upd
 *Homebrew helps you install different libraries and packages*
 
 {{< code-action "Run the below command to install homebrew." >}} This will install homebrew onto your computer. This may take up to an hour to complete. Don't worry, you can still use your computer and have it running in the background. If you already have homebrew, then this step will be quick.
+> *You may want to follow along with [this youtube video](https://www.youtube.com/watch?v=IWJKRmFLn-g) (watch 1:30 - 3:00)*
 
 ```shell
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
