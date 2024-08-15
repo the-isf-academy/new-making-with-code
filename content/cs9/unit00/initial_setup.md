@@ -121,6 +121,12 @@ You will know it is finished when you see your username and a `$` once again. Fo
 bgenzlinger~/Documents$
 ```
 
+{{< code-action "Run the below commands to add the Homebrew to the path." >}} 
+```shell
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+```
+
 ---
 
 
@@ -135,6 +141,11 @@ brew install pipx
 {{< code-action "Run the below command to install Poetry." >}} 
 ```shell
 pipx install poetry
+```
+
+{{< code-action "Run the below command to add the Poetry to the path." >}} 
+```shell
+pipx ensurepath
 ```
 
 ---
@@ -189,3 +200,35 @@ A successful setup will look something like this:
 
 
 {{< /deliverables >}}
+
+
+---
+
+## Debugging 
+
+**If `code --version` showes `EACCES: permission denied, unlink '/usr/local/bin/code'`**
+1.  First double check `VS Code` is in your “Applications” folder
+2.  In the top menu click `View > Comannd Palette...`
+3.  Type `uninstall code`, click the option 
+4.  Type `install code`, click the option
+5.  In Terminal, try `code --version`.
+6.  If you do not see a version number, run this command: `sudo chown -R your_user_name /usr/local/bin`
+7.  In Terminal, try `code --version`.
+3. If still does not show a verison number, ask a teacher.
+
+---
+
+**If `poetry --version` does NOT show a version number.** 
+1. Copy & Paste this command into the Terminal: `pipx ensurepath`
+2. Try `poetry --version` again. 
+3. If still does not show a verison number, ask a teacher.
+
+---
+
+**If `brew --version` does NOT show a version number.** 
+1. Copy & Paste the commands below into the Terminal.  Be sure to paste them one at a time. Each time, pressing `return` to run the command.
+    1. `echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile`
+    2. `eval "$(/opt/homebrew/bin/brew shellenv)"`
+2. Try `brew --version` again.
+3. If still does not show a verison number, ask a teacher.
+
