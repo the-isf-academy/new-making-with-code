@@ -121,6 +121,12 @@ You will know it is finished when you see your username and a `$` once again. Fo
 bgenzlinger~/Documents$
 ```
 
+{{< code-action "Run the below commands to add the Homebrew to the path." >}} 
+```shell
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+```
+
 ---
 
 
@@ -135,6 +141,11 @@ brew install pipx
 {{< code-action "Run the below command to install Poetry." >}} 
 ```shell
 pipx install poetry
+```
+
+{{< code-action "Run the below command to add the Poetry to the path." >}} 
+```shell
+pipx ensurepath
 ```
 
 ---
