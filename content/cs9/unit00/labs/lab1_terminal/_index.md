@@ -2,11 +2,11 @@
 title: "01. Terminal Adventure"
 
 # numberHeaders: true
-draft: true
+# draft: true
 
 ---
 # Terminal Adventure
-This lab will explore one of the most important tools we'll use all year: the Terminal. The Terminal is what we'll use to navigate our filesystem, run code files, install software, and
+This lab will explore one of the most important tools we'll use all year: the Terminal. The Terminal is what we'll use to navigate our file system, run code files, install software, and
 do all kinds of other tasks.
 
 
@@ -29,7 +29,7 @@ First, we want to make some folders to store our work. Do this we'll be using th
 | `cd folder`       | Go to `folder`                            |
 | `cd ..`       | Go up one to the previous folder                            |
 
-{{< code-action >}} **Open Terminal and use `ls` to list out where you are in your folder system.** 
+{{< code-action >}} **Open Terminal and use `ls` to list out all the files at your current location.** 
 
 ```shell
 ls
@@ -39,7 +39,7 @@ ls
 
 ```shell
 Applications         Downloads            Pictures
-Creative Cloud Files Library              Public
+Creative Cloud       Library              Public
 Desktop              Movies
 Documents            Music
 ```
@@ -52,7 +52,8 @@ cd Desktop
 
 ---
 
-{{< code-action >}} **Use the `mkdir` command to make a directory called `making_with_code`** `mkdir` stands for, make directory.
+{{< code-action >}} **Use the `mkdir` command to make a directory called `making_with_code`.**  
+> `mkdir` stands for *make directory*.
 
 ```shell
 mkdir making_with_code
@@ -132,6 +133,11 @@ When you want to exit the shell, you can type `exit` or `^D`
 ---
 
 ## [1] Starting your Adventure
+
+{{< code-action >}} **If you left the poetry shell, make sure you enter it again.** 
+```shell
+poetry shell
+```
 
 {{< code-action >}} **Let's have a look at what's in the `lab_terminal_adventure` repository with `ls`.** A *repository* is just a fancy word for a folder that is stored in the cloud using a version control software. 
 ```shell
@@ -234,7 +240,7 @@ These are just for fun. There's lots more--ask your teachers!
 
 
 {{< deliverables "You will end this lab by collecting the treasure!" >}}
-✔ **Once you've successfully completed the adventure be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLScnULLCRvMkIw06reo4MyR39s0efG1hz67VOJMEbFa-ekPdIA/viewform?usp=sf_link)**.
+✔ **Once you've successfully completed the adventure be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSdE8uL3aKClQNZBSrfb2mD5ZkvNXGrq47v3lC2kr8K95LJdOw/viewform?usp=sf_link)**.
 
 
 {{< /deliverables >}}
