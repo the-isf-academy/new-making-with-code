@@ -240,7 +240,7 @@ These are just for fun. There's lots more--ask your teachers!
 
 
 {{< deliverables "You will end this lab by collecting the treasure!" >}}
-✔ **Once you've successfully completed the adventure be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLScnULLCRvMkIw06reo4MyR39s0efG1hz67VOJMEbFa-ekPdIA/viewform?usp=sf_link)**.
+✔ **Once you've successfully completed the adventure be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSdE8uL3aKClQNZBSrfb2mD5ZkvNXGrq47v3lC2kr8K95LJdOw/viewform?usp=sf_link)**.
 
 
 {{< /deliverables >}}
