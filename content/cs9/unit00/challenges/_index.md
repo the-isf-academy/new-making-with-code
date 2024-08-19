@@ -4,7 +4,7 @@ title: "Challenges"
 type: unit
 # headless: true
 numberHeaders: true
-draft: true
+draft: false
 ---
 
 # Challenges
