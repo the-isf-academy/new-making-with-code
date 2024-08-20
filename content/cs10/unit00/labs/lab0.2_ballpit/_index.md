@@ -88,10 +88,9 @@ It **inherits** all of the **methods** from `Ball()` and **overrides** the `upda
 
 ```python
 class BreathingBall(Ball):
-    """ BreathingBall extends the Ball class.
-    A BreathingBall is the same as a Ball,
-    but it grows and shrinks as it moves.
-    """
+    # BreathingBall extends the Ball class.
+    # A BreathingBall is the same as a Ball,
+    # but it grows and shrinks as it moves.
 
     def __init__(self):
         # This constructor calls the constructor of the parent class,
@@ -163,11 +162,10 @@ If time allows, ramp up the chaos even further!
 
 ```python
 class WarpBall(Ball):
-    """ WarpBall extends the Ball class.
-    A WarpBall is the same as a Ball,
-    but instead of bouncing off the wall,
-    it reappears on the other side of the screen.
-    """
+    # WarpBall extends the Ball class.
+    # A WarpBall is the same as a Ball,
+    # but instead of bouncing off the wall,
+    # it reappears on the other side of the screen.
 
     def __init__(self):
         super().__init__()
