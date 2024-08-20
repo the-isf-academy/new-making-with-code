@@ -1,7 +1,7 @@
 ---
 title: "0.1 Review: Ball Pit"
 weight: 30
-# draft: true
+draft: false
 ---
 
 # Ball Pit
@@ -30,8 +30,7 @@ cd lab_ballpit_yourgithubusername
 
 📄 **This repository contains the following files:**
 - `ball.py`
-- `ballpit.py`
-- `setup_ballpit_canvas.py`
+- `animation_ballpit.py`
 
 {{< code-action "Enter the Poetry Shell." >}} 
 ```shell
@@ -42,10 +41,10 @@ poetry shell
 ## [1] Exploring Ball Pit
 
 
-{{< code-action >}} **Run `ballpit.py` to see the Ballpit animation.**
+{{< code-action >}} **Run `animation_ballpit.py` to see the Ballpit animation.**
  
 ```shell
-python ballpit.py
+python animation_ballpit.py
 ```
 
 
@@ -53,7 +52,7 @@ python ballpit.py
 
 In the Ballpit, notice each ball has a different size, stays the same size the whole time, and bounces off the walls.
 
-{{< code-action >}} **Let's delve into the code.** Start by looking at `ballpit.py`
+{{< code-action >}} **Let's delve into the code.** Start by looking at `animation_ballpit.py`
 ```shell
 code .
 ```
@@ -93,24 +92,27 @@ class BreathingBall(Ball):
     A BreathingBall is the same as a Ball,
     but it grows and shrinks as it moves.
     """
+
     def __init__(self):
-        """This constructor calls the constructor of the parent class,
-        and adds a counter variable.
-        """
+        # This constructor calls the constructor of the parent class,
+        # and adds a step variable.
+        
         super().__init__()
+        
         self.step = random.randint(0,120)
         
     def update(self):
-        """Calls the parent method and also changes the size of the ball
-        """
+        # Calls the parent method and also changes the size of the ball
+        
         super().update()
+
         self.step += 1
         new_radius = math.sin(self.step/20)*(3/2)+1.5
         self.set_size(new_radius)
 ```
 
 {{< code-action >}} **Add the `BreathingBall()` to the Ballpit.**
-> 🧐 *What lines of code will you need to add to `ballpit.py`?*
+> 🧐 *What lines of code will you need to add to `animation_ballpit.py`?*
 
 {{< figure src="images/courses/cs10/unit00/lab0.2-03.gif" width="50%" >}}
 
@@ -166,14 +168,15 @@ class WarpBall(Ball):
     but instead of bouncing off the wall,
     it reappears on the other side of the screen.
     """
+
     def __init__(self):
         super().__init__()
 
     def update(self):
-        """Checks whether the ball has hit a wall.
-        If the ball has hit a wall, it "warps" the ball
-        onto the opposite side of the screen
-        """
+        # Checks whether the ball has hit a wall.
+        # If the ball has hit a wall, it "warps" the ball
+        # onto the opposite side of the screen        
+
         if self.x > 1:
             self.x = 0
         if self.y > 1:
