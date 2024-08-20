@@ -206,13 +206,14 @@ Below are some Terminal commands which might come in handy on your adventure.
 | `ls`                 | List what's in the current directory.        |
 | `cd ~`               | Go to your home directory                    |
 | `cd folder`       | Go to `folder`                            |
-| `cd ..`              | Go up a level in your directory system                   |
+| `cd ..`              | Go up a level in your directory system.                  |
 | `open file.txt`      | Opens `file.txt` with its default program    |
 | `cat file.txt`       | Prints out the contents of `file.txt`        |
 | `python x.py`        | Runs the Python program `x.py`               |
 | `mv old.txt new.txt` | Renames a file from `old.txt` to `new.txt`. Also works for directories. |
 | `mv file.txt dir`    | Moves a file to directory `dir`.             |
 | `mv dir1 dir2`       | Moves `dir1` to `dir2` or renames if `dir2` doesn't exist.          |
+| `mv dir1 ..`       | Moves `dir1` up a level in your directory system.          |
 | `cp old.txt new.txt` | Copy a file from `old.txt` to `new.txt`.     |
 | `mkdir bag`          | Creates a new directory called `bag`     |
 | `pwd`                | Prints the path to where you are in the filesystem |
