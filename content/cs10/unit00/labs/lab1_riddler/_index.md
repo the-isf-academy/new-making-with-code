@@ -1,5 +1,5 @@
 ---
-title: "0.3. Riddler"
+title: "0.2 Review: Riddler"
 type: lab
 slug: lab_riddler
 repo_url: https://github.com/the-isf-academy/lab-riddler
@@ -126,7 +126,7 @@ Now that you understand how the `Riddle` is structured, it's up to you use it an
 - tell the user if their guess was correct or incorrect
 
 
-{{< expand "👾 A few helpufl functions"  >}}
+{{< expand "👾 A few helpful functions"  >}}
 
 ### User input
 ```python
@@ -164,7 +164,7 @@ Incorrect :(
 
 {{< deliverables "Congrats on completing the lab!" >}}  
 
-Once you've successfully completed the lab, fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSd9ZgAtOvdDZBYeIc2iQ_e5xWR3seokZlipsbG05VvQhYrIhA/viewform?usp=sf_link).
+Once you've successfully completed the lab, fill out [this Google form](https://forms.gle/HP5Cpp9j4ecrpWVm7).
 
 
 {{< code-action "Push your work to Github:" >}}
