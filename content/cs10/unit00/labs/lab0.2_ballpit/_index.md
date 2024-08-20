@@ -6,7 +6,7 @@ draft: false
 
 # Ball Pit
 
-In this lab, we'll get re-aquainted with CS concepts such as classes and decomposition with the Turtle library. 
+In this lab, we'll get re-aquainted with CS concepts such as classes and inheritance with the Turtle library. 
 
 {{< expand "Extra Resouces: Learn more about Python Objects" >}}
 - Creating a Class: [Python Classes](https://www.w3schools.com/python/python_classes.asp)
@@ -19,10 +19,10 @@ In this lab, we'll get re-aquainted with CS concepts such as classes and decompo
 ## [0] Set up
 
 
-{{< code-action "Let's start by cloning the repository" >}} in your `cs10\unit04_networking` folder.  Be sure to change `yourgithubusername` to your actual Github username.
+{{< code-action "Let's start by cloning the repository" >}} in your `unit03_networking` folder.  Be sure to change `yourgithubusername` to your actual Github username.
 
 ```shell
-cd ~/desktop/making_with_code/unit04_networking
+cd ~/desktop/making_with_code/unit03_networking
 git clone https://github.com/the-isf-academy/lab_ballpit_yourgithubusername
 cd lab_ballpit_yourgithubusername
 ```
