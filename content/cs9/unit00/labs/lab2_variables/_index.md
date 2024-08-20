@@ -31,10 +31,17 @@ cd ~/Desktop/making_with_code/unit00_drawing
 git clone https://github.com/the-isf-academy/lab_variables
 ```
 
+
+{{< code-action "Install Tkinter" >}} We'll need this for our drawings.
+```shell
+brew install python-tk
+```
+
 {{< code-action >}} **Then, enter the lab folder and start the `poetry shell`**
 ```shell
 cd lab_variables
 ```
+
 
 ```shell
 poetry shell
