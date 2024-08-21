@@ -1,13 +1,12 @@
 ---
-title: "0.2 Review: Ball Pit"
+title: "0.1 Review: Ball Pit"
 weight: 30
-
-draft: true
+draft: false
 ---
 
 # Ball Pit
 
-In this lab, we'll get re-aquainted with CS concepts such as classes and decomposition with the Turtle library. 
+In this lab, we'll get re-aquainted with CS concepts such as classes and inheritance with the Turtle library. 
 
 {{< expand "Extra Resouces: Learn more about Python Objects" >}}
 - Creating a Class: [Python Classes](https://www.w3schools.com/python/python_classes.asp)
@@ -20,10 +19,10 @@ In this lab, we'll get re-aquainted with CS concepts such as classes and decompo
 ## [0] Set up
 
 
-{{< code-action "Let's start by cloning the repository" >}} in your `cs10\unit04_networking` folder.  Be sure to change `yourgithubusername` to your actual Github username.
+{{< code-action "Let's start by cloning the repository" >}} in your `unit03_networking` folder.  Be sure to change `yourgithubusername` to your actual Github username.
 
 ```shell
-cd ~/desktop/making_with_code/unit04_networking
+cd ~/desktop/making_with_code/unit03_networking
 git clone https://github.com/the-isf-academy/lab_ballpit_yourgithubusername
 cd lab_ballpit_yourgithubusername
 ```
@@ -31,8 +30,7 @@ cd lab_ballpit_yourgithubusername
 
 📄 **This repository contains the following files:**
 - `ball.py`
-- `ballpit.py`
-- `setup_ballpit_canvas.py`
+- `animation_ballpit.py`
 
 {{< code-action "Enter the Poetry Shell." >}} 
 ```shell
@@ -43,10 +41,10 @@ poetry shell
 ## [1] Exploring Ball Pit
 
 
-{{< code-action >}} **Run `ballpit.py` to see the Ballpit animation.**
+{{< code-action >}} **Run `animation_ballpit.py` to see the Ballpit animation.**
  
 ```shell
-python ballpit.py
+python animation_ballpit.py
 ```
 
 
@@ -54,7 +52,7 @@ python ballpit.py
 
 In the Ballpit, notice each ball has a different size, stays the same size the whole time, and bounces off the walls.
 
-{{< code-action >}} **Let's delve into the code.** Start by looking at `ballpit.py`
+{{< code-action >}} **Let's delve into the code.** Start by looking at `animation_ballpit.py`
 ```shell
 code .
 ```
@@ -90,28 +88,30 @@ It **inherits** all of the **methods** from `Ball()` and **overrides** the `upda
 
 ```python
 class BreathingBall(Ball):
-    """ BreathingBall extends the Ball class.
-    A BreathingBall is the same as a Ball,
-    but it grows and shrinks as it moves.
-    """
+    # BreathingBall extends the Ball class.
+    # A BreathingBall is the same as a Ball,
+    # but it grows and shrinks as it moves.
+
     def __init__(self):
-        """This constructor calls the constructor of the parent class,
-        and adds a counter variable.
-        """
+        # This constructor calls the constructor of the parent class,
+        # and adds a step variable.
+        
         super().__init__()
+        
         self.step = random.randint(0,120)
         
     def update(self):
-        """Calls the parent method and also changes the size of the ball
-        """
+        # Calls the parent method and also changes the size of the ball
+        
         super().update()
+
         self.step += 1
         new_radius = math.sin(self.step/20)*(3/2)+1.5
         self.set_size(new_radius)
 ```
 
 {{< code-action >}} **Add the `BreathingBall()` to the Ballpit.**
-> 🧐 *What lines of code will you need to add to `ballpit.py`?*
+> 🧐 *What lines of code will you need to add to `animation_ballpit.py`?*
 
 {{< figure src="images/courses/cs10/unit00/lab0.2-03.gif" width="50%" >}}
 
@@ -138,7 +138,7 @@ Currently, it's pretty difficult to notice the regular `Ball()` from the `Breath
 
 {{< deliverables >}}  
 
-Once you've successfully completed the lab, fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSel8Ayu9Y1mjypJKgAA-e1wzIbod24AEAy-YRPrLqQbCGX-UQ/viewform?usp=sf_link).
+Once you've successfully completed the lab, fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSdMNcCkoniPqOsigzroaEyhCcLDNCbICICmUmMQ7ElK3d0CXw/viewform?usp=sf_link).
 
 
 {{< code-action "Push your work to Github:" >}}
@@ -162,19 +162,19 @@ If time allows, ramp up the chaos even further!
 
 ```python
 class WarpBall(Ball):
-    """ WarpBall extends the Ball class.
-    A WarpBall is the same as a Ball,
-    but instead of bouncing off the wall,
-    it reappears on the other side of the screen.
-    """
+    # WarpBall extends the Ball class.
+    # A WarpBall is the same as a Ball,
+    # but instead of bouncing off the wall,
+    # it reappears on the other side of the screen.
+
     def __init__(self):
         super().__init__()
 
     def update(self):
-        """Checks whether the ball has hit a wall.
-        If the ball has hit a wall, it "warps" the ball
-        onto the opposite side of the screen
-        """
+        # Checks whether the ball has hit a wall.
+        # If the ball has hit a wall, it "warps" the ball
+        # onto the opposite side of the screen        
+
         if self.x > 1:
             self.x = 0
         if self.y > 1:
