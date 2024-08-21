@@ -41,6 +41,7 @@ When you want to exit the shell, you can type `exit` or `^D`
 
 📄 **This repository has two files:**
 - `riddle.py`: This file had the `Riddle` class and a list of `Riddle` objects
+- `riddle_list.py`: This file has a list of `Riddle` objects
 - `game.py`: When run, this file should play the riddle guessing game
 
 ---
