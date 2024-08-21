@@ -96,10 +96,13 @@ When you want to exit the shell, you can type `exit()` or `^D`
 
 {{< code-action >}} **Now that you understand how to create a `Riddle`, open up `riddle.py`**
 
-This file contains an empty list `riddle_list`. 
+This file contains the list `list_of_riddles` with only one `Riddle()`. 
 
 ```python
-riddle_list = [
+list_of_riddles = [
+    Riddle(
+        prompt = 'What has to be broken before you can use it?',
+        answer = 'an egg'),    
 ]
 ```
 
@@ -122,7 +125,7 @@ Now that you understand how the `Riddle` is structured, it's up to you use it an
 {{< code-action "Start by opening up" >}} `game.py`
 
 {{< code-action >}} **It is up to you to finish the code in `game.py` to create a riddle guessing game!** The game should:
-- loop each `Riddle` in the `riddles` list
+- loop each `Riddle` in the `list_of_riddles` list
 - ask the user to guess the answer
 - tell the user if their guess was correct or incorrect
 
