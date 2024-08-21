@@ -1,6 +1,6 @@
 ---
 title: 03. Loops
-draft: true
+# draft: true
 ---
 
 # Loops Lab
@@ -210,7 +210,7 @@ Geometric Sequences are great for creating interesting visualizations.
 
 {{< deliverables "When are you finished with the lab:" >}}
 
-✔️   **Fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSc3tGkBfXuZuggoLoUQ79ouGBAYO6VTaaXeIhkEbYYBlA6cRA/viewform?usp=sf_link)**
+✔️   **Fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSdOWzsFMqW9hewAfyS6ayG1svFHvJngwxK0U53dbGBeOlAMhw/viewform?usp=sf_link)**
 
 ✏️  **Add a screenshot of a code snippet to your `CS9 Lab Code Log` in your Google Drive.** Add a comment either asking a question about your code OR describing a piece of code you are proud of. 
 
