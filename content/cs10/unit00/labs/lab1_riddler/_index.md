@@ -18,10 +18,10 @@ In this lab we will remind ourselves of classes and object-oriented programming 
 ## [0] Setup
 
 
-{{< code-action "Let's start by cloning the repository" >}} in your `cs10\unit00_networking` folder.  Be sure to change `yourgithubusername` to your actual Github username.
+{{< code-action "Let's start by cloning the repository" >}} in your `unit03_networking` folder.  Be sure to change `yourgithubusername` to your actual Github username.
 
 ```shell
-cd ~/desktop/making_with_code/cs10/unit00_networking
+cd ~/desktop/making_with_code/unit03_networking
 git clone https://github.com/the-isf-academy/lab_riddler_yourgithubusername
 cd lab_riddler_yourgithubusername
 ```
@@ -41,6 +41,7 @@ When you want to exit the shell, you can type `exit` or `^D`
 
 📄 **This repository has two files:**
 - `riddle.py`: This file had the `Riddle` class and a list of `Riddle` objects
+- `riddle_list.py`: This file has a list of `Riddle` objects
 - `game.py`: When run, this file should play the riddle guessing game
 
 ---
@@ -56,9 +57,10 @@ class Riddle:
 
 
     def check_guess(self,guess):
-        """Checks whether a guess is correct.
-        Uses the fuzzywuzzy library to accept guesses which are close to the answer.
-        """
+        #Checks whether a guess is correct.
+        #Uses the fuzzywuzzy library to accept guesses which 
+        #are close to the answer.
+
         min_fuzz_ratio = 80
         similarity = fuzz.ratio(guess.lower(), self.answer.lower())
 
@@ -93,12 +95,15 @@ r.check_guess('a towel')
 When you want to exit the shell, you can type `exit()` or `^D`
 {{< /aside >}}
 
-{{< code-action >}} **Now that you understand how to create a `Riddle`, open up `riddle.py`**
+{{< code-action >}} **Now that you understand how to create a `Riddle`, open up `riddle_list.py`**
 
-This file contains an empty list `riddle_list`. 
+This file contains the list `list_of_riddles` with only one `Riddle()`. 
 
 ```python
-riddle_list = [
+list_of_riddles = [
+    Riddle(
+        prompt = 'What has to be broken before you can use it?',
+        answer = 'an egg'),    
 ]
 ```
 
@@ -121,7 +126,7 @@ Now that you understand how the `Riddle` is structured, it's up to you use it an
 {{< code-action "Start by opening up" >}} `game.py`
 
 {{< code-action >}} **It is up to you to finish the code in `game.py` to create a riddle guessing game!** The game should:
-- loop each `Riddle` in the `riddles` list
+- loop each `Riddle` in the `list_of_riddles` list
 - ask the user to guess the answer
 - tell the user if their guess was correct or incorrect
 
