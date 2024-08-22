@@ -18,10 +18,10 @@ In this lab we will remind ourselves of classes and object-oriented programming 
 ## [0] Setup
 
 
-{{< code-action "Let's start by cloning the repository" >}} in your `cs10\unit00_networking` folder.  Be sure to change `yourgithubusername` to your actual Github username.
+{{< code-action "Let's start by cloning the repository" >}} in your `unit03_networking` folder.  Be sure to change `yourgithubusername` to your actual Github username.
 
 ```shell
-cd ~/desktop/making_with_code/cs10/unit00_networking
+cd ~/desktop/making_with_code/unit03_networking
 git clone https://github.com/the-isf-academy/lab_riddler_yourgithubusername
 cd lab_riddler_yourgithubusername
 ```
@@ -57,9 +57,10 @@ class Riddle:
 
 
     def check_guess(self,guess):
-        """Checks whether a guess is correct.
-        Uses the fuzzywuzzy library to accept guesses which are close to the answer.
-        """
+        #Checks whether a guess is correct.
+        #Uses the fuzzywuzzy library to accept guesses which 
+        #are close to the answer.
+
         min_fuzz_ratio = 80
         similarity = fuzz.ratio(guess.lower(), self.answer.lower())
 
@@ -94,7 +95,7 @@ r.check_guess('a towel')
 When you want to exit the shell, you can type `exit()` or `^D`
 {{< /aside >}}
 
-{{< code-action >}} **Now that you understand how to create a `Riddle`, open up `riddle.py`**
+{{< code-action >}} **Now that you understand how to create a `Riddle`, open up `riddle_list.py`**
 
 This file contains the list `list_of_riddles` with only one `Riddle()`. 
 
