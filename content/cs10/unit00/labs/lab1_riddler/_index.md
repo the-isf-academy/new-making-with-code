@@ -40,15 +40,15 @@ When you want to exit the shell, you can type `exit` or `^D`
 {{< /aside >}}
 
 📄 **This repository has two files:**
-- `riddle.py`: This file had the `Riddle` class and a list of `Riddle` objects
-- `riddle_list.py`: This file has a list of `Riddle` objects
+- `riddle.py`: This file has the `Riddle` class
+- `riddle_list.py`: This file has a list of `Riddle` instances
 - `game.py`: When run, this file should play the riddle guessing game
 
 ---
 
-## [1] Riddle Object
+## [1] Riddle Class
 
-Let's start by exploring the `Riddle` object. It has two properties and one method.
+Let's start by exploring the `Riddle` class. It has two properties and one method.
 ```python
 class Riddle:
     def __init__(self,prompt,answer):
@@ -76,12 +76,12 @@ class Riddle:
 python -i riddle.py
 ```
 
-{{< code-action >}} **Create an instance of a `Riddle`.**
+{{< code-action >}} **Create an instance of `Riddle`.**
 ```shell
 r = Riddle('What has to be broken before you can use it?','an egg')
 ```
 
-{{< code-action >}} **Print the prompt and the answer to check you correctly created a `Riddle`.**
+{{< code-action >}} **Print the prompt and the answer to check you correctly created an instance of `Riddle`.**
 ```shell
 r.prompt
 r.answer
@@ -107,7 +107,7 @@ list_of_riddles = [
 ]
 ```
 
-{{< code-action  >}} **Add 5 instances of a `Riddle()` object to `riddle_list`.** [Here](https://www.rd.com/list/easy-riddles/) is a list of riddles, but feel free to write your own!
+{{< code-action  >}} **Add 5 instances of `Riddle()` to `riddle_list`.** [Here](https://www.rd.com/list/easy-riddles/) is a list of riddles, but feel free to write your own!
 
 ---
 
@@ -208,7 +208,7 @@ Score: 3/5
 
 Currently, there are no difficulty settings for the game. Some riddles are easy, some riddles are difficult, and some riddles are in-between.
 
-{{< code-action "Implement a difficulty setting in your game to make it more accesisble." >}} Your game should allow the user between easy, medium, or hard riddles. This will require you to change the `Riddle` object and the game play flow in `game.py`.
+{{< code-action "Implement a difficulty setting in your game to make it more accesisble." >}} Your game should allow the user between easy, medium, or hard riddles. This will require you to change the `Riddle` class and the game play flow in `game.py`.
 > *Hint: what property could you add to store the difficulty of each riddle?* 
 
 ---
