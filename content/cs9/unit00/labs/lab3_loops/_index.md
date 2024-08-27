@@ -1,6 +1,6 @@
 ---
 title: 03. Loops
-draft: true
+# draft: true
 ---
 
 # Loops Lab
@@ -210,9 +210,9 @@ Geometric Sequences are great for creating interesting visualizations.
 
 {{< deliverables "When are you finished with the lab:" >}}
 
-✔️   **Fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSc3tGkBfXuZuggoLoUQ79ouGBAYO6VTaaXeIhkEbYYBlA6cRA/viewform?usp=sf_link)**
+✔️   **Fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSdOWzsFMqW9hewAfyS6ayG1svFHvJngwxK0U53dbGBeOlAMhw/viewform?usp=sf_link)**
 
-✏️  **Add a screenshot of a code snippet to your `CS9 Lab Code Log` in your Google Drive.** Add a comment either asking a question about your code OR describing a piece of code you are proud of. 
+✏️  **Add a piece of your code and a screenshot to the `CS Year 1 Code Log` in your Google Drive.** Add a comment either asking a question about your code OR describing a piece of code you are proud of. 
 
 
 {{< /deliverables >}}
@@ -230,7 +230,7 @@ The Fibonacci sequence begins with two numbers, `0` and `1`. Each subsequent num
 > For example the first 5 digits of the sequence are:
 > 0, 1, 1, 2, 3
 
-**It is up to you to write the algorithm for determining any number of digits in the Fibonacci sequence.**
+**It is up to you to write the algorithm to determine the digits in the Fibonacci sequence.**
 
 ---
 
@@ -279,7 +279,7 @@ line for each number in the Fibonacci sequence and connecting the lines at a con
 {{< figure src="images/courses/cs9/unit00/03_loops5.png" width=20% alt-text="geometric drawing" >}}
 
 
-### Multiple spirals
+#### Multiple spirals
 {{< code-action "Loop the drawing code to draw multiple spirals originating from the center." >}}
 
 Now, the Turtle should draw something like this:
@@ -291,7 +291,7 @@ You can return your turtle to the center of the window using `goto(0, 0)`. You c
 center.
 {{< /aside >}}
 
-### Clockwise and counterclockwise
+#### Clockwise and counterclockwise
 To get a pinecone or flower effect, you can try spiralling clockwise
 and counterclockwise.
 

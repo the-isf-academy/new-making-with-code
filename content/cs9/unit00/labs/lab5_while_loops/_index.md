@@ -1,7 +1,7 @@
 ---
 title: 05. While Loops
 
-draft: true
+# draft: true
 ---
 
 # While loops
@@ -48,8 +48,7 @@ When you want to exit the shell, you can type `exit` or `^D`
 ## [1] What is a While Loop?
 
 
-### Conditions
-`while` loops use conditions just like `if` statements. You can use operators to compare
+**`while` loops use conditions just like `if` statements.** You can use operators to compare
 values or to generate `True` or `False` conditions. Looping until a condition is met
 can be useful when you are getting input from a user, generating random variables,
 or repeatedly changing a value.
@@ -61,7 +60,7 @@ while user_input < 1 or user_input > 10:
 
 ```
 
-### While True / Break
+<!-- ### While True / Break
 You can also make `while` loops run indefinitely by setting the condition to `True` like
 this: `while True:`  This can be useful when you want to loop a program repeatedly.
 
@@ -85,7 +84,7 @@ while True:
         break
     else:
         print("Sorry, I don't know how to draw that...")
-```
+``` -->
 
 
 ---
@@ -264,3 +263,14 @@ Or you can visualize the number of steps it takes to reach one from a set of int
 You will need to reference the following:
 - [Turtle Color Documentation](https://docs.python.org/3/library/turtle.html#turtle.color)
 - [Python Random Library Documentation](https://docs.python.org/3/library/random.html)
+
+At the top of the file, you must to change the color mode to 255.
+
+```python
+colormode(255)
+```
+
+You can then use the RGB color system. For example `color(0,0,255)` is pure blue.
+```python
+color(0,0,255)
+```

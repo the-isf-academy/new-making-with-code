@@ -1,6 +1,6 @@
 ---
 title: 04. Conditionals
-draft: true
+# draft: true
 
 ---
 
@@ -201,34 +201,29 @@ code user_input.py
 
 from turtle import *
 
-while True:
-    
+
+for i in range(3):
     drawing = input("What would you like me to draw? ")
+    size = int(input("How big should I draw it? "))
 
     if drawing == "square":
-        size = int(input("How big should I draw it? "))
-
         for i in range(4):
             forward(size)
             right(90)
             
-    elif drawing == "quit":
-        break
+    elif drawing == "circle":
+        circle(size)
 
     else:
         print("Sorry, I don't know how to draw that...")
 
     clear()
 ```
-> *`while True:` just prevents the program from ending after one loop*
->
-> To quit this program, type `control + c`. This command quits any Python program.
 
+This program has a lot of potential, but so far it can only generate two drawings.
 
-This program has a lot of potential, but so far it can only generate one drawing.
-
-{{< code-action "Add at least two more branches to the conditional so that the program can draw more than just a square." >}}  An `elif` statement will probably be useful here.
-> For example, your program could draw a square, a triangle, and a circle.
+{{< code-action "Add at least two more branches to the conditional so that the program can draw more than just a square and a circle." >}}  An `elif` statement will probably be useful here.
+> For example, your program could also draw a triangle and a pentagon.
 
 ---
 
@@ -280,7 +275,7 @@ python pattern.py
 
 {{< deliverables  >}}
 
-**Once you've successfully completed the pattern be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSeAy0HmtzBOoY5al0LzKYOE1y7CLkshiRUjxxFnSgAvwyJZaQ/viewform?usp=sf_link)**.
+**Once you've successfully completed the pattern be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSeHZsiYCR0ZX584jz_LYOpCEdSDbh-Bi75htAs2C40i9BOeAQ/viewform?usp=sf_link)**.
 
 ✏️  **Add a screenshot of a code snippet to your `CS9 Lab Code Log` in your Google Drive.** Add a comment either asking a question about your code OR describing a piece of code you are proud of. 
 
