@@ -8,7 +8,7 @@ draft: false
 
 In this lab, we'll get re-aquainted with CS concepts such as classes and inheritance with the Turtle library. 
 
-{{< expand "Extra Resouces: Learn more about Python Objects" >}}
+{{< expand "Extra Resouces: Learn more about Python Classes" >}}
 - Creating a Class: [Python Classes](https://www.w3schools.com/python/python_classes.asp)
 - Inheritance: [Python Inheritance](https://www.w3schools.com/python/python_inheritance.asp)
 {{< /expand >}}
@@ -121,7 +121,7 @@ class BreathingBall(Ball):
 
 Currently, it's pretty difficult to notice the regular `Ball()` from the `BreathingBall()`. Let's change that by overriding `set_color()` in `BreathingBall()`
 
-{{< code-action >}} **In `ball.py` under the `BreathingBall()`, override the class `set_color()`.** 
+{{< code-action >}} **In `ball.py` under the `BreathingBall()`, override the method `set_color()`.** 
 > 🧐 *Remember, `update()` is another function in `BreathingBall()` that is overridden from `Ball()`*
 
 
