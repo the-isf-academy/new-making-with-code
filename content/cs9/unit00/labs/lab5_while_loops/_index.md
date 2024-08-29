@@ -60,33 +60,6 @@ while user_input < 1 or user_input > 10:
 
 ```
 
-<!-- ### While True / Break
-You can also make `while` loops run indefinitely by setting the condition to `True` like
-this: `while True:`  This can be useful when you want to loop a program repeatedly.
-
-To stop a loop like this, you can use a `break` statement. Once the program reaches the
-`break`, the loop will exit.
-
-You've actually already seen an example of this kind of loop when you learned about
-conditionals in the previous lab.
-
-```python
-speed(10)
-
-while True:
-    drawing = input("What would you like me to draw? ")
-    size = int(input("How big should I draw it? "))
-    if drawing == "square":
-        for i in range(4):
-            forward(size)
-            right(90)
-    elif drawing == "quit":
-        break
-    else:
-        print("Sorry, I don't know how to draw that...")
-``` -->
-
-
 ---
 
 ## [2] Guessing Game
@@ -229,7 +202,7 @@ It took 7 steps to complete the sequence
 
 {{< deliverables  >}}
 
-**Once you've successfully completed the sequence be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSfLSc5X8kWNIZqWzdz6o-80Bd6Njegj_cN-YXj7ZIjKwXTfBg/viewform?usp=sf_link)**.
+**Once you've successfully completed the sequence be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLScUoRxMYShhj2xg2fKdqbJ9FbkPwj15VNd0oqguKE-eGjEkzg/viewform?usp=sf_link)**.
 
 ✏️  **Add a screenshot of a code snippet to your `CS9 Lab Code Log` in your Google Drive.** Add a comment either asking a question about your code OR describing a piece of code you are proud of. 
 
