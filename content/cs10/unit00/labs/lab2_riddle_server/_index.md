@@ -78,7 +78,7 @@ Quit the server with CONTROL-C.
 
 ### Accessing the Server
 
-💻 **You can now visit this server in your web browser, just as you did with the riddler server hosted on the internet:**  [127.0.0.1:5000/riddles/all](http://127.0.0.1:5000/riddles/all)
+💻 **You can now visit this server in your web browser, just as you did with the riddler server hosted on the internet:**  [127.0.0.1:5000/riddle/all](http://127.0.0.1:5000/riddles/all)
 
 **In order to send requests to the other endpoints, you will need always have 2 Terminal windows open.**
 - 1 window will run the server
@@ -88,12 +88,12 @@ Quit the server with CONTROL-C.
 
 {{< code-action "View all the riddles in the second Terminal window." >}}
 ```shell
-http get http://127.0.0.1:5000/riddles/all
+http get http://127.0.0.1:5000/riddle/all
 ```
 
 {{< look-action " Look at the Terminal window running the server. Notice how it recorded your request." >}}
 ```shell
-[16/Sep/2022 02:44:20] "GET /riddles/all HTTP/1.1" 200 1069
+[16/Sep/2022 02:44:20] "GET /riddle/all HTTP/1.1" 200 1069
 ```
 
 Your version of the riddle server only has the 2 endpoints:
