@@ -105,6 +105,8 @@ It contains the following :
 
 ### [Success Claims]
 
+ADD INDEPDENCE TO CLAIMS
+
 Successful computer scientists should be able to make the following claims:
 - I can thoughtfully plan and manage a large computer science project.  
     - I can consider the components of my project before coding
