@@ -83,13 +83,13 @@ Here is a cheatsheet of the Riddle endpoints, what parameters they take in their
 
 ## [1] Set Up
 
-For this lab, we need to download software to view the database in a nicely formatted chart.
+<!-- For this lab, we need to download software to view the database in a nicely formatted chart.
 
 {{< code-action "Download dbsqlite onto your computer:" >}} [https://sqlitebrowser.org/dl/](https://sqlitebrowser.org/dl/)
 
-{{< figure src="https://sqlitebrowser.org/images/sqlitebrowser.svg" alt-text="database icon" >}}
+{{< figure src="https://sqlitebrowser.org/images/sqlitebrowser.svg" alt-text="database icon" >}} -->
 
-{{< code-action "Now, let's clone the repository" >}} in your `cs10\unit00_networking` folder.  Be sure to change `yourgithubusername` to your actual Github username.
+{{< code-action "Let's clone the repository" >}} in your `cs10\unit00_networking` folder.  Be sure to change `yourgithubusername` to your actual Github username.
 
 ```shell
 cd ~/desktop/making_with_code/cs10/unit00_networking
@@ -135,7 +135,7 @@ class Riddle(Model):
 
     MIN_FUZZ_RATIO = 80
 ```
-
+<!-- 
 ---
 
 ### Viewing the Database
@@ -154,14 +154,12 @@ open database.sqlite
 
 {{< look-action "Here you will see all of the riddles that are in your locally hosted server." >}} This database file gets updated each time you guess or add a `Riddle`.
 
-{{< figure src="images/courses/cs10/unit00/02_banjo_01.png" alt-text="databases" >}}
+{{< figure src="images/courses/cs10/unit00/02_banjo_01.png" alt-text="databases" >}} -->
 
 
 ---
 
-### Adding and Guessing Riddles
-
-Now, let's guess a `Riddle` and add a new `Riddle` and see how that affects the database.
+### Banjo Shell
 
 In this unit, we will be using `Banjo` and wrapper over [Django](https://www.djangoproject.com/). Django is a popular web framework that is used to quickly create web apps. We will be using Django in the spring, so for now we will `Banjo` to introduce the software.
 
