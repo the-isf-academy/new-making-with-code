@@ -1,7 +1,7 @@
 ---
-title: "2. Banjo Database"
+title: "1. Banjo Database"
 type: lab
-draft: true
+# draft: true
 ---
 
 # Riddle Database
@@ -16,85 +16,65 @@ The last time we saw riddles, they existed only within each of your computers. Y
 
 We are now going to look at Riddles that are hosted on the internet!
 
-{{< code-action >}} **Visit [http://sycs.student.isf.edu.hk/riddles/all](http://sycs.student.isf.edu.hk/riddles/all) to view riddle server.**
+{{< code-action >}} **Visit [http://sycs.student.isf.edu.hk/riddle/all](http://sycs.student.isf.edu.hk/riddle/all) to view riddle server.**
 > Not very easy to read, right? You can install the [JSON Formatter](https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa?hl=en) Chrome extension to view better formatted JSON.*
 
-{{< code-action >}} **Now try making `get` request to receive the same information in your terminal using `httpie`.**
-```shell
-http get http://sycs.student.isf.edu.hk/riddles/all
-```
+{{< code-action >}} **Now try making `GET` request to `http://sycs.student.isf.edu.hk/riddle/all` receive the same information using : [httpie.io/app](https://httpie.io/app)**
 
-```shell
-HTTP/1.1 200 OK
-Connection: keep-alive
-Content-Type: application/json
-Date: Sun, 03 Sep 2023 13:04:47 GMT
-Server: nginx/1.18.0
-Transfer-Encoding: chunked
 
-{
-    "riddles": [
-        {
-            "correct": 0,
-            "guesses": 0,
-            "id": 1,
-            "question": "What is black and white and red all over?"
-        }
-    ]
-}
-```
+{{< figure src="images/courses/cs10/unit00/02_banjo_05.png" alt-text="databases" >}}
 
-{{< code-action "Do you know the answer? Try posting a guess via the Terminal." >}}
-```shell
-http post http://sycs.student.isf.edu.hk/riddles/guess id=1 guess="pickles" 
-```
-> It is common for `POST` requests to send a *payload* with the request. In this case, the payload is a parameter called `id` specifying which riddle we are guessing, as well as `guess`.
->
+
+
+{{< code-action >}} **Do you know the answer? Try sending a `POST` request to make a guess.** This request to a different url `endpoint`: `/guess`
+
+0. Add a new request
+0. Change `GET` to `POST`
+0. Paste in the URL: `http://sycs.student.isf.edu.hk/riddle/guess`
+0. Select `Body`
+0. At the bottom, change `None` to `Form`
+0. Add the *payloads:* `id` and `guess`
+
+{{< figure src="images/courses/cs10/unit00/02_banjo_03.png" alt-text="databases" >}}
+
+> **It is common for `POST` requests to send a *payload* with the request.** In this case, the payloads are:
+> - `id` specifying which riddle we are guessing
+> - `guess` specifying the guess
 > We are also sending this request to a different url `endpoint`: `/guess`
 
 
-You should see something like this:
-```shell
-HTTP/1.1 200 OK
-Connection: keep-alive
-Content-Type: application/json
-Date: Sun, 03 Sep 2023 13:05:45 GMT
-Server: nginx/1.18.0
-Transfer-Encoding: chunked
-
-{
-    "incorrect guess": {
-        "guesses": 1,
-        "id": 1,
-        "question": "What is black and white and red all over?"
-    }
-}
-```
 
 ---
 
 ### Explore the Endpoints
-Server APIs often rely on different URL *endpoints* to determine what the API should do.
+
+**🔗 Server APIs often rely on different URL *endpoints* to the *base url* to determine what the API should do.**
+- The base url to this server is: `http://sycs.student.isf.edu.hk/riddle`
 
 Here is a cheatsheet of the Riddle endpoints, what parameters they take in their payload, and what they do:
 
 | Method | URL                                | Required Payload     | Action                                                                                   |
 | ------ | ---------------------------------- | -------------------- | ---------------------------------------------------------------------------------------- |
-| `GET`  | `/riddles/all`   |                      | Returns a list of all the riddles, without answers.                                      |
-| `GET`  | `/riddles/one`   | `id`                 | Returns the riddle if it exists. (Otherwise, it returns an error with status code 404.)  |
-| `GET`  | `/riddles/difficulty`   | `id`                 | Returns the riddle if it exists with its difficulty score. (Otherwise, it returns an error with status code 404.)  |
-| `POST` | `/riddles/new`   | `question`, `answer` | Creates a new riddle (with an automatically-assigned id). Returns the riddle.            |
-| `POST` | `/riddles/guess` | `id`, `guess`        | Checks whether the guess is correct. In the response, `correct` is `True` or `False`.    |
+| `GET`  | `/all`   |                      | Returns a list of all the riddles, without answers.                                      |
+| `GET`  | `/one`   | `id`                 | Returns the riddle if it exists |
+| `POST` | `/new`   | `question`, `answer` | Creates a new riddle (with an automatically-assigned id). Returns the riddle.            |
+| `POST` | `/guess` | `id`, `guess`        | Checks whether the guess is correct. In the response, `correct` is `True` or `False`.    |
+| `GET`  | `/difficulty`   | `id`                 | Returns the riddle if it exists with its difficulty score. (Otherwise, it returns an error with status code 404.)  |
+
 
 
 {{< checkpoint >}}
 
-{{< code-action "Explore each endpoint, and be sure to successfully:" >}}
+{{< code-action "Explore each endpoint in the `httpie tool`, and be sure to successfully:" >}}
 - view all riddles without the answers
 - view a single riddle
 - add a new riddle
 - guess a riddle
 - try to break the riddle server, what happens when you provide incorrect parameters?
+
+📖 **When using the the httpie tool,**
+- for a `GET` request, put the *payload* in the `Params`
+- for a `POST` request, put the *payload* in the `Body` > `Form`
 {{< /checkpoint >}}
 
 
@@ -117,15 +97,9 @@ git clone https://github.com/the-isf-academy/lab_banjo_yourgithubusername
 cd lab_banjo_yourgithubusername
 ```
 
-{{< code-action  >}} **Install `banjo`**:
-```shell
-pip3 install django-banjo
-```
-
-
 {{< code-action "Get the other necessary packages:" >}}
 ```shell
-poetry update
+poetry install
 ```
 
 {{< code-action "Enter the Poetry shell" >}} 
@@ -263,7 +237,7 @@ Now that you've experienced adding and updating the database, we're going to exp
 {{< deliverables >}}  
 
 
-**Once you've successfully completed the worksheet be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSeul5VSf93yA1mXQyXq3HaOcafoz4la8D3n8lWhoxsn-1ZdEw/viewform?usp=sf_link).**
+**Once you've successfully completed the worksheet be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSfPbtk3Y4aTV3dNgaTkUZrWaNhHdtJ68qYfpCrN6BGcwoccpA/viewform?usp=sf_link).**
 
 {{< /deliverables >}}
 
