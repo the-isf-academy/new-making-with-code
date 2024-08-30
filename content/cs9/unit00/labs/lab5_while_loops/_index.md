@@ -1,7 +1,7 @@
 ---
 title: 05. While Loops
 
-draft: true
+# draft: true
 ---
 
 # While loops
@@ -9,7 +9,7 @@ draft: true
 In addition to `for` loops which run for a set number of iterations, Python has another type of loop. `while` loops iterate until a particular condition is met.
 
 ---
-
+g
 ## [0] Set up
 
 
