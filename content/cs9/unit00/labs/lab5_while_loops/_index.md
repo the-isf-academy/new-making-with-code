@@ -167,7 +167,7 @@ This is another algorithm which will require pseudocode to figure out.
 code hailstone_sequence.py
 ```
 
-{{< write-action >}} **Use `comments` to complete the pseudocode to find the hailstone sequence of any starting number.** There are currently three line of pseudocode in the file.
+{{< write-action >}} **Use `comments` to complete the pseudocode to find the hailstone sequence of any starting number.** There are currently three lines of pseudocode in the file.
 > *A comment is any line that starts with a `#`*
 >
 > `# this is a comment`
@@ -204,7 +204,11 @@ It took 7 steps to complete the sequence
 
 **Once you've successfully completed the sequence be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLScUoRxMYShhj2xg2fKdqbJ9FbkPwj15VNd0oqguKE-eGjEkzg/viewform?usp=sf_link)**.
 
-✏️  **Add a screenshot of a code snippet to your `CS9 Lab Code Log` in your Google Drive.** Add a comment either asking a question about your code OR describing a piece of code you are proud of. 
+✏️  **Add a piece of your code and a screenshot to the `CS Year 1 Code Log` in your Google Drive.** Add a comment. You can:
+> - ask a question about your code     
+> - write a tip to your future self    
+> - explain a bug you fixed in your code   
+> - describe a piece of code you are proud of   
 
 {{< /deliverables >}}
 

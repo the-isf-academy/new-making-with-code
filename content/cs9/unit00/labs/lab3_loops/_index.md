@@ -212,7 +212,11 @@ Geometric Sequences are great for creating interesting visualizations.
 
 ✔️   **Fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSdOWzsFMqW9hewAfyS6ayG1svFHvJngwxK0U53dbGBeOlAMhw/viewform?usp=sf_link)**
 
-✏️  **Add a piece of your code and a screenshot to the `CS Year 1 Code Log` in your Google Drive.** Add a comment either asking a question about your code OR describing a piece of code you are proud of. 
+✏️  **Add a piece of your code and a screenshot to the `CS Year 1 Code Log` in your Google Drive.** Add a comment. You can:
+> - ask a question about your code   
+> - write a tip to your future self    
+> - explain a bug you fixed in your code   
+> - describe a piece of code you are proud of   
 
 
 {{< /deliverables >}}
