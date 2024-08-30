@@ -9,7 +9,7 @@ title: 05. While Loops
 In addition to `for` loops which run for a set number of iterations, Python has another type of loop. `while` loops iterate until a particular condition is met.
 
 ---
-g
+
 ## [0] Set up
 
 
