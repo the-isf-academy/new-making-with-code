@@ -1,7 +1,7 @@
 ---
 title: 06. Functions I
 
-draft: true
+# draft: true
 ---
 # Functions Lab | Part I
 
@@ -227,7 +227,7 @@ end_fill()                  #Tells the turtle to stop the color fill
 
 {{< deliverables  >}}
 
-☑️ **Once you've successfully completed the square pattern be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSfRcfEweimfcoY6gZxZMh0odczoer8w5DVx-EgRia7QP6UovA/viewform?usp=sf_link)**.
+☑️ **Once you've successfully completed the square pattern be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSchdB4wHncQNkSkXDKASZEeEd5pVGfNJW37HApTTOxF-2D3Dw/viewform?usp=sf_link)**.
 
 ✏️  **Add a screenshot of a code snippet to your `CS9 Lab Code Log` in your Google Drive.** Add a comment either asking a question about your code OR describing a piece of code you are proud of. 
 
@@ -243,6 +243,24 @@ Right now, you can only have 1 scoop of ice cream 😢. But, it's way more fun t
 💻 **Add another parameter to `scoop()`called `num_scoops`.** This should draw any number of scoops on top of each other. 
 
 {{< figure src="images/courses/cs9/unit00/06_functions_icecream.png" width="25%">}}
+
+--- 
+
+### Sprinkles
+
+What's even more fun than multiple scoops, sprinkles! 
+
+💻 **Write  a new function, `sprinkles()` that takes, `flavor` as a parameter.** It should randomly place sprinkles on the scoops of ice cream. 
+
+{{< figure src="images/courses/cs9/unit00/06_functions_icecream3.png" width="25%">}}
+
+*For random integers:*
+
+```python
+from random import randint
+
+randint(0,100)
+```
 
 --- 
 
@@ -271,6 +289,8 @@ What flavor would you like?
    > Select a flavor (chocolate, strawberry, vanilla): chocolate
 How many scoops would you like?
    > Select number of scoops (max 3): 3
+Do you want prinkles?
+   > Enter yes or no: no
 
 --- Enjoy your ice cream! Please come again! ---
 
