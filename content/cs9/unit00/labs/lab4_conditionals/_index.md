@@ -277,7 +277,11 @@ python pattern.py
 
 **Once you've successfully completed the pattern be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSeHZsiYCR0ZX584jz_LYOpCEdSDbh-Bi75htAs2C40i9BOeAQ/viewform?usp=sf_link)**.
 
-✏️  **Add a screenshot of a code snippet to your `CS9 Lab Code Log` in your Google Drive.** Add a comment either asking a question about your code OR describing a piece of code you are proud of. 
+✏️  **Add a piece of your code and a screenshot to the `CS Year 1 Code Log` in your Google Drive.** Add a comment. You can:
+> - ask a question about your code     
+> - write a tip to your future self    
+> - explain a bug you fixed in your code   
+> - describe a piece of code you are proud of   
 
 
 
