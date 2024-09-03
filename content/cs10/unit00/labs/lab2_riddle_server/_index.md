@@ -1,16 +1,16 @@
 ---
-title: "3. Banjo Server"
+title: "2. Banjo Server"
 type: lab
 slug: lab_riddle_server
 
-draft: true
+# draft: true
 ---
 
 # Riddle Server
 
 In this lab we are going to learn how the riddle server is made using Banjo.
 
-📖 **Open the Banjo documentation:** [cs.fablearn.org/docs/banjo/index.html](https://cs.fablearn.org/docs/banjo/index.html)
+📖 **Open the Banjo documentation:** [the-isf-academy.github.io/banjo_docs/](https://the-isf-academy.github.io/banjo_docs/)
 
 {{< expand "Debugging" >}}
 
@@ -27,7 +27,11 @@ In this lab we are going to learn how the riddle server is made using Banjo.
 
 ## [0] Set Up
 
-You are each able to run a locally hosted riddle server on your laptop using Banjo.
+{{< code-action "Download Mac app of HTTPIE:" >}} [ httpie.io/download](https://httpie.io/download). We need to download the app to make local HTTP requests for testing purposes. In this lab, you will run a locally hosted riddle server on your laptop using Banjo.
+
+{{< figure src="https://httpie.io/Images/download-shape.svg" width="25%">}}
+
+
 
 {{< code-action "Start by going into the unit folder and the lab." >}} Remember to replace `YOUR_USERNAME` with your actual Github username.
 ```shell
@@ -35,6 +39,11 @@ cd ~/desktop/making_with_code/cs10/unit00_networking/
 cd lab_banjo_yourgithubusername
 ```
 
+
+{{< code-action "Upgrade versions" >}}
+```shell
+poetry update
+```
 
 {{< code-action "Enter the Poetry shell" >}}
 ```shell
@@ -69,7 +78,7 @@ Performing system checks...
 System check identified no issues (0 silenced).
 September 16, 2022 - 02:40:21
 Django version 4.1.1, using settings 'banjo.settings'
-Starting development server at http://127.0.0.1:5000/
+Starting development server at http://127.0.0.1:8000/
 Quit the server with CONTROL-C.
 ```
 
@@ -78,31 +87,43 @@ Quit the server with CONTROL-C.
 
 ### Accessing the Server
 
-💻 **You can now visit this server in your web browser, just as you did with the riddler server hosted on the internet:**  [127.0.0.1:5000/riddle/all](http://127.0.0.1:5000/riddles/all)
+💻 **You can now visit this server in your web browser, just as you did with the riddler server hosted on the internet:**  [127.0.0.1:5000/riddle/all](http://127.0.0.1:8000/riddle/all)
 
-**In order to send requests to the other endpoints, you will need always have 2 Terminal windows open.**
-- 1 window will run the server
-- 1 window will send `HTTP` requests
 
-{{< code-action "Open another Terminal window." >}} You can either open a new tab, `command+t`, or open a new window with `command+n`.
+💻 **Open the `HTTPie` desktop app to send the same `GET` srequest to `/all`.**
 
-{{< code-action "View all the riddles in the second Terminal window." >}}
-```shell
-http get http://127.0.0.1:5000/riddle/all
-```
+{{< figure src="images/courses/cs10/unit00/banjo_server_00.png" width=50%" >}}
+
 
 {{< look-action " Look at the Terminal window running the server. Notice how it recorded your request." >}}
 ```shell
-[16/Sep/2022 02:44:20] "GET /riddle/all HTTP/1.1" 200 1069
+[16/Sep/2024 02:44:20] "GET /riddle/all HTTP/1.1" 200 1069
 ```
 
+---
+
+💻 **Send a `POST` request to the `/new` endpoint.** 
+> Payload:
+> - `question` (str)
+> - `answer` (str)
+
+{{< figure src="images/courses/cs10/unit00/banjo_server_01.png" width=50%" >}}
+
+
+{{< look-action " Look at the Terminal window running the server. Notice how it recorded your request." >}}
+```shell
+[01/Sep/2024 20:56:22] "POST /riddle/new?id=1 HTTP/1.1" 200 127
+```
+
+---
+
 Your version of the riddle server only has the 2 endpoints:
-- `/riddles/all`
-- `/riddles/new`
+- `/riddle/all`
+- `/riddle/new`
 
 {{< checkpoint >}}
 
-{{< code-action "Explore both endpoints via the Terminal and be sure to successfully:" >}}
+{{< code-action "Explore both endpoints via the HTTPie desktop app and be sure to successfully:" >}}
 - view all riddles without the answers
 - create a new riddle
 {{< /checkpoint >}}
@@ -131,14 +152,13 @@ lab_banjo
 
 ## [3] Writing Routes
 
-In this lab, you will build out the functionality of the Riddle server. Currently, your file only has `riddles/all` and `riddle/new`. 
+In this lab, you will build out the functionality of the Riddle server. Currently, your file only has `riddle/all` and `riddle/new`. 
 
 **It is up to you to add the following endpoints:**
-- `riddles/one`
-- `riddles/guess`
+- `riddle/one`
+- `riddle/guess`
 - `riddle/difficulty`
 - `riddle/random`
-
 
 
 {{< code-action "Start by opening up the primary folder:" >}} `/app`
@@ -149,13 +169,13 @@ code app
 
 {{< code-action >}} **Open the `views.py` file.** Here is where you will write the additional endpoints. 
 
-📖 **Open the [Banjo Views Documentation](https://cs.fablearn.org/docs/banjo/views.html).** You will need to reference this and the exisiting routes in `views.py`.
+📖 **Open the Banjo Views Documentation: [the-isf-academy.github.io/banjo_docs/](https://the-isf-academy.github.io/banjo_docs/)** You will need to reference this and the exisiting routes in `views.py`.
 
-🌐 **You may also want to reference the Riddle server that is live on the web:** [sycs.student.isf.edu.hk/api](http://sycs.student.isf.edu.hk/api). This is a unique route `/api` that provides a basic frontend interaction with the API.
+<!-- 🌐 **You may also want to reference the Riddle server that is live on the web:** [sycs.student.isf.edu.hk/riddle](http://sycs.student.isf.edu.hk/riddle). This is a unique route `/api` that provides a basic frontend interaction with the API. -->
 
 ---
 
-### riddles/one
+### riddle/one
 
 {{< code-action >}} **Write the `riddles/one` endpoint.** 
 - **HTTP method:** `get`
@@ -167,10 +187,23 @@ code app
 
 {{< checkpoint >}}
 
-💻 **Test the `riddles/one` endpoint in a separate Terminal window from the server..**
+💻 **Test the `riddle/one` endpoint in the `HTTPie desktop app` from the server.**
 
 ```shell
 http get http://127.0.0.1:5000/riddles/one id=0
+```
+
+✔️ **It should return `json` like:**
+
+```shell
+{
+  "riddle": {
+    "id": 1,
+    "question": "I’m light as a feather, yet the strongest person can’t hold me for five minutes. What am I?",
+    "guesses": 43,
+  "correct": 1
+  } 
+}
 ```
 
 {{< /checkpoint >}}
@@ -185,22 +218,33 @@ http get http://127.0.0.1:5000/riddles/one id=0
 - **Return:** 
   - if the guess was correct
     - message telling the user they were correct
-    - a single `Riddle` with the `question`, `guesses`, `correct`, and `answer` properties
+    - a single `Riddle` with the `id`, `question`, `guesses`, `correct`, and `answer` properties
   - if the guess was incorrect
     - message telling the user they were incorrect
-    - a single `Riddle` with the `question`, `guesses`, and `correct`, properties
+    - a single `Riddle` with the `id`, `question`, `guesses`, and `correct`, properties
 
 🤔 *Which `method` in the `Riddle` `model` could be useful?*
 
 
 {{< checkpoint >}}
 
-💻 **Test the `riddles/guess` endpoint in a separate Terminal window from the server..**
+💻 **Test the `riddles/guess` endpoint in the `HTTPie desktop app` from the server..**
 
 ```shell
 http post http://127.0.0.1:5000/riddles/guess id=1 guess="A carpet"
 ```
 
+✔️ **It should return `json` like:**
+
+```shell
+{
+  "riddle": {
+    "id": 1,
+    "question": "I’m light as a feather, yet the strongest person can’t hold me for five minutes. What am I?",
+    "guesses": 44,
+    "correct": false
+  }
+}
 {{< /checkpoint >}}
 
 ---
@@ -212,17 +256,29 @@ http post http://127.0.0.1:5000/riddles/guess id=1 guess="A carpet"
 - **HTTP method:** `get`
 - **Payload/args:** `id`
 - **Return:** 
-    - a single `Riddle` with the `question`, `guesses`, `correct`, and `difficulty` properties
+    - a single `Riddle` with the `id`, `question`, and `difficulty` properties
 
 🤔 *Which `method` in the `Riddle` `model` could be useful?*
 
 
 {{< checkpoint >}}
 
-💻 **Test the `riddles/guess` endpoint in a separate Terminal window from the server..**
+💻 **Test the `riddles/guess` endpoint in the `HTTPie desktop app` from the server..**
 
 ```shell
 http get http://127.0.0.1:5000/riddles/difficulty id=1 
+```
+
+✔️ **It should return `json` like:**
+
+```shell
+{
+  "riddle": {
+    "id": 1,
+    "question": "I’m light as a feather, yet the strongest person can’t hold me for five minutes. What am I?",
+    "difficulty": 0.9555555555555556
+  }
+}
 ```
 
 {{< /checkpoint >}}
@@ -234,17 +290,31 @@ http get http://127.0.0.1:5000/riddles/difficulty id=1
 {{< code-action >}} **Write the `riddles/random` endpoint.** 
 - **HTTP method:**`get`
 - **Payload/args:** none
-- **Return:**  a single `Riddle` with the `question`,  `correct`, and `guess` properties 
+- **Return:**  a single `Riddle` with the `id`, `question`,  `correct`, and `guess` properties 
 
 🤔 *Which query method may be useful? Be sure to reference the [Banjo documentation](https://cs.fablearn.org/docs/banjo/index.html).*
 
 
 {{< checkpoint >}}
 
-💻 **Test the `riddles/random` endpoint in a separate Terminal window from the server..**
+💻 **Test the `riddles/random` endpoint in the `HTTPie desktop app` from the server..**
 
 ```shell
 http get http://127.0.0.1:5000/riddles/random 
+```
+
+✔️ **It should return `json` like:**
+
+```shell
+{
+  "riddle": {
+    "id": 6,
+    "question": "The more you take, the more you leave behind. What am I?",
+    "guesses": 4,
+    "correct": 0
+  }
+}
+```
 ```
 
 {{< /checkpoint >}}
