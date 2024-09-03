@@ -16,7 +16,7 @@ In this lab we are going to learn how the riddle server is made using Banjo.
 
 **If you are getting an "Access Denied" error when visiting the `/api` route:**
 
-0. Go to [chrome://net-internals/#sockets](chrome://net-internals/#sockets) 
+0. Go to this url: `chrome://net-internals/#sockets`
 0. Select "Flush socket pool"
 0. Refresh the page
 
@@ -33,9 +33,9 @@ In this lab we are going to learn how the riddle server is made using Banjo.
 
 
 
-{{< code-action "Start by going into the unit folder and the lab." >}} Remember to replace `YOUR_USERNAME` with your actual Github username.
+{{< code-action "Start by going into the unit folder and the lab." >}} Remember to replace `yourgithubusername` with your actual GitHub username.
 ```shell
-cd ~/desktop/making_with_code/cs10/unit00_networking/
+cd ~/desktop/making_with_code/unit03_networking/
 cd lab_banjo_yourgithubusername
 ```
 
@@ -87,10 +87,9 @@ Quit the server with CONTROL-C.
 
 ### Accessing the Server
 
-💻 **You can now visit this server in your web browser, just as you did with the riddler server hosted on the internet:**  [127.0.0.1:5000/riddle/all](http://127.0.0.1:8000/riddle/all)
+💻 **You can now visit this server in your web browser, just as you did with the riddler server hosted on the internet:**  [127.0.0.1:8000/riddle/all](http://127.0.0.1:8000/riddle/all)
 
-
-💻 **Open the `HTTPie` desktop app to send the same `GET` srequest to `/all`.**
+💻 **Open the `HTTPie` desktop app to send the same `GET` request to `/all`.**
 
 {{< figure src="images/courses/cs10/unit00/banjo_server_00.png" width=50%" >}}
 
@@ -109,6 +108,17 @@ Quit the server with CONTROL-C.
 
 {{< figure src="images/courses/cs10/unit00/banjo_server_01.png" width=50%" >}}
 
+{{< expand "Getting a 400 Error?" >}}
+
+Make sure you did all these steps: 
+
+0. Change `all` to `new` in the url
+0. Change `GET` to `POST`
+0. Change `Params` to `Body`
+0. At the bottom, change `None` to `Form`
+0. Add the *payloads:* `question` and `answer`
+
+{{< /expand  >}}
 
 {{< look-action " Look at the Terminal window running the server. Notice how it recorded your request." >}}
 ```shell
@@ -160,12 +170,19 @@ In this lab, you will build out the functionality of the Riddle server. Currentl
 - `riddle/difficulty`
 - `riddle/random`
 
+ <br>
 
 {{< code-action "Start by opening up the primary folder:" >}} `/app`
 
 ```shell
 code app
 ```
+
+{{< aside >}}
+Open a new terminal tab using `⌘ + T`.   
+You can have your server running in one tab, and use the other tab to access your filesystem.
+{{< /aside >}}
+ <br>
 
 {{< code-action >}} **Open the `views.py` file.** Here is where you will write the additional endpoints. 
 
@@ -177,7 +194,7 @@ code app
 
 ### riddle/one
 
-{{< code-action >}} **Write the `riddles/one` endpoint.** 
+{{< code-action >}} **Write the `riddle/one` endpoint.** 
 - **HTTP method:** `get`
 - **Payload/args:** `id`
 - **Return:** a single `Riddle` with the `question`, `guesses`, and `correct` properties
@@ -187,15 +204,16 @@ code app
 
 {{< checkpoint >}}
 
-💻 **Test the `riddle/one` endpoint in the `HTTPie desktop app` from the server.**
+💻 **Test the `riddle/one` endpoint in the `HTTPie desktop app`**
 
 ```shell
-http get http://127.0.0.1:5000/riddles/one id=0
+http://127.0.0.1:8000/riddle/one
 ```
+
 
 ✔️ **It should return `json` like:**
 
-```shell
+```json
 {
   "riddle": {
     "id": 1,
@@ -210,9 +228,9 @@ http get http://127.0.0.1:5000/riddles/one id=0
 
 ---
 
-### riddles/guess
+### riddle/guess
 
-{{< code-action >}} **Write the `riddles/guess` endpoint.** 
+{{< code-action >}} **Write the `riddle/guess` endpoint.** 
 - **HTTP method:**  `post`
 - **Payload/args:**  `id` and `guess`
 - **Return:** 
@@ -228,15 +246,15 @@ http get http://127.0.0.1:5000/riddles/one id=0
 
 {{< checkpoint >}}
 
-💻 **Test the `riddles/guess` endpoint in the `HTTPie desktop app` from the server..**
+💻 **Test the `riddle/guess` endpoint in the `HTTPie desktop app`**
 
 ```shell
-http post http://127.0.0.1:5000/riddles/guess id=1 guess="A carpet"
+http://127.0.0.1:8000/riddle/guess
 ```
 
 ✔️ **It should return `json` like:**
 
-```shell
+```json
 {
   "riddle": {
     "id": 1,
@@ -250,9 +268,9 @@ http post http://127.0.0.1:5000/riddles/guess id=1 guess="A carpet"
 ---
 
 
-### riddles/difficulty
+### riddle/difficulty
 
-{{< code-action >}} **Write the `riddles/difficulty` endpoint.** 
+{{< code-action >}} **Write the `riddle/difficulty` endpoint.** 
 - **HTTP method:** `get`
 - **Payload/args:** `id`
 - **Return:** 
@@ -263,15 +281,15 @@ http post http://127.0.0.1:5000/riddles/guess id=1 guess="A carpet"
 
 {{< checkpoint >}}
 
-💻 **Test the `riddles/guess` endpoint in the `HTTPie desktop app` from the server..**
+💻 **Test the `riddle/difficulty` endpoint in the `HTTPie desktop app`**
 
 ```shell
-http get http://127.0.0.1:5000/riddles/difficulty id=1 
+http://127.0.0.1:8000/riddle/difficulty
 ```
 
 ✔️ **It should return `json` like:**
 
-```shell
+```json
 {
   "riddle": {
     "id": 1,
@@ -285,9 +303,9 @@ http get http://127.0.0.1:5000/riddles/difficulty id=1
 
 ---
 
-### riddles/random
+### riddle/random
 
-{{< code-action >}} **Write the `riddles/random` endpoint.** 
+{{< code-action >}} **Write the `riddle/random` endpoint.** 
 - **HTTP method:**`get`
 - **Payload/args:** none
 - **Return:**  a single `Riddle` with the `id`, `question`,  `correct`, and `guess` properties 
@@ -297,15 +315,15 @@ http get http://127.0.0.1:5000/riddles/difficulty id=1
 
 {{< checkpoint >}}
 
-💻 **Test the `riddles/random` endpoint in the `HTTPie desktop app` from the server..**
+💻 **Test the `riddle/random` endpoint in the `HTTPie desktop app`**
 
 ```shell
-http get http://127.0.0.1:5000/riddles/random 
+http://127.0.0.1:8000/riddle/random 
 ```
 
 ✔️ **It should return `json` like:**
 
-```shell
+```json
 {
   "riddle": {
     "id": 6,
@@ -326,7 +344,7 @@ http get http://127.0.0.1:5000/riddles/random
 
 {{< deliverables >}}  
 
-**Once you've successfully completed the worksheet be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSf8yjSaASsdDp2y4Zawso8Ko77nkhPH6ADf5BOTpPcO_kdtDw/viewform?usp=sf_link).**
+**Once you've successfully completed the worksheet be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSchvEidsL2yaQuPA09E78HCAqlee7X7nhgys72ib9dtCl-Y6A/viewform?usp=sf_link).**
 
 {{< code-action "Push your work to Github:" >}}
 - git status
@@ -345,13 +363,13 @@ http get http://127.0.0.1:5000/riddles/random
 
 ### View Solution
 
-Currently, there's not way to see the answer unless you correctly guess the riddle. 
+Currently, there's no way to see the answer unless you correctly guess the riddle. 
 
 {{< code-action >}} **Write an endpoint that has the ability to view the solution of a given Riddle.** 
 > *Hint: a new method in the `Riddle` class may be useful*
 
 It should return `JSON` that looks something like:
-```shell
+```json
 {
     "riddle": [
         {
@@ -380,11 +398,11 @@ It should return `JSON` that looks something like:
 
 Organizations often choose to keep data about their models that is not public. 
 
-{{< code-action >}} **Add a new field to the `Riddle` model that tracks how many times that riddle has been accessed.** For example, each time the Riddle queried from `riddles/one`, `riddles/guess`, or `riddles/difficulty` the field will be increased by 1. 
+{{< code-action >}} **Add a new field to the `Riddle` model that tracks how many times that riddle has been accessed.** For example, each time the Riddle queried from `riddle/one`, `riddle/guess`, or `riddle/difficulty` the field will be increased by 1. 
 
 {{< code-action >}} **Now, add a new field to the `Riddle` model that tracks how many times that riddle has been changed.**
 
-🤔 **Be sure to hide these new fields from all JSON response.** You may want to write a secret endpoint, that gives provides all of the secret data. 
+🤔 **Be sure to hide these new fields from all your JSON responses.** You may want to write a secret endpoint, that provides all of the secret data. 
 
 
 ---
@@ -419,9 +437,11 @@ As Banjo is a wrapper over Django, it works just as the Django documentation sta
 
 In the example code above, a **Artist** can be associated with many **Song** objects, but a **Song** object can only have one **Artist** object. 
 
-💻 **Try and incorporate a many-to-one relationship in `models.py`.** A few ideas:
-- question field its own Model to hold the history of changes
-- answer field its own Model to hold the history of changes
+💻 **Try to incorporate a many-to-one relationship in `models.py`.** A few ideas:
+- Make the category field it's own Model. Each category can have many songs that belong to it.
+- Make the question field its own Model to hold the history of changes
+- Make the answer field its own Model to hold the history of changes
+
 
 
 <!-- 
@@ -431,7 +451,7 @@ We will talk more about clients later in this unit, but for now just aquaint you
 
 {{< code-action >}} **Create a new python file:** `client.py`
 
-{{< code-action >}}  **Try to access the public Riddle server, [http://sycs.student.isf.edu.hk/riddles/all](http://sycs.student.isf.edu.hk/riddles/all), using the `Requests` library in this file.**
+{{< code-action >}}  **Try to access the public Riddle server, [http://sycs.student.isf.edu.hk/riddle/all](http://sycs.student.isf.edu.hk/riddle/all), using the `Requests` library in this file.**
 
 {{< code-action >}} **A few more things to try:**
 - format the response JSON in a user friendly, readable format 

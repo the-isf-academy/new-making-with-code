@@ -89,10 +89,10 @@ Here is a cheatsheet of the Riddle endpoints, what parameters they take in their
 
 {{< figure src="https://sqlitebrowser.org/images/sqlitebrowser.svg" alt-text="database icon" >}} -->
 
-{{< code-action "Let's clone the repository" >}} in your `cs10\unit00_networking` folder.  Be sure to change `yourgithubusername` to your actual Github username.
+{{< code-action "Let's clone the repository" >}} in your `unit03_networking` folder.  Be sure to change `yourgithubusername` to your actual Github username.
 
 ```shell
-cd ~/desktop/making_with_code/cs10/unit00_networking
+cd ~/desktop/making_with_code/unit03_networking
 git clone https://github.com/the-isf-academy/lab_banjo_yourgithubusername
 cd lab_banjo_yourgithubusername
 ```
