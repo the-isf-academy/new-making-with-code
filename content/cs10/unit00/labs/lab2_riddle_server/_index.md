@@ -366,7 +366,7 @@ http://127.0.0.1:8000/riddle/random
 Currently, there's no way to see the answer unless you correctly guess the riddle. 
 
 {{< code-action >}} **Write an endpoint that has the ability to view the solution of a given Riddle.** 
-> *Hint: a new method in the `Riddle` class may be useful*
+- *an existing `Riddle` class may be useful*
 
 It should return `JSON` that looks something like:
 ```json
@@ -387,37 +387,93 @@ It should return `JSON` that looks something like:
 ### Change Question and Answer
 
 {{< code-action >}} **Write an endpoint that has the ability to change the question a riddle.** 
-> *Consider, what kind of HTTP request would be best for this?*
+- *It may be helpful to write a new method `change_question()`
+
+
+| Method | URL                                | Required Payload     | Action                                                                                   |
+| ------ | ---------------------------------- | -------------------- | ---------------------------------------------------------------------------------------- |
+| `POST`  | `/change/question`   |        new_question             | Returns thee riddle with the new answer    |
 
 {{< code-action >}} **Write an endpoint that has the ability to change the answer a riddle.** 
-> *Consider, what kind of HTTP request would be best for this?*
+- *It may be helpful to write a new method `change_answer()`
+
+| Method | URL                                | Required Payload     | Action                                                                                   |
+| ------ | ---------------------------------- | -------------------- | ---------------------------------------------------------------------------------------- |
+| `POST`  | `/change/answer`   |        new_answer             | Returns the riddle with the new answer    |
 
 ---
 
-### Hidden Data 
+### Difficulty Level Endpoint 
 
-Organizations often choose to keep data about their models that is not public. 
+Because we track `difficulty`, it would be nice if we could `GET` a list of riddles of `easy`, `medium,` or `hard` difficulty. 
 
-{{< code-action >}} **Add a new field to the `Riddle` model that tracks how many times that riddle has been accessed.** For example, each time the Riddle queried from `riddle/one`, `riddle/guess`, or `riddle/difficulty` the field will be increased by 1. 
+{{< code-action >}} **Write an endpoint returns riddles within a difficulty category** 
+- *a Riddle with a difficulty of 1 is impossibly hard, while a Riddle with a difficulty of 0 is easy--everyone gets it right!*
 
-{{< code-action >}} **Now, add a new field to the `Riddle` model that tracks how many times that riddle has been changed.**
+| Method | URL                                | Required Payload     | Action                                                                                   |
+| ------ | ---------------------------------- | -------------------- | ---------------------------------------------------------------------------------------- |
+| `GET`  | `/all/difficulty`   |        level (easy, medium, or hard)              | Returns a list of riddles of the appropriate difficulty level     |
 
-🤔 **Be sure to hide these new fields from all your JSON responses.** You may want to write a secret endpoint, that provides all of the secret data. 
 
+✔️ **It should return `json` like:**
+
+```json
+{
+  "difficulty_level": "hard",
+ "riddles": [
+    {
+      "correct": 1,
+      "guesses": 44,
+      "id": 1,
+      "question": "I’m light as a feather, yet the strongest person can’t hold me for five minutes. What am I?",
+      "difficulty": 0.9555555555555556
+    },
+    {
+      "correct": 4,
+      "guesses": 9,
+      "id": 2,
+      "question": "What comes down but never goes up?",
+      "difficulty": 0.875
+    }
+ ]
+}
+```
 
 ---
 
-### Category field
+### Like field
 
+What if we want to know which riddles people like? For this, we will have to add allow users to *like* a riddle.
 
-{{< code-action >}} **Add a new field to the `Riddle` model called `category`.** 
+Let's make the `Riddle` keep track of `likes`. You will need to edit `models.py` 
+
+{{< code-action >}} **Let's make the `Riddle` keep track of `likes`. You will need to edit `models.py`**  You will need add a new *field* and write a new *method*.
+
 
 {{< code-action >}} **Add a new endpoint for you to get all Riddle objects of a category**
 
+| Method | URL                                | Required Payload     | Action                                                                                   |
+| ------ | ---------------------------------- | -------------------- | ---------------------------------------------------------------------------------------- |
+| `POST`  | `/one/like`   |        id             | Returns a single riddle with the likes  |
+
+
+```python
+{
+  "riddle": {
+    "id": 1,
+    "question": "I’m light as a feather, yet the strongest person can’t hold me for five minutes. What am I?",
+    "guesses": 43,
+    "correct": 1,
+    "likes": 10
+  } 
+}
+```
+
+
 
 ---
 
-### Foreign Key
+<!-- ### Foreign Key
 
 Banjo has the ability to have relational databases. 
 
@@ -441,7 +497,7 @@ In the example code above, a **Artist** can be associated with many **Song** obj
 - Make the category field it's own Model. Each category can have many songs that belong to it.
 - Make the question field its own Model to hold the history of changes
 - Make the answer field its own Model to hold the history of changes
-
+ -->
 
 
 <!-- 
@@ -459,3 +515,17 @@ We will talk more about clients later in this unit, but for now just aquaint you
 - hit a POST route that requires a payload  -->
 
 
+
+<!-- 
+### Hidden Data 
+
+Organizations often choose to keep data about their models that is not public. 
+
+{{< code-action >}} **Add a new field to the `Riddle` model that tracks how many times that riddle has been accessed.** For example, each time the Riddle queried from `riddle/one`, `riddle/guess`, or `riddle/difficulty` the field will be increased by 1. 
+
+{{< code-action >}} **Now, add a new field to the `Riddle` model that tracks how many times that riddle has been changed.**
+
+🤔 **Be sure to hide these new fields from all your JSON responses.** You may want to write a secret endpoint, that provides all of the secret data. 
+
+
+--- -->
