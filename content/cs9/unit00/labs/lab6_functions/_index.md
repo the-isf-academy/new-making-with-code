@@ -288,7 +288,7 @@ python ice_cream.py
 What flavor would you like?
    > Select a flavor (chocolate, strawberry, vanilla): chocolate
 How many scoops would you like?
-   > Select number of scoops (max 3): 3
+   > Select number of scoops (max 3): 3e
 Do you want prinkles?
    > Enter yes or no: no
 
