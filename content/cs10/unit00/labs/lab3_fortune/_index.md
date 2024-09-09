@@ -3,7 +3,7 @@ title: "4. Banjo - Fortune"
 type: lab
 slug: lab_fortune_server
 
-draft: true
+# draft: true
 ---
 
 # Fortune Server
@@ -11,7 +11,8 @@ draft: true
 In this lab we are going to delve further into Banjo by focusing on `models.py` and error handling in `views.py`.
 
 
-📖 **Open the Banjo documentation:** [cs.fablearn.org/docs/banjo/index.html](https://cs.fablearn.org/docs/banjo/index.html)
+📖 **Open the Banjo documentation:** [the-isf-academy.github.io/banjo_docs/](https://the-isf-academy.github.io/banjo_docs/)
+
 
 {{< expand "Debugging" >}}
 
@@ -28,12 +29,18 @@ In this lab we are going to delve further into Banjo by focusing on `models.py` 
 
 ## [0] Set Up
 
+For this lab, we need to download software to view the database in a nicely formatted chart.
+
+{{< code-action "Download dbsqlite onto your computer:" >}} [https://sqlitebrowser.org/dl/](https://sqlitebrowser.org/dl/)
+
+{{< figure src="https://sqlitebrowser.org/images/sqlitebrowser.svg" alt-text="database icon" >}}
+
 You are each able to run a locally hosted fortune server on your laptop using Banjo.
 
 {{< code-action "Now, let's clone the repository" >}} in your `cs10\unit00_networking` folder.  Be sure to change `yourgithubusername` to your actual Github username.
 
 ```shell
-cd ~/desktop/making_with_code/cs10/unit00_networking/
+cd ~/desktop/making_with_code/unit04_networking/
 git clone https://github.com/the-isf-academy/lab_fortune_yourgithubusername
 cd lab_fortune_yourgithubusername
 ```
@@ -49,11 +56,6 @@ poetry update
 poetry shell
 ```
 
-{{< code-action "You may need to re-install" >}} `banjo`
-```shell
-pip3 install django-banjo
-```
-
 
 
 ---
@@ -66,7 +68,7 @@ banjo --debug
 ```
 
 
-💻 **Test the server at the `/api` route:**  [127.0.0.1:5000/api](127.0.0.1:5000/api)
+💻 **Test the server using `HTTPie`:**  [127.0.0.1:5000/fortune/all](http://127.0.0.1:5000/fortune/all)
 
 {{< figure src="https://m.media-amazon.com/images/I/71DW-Qp7J6L.jpg" width="25%">}}
 
@@ -89,22 +91,42 @@ Banjo has 4 basic options for Field types
 from banjo.models import Model, StringField, IntegerField, BooleanField
 
 class Fortune(Model):
-    fortune_statement = StringField()
-    num_likes = IntegerField()
-
-    category_happy = BooleanField()
-    category_sad = BooleanField()
-
-    def increase_likes(self):
-        self.num_likes += 1
-        self.save()
-
-    def change_statement(self,new_statement):
-        self.fortune_statement = new_statement
-        self.num_likes = 0
-        self.save()
+    statement = StringField()
+    category = StringField()
+    likes = IntegerField()
+    archive = BooleanField()
 ```
 
+---
+
+### Viewing the Database
+
+You have just downloaded a simple server that hosts `Fortunes` onto your laptop. Let's start by looking at the its database.
+
+{{< code-action "Open the database in the DB Browser:" >}}
+```shell
+open database.sqlite
+```
+
+{{< code-action "Select" >}} `Browse Data`
+
+{{< figure src="images/courses/cs10/unit00/02_banjo_00.png" alt-text="databases" >}}
+
+
+{{< look-action "Here you will see all of the riddles that are in your locally hosted server." >}} This database file gets updated each time make a `POST` request.
+
+{{< figure src="images/courses/cs10/unit00/02_banjo_01.png" alt-text="databases" >}}
+
+{{< code-action "Try changing or adding rows." >}} 
+
+{{< code-action >}} **Be sure to save `command + s` the database to ensure the changes are saved.**
+
+
+💻 **See you changes by sending a `GET` request to:**  [127.0.0.1:5000/fortune/all](http://127.0.0.1:5000/fortune/all)
+
+---
+
+**In this lab you will edit `models.py` and `views.py`.**
 
 {{< code-action "Start by opening up the primary folder:" >}} `/app`
 
@@ -112,68 +134,216 @@ class Fortune(Model):
 code app
 ```
 
-{{< code-action >}} **Open the `models.py` file.** Be sure to understand how `increase_likes()` and `change_statement` are working. 
+{{< code-action >}} **Open the `models.py` file.** You will write two methods to update the `likes` and `statement` fields.
 
+---
+
+### Update the `likes`
+
+{{< code-action >}} **Write the `increase_likes()` method.**
+- increase `likes` by 1
+- save the object 
+
+**Example usage:**
+
+```shell
+one_fortune = Fortune.objects.get(id=1])
+one_fortune.increase_likes()
+```
+
+---
+
+### Update the `statement`
+
+{{< code-action >}} **Write the `change_statement()` method.**
+- it takes `new_statement` as a parameter
+- it changes the `statement` field to the `new_statement`
+- reset the `likes` to 0
+- save the object 
+
+**Example usage:**
+
+```shell
+one_fortune = Fortune.objects.get(id=1])
+one_fortune.change_statement('You will win a tesla')
+```
 
 ---
 
 ## [3] Views.py
 
-{{< code-action >}} **Open the `views.py` file.** This server has 5 endpoints:
-- `fortune/new`
-- `fortune/all`
-- `fortune/edit`
-- `fortune/like`
-- `fortune/random`
+{{< code-action >}} **Open the `views.py` file.** This server has 2 endpoints:
+- `/new`
+- `/all`
+
+It is up to you to write `/likes`, `/change_statement`, and `/search`
 
 
 --- 
 
-### Error Handling 
 
-Each endpoint works, but there is currently NO error handling.
+### /like
 
-💻 **Systematically test each endpoint and add in the necessary error JSON messages.** The best way to systematically test, is to try to break it! 
-> Be sure to provide error messages that provide relevant information to the user.
+{{< code-action >}} **Write the `fortune/like` endpoint.** 
+- **HTTP method:**  `post`
+- **Payload/args:**  `id`
+- if the fortune exists 
+    - increase the likes 
+    - return the fortune with the `id`, `statement`, `likes`, `category`
+- else  
+    - a helpful error message
 
+{{< checkpoint >}}
 
-{{< code-action >}} **When are you confident your endpoints are perfect, run the server outside of `--debug` mode.**
+💻 **Test the endpoint in the `HTTPie desktop app`**
+
 ```shell
-banjo 
+http://127.0.0.1:8000/fortune/like id=1
 ```
 
-💻 **Test the server at the `/api` route:**  [127.0.0.1:5000/api](127.0.0.1:5000/api)
+✔️ **It should return `json` like:**
 
-☑️ **Successful error should recieve zero HTTP 500 errors.** If you recieve a 500 error, you have not properly handled all the potential errors.
-
----
-
-## [4] `New` Add a Dislike feature
-
-Currently, we have a like feature, but no dislike feature. It's your job to add it in!
-
-💻 **In models.py,  add a property for `num_dislike` to the `Fortune`, and add the necessary method to increase its value.** 
-
-💻 **In views.py,  add a new endpoint that you can dislike fortunes.** Make sure to test it once you've made it!
-
-{{< aside "Hint" >}}
-Copy and paste is your friend!
-{{< /aside >}}
-
+```json
+{
+  "fortune": {
+    "id": 1,
+    "statement": "You will win a tesla",
+    "likes": 10,
+    "is_happy": "true"
+  }
+}
+```
+{{< /checkpoint >}}
 
 ---
 
-## [5] `New` Add a Search feature
+### /change_statement
 
-💻 **In views.py, add a new endpoint that allows you to search for fortunes by keyword.** For example, if you search for the word "money", you will receive all fortunes that contain that word. 
+{{< code-action >}} **Write the `fortune/change_statement` endpoint.** 
+- **HTTP method:**  `post`
+- **Payload/args:**  `id`, `new_statement`
+- if the fortune exists 
+    - change the statement
+    - return the fortune with the `id`, `statement`, `likes`, `category`
+- else  
+    - a helpful error message
 
-[Check the banjo documentation to find the best way to query the database!](https://cs.fablearn.org/docs/banjo/models.html#id2)
+{{< checkpoint >}}
+
+💻 **Test the endpoint in the `HTTPie desktop app`**
+
+```shell
+http://127.0.0.1:8000/fortune/change_statement id=1 new_statement="You will win a new iPhone"
+```
+
+✔️ **It should return `json` like:**
+
+```json
+{
+  "fortune": {
+    "id": 1,
+    "statement": "You will win a new iPhone",
+    "likes": 0,
+    "is_happy": "true"
+  }
+}
+```
+{{< /checkpoint >}}
+
+---
+
+
+### /all/happy
+
+{{< code-action >}} **Write the `fortune/all/happy` endpoint.** 
+- **HTTP method:**  `get`
+- **Payload/args:**  none
+- It should return all of the fortunes with `is_happy` set as `True`
+
+📖 **Check the banjo documentation to find the best way to query the database:** [the-isf-academy.github.io/banjo_docs/](https://the-isf-academy.github.io/banjo_docs/)
 
 🤔 **Consider:**
 - Which existing endpoint is similar? 
 - How should you format the json that you return?
 - What should you return to the user if no fortunes match their search term?
 
+{{< checkpoint >}}
+
+💻 **Test the endpoint in the `HTTPie desktop app`**
+
+```shell
+http://127.0.0.1:8000/fortune/all/happy
+```
+
+✔️ **It should return `json` like:**
+
+```json
+{
+    "fortunes": [
+        {
+        "id": 1,
+        "statement": "A surprise pizza is coming",
+        "likes": 0,
+        "is_happy": true
+        },
+        {
+        "id": 2,
+        "statement": "A random act of kindness will lead to a new friendship",
+        "likes": 0,
+        "is_happy": true
+        },
+    ]
+}
+```
+{{< /checkpoint >}}
+
+---
+
+
+### /search
+
+{{< code-action >}} **Write the `fortune/search` endpoint.** 
+- **HTTP method:**  `get`
+- **Payload/args:**  `keyword`
+- It should return all of the fortunes with the keyword. 
+- If no fortunes exist, provide a helpful error message
+
+📖 **Check the banjo documentation to find the best way to query the database:** [the-isf-academy.github.io/banjo_docs/](https://the-isf-academy.github.io/banjo_docs/)
+
+🤔 **Consider:**
+- Which existing endpoint is similar? 
+- How should you format the json that you return?
+- What should you return to the user if no fortunes match their search term?
+
+{{< checkpoint >}}
+
+💻 **Test the `fortune/like` endpoint in the `HTTPie desktop app`**
+
+```shell
+http://127.0.0.1:8000/fortune/search keyword="surprise"
+```
+
+✔️ **It should return `json` like:**
+
+```json
+{
+  "fortunes": [
+    {
+      "id": 1,
+      "statement": "A surprise pizza is coming",
+      "likes": 0,
+      "is_happy": true
+    },
+    {
+      "id": 6,
+      "statement": "A surprise typhoon day is in your future",
+      "likes": 0,
+      "is_happy": true
+    }
+    ]
+}
+```
+{{< /checkpoint >}}
 
 
 ---
@@ -183,7 +353,7 @@ Copy and paste is your friend!
 
 {{< deliverables >}}  
 
-**Once you've successfully completed the worksheet be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLScpKVddt8G5qgNr_utgyjKt80ZDtDF5cJLv2D0w2wt76vi5mQ/viewform?usp=sf_link).**
+**Once you've successfully completed the worksheet be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSdzNtmIQhpra6TBJ2A4s4b9wpne6fdaP0w5dTd9vDjkWJQxZw/viewform?usp=sf_link).**
 
 {{< code-action "Push your work to Github:" >}}
 - git status
@@ -202,21 +372,20 @@ Copy and paste is your friend!
 
 ### Archive 
 
-Currently there is no feature to delete a fortune. It can be risky to permanently delete an item from the database, so instead let's create an archive feature.
+Currently there is no feature to delete a fortune. It can be risky to permanently delete an item from the database, so instead let's utilize the archive feature.
 
-💻**Create a feature to "archive" a `Fortune` and hide it from queries.** If a `Fortune` is "archived", it should not be queried in `fortune/all`, `fortune/like` or `fortune/random`.
+💻 **Write a method `change_archive()`** that sets the `archive` field to `False`.
 
-🤔 **Consider:**
-- what field type is best? 
-- which files will you need to edit?
-- will you need a new endpoint?
-- how will you edit existing endpoints?
+💻 **Write a new route `/change_archive` to change the `archive` field of a fortuen with a given `id`.**
+
+💻 **Change your exisitng routes (`/all`, `/search`) to only return fortunes with `arhive` set to `True`.**
+
 
 ---
 
 ### Calculate Popularity % 
 
-💻 **Use the `FloatField` to store a `popularity_percentage` for each `Fortune`.** It is up to you to decide how to calculate this percentage. You may want to:
+💻 **Create a new field `popularity_percentage` to store a  for each `Fortune`.** It should be a `FloatField`. It is up to you to decide how to calculate this percentage. You may want to:
 - add additional fields 
 - loop through all of the database
 
@@ -246,20 +415,23 @@ As Banjo is a wrapper over Django, it works just as the Django documentation sta
 In the example code above, a **Artist** can be associated with many **Song** objects, but a **Song** object can only have one **Artist** object. 
 
 💻 **Try to incorporate a many-to-one relationship in `models.py`.** An example:
-- each `Fortune` could have many `Feedback`s.
+- each `Person` could have many `Fortune`s.
+
 
 <!-- 
-### Interface: Riddle Client 
+### Error Handling 
 
-We will talk more about clients later in this unit, but for now just aquaint yourself with the [Requests library](https://requests.readthedocs.io/en/latest/). 
+Each endpoint works, but there is currently NO error handling.
 
-{{< code-action >}} **Create a new python file:** `client.py`
-
-{{< code-action >}}  **Try to access the public Riddle server, [http://sycs.student.isf.edu.hk/riddles/all](http://sycs.student.isf.edu.hk/riddles/all), using the `Requests` library in this file.**
-
-{{< code-action >}} **A few more things to try:**
-- format the response JSON in a user friendly, readable format 
-- hit a GET route that requires a payload
-- hit a POST route that requires a payload  -->
+💻 **Systematically test each endpoint and add in the necessary error JSON messages.** The best way to systematically test, is to try to break it! 
+> Be sure to provide error messages that provide relevant information to the user.
 
 
+{{< code-action >}} **When are you confident your endpoints are perfect, run the server outside of `--debug` mode.**
+```shell
+banjo 
+```
+
+💻 **Test the server at the `/api` route:**  [127.0.0.1:5000/api](127.0.0.1:5000/api)
+
+☑️ **Successful error should recieve zero HTTP 500 errors.** If you recieve a 500 error, you have not properly handled all the potential errors. -->
