@@ -1,5 +1,5 @@
 ---
-title: "4. Banjo - Fortune"
+title: "3. Banjo - Fortune"
 type: lab
 slug: lab_fortune_server
 
@@ -18,7 +18,7 @@ In this lab we are going to delve further into Banjo by focusing on `models.py` 
 
 **If you are getting an "Access Denied" error when visiting the `/api` route:**
 
-0. Go to <a href="chrome://net-internals/#sockets" >chrome://net-internals/#sockets</a>
+0. Go to this url: `chrome://net-internals/#sockets`
 0. Select "Flush socket pool"
 0. Refresh the page
 
@@ -37,10 +37,10 @@ For this lab, we need to download software to view the database in a nicely form
 
 You are each able to run a locally hosted fortune server on your laptop using Banjo.
 
-{{< code-action "Now, let's clone the repository" >}} in your `cs10\unit00_networking` folder.  Be sure to change `yourgithubusername` to your actual Github username.
+{{< code-action "Now, let's clone the repository" >}} in your `unit03_networking` folder.  Be sure to change `yourgithubusername` to your actual Github username.
 
 ```shell
-cd ~/desktop/making_with_code/unit04_networking/
+cd ~/desktop/making_with_code/unit03_networking/
 git clone https://github.com/the-isf-academy/lab_fortune_yourgithubusername
 cd lab_fortune_yourgithubusername
 ```
@@ -92,7 +92,7 @@ from banjo.models import Model, StringField, IntegerField, BooleanField
 
 class Fortune(Model):
     statement = StringField()
-    category = StringField()
+    is_happy = BooleanField()
     likes = IntegerField()
     archive = BooleanField()
 ```
@@ -113,16 +113,16 @@ open database.sqlite
 {{< figure src="images/courses/cs10/unit00/02_banjo_00.png" alt-text="databases" >}}
 
 
-{{< look-action "Here you will see all of the riddles that are in your locally hosted server." >}} This database file gets updated each time make a `POST` request.
+{{< look-action "Here you will see all of the fortunes that are in your locally hosted server." >}} This database file gets updated each time you make a `POST` request.
 
 {{< figure src="images/courses/cs10/unit00/02_banjo_01.png" alt-text="databases" >}}
 
 {{< code-action "Try changing or adding rows." >}} 
 
-{{< code-action >}} **Be sure to save `command + s` the database to ensure the changes are saved.**
+{{< code-action >}} **Be sure to save `⌘ + S` the database to ensure the changes are saved.**
 
 
-💻 **See you changes by sending a `GET` request to:**  [127.0.0.1:5000/fortune/all](http://127.0.0.1:5000/fortune/all)
+💻 **See your changes by sending a `GET` request to:**  [127.0.0.1:5000/fortune/all](http://127.0.0.1:5000/fortune/all)
 
 ---
 
@@ -176,7 +176,7 @@ one_fortune.change_statement('You will win a tesla')
 - `/new`
 - `/all`
 
-It is up to you to write `/likes`, `/change_statement`, and `/search`
+It is up to you to write `/like`, `/change_statement`, `all/happy` and `/search`
 
 
 --- 
@@ -189,7 +189,7 @@ It is up to you to write `/likes`, `/change_statement`, and `/search`
 - **Payload/args:**  `id`
 - if the fortune exists 
     - increase the likes 
-    - return the fortune with the `id`, `statement`, `likes`, `category`
+    - return the fortune with the `id`, `statement`, `likes`, `is_happy`
 - else  
     - a helpful error message
 
@@ -198,7 +198,10 @@ It is up to you to write `/likes`, `/change_statement`, and `/search`
 💻 **Test the endpoint in the `HTTPie desktop app`**
 
 ```shell
-http://127.0.0.1:8000/fortune/like id=1
+http://127.0.0.1:5000/fortune/like
+```
+```shell
+id = 1
 ```
 
 ✔️ **It should return `json` like:**
@@ -209,7 +212,7 @@ http://127.0.0.1:8000/fortune/like id=1
     "id": 1,
     "statement": "You will win a tesla",
     "likes": 10,
-    "is_happy": "true"
+    "is_happy": true
   }
 }
 ```
@@ -224,7 +227,7 @@ http://127.0.0.1:8000/fortune/like id=1
 - **Payload/args:**  `id`, `new_statement`
 - if the fortune exists 
     - change the statement
-    - return the fortune with the `id`, `statement`, `likes`, `category`
+    - return the fortune with the `id`, `statement`, `likes`, `is_happy`
 - else  
     - a helpful error message
 
@@ -233,9 +236,12 @@ http://127.0.0.1:8000/fortune/like id=1
 💻 **Test the endpoint in the `HTTPie desktop app`**
 
 ```shell
-http://127.0.0.1:8000/fortune/change_statement id=1 new_statement="You will win a new iPhone"
+http://127.0.0.1:5000/fortune/change_statement
 ```
-
+```shell
+id=1 
+new_statement="You will win a new iPhone"
+```
 ✔️ **It should return `json` like:**
 
 ```json
@@ -244,7 +250,7 @@ http://127.0.0.1:8000/fortune/change_statement id=1 new_statement="You will win 
     "id": 1,
     "statement": "You will win a new iPhone",
     "likes": 0,
-    "is_happy": "true"
+    "is_happy": true
   }
 }
 ```
@@ -265,14 +271,14 @@ http://127.0.0.1:8000/fortune/change_statement id=1 new_statement="You will win 
 🤔 **Consider:**
 - Which existing endpoint is similar? 
 - How should you format the json that you return?
-- What should you return to the user if no fortunes match their search term?
+- What should you return to the user if there are no happy fortunes in the database?
 
 {{< checkpoint >}}
 
 💻 **Test the endpoint in the `HTTPie desktop app`**
 
 ```shell
-http://127.0.0.1:8000/fortune/all/happy
+http://127.0.0.1:5000/fortune/all/happy
 ```
 
 ✔️ **It should return `json` like:**
@@ -317,10 +323,13 @@ http://127.0.0.1:8000/fortune/all/happy
 
 {{< checkpoint >}}
 
-💻 **Test the `fortune/like` endpoint in the `HTTPie desktop app`**
+💻 **Test the `fortune/search` endpoint in the `HTTPie desktop app`**
 
 ```shell
-http://127.0.0.1:8000/fortune/search keyword="surprise"
+http://127.0.0.1:5000/fortune/search
+```
+```shell
+keyword="surprise"
 ```
 
 ✔️ **It should return `json` like:**
@@ -348,7 +357,7 @@ http://127.0.0.1:8000/fortune/search keyword="surprise"
 
 ---
 
-## [6] Deliverables
+## [4] Deliverables
 
 
 {{< deliverables >}}  
@@ -367,7 +376,7 @@ http://127.0.0.1:8000/fortune/search keyword="surprise"
 
 ---
 
-## [7] Extensions
+## [5] Extensions
 
 
 ### Archive 
@@ -376,16 +385,16 @@ Currently there is no feature to delete a fortune. It can be risky to permanentl
 
 💻 **Write a method `change_archive()`** that sets the `archive` field to `False`.
 
-💻 **Write a new route `/change_archive` to change the `archive` field of a fortuen with a given `id`.**
+💻 **Write a new route `/change_archive` to change the `archive` field of a fortune with a given `id`.**
 
-💻 **Change your exisitng routes (`/all`, `/search`) to only return fortunes with `arhive` set to `True`.**
+💻 **Change your exisitng routes (`/all`, `/search`, and `/all/happy`) to only return fortunes with `archive` set to `True`.**
 
 
 ---
 
 ### Calculate Popularity % 
 
-💻 **Create a new field `popularity_percentage` to store a  for each `Fortune`.** It should be a `FloatField`. It is up to you to decide how to calculate this percentage. You may want to:
+💻 **Create a new field `popularity_percentage` to store the popularity percentage for each `Fortune`.** It should be a `FloatField`. It is up to you to decide how to calculate this percentage. You may want to:
 - add additional fields 
 - loop through all of the database
 
@@ -415,7 +424,7 @@ As Banjo is a wrapper over Django, it works just as the Django documentation sta
 In the example code above, a **Artist** can be associated with many **Song** objects, but a **Song** object can only have one **Artist** object. 
 
 💻 **Try to incorporate a many-to-one relationship in `models.py`.** An example:
-- each `Person` could have many `Fortune`s.
+- each `Person` could have many `Fortune` objects.
 
 
 <!-- 

@@ -366,7 +366,7 @@ http://127.0.0.1:8000/riddle/random
 Currently, there's no way to see the answer unless you correctly guess the riddle. 
 
 {{< code-action >}} **Write an endpoint that has the ability to view the solution of a given Riddle.** 
-- *an existing `Riddle` class may be useful*
+- *an existing `Riddle` method may be useful*
 
 It should return `JSON` that looks something like:
 ```json
@@ -394,7 +394,7 @@ It should return `JSON` that looks something like:
 | ------ | ---------------------------------- | -------------------- | ---------------------------------------------------------------------------------------- |
 | `POST`  | `/change/question`   |        new_question             | Returns thee riddle with the new answer    |
 
-{{< code-action >}} **Write an endpoint that has the ability to change the answer a riddle.** 
+{{< code-action >}} **Write an endpoint that has the ability to change the answer of a riddle.** 
 - *It may be helpful to write a new method `change_answer()`
 
 | Method | URL                                | Required Payload     | Action                                                                                   |
