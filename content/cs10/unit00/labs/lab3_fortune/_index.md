@@ -144,10 +144,12 @@ code app
 - increase `likes` by 1
 - save the object 
 
-**Example usage:**
+{{< code-action >}} **Test your method in the shell:** `banjo --shell`  
+
+- How will you test in the `likes` increased?
 
 ```shell
-one_fortune = Fortune.objects.get(id=1])
+one_fortune = Fortune.objects.get(id=1)
 one_fortune.increase_likes()
 ```
 
@@ -161,10 +163,12 @@ one_fortune.increase_likes()
 - reset the `likes` to 0
 - save the object 
 
-**Example usage:**
+{{< code-action >}} **Test your method in the shell:** `banjo --shell`  
+
+- How will you test in the `statement` changed?
 
 ```shell
-one_fortune = Fortune.objects.get(id=1])
+one_fortune = Fortune.objects.get(id=1)
 one_fortune.change_statement('You will win a tesla')
 ```
 
@@ -266,7 +270,18 @@ new_statement="You will win a new iPhone"
 - **Payload/args:**  none
 - It should return all of the fortunes with `is_happy` set as `True`
 
-📖 **Check the banjo documentation to find the best way to query the database:** [the-isf-academy.github.io/banjo_docs/](https://the-isf-academy.github.io/banjo_docs/)
+📖 **Check the banjo documentation to find the best way to query the database:** [the-isf-academy.github.io/banjo_docs/](https://the-isf-academy.github.io/banjo_docs/models.html#objects.filter)
+
+{{< expand "Hint..." >}}
+
+Filtering the databse returns a QuerySet. You can loop through a QuerySet, just like you would a list. 
+
+```python
+for person in Person.objects.filter(age=16):
+  print(person.name)
+```
+
+{{< /expand >}}
 
 🤔 **Consider:**
 - Which existing endpoint is similar? 
@@ -314,7 +329,7 @@ http://127.0.0.1:5000/fortune/all/happy
 - It should return all of the fortunes with the keyword. 
 - If no fortunes exist, provide a helpful error message
 
-📖 **Check the banjo documentation to find the best way to query the database:** [the-isf-academy.github.io/banjo_docs/](https://the-isf-academy.github.io/banjo_docs/)
+📖 **Check the banjo documentation to find the best way to query the database:** [the-isf-academy.github.io/banjo_docs/](https://the-isf-academy.github.io/banjo_docs/models.html#advanced-filtering)
 
 🤔 **Consider:**
 - Which existing endpoint is similar? 
