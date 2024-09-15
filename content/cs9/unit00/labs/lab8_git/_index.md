@@ -1,6 +1,6 @@
 ---
 title: 08. Version Control
-draft: true
+# draft: true
 ---
 # Version Control Lab
 
@@ -27,13 +27,18 @@ git --version
 
 > Make sure to replace the information inside the `< >` with your information.
 
-- `git config --global user.name <Your name>`
-- `git config --global user.email <Your school email>`
-
+```shell
+git config --global user.name <Your name>
+```
+```shell
+git config --global user.email <Your school email>
+```
 
 {{< code-action "Install a credential manager to store your Github credentials securely." >}} *Copy and paste the lines below one at a time. It may ask you for your computer password.*
 ```shell
 brew tap microsoft/git
+```
+```shell
 brew install --cask git-credential-manager-core
 ```
 

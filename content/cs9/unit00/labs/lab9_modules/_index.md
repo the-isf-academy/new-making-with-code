@@ -1,6 +1,6 @@
 ---
 title: 09. Modules
-draft: true
+# draft: true
 ---
 
 # Modules Lab
@@ -112,7 +112,7 @@ code .
 > - what modules will you need to import?
 > - how can you combine exisiting functions to draw a full tree?
 
-When you run `tree`.py it look like:
+When you run `tree.py` it look like:
 
 {{< figure src="images/courses/cs9/unit00/lab_09_modules_tree.png" width="30%" >}}
 
@@ -217,7 +217,7 @@ code fancy_drawing.py
 
 {{< deliverables  >}}
 
-**Once you've successfully completed the sequence be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSd_Cq-iJTMviYOk7MlgSYsK7R2DaCpLQzX0GIDdOq_ROJDPGA/viewform?usp=sf_link)**.
+**Once you've successfully completed the sequence be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSciiMuOg4kmZ1uEzZ7MtHwo2HFvzAIIhizuYMGf_WgdrcSWGA/viewform?usp=sf_link)**.
 
 
 {{< code-action "Push your work to Github:" >}}
