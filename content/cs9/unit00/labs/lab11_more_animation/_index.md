@@ -1,5 +1,5 @@
 ---
-title: 11. More Animation
+title: 11. More SuperTurtle
 draft: true
 ---
 
@@ -101,6 +101,13 @@ python animation_tree.py
 
 {{< figure src="images/courses/cs9/unit00/lab_11_tree3.gif" width="50%">}}
 
+
+ADD MORE TREES 
+hint, use `fly` and 
+
+USE DEBUG=TRUE
+
+ADD RANDOMNESS TO BACKGROUND COLOR USING INTERPOLATE
 
 
 ---
