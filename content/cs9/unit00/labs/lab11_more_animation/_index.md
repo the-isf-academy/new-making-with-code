@@ -100,16 +100,25 @@ python animation_tree.py
 - How will you move the moon across the screen? 
     - Reference the previous lab OR the documentation
 
-{{< figure src="images/courses/cs9/unit00/lab_11_tree2.gif" width="50%">}}
+{{< figure src="images/courses/cs9/unit00/lab_11_tree2_still.png" width="50%">}}
 
-{{< code-action >}} **Now move the moon and change its color!** 
-- How can you use `interpolate`? 
+{{< code-action >}} **Now move the moon!** 
+- How can you use `translate` to move the moon across the screen? 
 
 {{< figure src="images/courses/cs9/unit00/lab_11_tree3.gif" width="50%">}}
 
+{{< code-action >}} **Edit the `settings.py` file. Add the abilty to easily customize the moon size and color**
+- How do you use variables from `settings.py` in `animation_tree.py`? 
+
+```python
+TOTAL_FRAMES = 240
+TREE_TOP_COLOR = (40, 112, 58)
+TREE_TRUNK_COLOR = (100,40,0)
+```
+
 {{< code-action >}} **Now, create a forest of trees!** 
 - You may keep the moon, or comment out the moon (`command + ?`)
-- You will need to use nested for loops and `fly()`
+- You will need to use `nested for loops` and `fly()`
 
 {{< expand "Hint" >}}
 
@@ -117,15 +126,15 @@ You can customize a `for loop` by using additional parameters. In this example, 
 
 
 ```python
-for i in range(-200, 200, 100):
+for i in range(-100, 100, 10):
     print(i)
 ```
 
 You can also do this with `nested for loops`:
 
 ```python
-for x in range(-200, 200, 100):
-    for y in range(-200, 200, 100):
+for x in range(-100, 100, 10):
+    for y in range(-100, 100, 10):
         fly(x, y)
 ```
 {{< /expand >}}
