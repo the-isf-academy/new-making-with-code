@@ -1,6 +1,6 @@
 ---
 title: 11. More SuperTurtle
-draft: true
+# draft: true
 ---
 
 # More Animation Lab
@@ -22,20 +22,20 @@ cd ~/desktop/making_with_code/unit00_drawing/
 
 {{< code-action "Clone your repo. This will copy it onto your computer." >}}  
 ```shell
-git clone https://github.com/the-isf-academy/lab_animation_yourGithubUsername
+git clone https://github.com/the-isf-academy/lab_more_superturtle_yourGithubUsername
 ```
 > Below you'll see that the `git clone` command has a `yourGithubUsername`. 
 >
 > **You need to replace this with your username**
 >
-> *e.g. `https://github.com/the-isf-academy/lab_animation_emmaqbrown`*
+> *e.g. `https://github.com/the-isf-academy/lab_more_superturtle_emmaqbrown`*
 
 
 
 
 {{< code-action "In the Terminal, type the following command to open the lab folder." >}}
 ```shell
-cd lab_animation_yourGithubUsername
+cd lab_more_superturtle_yourGithubUsername
 ```
 
 
@@ -90,24 +90,68 @@ python animation_tree.py
 
 {{< figure src="images/courses/cs9/unit00/lab_11_tree1.gif" width="50%">}}
 
-{{< code-action >}} **Take a look at the code with:** `code .` The main animation loop is in `animation.py`. It uses the `shapes.py` file and `tree_parts.py` from the `modules` lab.
+{{< code-action >}} **Take a look at the code with:** `code .`
+- The main animation loop is in `animation.py`. 
+- It uses the `shapes.py` file and `tree_parts.py` from the `modules` lab.
 
 
-{{< code-action >}} **Fist, add a moon!** Look in `shapes.py` for a function you can use to draw the moon!
+{{< code-action >}} **Fist, add a moon!** 
+- Look in `shapes.py` for a function you can use to draw the moon!
+- How will you move the moon across the screen? 
+    - Reference the previous lab OR the documentation
 
-{{< figure src="images/courses/cs9/unit00/lab_11_tree2.gif" width="50%">}}
+{{< figure src="images/courses/cs9/unit00/lab_11_tree2_still.png" width="50%">}}
 
-{{< code-action >}} **Now move the moon and change its color!** 
+{{< code-action >}} **Now move the moon!** 
+- How can you use `translate` to move the moon across the screen? 
 
 {{< figure src="images/courses/cs9/unit00/lab_11_tree3.gif" width="50%">}}
 
+{{< code-action >}} **Edit the `settings.py` file. Add the abilty to easily customize the moon size and color**
+- How do you use variables from `settings.py` in `animation_tree.py`? 
 
-ADD MORE TREES 
-hint, use `fly` and 
+```python
+TOTAL_FRAMES = 240
+TREE_TOP_COLOR = (40, 112, 58)
+TREE_TRUNK_COLOR = (100,40,0)
+```
 
-USE DEBUG=TRUE
+{{< code-action >}} **Now, create a forest of trees!** 
+- You may keep the moon, or comment out the moon (`command + ?`)
+- You will need to use `nested for loops` and `fly()`
 
-ADD RANDOMNESS TO BACKGROUND COLOR USING INTERPOLATE
+{{< expand "Hint" >}}
+
+You can customize a `for loop` by using additional parameters. In this example, the `i` starts at `-200` and increases by `100` each time, stopping at `200`. 
+
+
+```python
+for i in range(-100, 100, 10):
+    print(i)
+```
+
+You can also do this with `nested for loops`:
+
+```python
+for x in range(-100, 100, 10):
+    for y in range(-100, 100, 10):
+        fly(x, y)
+```
+{{< /expand >}}
+
+{{< figure src="images/courses/cs9/unit00/lab_11_tree4.gif" width="50%">}}
+
+
+
+{{< expand "Extension: Offset Trees" >}}
+
+How would you offset the trees? 
+
+{{< figure src="images/courses/cs9/unit00/lab_11_tree5.gif" width="50%">}}
+
+
+```
+{{< /expand >}}
 
 
 ---
