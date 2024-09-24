@@ -83,9 +83,7 @@ The `project_networking` repository containing the following:
 - iterative development [3]
 - model architecture [3]
 - endpoint architecture [3]
-- readability [3]
 - documentation [3]
-
 
 **For each criteria you will be assessed on a score from 0-3. With 8 criteria, there is a total of 24 potential points.** 
 - 0 - no evidence of the practice
@@ -93,33 +91,31 @@ The `project_networking` repository containing the following:
 - 2 - adequate evidence of the practice
 - 3 - substantial evidence of the practice
 
-
 ---
 
 ### [Success Claims]
 
 Successful computer scientists should be able to make the following claims:
-- I can thoughtfully plan and manage a large computer science project.  
+- I can thoughtfully plan a large computer science project.  
     - I can consider the components of my project before coding
-    - I can manage my time well and complete the project by the deadline
+    - I can design the API architecure 
 - I can develop my project iteratively over time
     - I can track the development of my project by successfully committing to Github a minimum of each class work day
     - I can write descriptive commit messages that accurately describe the changes made
     - I can systematically break down my project into smaller chunks
     - I can identify a Minimum Viable Product (MVP) and complete it before adding additional features
-- I can write model architecture
+- I can independently write model architecture
   - I can use Banjo to effectively build a model with necessary features
   - I can write fields with appropriate data types
   - I can write methods to simplify code
   - I can write a model with multiple uses in mind
-- I can write endpoint architecture
+  - I can write code with readabity in mind
+- I can independently write endpoint architecture
   - I can appropriately use GET and POST requests
   - I can write endpoints with user experience in mind
   - I can return descriptive and accurate JSON
   - I can return helpful error messages
-- I can write code with readability in mind
-  - I can use descriptive names for models, fields, methods, endpoints, variables, and  parameters
-  - I can write descriptive comments
+  - I can write code with readabity in mind 
 - I can write documentation with public use in-mind
   - I can write a README.md that is clear enough for someone with no prior knowledge of my project to understand
   - I can write a README.md that is complete and accurate to my final project

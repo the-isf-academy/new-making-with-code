@@ -1,6 +1,6 @@
 ---
-Title: "Project: Backend"
-draft: true
+Title: "OLD Project: Backend"
+# draft: true
 ---
 
 # Networking: Social Computing Project
@@ -34,7 +34,7 @@ Before you start working on your project, you are required to complete the plann
 
 - collaborative story telling (poetry, madlibs, etc.)
 - collaboarative art project with emojis, symbols, or [ASCII art](https://www.asciiart.eu/)
-- collaborative messaging board
+- collaborative messaging board about a specific topic
 
 {{< /aside >}}
 
@@ -112,21 +112,21 @@ Successful computer scientists should be able to make the following claims:
     - I can consider the components of my project before coding
     - I can manage my time well and complete the project by the deadline
     - I can update my process journal on an ongoing basis to organize by thoughts for the next work day
+    - I can define an appropriate Minimum Viable Product (MVP) 
 - I can develop my project iteratively over time
     - I can track the development of my project by successfully committing to Github a minimum of each class work day
     - I can write descriptive commit messages that accurately describe the changes made
     - I can systematically break down my project into smaller chunks  
-- I can write model architecture
+- I can independently write model architecture
   - I can use Banjo to effectively build a model with necessary features
   - I can write field with appropriate data types
-  - I can write methods to simplify code
-  - I can write a model with multiple uses in mind
-- I use write API architecture
+  - I can write abstract methods to simplify code
+- I use independently write API architecture
   - I can appropriately use GET and POST requests
   - I can write endpoints with user experience in mind
   - I can appropratiely filter the database and return descriptive and accurate JSON 
   - I can incorporate error handling with appropraite JSON messaging
-- I can write backend code with readability in mind
+- I can independently write backend code with readability in mind
   - I can use descriptive names for models, fields, methods, routes, variables, and payload
   - I can write descriptive comments
 - I can document my API in the `README.md`
