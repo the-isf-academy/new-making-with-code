@@ -25,13 +25,13 @@ git --version
 
 {{< code-action "Configure git">}} : Type each of these commands into Terminal. 
 
-> Make sure to replace the information inside the `< >` with your information.
+> Make sure to replace `your_name` and `your_school_email` with your information.
 
 ```shell
-git config --global user.name <Your name>
+git config --global user.name your_name
 ```
 ```shell
-git config --global user.email <Your school email>
+git config --global user.email your_school_email
 ```
 <!-- 
 {{< code-action "Install a credential manager to store your Github credentials securely." >}} *Copy and paste the lines below one at a time. It may ask you for your computer password.*
