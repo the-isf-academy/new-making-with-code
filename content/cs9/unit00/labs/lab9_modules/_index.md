@@ -111,6 +111,7 @@ code .
 > Be sure to consider:
 > - what modules will you need to import?
 > - how can you combine exisiting functions to draw a full tree?
+> - what parameters will `tree_full()` need to draw at tree of any size?
 
 When you run `tree.py` it look like:
 
