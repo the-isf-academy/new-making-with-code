@@ -33,14 +33,14 @@ git config --global user.name <Your name>
 ```shell
 git config --global user.email <Your school email>
 ```
-
+<!-- 
 {{< code-action "Install a credential manager to store your Github credentials securely." >}} *Copy and paste the lines below one at a time. It may ask you for your computer password.*
 ```shell
 brew tap microsoft/git
 ```
 ```shell
 brew install --cask git-credential-manager-core
-```
+``` -->
 
 ---
 
@@ -67,7 +67,7 @@ gh auth login
 
 <br>
 
-{{< expand "Github Auth Token" >}}
+<!-- {{< expand "Github Auth Token" >}}
 
 
 Github uses personal access tokens to ensure security when remotely accessing a repository. You will need your token when using git from the Terminal. 
@@ -82,7 +82,7 @@ Github uses personal access tokens to ensure security when remotely accessing a 
 
 {{< code-action "Copy your token to your Notes application.">}} 
 
-{{< /expand >}}
+{{< /expand >}} -->
 
 ---
 
