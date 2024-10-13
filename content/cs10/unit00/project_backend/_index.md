@@ -1,5 +1,5 @@
 ---
-Title: "OLD Project: Backend"
+Title: "Project: Backend"
 # draft: true
 ---
 
@@ -9,32 +9,28 @@ In this unit there will be 2 mini-projects for you to create a social computing 
 
 {{< aside "Reference: Banjo Documentation" >}}
 
-[cs.fablearn.org/docs/banjo/index.html](https://cs.fablearn.org/docs/banjo/index.html)
+[the-isf-academy.github.io/banjo_docs/](https://the-isf-academy.github.io/banjo_docs/)
 
 {{< /aside >}}
 
 
-UPDATES
-- use miro board or paper??? 
-- individual project 
-
 ---
 
-## [0] Project Management Sheet
+## [0] Project Planning Document
 
+This is a big project, and you will get lost or frustrated if you don't do some planning up front.
+Before you start working on your project, you are required to complete the Project Planning Sheet and meet with a teacher.
 
-This is a complex project, and you will get lost or frustrated if you don't do some planning up front.
-Before you start working on your project, you are required to complete the planning section of your booklet. 
+✏️ **Fill out your project planning sheet.**
 
-{{< code-action >}} **Find your project management sheet in your Google Drive folder: "Networking Project Management Sheet".** Share the sheet with your group member(s)
+✋ **Meet with a teacher to discuss your idea before beginning to code.**
 
-{{< write-action "Fill out the both tabs." >}} Once you're completed, meet with a teacher to discuss your idea before beginning to code.
+{{< aside "A few ideas to build on from last year's projects:" >}}
 
-{{< aside "A few ideas..." >}}
-
-- collaborative story telling (poetry, madlibs, etc.)
-- collaboarative art project with emojis, symbols, or [ASCII art](https://www.asciiart.eu/)
-- collaborative messaging board about a specific topic
+- collaborative story telling (each person adds a new word to a collaborative story)
+- r/place, but with emojis or symbols 
+- collaborative counting game like [this IRL game](https://dramaresource.com/count-to-20/#:~:text=Sit%20or%20stand%20in%20a,start%20again%20from%20the%20beginning.)
+- collaborative hangman
 
 {{< /aside >}}
 
@@ -42,18 +38,19 @@ Before you start working on your project, you are required to complete the plann
 
 ## [1] Starter Code
 
+{{< code-action "Add a shortcut command to easily open Github" >}} 
+```shell
+echo 'alias remote="open \"\$(git remote get-url origin | sed \"s/\.git\$//\")\""' >> ~/.zshrc
+```
 
-In this lab, you will be working in groups, storing your shared code in your group's repository.
 
-{{< code-action "Download your repository with starter code for your project." >}}
+{{< code-action "Download your repository with starter code for your project." >}} Be sure to change `yourgithubusername` to your actual Github username.
 
 ```shell
-cd ~/desktop/making_with_code/cs10/unit00_networking/
-git clone https://github.com/the-isf-academy/project_networking_group#.git
-cd project_networking_group#
+cd ~/desktop/making_with_code/unit03_networking/
+git clone https://github.com/the-isf-academy/project_networking_backend_yourgithubusername.git
+cd project_networking_project_networking_backend_yourgithubusername
 ```
-> replace `#` with your group number
-
 
 {{< code-action "Enter the poetry shell." >}}
 ```shell
@@ -62,22 +59,21 @@ poetry shell
 
 {{< code-action "Install requirements" >}}
 ```shell
-poetry install
+poetry update
 ```
 
-{{< code-action "Install Banjo" >}}
+<!-- {{< code-action "Install Banjo" >}}
 ```shell
 pip3 install django-banjo
-```
+``` -->
 
-It contains the following :
-- A `project_networking` repository containing the following:
+The `project_networking` repository containing the following:
   - `\app`
     - `models.py` - This is where you will define your model.
     - `views.py` - This is where you will define your routes and endpoints.
+  - `settings.py` - This is where you define your `BASE_URL`
   - `database.sqlite` - This is your database file.
   - `README.md` - This is documentation for the backend of your project.
-  - `client.py` - This is how the User will interact wiht your server.
 
 {{< code-action "Start coding your first milestone!" >}} With you project management sheet approved by a teacher and your starter code downloaded, you're ready to start creating.
 
@@ -87,51 +83,47 @@ It contains the following :
 
 
 **This project will be assessed on the following criteria:**
+- project planning [3]
 - iterative development [3]
 - model architecture [3]
-- api architecture [3]
-- backend readability [3]
+- endpoint architecture [3]
+- documentation [3]
 
-
-
-**For each criteria you will be assessed on a score from 0-3. With 8 criteria, there is a total of 24 potential points.** For each criteria, you will be awarded the same grade as your group member(s). However, the one exception is the *iterative development* criteria, which will be individually awarded.
+**For each criteria you will be assessed on a score from 0-3. With 8 criteria, there is a total of 24 potential points.** 
 - 0 - no evidence of the practice
 - 1 - limited evidence of the practice
 - 2 - adequate evidence of the practice
 - 3 - substantial evidence of the practice
 
-
 ---
 
 ### [Success Claims]
 
-ADD INDEPDENCE TO CLAIMS
-
 Successful computer scientists should be able to make the following claims:
-- I can thoughtfully plan and manage a large computer science project.  
+- I can thoughtfully plan a large computer science project.  
     - I can consider the components of my project before coding
-    - I can manage my time well and complete the project by the deadline
-    - I can update my process journal on an ongoing basis to organize by thoughts for the next work day
-    - I can define an appropriate Minimum Viable Product (MVP) 
+    - I can design the API architecure 
 - I can develop my project iteratively over time
-    - I can track the development of my project by successfully committing to Github a minimum of each class work day
-    - I can write descriptive commit messages that accurately describe the changes made
-    - I can systematically break down my project into smaller chunks  
+    - I can track the development of my project by successfully committing to Github at least once per class work day
+    - I can track my current progress and next steps using specific commit messages 
+    - I can test my code in small chunks
+    - I can identify a Minimum Viable Product (MVP) and complete it before adding additional features
 - I can independently write model architecture
   - I can use Banjo to effectively build a model with necessary features
-  - I can write field with appropriate data types
-  - I can write abstract methods to simplify code
-- I use independently write API architecture
+  - I can write fields with appropriate data types
+  - I can write methods to simplify code
+  - I can write a model with multiple uses in mind
+  - I can write code with readabity in mind
+- I can independently write endpoint architecture
   - I can appropriately use GET and POST requests
   - I can write endpoints with user experience in mind
-  - I can appropratiely filter the database and return descriptive and accurate JSON 
-  - I can incorporate error handling with appropraite JSON messaging
-- I can independently write backend code with readability in mind
-  - I can use descriptive names for models, fields, methods, routes, variables, and payload
-  - I can write descriptive comments
-- I can document my API in the `README.md`
-  - I can write a short description of my API and potential uses 
-  - I can write an easy to guide for how to hit my API 
+  - I can return descriptive and accurate JSON
+  - I can return helpful error messages
+  - I can write code with readabity in mind 
+- I can write documentation with public use in-mind
+  - I can write a README.md that is clear enough for someone with no prior knowledge of my project to understand
+  - I can write a README.md that is complete and accurate to my final project
+
 
 *Keep these success claims in mind when coding your project and assessing yourself.*
 
@@ -139,32 +131,40 @@ Successful computer scientists should be able to make the following claims:
 
 ## [3] Deliverables
 
-{{< deliverables  "Projects are due on Friday, 25 Novemeber." >}}
 
-- A `Networking Project Management Sheet` - Google sheet. This is where you will plan your project.
-- A `project_networking` repository containing the following:
+{{< deliverables  >}}
+
+- A `Networking Project: Backend Worksheet` - Paper planning document
+- A `project_networking_backend` repository containing the following:
   - `\app`
     - `models.py` - This is where you will define your model.
     - `views.py` - This is where you will define your routes and endpoints.
+  - `settings.py` - This is where you define your `BASE_URL`
   - `database.sqlite` - This is your database file.
   - `README.md` - This is documentation for the backend of your project.
-  - `client.py` - This is how the User will interact wiht your server.
 
 ---
 
 **🗓️ Timeline**
 
-The project will begin on Wednesday, 02 November. You have 8 in-class work days. You may find it necessary to work outside of school, however if you are focused in class you can complete the project within the allotted blocks.
+You have 5 in-class work days. You may find it necessary to work outside of school, however if you are focused in class you can complete the project within the allotted blocks. Our office hours are Wednesdays during CCA in B405. 
+
+| CS10.1 Dates | CS10.2 Dates | Agenda                         |
+|--------------|--------------|--------------------------------|
+| 14 Oct       | 11 Oct       | Project Intro & MVP |
+| 15 Oct       | 17 Oct       | Work Day - MVP                 |
+| 18 Oct       | 18 Oct       | Work Day - Peer Review         |
+| 23 Oct       | 20 Oct       | Work Day - Documentation       |
+| 24 Oct       | 25 Oct       | Due at End of Class            |
 
 ---
 
 {{< code-action "Push your work to Github:" >}}
 - `git status`
-- `git add project.py`
-    - you can add multiple files by putting a space inbetween each file
-    - *e.g. `git add project.py settings.py`*
+- `git add -A`
+    - this adds all changed files to the commit
 - `git status`
-- `git commit -m "describe your drawing and your process here"`
+- `git commit -m "DAY X  #today I worked on X  #next I will do Y"`
   > be sure to customize this message, do not copy and paste this line
 - `git push`
 {{< /deliverables >}}
