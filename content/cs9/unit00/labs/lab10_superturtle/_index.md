@@ -44,7 +44,10 @@ For example, let's consider baking again.
 
 ## [1] Set Up
 
-
+{{< code-action "Add a shortcut command to easily open Github" >}} 
+```shell
+echo 'alias remote="open \"\$(git remote get-url origin | sed \"s/\.git\$//\")\""' >> ~/.zshrc
+```
 
 {{< code-action "Go to your" >}} `unit00_drawing` **folder.**
 

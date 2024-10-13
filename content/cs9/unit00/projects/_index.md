@@ -37,7 +37,10 @@ This is a big project, and you will get lost or frustrated if you don't do some 
 
 ##  [1] Setup
 
-### Starter Code
+{{< code-action "Add a shortcut command to easily open Github" >}} 
+```shell
+echo 'alias remote="open \"\$(git remote get-url origin | sed \"s/\.git\$//\")\""' >> ~/.zshrc
+```
 
 For this project, your code will live in a git repository. It is your responsibility to regularly commit to your repository.
 
