@@ -37,7 +37,10 @@ This is a big project, and you will get lost or frustrated if you don't do some 
 
 ##  [1] Setup
 
-### Starter Code
+{{< code-action "Add a shortcut command to easily open Github" >}} 
+```shell
+echo 'alias remote="open \"\$(git remote get-url origin | sed \"s/\.git\$//\")\""' >> ~/.zshrc
+```
 
 For this project, your code will live in a git repository. It is your responsibility to regularly commit to your repository.
 
@@ -143,23 +146,22 @@ Successful computer scientists should be able to make the following claims:
 - I can thoughtfully plan and manage a large computer science project.  
     - I can consider the components of my project before coding
     - I can manage my time well and complete the project by the deadline
-    - I can update my process journal on an ongoing basis to organize by thoughts for the next work day
 - I can develop my project iteratively over time
-    - I can track the development of my project by successfully committing to Github a minimum of each class work day
-    - I can write descriptive commit messages that accurately describe the changes made
-    - I can systematically breakdown my project into smaller chunks  
+    - I can track the development of my project by successfully committing to Github at least once per class work day
+    - I can track my current progress and next steps using specific commit messages 
+    - I can test my code in small chunks 
 - I can write code with readability in mind
-    - I can write code as readable as possible for another CS student to understand
-    - I can use descriptive names for modules, variables, and functions
+    - I can write readable code that another CS student could understand
+    - I can use descriptive names for modules, functions, and variables
     - I can write descriptive comments to describe complex pieces of the code
 - I can effectively use the principle of abstraction to make my code more efficient and elegant
-    - I can write a function with parameters
+    - I can write a function with parameters that can be used in multiple situations 
     - I can manipulate control flow with conditional statements
     - I can use loops to repeat commands
-     can write functions with parameters
+     I can use settings.py to easily configure my animation
 - I can effectively use the principle of decomposition to make my code more efficient and elegant
     - I can write functions to be used in different scenarios
-    - I can write modules for different aspects of my project
+    - I can structure my modules and functions so that another CS student could easily extend my work
 
 *Keep the success claims in mind when coding your project.*
 
