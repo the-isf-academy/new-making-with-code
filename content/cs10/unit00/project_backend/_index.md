@@ -102,24 +102,23 @@ The `project_networking` repository containing the following:
 Successful computer scientists should be able to make the following claims:
 - I can thoughtfully plan a large computer science project.  
     - I can consider the components of my project before coding
-    - I can design the API architecure 
+    - I can design the API architecture 
 - I can develop my project iteratively over time
     - I can track the development of my project by successfully committing to Github at least once per class work day
     - I can track my current progress and next steps using specific commit messages 
     - I can test my code in small chunks
     - I can identify a Minimum Viable Product (MVP) and complete it before adding additional features
 - I can independently write model architecture
-  - I can use Banjo to effectively build a model with necessary features
+  - I can independently build a model with necessary features
   - I can write fields with appropriate data types
   - I can write methods to simplify code
-  - I can write a model with multiple uses in mind
-  - I can write code with readabity in mind
+  - I can write code with readability in mind
 - I can independently write endpoint architecture
-  - I can appropriately use GET and POST requests
-  - I can write endpoints with user experience in mind
+  - I can independently write GET and POST requests
+  - I can design endpoints with user experience in mind
   - I can return descriptive and accurate JSON
   - I can return helpful error messages
-  - I can write code with readabity in mind 
+  - I can write code with readability in mind 
 - I can write documentation with public use in-mind
   - I can write a README.md that is clear enough for someone with no prior knowledge of my project to understand
   - I can write a README.md that is complete and accurate to my final project
