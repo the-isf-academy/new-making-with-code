@@ -1,6 +1,6 @@
 ---
 Title: Project
-draft: true
+# draft: true
 ---
 
 # Animation Project
@@ -15,7 +15,7 @@ Here are a few examples from last year to get you started.
 
 {{< figure src="images/courses/cs9/unit00/00_project_2022_alden.gif" width="75%" title="by Alden" >}}
 <--->
-{{< figure src="images/courses/cs9/unit00/00_project_2021_edwin.gif" width="75%" title="by Edwin" >}}
+{{< figure src="images/courses/cs9/unit00/00_project_2023_claire.gif" width="75%" title="by Claire" >}}
 {{< /columns >}}
 
 
@@ -117,13 +117,13 @@ Feel free to use **any** of the superturtle modules in your project!
 
 {{< columns >}}
 
-{{< figure src="images/courses/cs9/unit00/00_project_2022_jay.gif" width="75%" title="by Jay" >}}
+{{< figure src="images/courses/cs9/unit00/00_project_2023_alex.gif" width="75%" title="by Alex" >}}
 <--->
 {{< figure src="images/courses/cs9/unit00/00_project_2022_brandon.gif" width="75%" title="by Brandon" >}}
 {{< /columns >}}
 
 **This project will be assessed on the following criteria:**
-- project managment
+- project planning
 - iterative development
 - readability
 - abstraction
@@ -143,9 +143,9 @@ Feel free to use **any** of the superturtle modules in your project!
 ### Success Claims
 
 Successful computer scientists should be able to make the following claims:
-- I can thoughtfully plan and manage a large computer science project.  
+- I can thoughtfully plan a large computer science project.  
+    - I can design my animation 
     - I can consider the components of my project before coding
-    - I can manage my time well and complete the project by the deadline
 - I can develop my project iteratively over time
     - I can track the development of my project by successfully committing to Github at least once per class work day
     - I can track my current progress and next steps using specific commit messages 
@@ -182,16 +182,15 @@ Successful computer scientists should be able to make the following claims:
 
 **🗓️ Timeline**
 
-You have 6 in-class work days. You may find it necessary to work outside of school, however if you are focused in class you can complete the project within the allotted blocks. Our office hours are Tuesday during CCA in B405. 
+You have 5 in-class work days. You may find it necessary to work outside of school, however if you are focused in class you can complete the project within the allotted blocks. Our office hours are Wednesday during CCA in B405. 
 
-| CS9.1 Dates  | CS9.2 Dates  | Agenda                           |
-|--------------|--------------|----------------------------------|
-| 07 Nov       | 06 Nov       | Project Intro & Planning Booklet |
-| 10 Nov       | 08 Nov       | Work Day                         |
-| 15 Nov       | 13 Nov       | Work Day                         |
-| 16 Nov       | 14 Nov       | Work Day                         |
-| 17 Nov       | 16 Nov       | Work Day                         |
-| 21 Nov       | 22 Nov       | Due at End of Class              |
+| CS10 Dates   | Agenda                           |
+|--------------|----------------------------------|
+| 16 Oct       | Project Intro & Planning Booklet |
+| 18 Oct      | Work Day                         |
+| 21 Oct       | Work Day                         |
+| 23 Oct       | Work Day                         |
+| 21 Nov       | Work Day: Due at End of Class              |
 
  ---
 
@@ -201,7 +200,7 @@ You have 6 in-class work days. You may find it necessary to work outside of scho
     - you can add multiple files by putting a space inbetween each file
     - *e.g. `git add project.py settings.py`*
 - `git status`
-- `git commit -m "describe your drawing and your process here"`
+- `git commit -m "#today what I worked on today #next what I will work on next class"`
   > be sure to customize this message, do not copy and paste this line
 - `git push`
 {{< /deliverables >}}
