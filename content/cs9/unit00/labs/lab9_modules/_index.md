@@ -103,21 +103,41 @@ This folder has 3 files:
 code .
 ```
 
-{{< look-action "Take a look at" >}} `basic_shapes.py` and `tree_parts.py`. Note how `tree_parts.py` uses functions from `basic_shapes.py`.
+{{< look-action "Take a look at" >}} `basic_shapes.py` and `tree_parts.py`. Note how `tree_parts.py` uses functions from `basic_shapes.py`. Currently, the file `tree.py` is empty.
 
-
-{{< code-action >}} **Currently, `tree.py` is empty. It's up to you to write function to draw a full tree.** Your `tree_full()` function should be able to draw a tree of any size.
+    
+{{< code-action >}} **In `tree.py`, write a new function `tree_full()` to draw a full tree.** Your `tree_full()` function should be able to draw a tree of any size.
 
 > Be sure to consider:
 > - what modules will you need to import?
 > - how can you combine exisiting functions to draw a full tree?
-> - what parameters will `tree_full()` need to draw at tree of any size?
+> - what parameters will `tree_full()` need, in order to draw at tree of **any size**?
 
-When you run `tree.py` it look like:
+When you run `tree.py` it should look like:
 
 {{< figure src="images/courses/cs9/unit00/lab_09_modules_tree.png" width="30%" >}}
 
-{{< expand "Extension: Forest" >}}
+## [3] Deliverables
+
+{{< deliverables  >}}
+
+**Once you've successfully completed the tree drawing, be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSciiMuOg4kmZ1uEzZ7MtHwo2HFvzAIIhizuYMGf_WgdrcSWGA/viewform?usp=sf_link)**.
+
+---
+
+{{< code-action "Push your work to Github:" >}}
+- git status
+- git add tree.py 
+- git status
+- git commit -m "describe your drawing and your process here"
+  > be sure to customize this message, do not copy and paste this line
+- git push
+
+{{< /deliverables >}}
+
+---
+
+## [4] Extension: Forest
 
 💻 **Write a function `forest()` that randomly draws trees around the screen!**
 
@@ -136,13 +156,12 @@ goto(x_coordinate, y_coordinate) #moves the turtle to the random location
 💻  **After you have your forest, try making the nearby trees larger than those farther away.**
 
 
-{{< /expand >}}
 
 
 ---
 
 
-## [3] Drawing Package
+## [5] Extension: Drawing Package
 
 Now we are going to use a package full of fancy drawing functions to turbocharge your turtle.
 
@@ -209,28 +228,6 @@ code fancy_drawing.py
 {{< checkpoint >}}
 **Be prepared to share your drawing!**
 {{< /checkpoint >}}
-
-
-
----
-
-## [4] Deliverables
-
-{{< deliverables  >}}
-
-**Once you've successfully completed the sequence be sure to fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSciiMuOg4kmZ1uEzZ7MtHwo2HFvzAIIhizuYMGf_WgdrcSWGA/viewform?usp=sf_link)**.
-
-
-{{< code-action "Push your work to Github:" >}}
-- git status
-- git add fancy_drawing.py 
-- git status
-- git commit -m "describe your drawing and your process here"
-  > be sure to customize this message, do not copy and paste this line
-- git push
-
-{{< /deliverables >}}
-
 
 
 
