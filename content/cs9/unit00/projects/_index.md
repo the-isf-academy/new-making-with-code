@@ -209,6 +209,14 @@ You have 5 in-class work days. You may find it necessary to work outside of scho
 
 ## [4] Gallery
 
+
+{{< columns >}}
+
+{{< figure src="images/courses/cs9/unit00/00_project_2023_owen.gif" width="75%" title="by Owen" >}}
+<--->
+{{< figure src="images/courses/cs9/unit00/00_project_2023_kelley.gif" width="75%" title="by Kelley" >}}
+{{< /columns >}}
+
 {{< columns >}}
 
 {{< figure src="images/courses/cs9/unit00/00_project_2022_lawrence.gif" width="75%" title="by Lawrence" >}}
@@ -232,4 +240,6 @@ You have 5 in-class work days. You may find it necessary to work outside of scho
 <--->
 {{< figure src="images/courses/cs9/unit00/00_project_2020_austin.gif" width="75%" title="by Austin" >}}
 {{< /columns >}}
+
+
 
