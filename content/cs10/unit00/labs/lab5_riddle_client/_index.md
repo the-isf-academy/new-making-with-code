@@ -1,5 +1,5 @@
 ---
-title: "5. Client"
+title: "4. Client"
 type: lab
 # draft: true
 ---
@@ -103,11 +103,11 @@ And the following methods:
 
 ### `all_riddles()`
 
-👀 **First let's look at the method`all_riddles()`** that sends an **HTTP GET** request to the Riddle server endpoint `riddles/all`.
+👀 **First let's look at the method`all_riddles()`** that sends an **HTTP GET** request to the Riddle server endpoint `riddle/all`.
 
 ```python {linenos=inline}
 def all_riddles(self):
-        '''This functions sends a GET request to riddles/all.'''
+        '''This method sends a GET request to riddle/all.'''
 
         # stores the full address for /all
         all_riddles_address = self.riddle_server + 'all'
@@ -149,7 +149,7 @@ def all_riddles(self):
 
 ```python {linenos=inline}
 def guess_riddle(self, user_chosen_id, user_guess):
-        '''This function sends a POST request to riddles/guess.'''
+        '''This method sends a POST request to riddle/guess.'''
 
         # stores the full address for /guess
         guess_riddles_address = self.riddle_server + 'guess'
@@ -184,27 +184,27 @@ def guess_riddle(self, user_chosen_id, user_guess):
         else:
             return f"HTTP error {response.status_code}"
 ```
-- `line 5:` stores the full URL address of where to get one riddle.
+- `line 5:` stores the full URL address of where to guess one riddle.
 - `lines 8-11:` stores the payload in a dictionary.
 - `line 14` sends an HTTP POST request with the payload to the server and stores the response.
 - `lines 16-32` If the HTTP request was sucessful, it parses the JSON
   - `line 17` - get the json from the HTTP request
   - `line 21` - creates a variable to store the parsed message
-  - `line 22-19` - checks if the guess was correct or incorrect and returns an appropraite message
+  - `line 22-19` - checks if the guess was correct or incorrect and returns an appropriate message
   - `line 21-32` - returns error JSON
-- `line 22-23`: If the HTTP request was unsuccessful, return the error status code
+- `line 34-35`: If the HTTP request was unsuccessful, return the error status code
 
 ---
 
-## [4] Extend the Client
+## [2] Extend the Client
 
 💻 **Your job is to add 2 methods to the `riddle_client.py`.** 
 - `view_one_riddle()`
-  - allows the user to input a riddle id 
+  - allows the user to input a riddle `id` 
   - if riddle exists, return specific information for the given riddle
   - returns the specific information for the given riddle
 - `new_riddle()` 
-  - allows the user to input a riddle question and answer
+  - allows the user to input a riddle `question` and `answer`
   - if riddle was added, return a success message 
 
 
@@ -219,7 +219,7 @@ def guess_riddle(self, user_chosen_id, user_guess):
 
 - is the success message correct? 
 - is the error message appropriate? *(try sending a riddle id that does not exist)*
-- what if there is an HTTP error? *(try sending incorrect parameters, like a string as an id)*
+- what if there is an HTTP error? *(try sending incorrect parameters, like a float 3.5 as the id)*
 
 {{< /aside >}}
 
@@ -229,27 +229,32 @@ def guess_riddle(self, user_chosen_id, user_guess):
 
 
 🐞 **Debugging**
-- Test, test, test! Make sure you are confident in each piece before moving on. 
+- Test, test, test! Make sure you are confident in each piece **before moving on**. 
 - Use `print()` statements CONSTANTLY to give yourself more information 
 - Copy and Paste are your best friends 
 
+| code            | likely cause                                                       |
+|------|--------------------------------------------------------------------|
+| **400**   bad request        | your `payload` is formatted incorrectly                            |
+| **404**   not found          | wrong `endpoint` <br> *---or---* <br> the riddle doesn't exist                          |
+| **405**   method not allowed | you used `POST` instead of `GET` <br> *---or---* <br> you used `GET` instead of `POST` |
 ---
 
 📚 **Parsing JSON**
 
 The HTTP response is given to us in `JSON`.  
 
-JSON is a standardized format to transfer data over a network. It represents data in a key/value pair, just like a Python dictionary.
+`JSON` is a standardized format to transfer data over a network. It represents data in a key/value pair, just like a Python dictionary.
 
-**You can parse JSON, just as you would a [Python dictionary](https://realpython.com/iterate-through-dictionary-python/).**
+**You can parse `JSON`, just as you would a [Python dictionary](https://realpython.com/iterate-through-dictionary-python/).**
 
-💡 *What is in the `JSON` response if the guess is correct? If the guess is incorrect?*
+💡 *What is in the `JSON response` if the guess is correct? If the guess is incorrect?*
 
 
 
 ---
 
-## [5] Deliverables
+## [3] Deliverables
 
 {{< deliverables "Once you've successfully completed the client:" >}}  
 
@@ -269,13 +274,13 @@ JSON is a standardized format to transfer data over a network. It represents dat
 
 ---
 
-## [6] Extension
+## [4] Extension
 
 ### Explore GUI
 
 Currently when you run `python gui_template.py`, the GUI does not open. 
 
-💻  **Figure out how to start properly run the `RiddlerGUI` when you run `python gui_template.py`**
+💻  **Figure out how to start the `RiddlerGUI` when you run `python gui_template.py`**
 
 💻  **Try to customize the GUI by referencing the [CustomTkinter Documentation](https://customtkinter.tomschimansky.com/documentation/).** 
 - What are you able to change about the aesthetics of the app? 
