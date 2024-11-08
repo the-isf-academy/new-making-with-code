@@ -1,71 +1,62 @@
 ---
-title: "5. Client"
+title: "5. GUI"
 type: lab
-draft: true
+# draft: true
 ---
 
-# Client
+# GUI
 
-In this lab we will create a Client in the form of a Command Line Interface(CLI) for the Riddle server. We will use the `Requests` library to send and recieve HTTP requests. To learn more about the `Requests` library, checkout its [documentation](https://requests.readthedocs.io/en/latest/).
+In this lab we will explore how to create a Grapical User Interface (GUI) for a user to interaction with the Riddle Server. We will use the 
+CustomTkinter Library to build our application. 
 
+{{< aside "CustomTkinter Documentation" >}}
 
----
+📖 View the documentation [HERE](https://customtkinter.tomschimansky.com/documentation/)
 
-
-## [0] zxWhat is a client?
-
-
-Since the riddle server is an API with no user interface, we end up writing a lot of
-HTTP requests into the Terminal to use it. What if we had a program which took care
-of making these requests for us? A program like this is called a *client*.
-
-**Any app which uses the Internet is a client.**
-
-{{< figure src=https://res.cloudinary.com/lwgatsby/f_auto/www/uploads/2023/05/client-server-network.jpg" width="50%">}}
-
-
-The client, or app, is constantly making HTTP requests to a server to send and receive information.
+{{< /aside >}}
 
 ---
 
 ## [1] Set Up
 
+We will use the repo from the previous lab, `lab_client`. 
 
-{{< code-action "Go to the unit folder, clone the riddler server lab, and cd into the repo." >}}
+{{< code-action "Go to the lab folder." >}}
 ```shell
-cd ~/desktop/making_with_code/cs10/unit00_networking/
-git clone https://github.com/the-isf-academy/lab_client_YOURGITHUBUSERNAME
-cd lab_client_YOURGITHUBUSERNAME
+cd ~/desktop/making_with_code/cs10/unit00_networking/lab_client_YOURGITHUBUSERNAME
 ```
 
-{{< code-action "Install the requirements." >}}
-```shell
-poetry install
-```
-
-{{< code-action "Enter the poetry shell." >}}
+{{< code-action "Enter the poetry shell." >}} You do NOT need to install the requirements again. 
 ```shell
 poetry shell
 ```
 
 📄 **The repository has the following files.**  In this lab we will just focus on the bolded files.
-- **`riddle_client.py`**
-- **`test_riddle_client.py`**
-- `gui_template.py`
-- `gui_view.py`
+- `riddle_client.py`
+- `test_riddle_client.py`
+- **`gui_template.py`**
+- **`gui_view.py`**
 
+{{< code-action "Open the folder in VS Code:" >}} `code .`
 
 
 ---
 
-## [2] Try the Client
+## [2] GUI 
 
-We are going to create a **Graphical User interface (GUI)** for the riddler server. This will allow users to easily interact with the server without needing to explicitly make a `GET` or `POST` request.
+If you run `python gui_view.py` it the application does not run. This is becuase the `RiddleGUI` class is defined, but there is no instance of the application. 
 
-{{< code-action "Try the client for the Riddle Server:" >}} `python client.py`
-> Click on the various buttons to test the interaction
+{{< code-action >}} **Add the following lines of code to the bottom of `gui_view.py` to create an instance of `RiddleGUI` and call the method `run()`.**
 
-{{< figure src="images/courses/cs10/unit00/05_client_0.png" width="50%" alt-text="An HTTP GET request" >}}
+```python
+riddle_gui = RiddleGUI()
+riddle_gui.run()
+```
+
+
+{{< code-action "Now you may run the python file to launch the application:" >}} `python gui_view.py`. Click on the various buttons to test the interaction
+
+{{< figure src="images/courses/cs10/unit00/06_gui_0.png" width="50%" alt-text="An HTTP GET request"  >}}
 
 {{< aside >}}
 
@@ -74,235 +65,118 @@ You can close the GUI with `command + w`, just like you would a normal window.
 {{< /aside >}}
 
 
-{{< code-action "Close the GUI and Open code:" >}} `code client.py`
-
-
 ---
 
-### client.py
+### GUI()
 
-`client.py` creates a simple application using the `CustomTkinter` library.
 
-{{< aside "CustomTkinter Documentation" >}}
+**The `GUI()` in `gui_template.py` is the framework for our application using the `CustomTkinter` library.** It has a bunch of properties and
+methods that help us set up the application window and widgets.
 
-📖 View the documentation [HERE](https://customtkinter.tomschimansky.com/documentation/)
+```python
+# gui_view.py 
 
-{{< /aside >}}
+import customtkinter
 
-**We use CustomTkinter to creates various [widgets](https://customtkinter.tomschimansky.com/documentation/widgets)** for the user to interact with and view information, this includes:
-- text box
-- buttons
-- labels
-- entry boxes
+class GUI:
+    def __init__(self, app_title, width, height):
 
-**`client.py` has a ton of code, you don't have to be too concerned with understanding each line.** Focus on reading the comments in the code to understand specific pieces. 
-
-**The key piece to understand is the `__init__`, this is where the scren is setup and the the widgets are defined.** Here is an abreviated version with the setup and a menu button. 
-
-```python {linenos=inline}
-class RiddleGUI:
-    def __init__(self):
-
-        self.riddler_interface = RiddlerInterface()
-
-        # Create and Setup the application window 
         self.app = customtkinter.CTk()
-        self.app.geometry("600x400")
-        self.app.title("Riddler Client")
-
-        # Create menu buttons
-        self.menu_view_all_button = customtkinter.CTkButton(
-            self.app, 
-            text="View All", 
-            command=self.view_all_riddles, # method activated
-            font=customtkinter.CTkFont(size=16)
-        )
-
-        # Place menu buttons on grid 
-        self.menu_view_all_button.grid(row=0, column=0, padx=20, pady=20, sticky="ew")
+        self.app.geometry(f"{width}x{height}")
+        self.app.title(app_title)
 ```
-- `line 4` - creates a `RiddlerInterface` subject which controls the HTTP requests
-- `lines 7-9` - creates a CustomTinkter application
-- `lines 12-17` - creates a button
-- `line 20` - places the button the screen
+
+
+
+ **It uses CustomTkinter to creates various [widgets](https://customtkinter.tomschimansky.com/documentation/widgets)** 
+for the user to interact with and view information, this includes:
+- text box widget
+- buttons widget
+- labels label widget
+- entry widget *(input box)*
+
+
+**`gui_template.py` has a ton of code, you don't have to be too concerned with understanding each line.**
+Focus on reading the comments to understand the methods.  
 
 ---
 
-## [3] RiddleInterface
+### `RiddlerGUI`
 
-Let's start by delving into how to use the Requests library. This will require you to remember the Riddle API. 
+The `RiddlerGUI` in `gui_view.py` is the child class of `GUI()`. It inherits all of the properties and methods from `GUI()`. 
 
+```python
+from gui_template import GUI
+import customtkinter
 
----
+class RiddlerGUI(GUI):
+    def __init__(self):
+        # inherit all the properties and methods from the parent class
+        super().__init__(app_title="Riddler",width=800, height=600)
 
-### Riddle API Refresher
-
-🌐 **Visit [http://sycs.student.isf.edu.hk/riddle/all](http://sycs.student.isf.edu.hk/riddle/all) to view riddle server.**
-
-💻 **As a reminder, you can make `GET` and `POST` requests to the API using the `httpie` tool in the Terminal**
-```shell
-http get http://sycs.student.isf.edu.hk/riddle/all
+        # create the riddler client object
+        self.riddler_client = RiddleClient()
 ```
 
-```shell
-http post http://sycs.student.isf.edu.hk/riddle/guess id=1 guess="pickles" 
-```
+👀 **It has the following properties.** 
+- `self.riddle_client` - instance of the `RiddleClient` to process the HTTP requests and responses
+- `self.menu_dictionary` - stores the menu buttons with the associated method 
+- `self.entry_dictionary` - stores the entry widget with its associated placeholder text
+- `self.label_dictionary` - stores the labels for the entry widgets with its associated label text
+- `self.submit_dictionary` - stores the submit button with the method its associated method
+- `self.text_box` - stores the text box widget for displaying the HTTP responses
 
-Here is a cheatsheet of the Riddle endpoints, what parameters they take in their payload, and what they do:
-
-| Method | URL                                | Required Payload     | Action                                                                                   |
-| ------ | ---------------------------------- | -------------------- | ---------------------------------------------------------------------------------------- |
-| `GET`  | `/riddles/all`   |                      | Returns a list of all the riddles, without answers.                                      |
-| `GET`  | `/riddles/one`   | `id`                 | Returns the riddle if it exists. (Otherwise, it returns an error with status code 404.)  |
-| `GET`  | `/riddles/difficulty`   | `id`                 | Returns the riddle if it exists with its difficulty score. (Otherwise, it returns an error with status code 404.)  |
-| `POST` | `/riddles/new`   | `question`, `answer` | Creates a new riddle (with an automatically-assigned id). Returns the riddle.            |
-| `POST` | `/riddles/guess` | `id`, `guess`        | Checks whether the guess is correct. In the response, `correct` is `True` or `False`.    |
-
----
-
-### requests_interface.py
-
-The `RequestsInterface` class controls the `HTTP requests` to the [Riddle Server](http://sycs.student.isf.edu.hk/riddle/all). It uses the [Requests library](https://requests.readthedocs.io/en/latest/) to send `GET` and `POST` requests. 
-
-It has two properties:
-
-| Property      | Description                                     |
-|---------------|-------------------------------------------------|
-| **riddle_server** | stores the url of the riddle server             |
-| **view**          | stores a View object for displaying information |
-
-And the following methods:
-
-| Method                          | Description                                                          |
-|---------------------------------|----------------------------------------------------------------------|
-| **view_all_riddles()**              | GETS all of the riddles and prints them as a bulleted list       |
-| **guess_riddle(user_chosen_id, user_guess)** | GETS one riddle with the requested ID                            |
-
+👀 **It has 2 methods**
+- `view_all_riddles()` 
+  - uses `self.riddle_client` to make an HTTP GET request to get all riddles
+  - nicely formats each riddle in the text box
+- `guess_riddle_submit()` 
+  - captures the user entry from the entry widgets
+  - uses `self.riddle_client` to make an HTTP POST request
+  - nicely formats the response in the text box
 
 --- 
 
-### `all_riddles()`
-
-👀 **First let's look at the method`all_riddles()`** that sends an **HTTP GET** request to the Riddle server endpoint `riddles/all`.
-
-```python {linenos=inline}
-def all_riddles(self):
-    '''This functions sends a GET request to riddles/all.'''
-
-    all_riddles_address = self.riddle_server + 'all'
-
-    response = requests.get(all_riddles_address)
-
-    if response.status_code == 200:
-        all_riddles_json = response.json()
-        return all_riddles_json['riddles']
-
-    else:     
-        return f"HTTP error {response.status_code}"
-
-```
-- `line 4:` stores the full URL address of where to get all of the riddles. It uses the `riddle_server` property of the client class as the base address and adds the endpoint to the end of it.
-- `line 6:` sends an HTTP GET request to the server and stores the response.
-- `lines 8-10:` If the HTTP request was sucessful, it stores the JSON. Then, uses the `View` class to print the JSON is a nicely formatted bulleted list. 
-  - `line 9:` converts the response from the server into JSON.
-  - `line 10:` returns the list of all of the riddles in the database
-- `line 12-13`: If the HTTP request was unsuccessful, return the error status code
-
----
-
-### `guess_riddle()`
-
-👀 **Now, let's look at the method`guess_riddle()`** that sends an **HTTP POST** request to the Riddle server endpoint `riddle/guess`.
+## [3] Extend the GUI
 
 
-```python {linenos=inline}
-def guess_riddle(self, user_chosen_id, user_guess):
-  '''This function sends a POST request to riddle/guess.'''
+**Your job is to add the ability to `view one riddle` and `add a new riddle` to the `RiddleGUI()`.** 
 
-  guess_riddles_address = self.riddle_server + 'guess'
+💻  **Add the ability to `view one riddle` in the `RiddleGUI()`.** What existing code can you reference and modify? 
 
-  payload = {
-      'id': user_chosen_id,
-      'guess': user_guess
-  }
+{{< figure src="images/courses/cs10/unit00/06_gui_2.png" width="75%" alt-text="An HTTP GET request" >}}
 
-  response = requests.post(guess_riddles_address, json=payload)
 
-  if response.status_code == 200:
-      guess_riddle_json = response.json()
+{{< expand "Hint" >}}
 
-      if 'riddle' in guess_riddle_json:
-          return guess_riddle_json['riddle'])
+- add a new menu button 
+- add a new submission button
+- create a new `view_one_riddle_submit()` method 
+- used the `one_riddle()` method from the `RiddleClient()` 
+- display the appropriate message in the text box widget 
 
-      else:
-          return guess_riddle_json
+{{< /expand >}}
 
-  else:
-      return f"HTTP error {response.status_code}"
-```
-- `line 4:` stores the full URL address of where to get one riddle.
-- `lines 6-9:` stores the payload in a dictionary.
-- `line 11:` sends an HTTP POST request with the payload to the server and stores the response.
-- `lines 13-` Checks if the HTTP request was sucessful
-  - `line 14` - get the json from the HTTP request
-  - `line 16-17` - if riddle in JSON, return the riddle dictionary
-  - `line 19-20` - returns error JSON
-- `line 22-23`: If the HTTP request was unsuccessful, return the error status code
+💻  **Add the ability to `add a new riddle` in the `RiddleGUI()`.** What existing code can you reference and modify? 
 
----
+{{< figure src="images/courses/cs10/unit00/06_gui_3.png" width="75%" alt-text="An HTTP GET request" >}}
 
-## [4] Extend the Client
 
-### `View One Riddle`
+{{< expand "Hint" >}}
 
-Add the ability for the user to input a riddle id and view the specific information for the given riddle.
+- add a new menu button 
+- add a new submission button
+- add 2 new entry widgets
+- create a new `new_riddle_submit()` method 
+- used the `new_riddle()` method from the `RiddleClient()` 
+- display the appropriate message in the text box widget 
 
-Edit requests_interface.py
-
-Edit client.py
-
-It should look like this
-
----
-
-### `Add New Riddle`
-
-Add the ability for the user to input a riddle question and answer, send a post request, and print the newly added riddle
-
-Edit requests_interface.py
-
-Edit client.py
-
-It should look like this
+{{< /expand >}}
 
 
 ---
 
-### A few tips
-
-
-🐞 **Debugging**
-- Test, test, test! Make sure you are confident in each piece before moving on. 
-- Use `print()` statements CONSTANTLY to give yourself more information 
-- Copy and Paste are your best friends 
-
----
-
-📚 **Parsing JSON**
-
-The HTTP response is given to us in `JSON`.  
-
-JSON is a standardized format to transfer data over a network. It represents data in a key/value pair, just like a Python dictionary.
-
-**You can parse JSON, just as you would a [Python dictionary](https://realpython.com/iterate-through-dictionary-python/).**
-
-💡 *What is in the `JSON` response if the guess is correct? If the guess is incorrect?*
-
-
-
----
-
-## [5] Deliverables
+## [4] Deliverables
 
 {{< deliverables "Once you've successfully completed the client:" >}}  
 
@@ -323,6 +197,15 @@ JSON is a standardized format to transfer data over a network. It represents dat
 ---
 
 ## [6] Extension
+
+### Customize the look!
+
+💻 **Explore the [documentation](https://customtkinter.tomschimansky.com/documentation/) and customize the appearnce of your app.**
+You may need to edit the `RiddleGUI()` and `GUI()`, depending on which widgets you want to edit.
+
+{{< figure src="images/courses/cs10/unit00/06_gui_4.png" width="75%" alt-text="An HTTP GET request"  >}}
+
+--
 
 ### Gamify!
 
