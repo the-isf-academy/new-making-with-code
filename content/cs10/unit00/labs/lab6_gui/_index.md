@@ -97,7 +97,7 @@ for the user to interact with and view information, this includes:
 
 
 **`gui_template.py` has a ton of code, you don't have to be too concerned with understanding each line.**
-Focus on reading the comments to understand the methods.  
+Focus on reading the comments to understand the purpose of each method.  
 
 ---
 
@@ -181,7 +181,7 @@ class RiddlerGUI(GUI):
 {{< deliverables "Once you've successfully completed the client:" >}}  
 
 
-{{< write-action >}} **Fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSe-mGrk41m6_-iZtqw5X1LpmYrfhF68Kbw8XJBCNv0XsqHG-Q/viewform?usp=sf_link)**
+{{< write-action >}} **Fill out [this Google form](https://docs.google.com/forms/d/e/1FAIpQLScM7qccLbYlDrzVEWRJKU834Q6VViMmax6ZN8NNybpRpvDJRw/viewform?usp=sf_link)**
 
 {{< code-action "Push your code to Github." >}}
 - git status
@@ -205,7 +205,7 @@ You may need to edit the `RiddleGUI()` and `GUI()`, depending on which widgets y
 
 {{< figure src="images/courses/cs10/unit00/06_gui_4.png" width="75%" alt-text="An HTTP GET request"  >}}
 
---
+<!-- --
 
 ### Gamify!
 
@@ -242,4 +242,4 @@ Enter your guess:
 - randomly display each riddle
 
 
----
+--- -->
