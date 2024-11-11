@@ -160,7 +160,7 @@ Successful computer scientists should be able to make the following claims:
     - I can use loops to repeat commands
      I can use settings.py to easily configure my animation
 - I can effectively use the principle of decomposition to make my code more efficient and elegant
-    - I can write functions to be used in different scenarios
+    - I can write modules and functions to break down my animation into smaller pieces 
     - I can structure my modules and functions so that another CS student could easily extend my work
 
 *Keep the success claims in mind when coding your project.*
