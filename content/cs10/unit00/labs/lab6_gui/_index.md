@@ -17,13 +17,13 @@ CustomTkinter Library to build our application.
 
 ---
 
-## [1] Set Up
+## [0] Set Up
 
 We will use the repo from the previous lab, `lab_client`. 
 
 {{< code-action "Go to the lab folder." >}}
 ```shell
-cd ~/desktop/making_with_code/cs10/unit00_networking/lab_client_YOURGITHUBUSERNAME
+cd ~/desktop/making_with_code/unit03_networking/lab_client_YOURGITHUBUSERNAME
 ```
 
 {{< code-action "Enter the poetry shell." >}} You do NOT need to install the requirements again. 
@@ -42,9 +42,9 @@ poetry shell
 
 ---
 
-## [2] GUI 
+## [1] GUI 
 
-If you run `python gui_view.py` it the application does not run. This is becuase the `RiddleGUI` class is defined, but there is no instance of the application. 
+If you run `python gui_view.py`, the application does not run. This is becuase the `RiddleGUI` class is defined, but there is no instance of the application. 
 
 {{< code-action >}} **Add the following lines of code to the bottom of `gui_view.py` to create an instance of `RiddleGUI` and call the method `run()`.**
 
@@ -118,7 +118,7 @@ class RiddlerGUI(GUI):
         self.riddler_client = RiddleClient()
 ```
 
-👀 **It has the following properties.** 
+👀 **It has the following properties:** 
 - `self.riddle_client` - instance of the `RiddleClient` to process the HTTP requests and responses
 - `self.menu_dictionary` - stores the menu buttons with the associated method 
 - `self.entry_dictionary` - stores the entry widget with its associated placeholder text
@@ -126,7 +126,7 @@ class RiddlerGUI(GUI):
 - `self.submit_dictionary` - stores the submit button with the method its associated method
 - `self.text_box` - stores the text box widget for displaying the HTTP responses
 
-👀 **It has 2 methods**
+👀 **It has 2 methods:**
 - `view_all_riddles()` 
   - uses `self.riddle_client` to make an HTTP GET request to get all riddles
   - nicely formats each riddle in the text box
@@ -137,7 +137,7 @@ class RiddlerGUI(GUI):
 
 --- 
 
-## [3] Extend the GUI
+## [2] Extend the GUI
 
 
 **Your job is to add the ability to `view one riddle` and `add a new riddle` to the `RiddleGUI()`.** 
@@ -176,7 +176,7 @@ class RiddlerGUI(GUI):
 
 ---
 
-## [4] Deliverables
+## [3] Deliverables
 
 {{< deliverables "Once you've successfully completed the client:" >}}  
 
@@ -196,7 +196,7 @@ class RiddlerGUI(GUI):
 
 ---
 
-## [6] Extension
+## [5] Extension
 
 ### Customize the look!
 
