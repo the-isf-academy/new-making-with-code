@@ -184,13 +184,6 @@ Successful computer scientists should be able to make the following claims:
 
 You have 5 in-class work days. You may find it necessary to work outside of school, however if you are focused in class you can complete the project within the allotted blocks. Our office hours are Wednesday during CCA in B405. 
 
-| CS10 Dates   | Agenda                           |
-|--------------|----------------------------------|
-| 16 Oct       | Project Intro & Planning Booklet |
-| 18 Oct      | Work Day                         |
-| 21 Oct       | Work Day                         |
-| 23 Oct       | Work Day                         |
-| 21 Nov       | Work Day: Due at End of Class              |
 
  ---
 
