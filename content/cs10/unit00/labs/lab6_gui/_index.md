@@ -196,7 +196,7 @@ class RiddlerGUI(GUI):
 
 ---
 
-## [5] Extension
+## [4] Extension
 
 ### Customize the look!
 
