@@ -78,18 +78,7 @@ poetry shell
 
 {{< /expand >}}
 
-&nbsp;&nbsp;&nbsp;**[✔️]** make guess a required field  
-{{< expand "Hint" >}}
-Python considers an empty string `""` to be equivalent to `False`. This means you can check if a string has text really easily:
 
-```python
-if guess:
-  # the string has text in it
-  # do something
-else:
-  #the guess is empty ""
-```
-{{< /expand >}}
 
 ---
 
