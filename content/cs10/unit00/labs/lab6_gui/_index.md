@@ -17,7 +17,7 @@ CustomTkinter Library to build our application.
 
 ---
 
-## [0]] Set Up
+## [0] Set Up
 
 We will use the repo from the previous lab, `lab_client`. 
 
