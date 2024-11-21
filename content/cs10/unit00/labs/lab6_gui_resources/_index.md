@@ -1,5 +1,5 @@
 ---
-title: "7. GUI Game"
+title: "6. GUI Game"
 type: lab
 # draft: true
 ---
@@ -17,23 +17,28 @@ CustomTkinter Library.
 
 ---
 
-## [1] Set Up
+## [0] Set Up
 
-We will use the repo from the previous lab, `lab_gui_game`. 
 
-{{< code-action "Go to the lab folder." >}}
+{{< code-action "Go to the unit folder, clone the riddler server lab, and cd into the repo." >}}
 ```shell
-cd ~/desktop/making_with_code/unit03_networking/lab_gui_game_YOURGITHUBUSERNAME
+cd ~/desktop/making_with_code/unit03_networking/
+git clone https://github.com/the-isf-academy/lab_gui_game_YOURGITHUBUSERNAME
+cd lab_gui_game_YOURGITHUBUSERNAME
 ```
 
-{{< code-action "Enter the poetry shell." >}} You do NOT need to install the requirements again. 
+{{< code-action "Install the requirements." >}}
+```shell
+poetry install
+```
+
+{{< code-action "Enter the poetry shell." >}}
 ```shell
 poetry shell
 ```
 
 📄 **The repository has the following files.**  In this lab we will just focus on the bolded files.
 - `riddle_client.py`
-- `test_riddle_client.py`
 - **`gui_template.py`**
 - **`gui_view_game.py`**
 
@@ -42,7 +47,7 @@ poetry shell
 
 ---
 
-## [2] Play the game! 
+## [1] Play the game! 
 
 **💻 Play the game!** `python gui_view_game.py`.
 
@@ -51,7 +56,7 @@ poetry shell
 
 ---
 
-## [3] Improve the Game
+## [2] Improve the Game
 
 **💻 Add the following features to the game**
 
@@ -65,7 +70,6 @@ poetry shell
 
 &nbsp;&nbsp;&nbsp;**[✔️]** add difficulty feature 
 
-
 {{< expand "Hint" >}}
 
 - look into the `shuffle()` function
@@ -74,10 +78,22 @@ poetry shell
 
 {{< /expand >}}
 
+&nbsp;&nbsp;&nbsp;**[✔️]** make guess a required field  
+{{< expand "Hint" >}}
+Python considers an empty string `""` to be equivalent to `False`. This means you can check if a string has text really easily:
+
+```python
+if guess:
+  # the string has text in it
+  # do something
+else:
+  #the guess is empty ""
+```
+{{< /expand >}}
 
 ---
 
-## [4] Deliverables
+## [3] Deliverables
 
 {{< deliverables "Once you've successfully completed the client:" >}}  
 
@@ -95,7 +111,7 @@ poetry shell
 
 ---
 
-## [6] Extension
+## [4] Extension
 
 ### Customize the look!
 
