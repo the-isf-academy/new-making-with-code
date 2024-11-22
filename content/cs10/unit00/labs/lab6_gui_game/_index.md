@@ -15,6 +15,15 @@ CustomTkinter Library.
 
 {{< /aside >}}
 
+{{< aside "Updates to the server" >}}
+
+🌐 The [riddle server](http://sycs.student.isf.edu.hk/riddle/all) has been updated per requests! 
+
+The JSON now includes the riddle's answer and difficulty score. 
+{{< /aside >}}
+
+
+
 ---
 
 ## [0] Set Up
@@ -68,7 +77,6 @@ poetry shell
 
 &nbsp;&nbsp;&nbsp;**[✔️]** add game over screen
 
-&nbsp;&nbsp;&nbsp;**[✔️]** add difficulty feature 
 
 {{< expand "Hint" >}}
 
@@ -76,19 +84,6 @@ poetry shell
 - what properties will you need to add to track the `score` and `lives`?
 - how will you know if the game is over? 
 
-{{< /expand >}}
-
-&nbsp;&nbsp;&nbsp;**[✔️]** make guess a required field  
-{{< expand "Hint" >}}
-Python considers an empty string `""` to be equivalent to `False`. This means you can check if a string has text really easily:
-
-```python
-if guess:
-  # the string has text in it
-  # do something
-else:
-  #the guess is empty ""
-```
 {{< /expand >}}
 
 ---
@@ -113,10 +108,63 @@ else:
 
 ## [4] Extension
 
-### Customize the look!
+### Difficulty Modes
 
-💻 **Explore the [documentation](https://customtkinter.tomschimansky.com/documentation/) and customize the appearnce of your app.**
-- experiment with using a [combo box](https://customtkinter.tomschimansky.com/documentation/widgets/combobox) to select the difficulty
+💻 **Add a difficulty feature using [combo box widget](https://customtkinter.tomschimansky.com/documentation/widgets/combobox)** Users should be able to choose between easy, medium, or hard mode. 
 
+{{< figure src="https://python-hub.com/wp-content/uploads/2023/11/Screenshot-2023-11-26-135852.png" width="20%"  >}}
+
+
+**The API [`/riddle/all`](http://sycs.student.isf.edu.hk/riddle/all) has been updated to include difficulty score.**
+- `1.0` represents a riddle with 0% correct guesses 
+- `0.5` represents a riddle with 50% correct guesses
+- `0.0` represents a score with 100% correct guesses
+
+```shell
+{
+"riddles": [
+  {
+    "id": 1,
+    "question": "I’m light as a feather, yet the strongest person can’t hold me for five minutes. What am I?",
+    "answer": "Your breath",
+    "difficulty": 0.9885931558935361,
+    "correct": 2,
+    "guesses": 262
+  },
+]
+```
+
+{{< expand "Hint: Creating a Combobox" >}}
+
+To create a combobox:
+
+```python
+combobox = customtkinter.CTkComboBox(
+    app, 
+    values=["option 1", "option 2"]
+    )
+```
+
+To access the selected value:
+
+```python
+combobox.get()
+```
+{{< /expand >}}
+
+
+---
+
+### A progress bar
+
+💻 **Add a [progress bar widget](https://customtkinter.tomschimansky.com/documentation/widgets/progressbar) to communicate to the user their progress in the game.**
+
+{{< figure src="https://python-hub.com/wp-content/uploads/2023/12/CTkProgressBar.png" width="25%"  >}}
+
+<!-- ---
+
+
+### A local leaderboard
 
 💻 **Add a high score leaderboard feature.** You will need to learn how to [read and write to a file](https://www.geeksforgeeks.org/reading-writing-text-files-python/).
+- Due to the lack of  -->
