@@ -163,7 +163,7 @@ You have 5 in-class work days. You may find it necessary to work outside of scho
 - `git add -A`
     - this adds all changed files to the commit
 - `git status`
-- `git commit -m "DAY X  #today I worked on X  #next I will do Y"`
+- `git commit -m "#today I worked on X  #next I will do Y"`
   > be sure to customize this message, do not copy and paste this line
 - `git push`
 {{< /deliverables >}}
