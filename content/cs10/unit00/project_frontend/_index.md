@@ -1,6 +1,6 @@
 ---
 Title: "Project: Frontend"
-draft: true
+# draft: true
 ---
 
 # Networking Frontend Project
@@ -37,7 +37,7 @@ Before you start working on your project, you will outline your implementation o
 {{< code-action "Download your repository with starter code for your project." >}} Be sure to change `yourgithubusername` to your actual Github username.
 
 ```shell
-cd ~/desktop/making_with_code/cs10/unit00_networking/
+cd ~/desktop/making_with_code/unit03_networking/
 git clone https://github.com/the-isf-academy/project_networking_frontend_yourgithubusername
 cd project_networking_frontend_yourgithubusername
 ```
@@ -54,10 +54,9 @@ poetry install
 
 📄 **It contains the following:**
 - A `project_networking_frontend` repository containing the following:
-  - `client.py` - This is where you will manage the user interactions. 
-  - `requests_interface.py` - This is where you will manage the HTTP requests.
-  - `view.py` - This is where you will manage the input and output for the user. 
-  - `README.md` - This is documentation for the frontend of your project.
+  - `client.py` - This is where you will manage the HTTP requests and parse the JSON. 
+  - `gui_view.py` - This is where you will manage the logic of your app
+  - `gui_template.py` - This creates and runs the apps and contains helper methods
 
 {{< code-action "Start coding your MVP (minimum viable product)!" >}}
 
@@ -77,7 +76,6 @@ poetry install
 - 1 - limited evidence of the practice
 - 2 - adequate evidence of the practice
 - 3 - substantial evidence of the practice
-
 
 ---
 
