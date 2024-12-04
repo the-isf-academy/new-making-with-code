@@ -1,6 +1,6 @@
 ---
 Title: "[Tips & Tricks]"
-# draft: true
+draft: true
 ---
 
 # Tips & Tricks
