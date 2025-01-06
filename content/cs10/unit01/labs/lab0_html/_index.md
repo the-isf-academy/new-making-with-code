@@ -1,12 +1,14 @@
 ---
 title: "0: HTML"
 weight: 10
-# draft: false
+draft: false
 ---
 
 # HTML Lab
 
 In this lab, you will start learning to write `HTML` code! HTML defines the content and the structural elements of a web site.
+
+{{< figure src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/800px-HTML5_logo_and_wordmark.svg.png" width="15%" >}}
 
 
 ---
@@ -15,24 +17,22 @@ In this lab, you will start learning to write `HTML` code! HTML defines the cont
 
 We are now in the **Web Design** unit, so you'll need to make a new folder. 
 
-{{< code-action  >}} **In the Terminal, go into your `making_with_code/cs10` folder and create a `unit01_webdesign` folder.**
+{{< code-action  >}} **In the Terminal, go into your `making_with_code/cs10` folder, create a `unit04_webdesign` folder, `cd` into it.**
 
 ```shell
-cd ~/desktop/making_with_code/cs10
-mkdir unit01_webdesign
+cd ~/desktop/making_with_code
+mkdir unit04_webdesign
+cd unit04_webdesign
 ```
 
 
-{{< code-action "Then, clone your starter code." >}} Be sure to change `yourgithubusername` to your actual Github username.
+{{< code-action >}} **Then, clone your starter code and `cd` into the lab**
+Be sure to change `yourgithubusername` to your actual Github username.
 ```shell
 git clone https://github.com/the-isf-academy/lab_html_yourgithubusername
 cd lab_html_yourgithubusername
 ```
 
-{{< code-action >}} `cd` **into the lab**
-```shell
-cd lab_html_yourgithubusername
-```
 
 {{< aside "No need for the Poetry shell" >}}
 
@@ -86,6 +86,7 @@ Don't worry, we'll return to Python in the next unit - Web Apps :)
 
 
 💻 **As you edit `index.html`, **save** `⌘+s` the file and **refresh** `⌘+r`  the web browser.** This will allow you to see updates as you edit the code!
+> Use `⌘+tab` to easily switch between VS Code and your web browser. This will save you a ton of time :)
 
 {{< figure src="images/courses/cs10/unit01/00_html_2.png" width="75%" >}}
 
