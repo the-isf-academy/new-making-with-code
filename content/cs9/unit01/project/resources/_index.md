@@ -373,6 +373,17 @@ sum = other_df["total"].sum()
 ```python
 # create the new row
 new_row = {'artist': 'Other', 'total': sum}
+# create the new row
+other_data = {
+    'reviewer_location': ['Other'], 
+    'count': [other_sum]}
+
+other_df = pd.DataFrame(other_data)
+
+location_df = pd.concat([top_10_locations, other_df])
+
+location_df
+
 # make a new df that combines the top5_df with the new row
 combo_df = top5_df.append(new_row, ignore_index = True)
 ```
