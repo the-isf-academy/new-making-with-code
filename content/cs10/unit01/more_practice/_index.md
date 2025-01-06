@@ -1,6 +1,6 @@
 ---
 title: "More Practice" 
-
+draft: true
 ---
 
 # More HTML/CSS Practice
