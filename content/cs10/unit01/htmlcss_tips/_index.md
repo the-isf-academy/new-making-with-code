@@ -1,6 +1,6 @@
 ---
 title: "HTML/CSS Tips" 
-draft: true
+# draft: true
 ---
 <style>
 
@@ -67,7 +67,7 @@ This page is dedicated to HTML and CSS tips. Let the teachers know if you would 
 ## CSS Cheat Sheets
 
 
-{{< figure src="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics/css-declaration-small.png" width="40%" >}}
+{{< figure src="https://miro.medium.com/v2/resize:fit:600/1*OFsc0SD55jhi8cjo7aCA4w.jpeg" width="40%" >}}
 
 🔗 **Here are a few helpful links to reference CSS properties:**
 - [CSS Properties Cheat Sheet](https://web.stanford.edu/group/csp/cs21/csscheatsheet.pdf)
@@ -245,6 +245,7 @@ This page is dedicated to HTML and CSS tips. Let the teachers know if you would 
 > - `#` - is used to apply rules to a `CSS ID`
 > - **`flex-grow`** - this makes `col-2` 3x as big
 
+<!-- 
 ---
 
 
@@ -272,4 +273,4 @@ This page is dedicated to HTML and CSS tips. Let the teachers know if you would 
 ```
 > - **`@media only screen and (max-width: 768px)`** - this applies different `CSS` properties for the two classes, `flexbox-grid` and `column`, when the window is at a specific screen size
 - `/* FOR MOBILE SCREEN SIZE */` - is a comment, just like the `#` for comments in Python 
-  - You can learn more about `media queries` [HERE](https://www.w3schools.com/css/css_rwd_mediaqueries.asp).
+  - You can learn more about `media queries` [HERE](https://www.w3schools.com/css/css_rwd_mediaqueries.asp). -->
