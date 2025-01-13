@@ -27,12 +27,11 @@ To be successful in this project, you should **find a topic that is both interes
 
 ---
 
-📅 **You will have 5 in-class blocks to complete this project.** 
+📅 **You will have 4 in-class blocks to complete this project.** 
 
 | section | due date |
 |---------|----------|
-| cs9.1   | 06 March   |
-| cs9.2   | 04 March   |
+| cs10.1  | 22 January   |
 
 ---
 
@@ -40,8 +39,7 @@ To be successful in this project, you should **find a topic that is both interes
 
 {{< code-action >}} **You can find your project in your Google Drive:** `Project: Data Science.ipynb`
 
-✏️ **For the poster, you may use Canva or any other service.** It will be A3 size. 
-
+✏️ **For the poster, you may use Canva or any other service.** It will be A3 size. You will begin the poster after LNY.
 
 ---
 
@@ -59,22 +57,7 @@ To be successful in this project, you should **find a topic that is both interes
 - 1 - limited evidence of the concept
 - 2 - adequate evidence of the concept
 - 3 - substantial evidence of the concept
-<!-- 
-{{< expand "Scoring Breakdown" >}}
 
-The project is scored out of 7. 
-
-*To calculate your score for the practices & concepts, look at the following bands:*
-
-- 0 = 0
-- 1 = 1
-- 2 = 2-3
-- 3 = 4-5
-- 4 = 6-7
-- 5 = 8-11
-- 6 = 12-13
-- 7 = 14-15
-{{< /expand >}} -->
 
 --- 
 
@@ -82,16 +65,19 @@ The project is scored out of 7.
 
 💯 **Successful computer scientists should be able to make the following claims:**
 - Project Planning 
-    - I can brainstorm potential areas of exploration with my data 
-    - I can choose a relevant research question and break it down into sub-questions 
-    - I can consistently track my progress with notes and comments
+    - I can choose a relevant research question and determine appropriate forms of evidence
+    - I can consistently track my progress with specific comments
 - Data Analysis  
-    - I can combine and reorganize pieces of data to explore new relationships
+    - I can prepare my dataset by adding and removing necessary columns or rows
+    - I can combine and reorganize pieces of data to explore new relationships and support my research question
     - I can generate summary statistics (mean, median, mode, frequency count) for describing the data
+    - I can write readable code by using descriptive names for modules, functions, and variables
+    - I can write descriptive comments to describe complex pieces of the code
 - Data Visualization 
-    - I can chooose appropriate data visaulizations to communicate my findings 
+    - I can choose appropriate data visualizations to communicate my findings 
     - I can display data visualizations that are thoughtfully sorted and easy to read
-- Data Communication Communication: Poster & Presentation 
+    - I can include appropriate title, axis, and labels for my visualizations
+- Data Communication Communication: Poster 
     - I can explain the purpose and focus of the research 
     - I can explain my methodology, including action steps and reasoning for restructuring the data
     - I can reflect on the meaning of the data and provide context of the results
