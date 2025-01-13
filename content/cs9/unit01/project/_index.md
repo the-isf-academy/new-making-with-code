@@ -77,7 +77,7 @@ To be successful in this project, you should **find a topic that is both interes
     - I can choose appropriate data visualizations to communicate my findings 
     - I can display data visualizations that are thoughtfully sorted and easy to read
     - I can include appropriate title, axis, and labels for my visualizations
-- Data Communication Communication: Poster 
+- Data Communication: Poster 
     - I can explain the purpose and focus of the research 
     - I can explain my methodology, including action steps and reasoning for restructuring the data
     - I can reflect on the meaning of the data and provide context of the results
