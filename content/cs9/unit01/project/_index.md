@@ -86,4 +86,23 @@ To be successful in this project, you should **find a topic that is both interes
 
 **Keep the success claims in mind when coding your project.**
 
+---
 
+## [5] Tips & Tricks
+
+**Detecting Chinese Characters**
+
+Here is an example of how to detect if there are Chinese characters in a string.
+- You will need to import `regex`
+- Then use `regex.search()` - it will return either `True` or `False` if there are Chinese characters
+
+```python
+import regex
+
+chinese_string = "上海 2025"
+
+if regex.search(r'\p{Han}', chinese_string) == True:
+  print("Has Chinese!")
+else:
+  print("No chinese")
+```
