@@ -72,6 +72,11 @@ cd lab_html_yourgithubusername
   - [ ] [id selector example](https://developer.mozilla.org/en-US/docs/Web/CSS/ID_selectors#examples)
 - [ ] flexbox
 
+🎨 **Go to [fonts.google.com](https://fonts.google.com/) to find a custom font.**
+- Select `Get Font`
+- Select `Get embeded code`
+- Copy the code from the `Embed code in the <head> of your html` into the `head` of your `html` file
+- You can then use the name of the font in the `css` file
 
 
 ---
