@@ -69,7 +69,7 @@ cd lab_html_yourgithubusername
 
 ✅ **You must implement `class` and `id` selectors**
 - [ ][class selector example](https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors#examples)
-- [ ] [id selector example](https://developer.mozilla.org/en-US/docs/Web/CSS/ID_selectors#examples)
+  - [ ] [id selector example](https://developer.mozilla.org/en-US/docs/Web/CSS/ID_selectors#examples)
 - [ ] flexbox
 
 
