@@ -1,7 +1,7 @@
 ---
 title: "1: CSS"
 weight: 10
-draft: true
+# draft: true
 ---
 
 <style>
@@ -50,7 +50,7 @@ cd lab_html_yourgithubusername
 
 ## [0] Wireframe Design
 
-🎨  **In this lab you will design a `wireframe` for the Ocean Park Water Park.** A `wireframe` is a layout design for a website. 
+🎨  **In this lab you will design a `wireframe` for the G9 & G10 ELP.** A `wireframe` is a layout design for a website. 
 
 
 {{< figure src="https://thewebsitearchitect.com/wp-content/uploads/2021/02/How-do-you-draw-a-website-wireframe.jpg" width="40%" >}}
@@ -65,11 +65,14 @@ cd lab_html_yourgithubusername
 
 ## [1] Develop the Wireframe 
 
-💻 **Exchange wireframe design documents and implement your partners design in `HTML` and `CSS`.** This will require you to write `CSS` rules for various HTML elements. You may even want to implement `class` and `id` selectors for layout components and finer tuning of aesthetic design. 
-> 📖 Be sure to reference the `HTML/CSS Tips` 
->
-> - [class selector example](https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors#examples)
-> - [id selector example](https://developer.mozilla.org/en-US/docs/Web/CSS/ID_selectors#examples)
+💻 **Exchange wireframe design documents and implement your partners design in `HTML` and `CSS`.** This will require you to write `CSS` rules for various HTML elements. 
+
+✅ **You must implement `class` and `id` selectors**
+- [ ][class selector example](https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors#examples)
+- [ ] [id selector example](https://developer.mozilla.org/en-US/docs/Web/CSS/ID_selectors#examples)
+- [ ] flexbox
+
+
 
 ---
 
