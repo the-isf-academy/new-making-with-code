@@ -9,6 +9,12 @@ The final project for this unit will be a research project. Working with the dat
 
 To be successful in this project, you should **find a topic that is both interesting to you and answerable** (at least in part) with data from your chosen dataset. Your teachers will help you make sure your project hypothesis achieves that. 
 
+{{< aside "Extra Examples" >}}
+
+📖 **Extra Examples [HERE](https://colab.research.google.com/drive/1K12_0EC4NpNWzzhl6hGw3ImAmtxzMJuJ?usp=sharing)**
+
+{{< /aside >}}
+
 
 
 ---
